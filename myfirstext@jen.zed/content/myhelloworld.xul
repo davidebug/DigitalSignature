@@ -3,6 +3,8 @@
 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
  <script type="application/javascript" src="chrome://myfirstext/content/overlay.js"/><!-- A reference to your JavaScript file -->
  <statusbar id="mail-bar3">
-  <toolbarbutton id="my-panel" label="Date"/>
+  <toolbarbutton id="my-panel" label=" ">
+   
+   </toolbarbutton>   
  </statusbar>
 </overlay>
