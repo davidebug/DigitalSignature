@@ -6,7 +6,7 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>myfirstext@jen.zed</em:id>
     <em:name>My First Extension</em:name>
-    <em:version>1.14</em:version>
+    <em:version>1.26</em:version>
     <em:creator>jenzed</em:creator>
    
     <em:targetApplication>

@@ -1,3 +1,7 @@
+window.addEventListener("load", function(e) { 
+	check(); 
+}, false);
+
 window.addEventListener("click", function(e) { 
 	check(); 
 }, false);
