@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<overlay id="sample" 
+xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+ <script type="application/javascript" src="chrome://thundersign/content/overlay.js"/>
+
+ <toolbar id="header-view-toolbar">
+  <toolbarbutton id="my-panel" class="toolbarbutton-1 msgHeaderView-button" label="ThunderSign" tooltiptext="Digital Signature on attachments" style="list-style-image: url('chrome://thundersign/content/icon-16.png');">
+
+   </toolbarbutton>   
+
+ </toolbar>
+</overlay>

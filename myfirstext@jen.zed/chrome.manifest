@@ -1,2 +1,0 @@
-content     myfirstext    content/
-overlay chrome://messenger/content/messenger.xul chrome://myfirstext/content/myhelloworld.xul
