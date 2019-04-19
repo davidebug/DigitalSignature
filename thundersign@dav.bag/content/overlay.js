@@ -1,16 +1,41 @@
 
+
 window.addEventListener("DOMContentLoaded", function(e) { 
 	check(); 
 }, false);
 
 
 function check() {
-	var myPanel = document.getElementById("my-panel");
+	var button = document.getElementById("my-button");
+
 	if(document.getElementById("attachmentView").collapsed == true){
-		myPanel.style.display = "none";
+		button.style.display = "none";
 		return;
 	}
-	myPanel.style.display = "inline";
-
+	button.style.display = "inline";
+	scanAttachments();
 	
+	
+}
+
+
+
+function scanAttachments(){
+	var attachmentsList = document.getElementById("attachmentList");
+	var myAttachments = document.getElementById("my-attachments");
+	while (myAttachments.firstChild) {
+		myAttachments.removeChild(myAttachments.firstChild);
+	}
+	var checkbox = document.createElement("checkbox");
+		checkbox.setAttribute("id", "attachments[i].value()");
+		checkbox.setAttribute("label", "attachments[i].value()");
+		myAttachments.appendChild(checkbox);
+	// for(var i = 0; i<attachments.length ; i++){
+		
+	// 	var checkbox = document.createElement("checkbox");
+	// 	checkbox.setAttribute("id", attachments[i].value());
+	// 	checkbox.setAttribute("label", attachments[i].value());
+	// 	checkbox.setAttribute("checked", "false");
+	// 	panel.appendChild(checkbox);
+	// }
 }
