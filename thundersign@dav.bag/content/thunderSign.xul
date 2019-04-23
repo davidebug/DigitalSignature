@@ -5,8 +5,15 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
  <toolbar id="header-view-toolbar">
   <toolbarbutton id="my-button" class="toolbarbutton-1 msgHeaderView-button" label="ThunderSign" tooltiptext="Digital Signature on attachments" type="menu" style="list-style-image: url('chrome://thundersign/content/icon-16.png');">
-    <panel id="thundersign-expanded">
+    <panel id="thundersign-expanded" style="list-style-image: url('');">
       <box id= "my-attachments" ></box>
+      <radiogroup>
+        <radio id="cades" label="CAdes" selected= "true"/>
+        <radio id="pades" label="PAdes"/>
+      </radiogroup>
+      <button label="Sign and Reply" style="list-style-image: url('chrome://messenger/skin/icons/reply.svg');" ></button>
+      <button label="Sign and Send" style="list-style-image: url('chrome://messenger/skin/icons/forward.svg');"></button>
+      <button label="Sign and Save" style="list-style-image: url('chrome://messenger/skin/icons/save.svg');"></button>
     </panel>
     
    </toolbarbutton>   

@@ -26,16 +26,17 @@ function scanAttachments(){
 	while (myAttachments.firstChild) {
 		myAttachments.removeChild(myAttachments.firstChild);
 	}
-	var checkbox = document.createElement("checkbox");
+	
+	 for(var i = 0; i<attachmentsList.length ; i++){    // <-------- NON FUNZIA
+		var checkbox = document.createElement("checkbox");
 		checkbox.setAttribute("id", "attachments[i].value()");
 		checkbox.setAttribute("label", "attachments[i].value()");
 		myAttachments.appendChild(checkbox);
-	// for(var i = 0; i<attachments.length ; i++){
-		
 	// 	var checkbox = document.createElement("checkbox");
 	// 	checkbox.setAttribute("id", attachments[i].value());
 	// 	checkbox.setAttribute("label", attachments[i].value());
 	// 	checkbox.setAttribute("checked", "false");
 	// 	panel.appendChild(checkbox);
 	// }
+	 }
 }
