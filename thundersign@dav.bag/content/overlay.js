@@ -21,22 +21,16 @@ function check() {
 
 
 function scanAttachments(){
-	var attachmentsList = document.getElementById("attachmentList");
+	var attachmentList = document.getElementById("attachmentList");
 	var myAttachments = document.getElementById("my-attachments");
 	while (myAttachments.firstChild) {
 		myAttachments.removeChild(myAttachments.firstChild);
 	}
 	
-	 for(var i = 0; i<attachmentsList.length ; i++){    // <-------- NON FUNZIA
+	  for(var i = 0; i<attachmentList.children.length ; i++){    
 		var checkbox = document.createElement("checkbox");
-		checkbox.setAttribute("id", "attachments[i].value()");
-		checkbox.setAttribute("label", "attachments[i].value()");
+		checkbox.setAttribute("id", attachmentList.children[i].getAttribute("name"));
+		checkbox.setAttribute("label", attachmentList.children[i].getAttribute("name"));
 		myAttachments.appendChild(checkbox);
-	// 	var checkbox = document.createElement("checkbox");
-	// 	checkbox.setAttribute("id", attachments[i].value());
-	// 	checkbox.setAttribute("label", attachments[i].value());
-	// 	checkbox.setAttribute("checked", "false");
-	// 	panel.appendChild(checkbox);
-	// }
 	 }
 }
