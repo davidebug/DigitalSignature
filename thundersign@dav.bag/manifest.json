@@ -1,0 +1,11 @@
+ {
+   "name": "Digital Signature Tool",
+   "version": "1.0",
+   "description": "Extension for digital signature with PKCS#11 token",
+   "permissions": [],
+   "background": {
+     "scripts": []
+  
+   },
+   "manifest_version": 2
+ }
