@@ -1,0 +1,73 @@
+[
+  {
+    "namespace": "manifest",
+    "types": [
+      {
+        "$extend": "OptionalPermission",
+        "choices": [
+          {
+            "type": "string",
+            "enum": [
+              "accountsRead"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "namespace": "accounts",
+    "permissions": [
+      "accountsRead"
+    ],
+    "types": [
+      {
+        "id": "MailFolder",
+        "type": "object",
+        "description": "A folder object, as returned by the <var>list</var> and <var>get</var> methods. Use the accountId and path properties to refer to a folder.",
+        "properties": {
+          "accountId": {
+            "type": "string",
+            "description": "The account this folder belongs to."
+          },
+          "name": {
+            "type": "string",
+            "optional": true,
+            "description": "The human-friendly name of this folder."
+          },
+          "path": {
+            "type": "string",
+            "description": "Path to this folder in the account. Although paths look predictable, never guess a folder's path, as there are a number of reasons why it may not be what you think it is."
+          },
+          "type": {
+            "type": "string",
+            "optional": true,
+            "description": "The type of folder, for several common types.",
+            "enum": ["inbox", "drafts", "sent", "trash", "templates", "archives", "junk", "outbox"]
+          }
+        }
+      }
+    ],
+    "functions": [
+      {
+        "name": "list",
+        "type": "function",
+        "description": "Returns all mail accounts.",
+        "async": true,
+        "parameters": []
+      },
+      {
+        "name": "get",
+        "type": "function",
+        "description": "Returns details of the requested account, or null if it doesn't exist.",
+        "async": true,
+        "parameters": [
+          {
+            "name": "accountId",
+            "type": "string"
+          }
+        ]
+      }
+    ]
+  }
+]

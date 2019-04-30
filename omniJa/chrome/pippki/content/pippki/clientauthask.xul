@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE dialog [
+<!ENTITY % pippkiDTD SYSTEM "chrome://pippki/locale/pippki.dtd" >
+%pippkiDTD;
+]>
+
+
+<dialog id="certAuthAsk" title="&clientAuthAsk.title;"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  buttons="accept,cancel"
+  ondialogaccept="return doOK();"
+  ondialogcancel="return doCancel();"
+  onload="onLoad();">
+
+<stringbundleset id="stringbundleset">
+  <stringbundle id="pippki_bundle" src="chrome://pippki/locale/pippki.properties"/>
+</stringbundleset>
+
+<script type="application/javascript" src="chrome://pippki/content/pippki.js"/>
+<script type="application/javascript" src="chrome://pippki/content/clientauthask.js"/>
+<script type="application/javascript" src="chrome://global/content/globalOverlay.js"/>
+
+<script type="application/javascript" src="chrome://global/content/editMenuOverlay.js"/>
+<commandset id="editMenuCommands">
+  <commandset id="editMenuCommandSetAll" commandupdater="true" events="focus,select"
+              oncommandupdate="goUpdateGlobalEditMenuItems()"/>
+  <commandset id="editMenuCommandSetUndo" commandupdater="true" events="undo"
+              oncommandupdate="goUpdateUndoEditMenuItems()"/>
+  <commandset id="editMenuCommandSetPaste" commandupdater="true" events="clipboard"
+              oncommandupdate="goUpdatePasteMenuItems()"/>
+  <command id="cmd_undo" oncommand="goDoCommand('cmd_undo')"/>
+  <command id="cmd_redo" oncommand="goDoCommand('cmd_redo')"/>
+  <command id="cmd_cut" oncommand="goDoCommand('cmd_cut')"/>
+  <command id="cmd_copy" oncommand="goDoCommand('cmd_copy')"/>
+  <command id="cmd_paste" oncommand="goDoCommand('cmd_paste')"/>
+  <command id="cmd_delete" oncommand="goDoCommand('cmd_delete')"/>
+  <command id="cmd_selectAll" oncommand="goDoCommand('cmd_selectAll')"/>
+  <command id="cmd_switchTextDirection" oncommand="goDoCommand('cmd_switchTextDirection');"/>
+</commandset>
+
+<description style="font-weight: bold;">&clientAuthAsk.message1;</description>
+<description id="hostname"/>
+<description id="organization"/>
+<description id="issuer"/>
+
+<description style="font-weight: bold;">&clientAuthAsk.message2;</description>
+<!-- The items in this menulist must never be sorted,
+     but remain in the order filled by the application
+-->
+<menulist id="nicknames" oncommand="onCertSelected();">
+    <menupopup/>
+</menulist>
+<description>&clientAuthAsk.message3;</description>
+<html:textarea readonly="readonly" id="details" style="height: 11em;"/>
+<checkbox id="rememberBox" checked="true"/>
+
+</dialog>

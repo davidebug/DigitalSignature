@@ -1,11 +1,19 @@
- {
-   "name": "Digital Signature Tool",
-   "version": "1.0",
-   "description": "Extension for digital signature with PKCS#11 token",
-   "permissions": [],
-   "background": {
-     "scripts": []
-  
-   },
-   "manifest_version": 2
- }
+{
+  "manifest_version": 2,
+  "applications": {
+    "gecko": {
+      "id": "thundersign@dav.bag",
+      "strict_min_version": "67.0a1"
+    }
+  },
+  "name": "ThunderSign - Digital Signature",
+  "description": "Digital signature on attachments",
+  "version": "1.2",
+
+
+  "icons": {
+		"16": "images/icon-16.png",
+		"32": "images/icon-32.png"
+	},
+  "legacy": true
+}

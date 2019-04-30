@@ -1,0 +1,655 @@
+<?xml version="1.0"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<?xml-stylesheet href="chrome://messenger/skin/messenger.css" type="text/css"?>
+<?xml-stylesheet href="chrome://messenger/skin/folderMenus.css" type="text/css"?>
+<?xml-stylesheet href="chrome://messenger/skin/accountManage.css" type="text/css"?>
+
+<!DOCTYPE dialog [
+<!ENTITY % identityEditDTD SYSTEM "chrome://messenger/locale/am-identity-edit.dtd" >
+%identityEditDTD;
+<!ENTITY % identityDTD SYSTEM "chrome://messenger/locale/am-main.dtd" >
+%identityDTD;
+<!ENTITY % copiesDTD SYSTEM "chrome://messenger/locale/am-copies.dtd">
+%copiesDTD;
+<!ENTITY % addressingDTD SYSTEM "chrome://messenger/locale/am-addressing.dtd" >
+%addressingDTD;
+<!ENTITY % smimeDTD SYSTEM "chrome://messenger/locale/am-smime.dtd" >
+%smimeDTD;
+]>
+
+<dialog id="identityDialog"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        onload="onLoadIdentityProperties();"
+        ondialogaccept="return onOk();"
+        style="&identityDialog.style;">
+
+  <stringbundle id="bundle_prefs"
+                src="chrome://messenger/locale/prefs.properties"/>
+  <stringbundle id="bundle_messenger"
+                src="chrome://messenger/locale/messenger.properties"/>
+
+  <script type="application/javascript"
+          src="chrome://messenger/content/am-prefs.js"/>
+  <script type="application/javascript"
+          src="chrome://messenger/content/am-identity-edit.js"/>
+  <script type="application/javascript"
+          src="chrome://messenger/content/amUtils.js"/>
+  <script type="application/javascript"
+          src="chrome://messenger/content/AccountManager.js"/>
+  <script type="application/javascript"
+          src="chrome://messenger/content/am-copies.js"/>
+  <script type="application/javascript"
+          src="chrome://messenger/content/am-addressing.js"/>
+  <script type="application/javascript"
+          src="chrome://messenger/content/am-smime.js"/>
+  <script type="application/javascript">
+  <![CDATA[
+    window.addEventListener("load", smimeOnLoadEditor, false);
+  ]]>
+  </script>
+
+  <description>&identityListDesc.label;</description>
+  <separator class="thin"/>
+
+  <tabbox flex="1" style="overflow: auto;">
+    <tabs id="identitySettings">
+      <tab label="&settingsTab.label;"/>
+      <tab label="&copiesFoldersTab.label;"/>
+      <tab label="&addressingTab.label;"/>
+      <tab label="&securityTab.label;"/>
+    </tabs>
+
+    <tabpanels id="identityTabsPanels" flex="1">
+      <!-- Identity Settings Tab -->
+      <vbox flex="1" name="settings">
+        <groupbox>
+          <label class="header">&publicData.label;</label>
+
+        <grid>
+          <columns>
+            <column/>
+            <column flex="1"/>
+          </columns>
+          <rows>
+            <row align="center">
+              <label value="&name.label;" control="identity.fullName" accesskey="&name.accesskey;"/>
+              <textbox id="identity.fullName" size="30"/>
+            </row>
+            <row align="center">
+              <label value="&email.label;" control="identity.email" accesskey="&email.accesskey;"/>
+              <textbox id="identity.email" class="uri-element"/>
+            </row>
+            <row align="center">
+              <label value="&replyTo.label;" control="identity.replyTo" accesskey="&replyTo.accesskey;"/>
+              <textbox id="identity.replyTo" class="uri-element" placeholder="&replyTo.placeholder;"/>
+            </row>
+            <row align="center">
+              <label value="&organization.label;" control="identity.organization" accesskey="&organization.accesskey;"/>
+              <textbox id="identity.organization"/>
+            </row>
+            <separator class="thin"/>
+            <row align="center">
+              <label value="&signatureText.label;" control="identity.htmlSigText" accesskey="&signatureText.accesskey;"/>
+              <checkbox id="identity.htmlSigFormat" label="&signatureHtml.label;" accesskey="&signatureHtml.accesskey;"/>
+            </row>
+          </rows>
+        </grid>
+
+        <hbox class="indent" flex="1">
+          <html:textarea id="identity.htmlSigText" rows="4" cols="72" class="signatureBox"/>
+        </hbox>
+
+        <hbox align="center">
+          <checkbox id="identity.attachSignature" label="&signatureFile.label;" flex="1"
+                    accesskey="&signatureFile.accesskey;"
+                    oncommand="setupSignatureItems();"/>
+        </hbox>
+
+        <hbox align="center" class="indent">
+          <textbox id="identity.signature" datatype="nsIFile" flex="1" name="identity.signature"
+                   aria-labelledby="identity.attachSignature"
+                   observes="broadcaster_attachSignature" class="uri-element"/>
+          <button class="push" name="browse" label="&choose.label;"
+                  accesskey="&choose.accesskey;"
+                  oncommand="selectFile()"
+                  observes="broadcaster_attachSignature"
+                  id="identity.sigbrowsebutton"/>
+        </hbox>
+
+        <hbox align="center">
+          <checkbox id="identity.attachVCard" label="&attachVCard.label;" flex="1"
+                    accesskey="&attachVCard.accesskey;"/>
+          <button class="push" name="editVCard" label="&editVCard.label;"
+                  accesskey="&editVCard.accesskey;"
+                  oncommand="editVCard()"/>
+          <label hidden="true" id="identity.escapedVCard"/>
+        </hbox>
+        </groupbox>
+
+        <groupbox>
+          <label class="header">&privateData.label;</label>
+
+          <label value="&smtpName.label;"
+                 control="identity.smtpServerKey"
+                 accesskey="&smtpName.accesskey;"/>
+          <hbox align="center">
+            <menulist id="identity.smtpServerKey" flex="1">
+              <menupopup id="smtpPopup">
+                <menuitem value=""
+                          label="&smtpDefaultServer.label;"
+                          id="useDefaultItem"/>
+                <menuseparator/>
+                <!-- list will be inserted here -->
+              </menupopup>
+            </menulist>
+
+            <button id="editSmtp"
+                    label="&smtpServerEdit.label;"
+                    accesskey="&smtpServerEdit.accesskey;"
+                    oncommand="editCurrentSMTP();"/>
+          </hbox>
+
+          <separator class="thin"/>
+
+          <hbox align="center">
+            <label value="&identityAlias.label;"
+                   accesskey="&identityAlias.accesskey;"
+                   control="identity.label"/>
+            <textbox id="identity.label" flex="1"/>
+          </hbox>
+        </groupbox>
+
+        <spacer flex="1"/>
+      </vbox>
+
+      <!-- Copies & Folders Tab -->
+
+  <vbox flex="1" id="copiesAndFolders">
+    <stringbundleset id="stringbundleset">
+    <stringbundle id="bundle_messenger" src="chrome://messenger/locale/messenger.properties"/>
+    </stringbundleset>
+
+    <label hidden="true" wsm_persist="true" id="identity.fccFolder"
+                  pref="true" preftype="string" prefattribute="value"
+                  prefstring="mail.identity.%identitykey%.fcc_folder"/>
+    <label hidden="true" wsm_persist="true" id="identity.draftFolder"
+                  pref="true" preftype="string" prefattribute="value"
+                  prefstring="mail.identity.%identitykey%.draft_folder"/>
+    <label hidden="true" wsm_persist="true" id="identity.archiveFolder"
+                  pref="true" preftype="string" prefattribute="value"
+                  prefstring="mail.identity.%identitykey%.archive_folder"/>
+    <label hidden="true" wsm_persist="true" id="identity.stationeryFolder"
+                  pref="true" preftype="string" prefattribute="value"
+                  prefstring="mail.identity.%identitykey%.stationary_folder"/>
+    <label hidden="true" wsm_persist="true" id="identity.email"/>
+    <label hidden="true" wsm_persist="true" id="identity.fccFolderPickerMode"
+                  pref="true" preftype="int" prefattribute="value"
+                  prefstring="mail.identity.%identitykey%.fcc_folder_picker_mode"/>
+    <label hidden="true" wsm_persist="true" id="identity.draftsFolderPickerMode"
+                  pref="true" preftype="int" prefattribute="value"
+                  prefstring="mail.identity.%identitykey%.drafts_folder_picker_mode"/>
+    <label hidden="true" wsm_persist="true" id="identity.archivesFolderPickerMode"
+                  pref="true" preftype="int" prefattribute="value"
+                  prefstring="mail.identity.%identitykey%.archives_folder_picker_mode"/>
+    <label hidden="true" wsm_persist="true" id="identity.tmplFolderPickerMode"
+                  pref="true" preftype="int" prefattribute="value"
+                  prefstring="mail.identity.%identitykey%.tmpl_folder_picker_mode"/>
+    <groupbox id="copiesGroup">
+      <label class="header">&sendingPrefix.label;</label>
+
+      <hbox align="center">
+        <checkbox wsm_persist="true" id="identity.doFcc" label="&fccMailFolder.label;"
+                  accesskey="&fccMailFolder.accesskey;"
+                  prefattribute="value"
+                  prefstring="mail.identity.%identitykey%.fcc"
+                  oncommand="setupFccItems();"/>
+      </hbox>
+        <radiogroup id="doFcc" aria-labelledby="identity.doFcc">
+        <grid class="specialFolderPickerGrid">
+          <columns>
+            <column/>
+            <column flex="1"/>
+          </columns>
+          <rows>
+            <row align="center">
+              <radio id="fcc_selectAccount"
+                     class="depends-on-do-fcc"
+                     value="0" label="&sentFolderOn.label;"
+                     accesskey="&sentFolderOn.accesskey;"
+                     oncommand="setPickersState('msgFccAccountPicker', 'msgFccFolderPicker', event)"/>
+                <menulist id="msgFccAccountPicker"
+                          class="folderMenuItem depends-on-do-fcc"
+                          aria-labelledby="fcc_selectAccount">
+                  <menupopup id="msgFccAccountPopup" type="folder" mode="filing"
+                             expandFolders="false"
+                             oncommand="noteSelectionChange('fcc', 'Account', event)"/>
+                </menulist>
+            </row>
+            <row align="center">
+              <radio id="fcc_selectFolder"
+                     class="depends-on-do-fcc"
+                     value="1" label="&sentInOtherFolder.label;"
+                     accesskey="&sentInOtherFolder.accesskey;"
+                     oncommand="setPickersState('msgFccFolderPicker', 'msgFccAccountPicker', event)"/>
+                <menulist id="msgFccFolderPicker"
+                          class="folderMenuItem depends-on-do-fcc"
+                          aria-labelledby="fcc_selectFolder"
+                          displayformat="verbose">
+                  <menupopup id="msgFccFolderPopup" type="folder" mode="filing"
+                             class="menulist-menupopup"
+                             showFileHereLabel="true"
+                             oncommand="noteSelectionChange('fcc', 'Folder', event)"/>
+                </menulist>
+            </row>
+          </rows>
+        </grid>
+      </radiogroup>
+
+      <hbox align="center" class="fccReplyFollowsParent" hidable="true" hidefor="nntp,rss">
+        <checkbox id="identity.fccReplyFollowsParent" wsm_persist="true"
+                  class="depends-on-do-fcc"
+                  label="&fccReplyFollowsParent.label;"
+                  accesskey="&fccReplyFollowsParent.accesskey;"
+                  prefattribute="value"
+                  prefstring="mail.identity.%identitykey%.fcc_reply_follows_parent"/>
+      </hbox>
+
+      <grid>
+        <columns>
+          <column/>
+          <column flex="1"/>
+        </columns>
+
+        <rows>
+          <row align="center">
+            <checkbox wsm_persist="true" id="identity.doCc" label="&ccAddress.label;"
+                  accesskey="&ccAddress.accesskey;"
+                  control="identity.doCcList"
+                  oncommand="setupCcTextbox();"
+                  prefattribute="value"
+                  prefstring="mail.identity.%identitykey%.doCc"/>
+            <textbox wsm_persist="true" id="identity.doCcList" flex="1"
+                  aria-labelledby="identity.doCc"
+                  prefstring="mail.identity.%identitykey%.doCcList" class="uri-element"
+                  placeholder="&ccAddressList.placeholder;"/>
+          </row>
+          <row align="center">
+            <checkbox wsm_persist="true" id="identity.doBcc" label="&bccAddress.label;"
+                  accesskey="&bccAddress.accesskey;"
+                  control="identity.doBccList"
+                  oncommand="setupBccTextbox();"
+                  prefattribute="value"
+                  prefstring="mail.identity.%identitykey%.doBcc"/>
+            <textbox wsm_persist="true" id="identity.doBccList" flex="1"
+                  aria-labelledby="identity.doBcc"
+                  prefstring="mail.identity.%identitykey%.doBccList" class="uri-element"
+                  placeholder="&bccAddressList.placeholder;"/>
+          </row>
+        </rows>
+      </grid>
+
+    </groupbox>
+
+    <groupbox id="archivesGroup">
+      <label class="header">&archivesTitle.label;</label>
+
+      <hbox align="center">
+        <checkbox wsm_persist="true" id="identity.archiveEnabled"
+                  label="&keepArchives.label;"
+                  accesskey="&keepArchives.accesskey;"
+                  prefattribute="value"
+                  prefstring="mail.identity.%identitykey%.archive_enabled"
+                  oncommand="setupArchiveItems();"/>
+        <spacer flex="1"/>
+        <button id="archiveHierarchyButton"
+                class="depends-on-archive"
+                label="&archiveHierarchyButton.label;"
+                accesskey="&archiveHierarchyButton.accesskey;"
+                oncommand="ChangeArchiveHierarchy();"/>
+      </hbox>
+
+      <radiogroup id="messageArchives">
+        <grid class="specialFolderPickerGrid">
+          <columns>
+            <column/>
+            <column flex="1"/>
+          </columns>
+          <rows>
+            <row align="center">
+              <radio id="archive_selectAccount"
+                     class="depends-on-archive"
+                     value="0" label="&archivesFolderOn.label;"
+                     accesskey="&archivesFolderOn.accesskey;"
+                     oncommand="setPickersState('msgArchivesAccountPicker', 'msgArchivesFolderPicker', event)"/>
+              <menulist id="msgArchivesAccountPicker"
+                        class="folderMenuItem depends-on-archive"
+                        aria-labelledby="archive_selectAccount">
+                <menupopup id="msgArchivesAccountPopup" type="folder" mode="filing"
+                           expandFolders="false"
+                           oncommand="noteSelectionChange('archive', 'Account', event)"/>
+              </menulist>
+            </row>
+            <row align="center">
+              <radio id="archive_selectFolder"
+                     class="depends-on-archive"
+                     value="1" label="&archiveInOtherFolder.label;"
+                     accesskey="&archiveInOtherFolder.accesskey;"
+                     oncommand="setPickersState('msgArchivesFolderPicker', 'msgArchivesAccountPicker', event)"/>
+              <menulist id="msgArchivesFolderPicker"
+                        class="folderMenuItem depends-on-archive"
+                        aria-labelledby="archive_selectFolder"
+                        displayformat="verbose">
+                <menupopup id="msgArchivesFolderPopup" type="folder" mode="filing"
+                           class="menulist-menupopup"
+                           showFileHereLabel="true"
+                           oncommand="noteSelectionChange('archive', 'Folder', event)"/>
+              </menulist>
+            </row>
+          </rows>
+        </grid>
+      </radiogroup>
+    </groupbox>
+
+    <groupbox id="foldersGroup">
+      <label class="header">&specialFolders.label;</label>
+
+      <hbox align="center">
+        <label value="&keepDrafts2.label;" control="messageDrafts"/>
+      </hbox>
+
+      <radiogroup id="messageDrafts">
+        <grid class="specialFolderPickerGrid">
+          <columns>
+            <column/>
+            <column flex="1"/>
+          </columns>
+          <rows>
+            <row align="center">
+              <radio id="draft_selectAccount"
+                     oncommand="setPickersState('msgDraftsAccountPicker', 'msgDraftsFolderPicker', event)"
+                     value="0" label="&draftsFolderOn.label;"
+                     accesskey="&draftsFolderOn.accesskey;"/>
+              <menulist id="msgDraftsAccountPicker"
+                        class="folderMenuItem"
+                        aria-labelledby="draft_selectAccount">
+                <menupopup id="msgDraftAccountPopup" type="folder" mode="filing"
+                           expandFolders="false"
+                           oncommand="noteSelectionChange('draft', 'Account', event)"/>
+              </menulist>
+            </row>
+            <row align="center">
+              <radio id="draft_selectFolder"
+                     oncommand="setPickersState('msgDraftsFolderPicker', 'msgDraftsAccountPicker', event)"
+                     value="1" label="&draftInOtherFolder.label;"
+                     accesskey="&draftInOtherFolder.accesskey;"/>
+              <menulist id="msgDraftsFolderPicker"
+                        class="folderMenuItem"
+                        aria-labelledby="draft_selectFolder"
+                        displayformat="verbose">
+                <menupopup id="msgDraftFolderPopup" type="folder" mode="filing"
+                           class="menulist-menupopup"
+                           showFileHereLabel="true"
+                           oncommand="noteSelectionChange('draft', 'Folder', event)"/>
+              </menulist>
+            </row>
+          </rows>
+        </grid>
+      </radiogroup>
+
+      <hbox align="center">
+        <label value="&keepTemplates.label;" control="messageTemplates"/>
+      </hbox>
+
+      <radiogroup id="messageTemplates">
+        <grid class="specialFolderPickerGrid">
+          <columns>
+            <column/>
+            <column flex="1"/>
+          </columns>
+          <rows>
+            <row align="center">
+              <radio id="tmpl_selectAccount"
+                     oncommand="setPickersState('msgStationeryAccountPicker', 'msgStationeryFolderPicker', event)"
+                     value="0" label="&templatesFolderOn.label;"
+                     accesskey="&templatesFolderOn.accesskey;"/>
+              <menulist id="msgStationeryAccountPicker"
+                        class="folderMenuItem"
+                        aria-labelledby="tmpl_selectAccount">
+                <menupopup id="msgFccAccountPopup" type="folder" mode="filing"
+                           expandFolders="false"
+                           oncommand="noteSelectionChange('tmpl', 'Account', event)"/>
+              </menulist>
+            </row>
+            <row align="center">
+              <radio id="tmpl_selectFolder"
+                     oncommand="setPickersState('msgStationeryFolderPicker', 'msgStationeryAccountPicker', event)"
+                     value="1" label="&templateInOtherFolder.label;"
+                     accesskey="&templateInOtherFolder.accesskey;"/>
+              <menulist id="msgStationeryFolderPicker"
+                        class="folderMenuItem"
+                        aria-labelledby="tmpl_selectFolder"
+                        displayformat="verbose">
+                <menupopup id="msgTemplFolderPopup" type="folder" mode="filing"
+                           class="menulist-menupopup"
+                           showFileHereLabel="true"
+                           oncommand="noteSelectionChange('tmpl', 'Folder', event)"/>
+              </menulist>
+            </row>
+          </rows>
+        </grid>
+      </radiogroup>
+      <hbox align="center">
+        <checkbox wsm_persist="true" id="identity.showSaveMsgDlg" label="&saveMessageDlg.label;"
+                  accesskey="&saveMessageDlg.accesskey;"
+                  prefattribute="value"
+                  prefstring="mail.identity.%identitykey%.showSaveMsgDlg"/>
+      </hbox>
+    </groupbox>
+  </vbox>
+
+      <!-- Composition & Addressing Tab -->
+
+    <vbox flex="1" id="compositionAndAddressing">
+      <stringbundle id="bundle_addressBook" src="chrome://messenger/locale/addressbook/addressBook.properties"/>
+
+      <groupbox>
+        <label class="header">&compositionGroupTitle.label;</label>
+        <hbox align="center">
+          <checkbox wsm_persist="true" id="identity.composeHtml" label="&useHtml.label;"
+                    accesskey="&useHtml.accesskey;"
+                    prefattribute="value"
+                    prefstring="mail.identity.%identitykey%.compose_html"/>
+        </hbox>
+
+        <separator class="thin"/>
+
+        <hbox align="center">
+          <checkbox wsm_persist="true" id="identity.autoQuote" label="&autoQuote.label;"
+                    accesskey="&autoQuote.accesskey;"
+                    pref="true" preftype="bool" prefattribute="value"
+                    prefstring="mail.identity.%identitykey%.auto_quote"/>
+        </hbox>
+        <hbox align="center">
+          <label value="&quoting.label;" accesskey="&quoting.accesskey;" control="identity.replyOnTop"/>
+          <menulist wsm_persist="true" id="identity.replyOnTop" oncommand="quoteEnabling();"
+                    pref="true" preftype="int" prefattribute="value"
+                    prefstring="mail.identity.%identitykey%.reply_on_top">
+            <menupopup>
+              <menuitem value="1" label="&aboveQuote.label;"/>
+              <menuitem value="0" label="&belowQuote.label;"/>
+              <menuitem value="2" label="&selectAndQuote.label;"/>
+            </menupopup>
+          </menulist>
+        </hbox>
+        <hbox class="indent" align="center" id="placeBox">
+          <label value="&place.label;" accesskey="&place.accesskey;" control="identity.sig_bottom"/>
+          <menulist wsm_persist="true" id="identity.sig_bottom" genericattr="true"
+                    pref="true" preftype="bool" prefattribute="value"
+                    prefstring="mail.identity.%identitykey%.sig_bottom">
+            <menupopup>
+              <menuitem value="true" label="&belowText.label;"/>
+              <menuitem value="false" label="&aboveText.label;"/>
+            </menupopup>
+          </menulist>
+        </hbox>
+
+        <checkbox id="identity.sig_on_reply" wsm_persist="true"
+                  label="&includeSigOnReply.label;"
+                  accesskey="&includeSigOnReply.accesskey;"
+                  preftype="bool" genericattr="true"
+                  prefstring="mail.identity.%identitykey%.sig_on_reply"/>
+
+        <checkbox id="identity.sig_on_fwd" wsm_persist="true"
+                  label="&includeSigOnForward.label;"
+                  accesskey="&includeSigOnForward.accesskey;"
+                  preftype="bool" genericattr="true"
+                  prefstring="mail.identity.%identitykey%.sig_on_fwd"/>
+
+        <separator class="thin"/>
+
+        <hbox pack="start">
+          <button id="globalComposingPrefsLink"
+                  label="&globalComposingPrefs.label;"
+                  accesskey="&globalComposingPrefs.accesskey;"
+                  oncommand="showGlobalComposingPrefs();"/>
+        </hbox>
+      </groupbox>
+
+      <separator class="thin"/>
+
+      <groupbox>
+        <label class="header">&addressingGroupTitle.label;</label>
+
+        <label control="identity.overrideGlobal_Pref">&addressingText.label;</label>
+        <radiogroup id="identity.overrideGlobal_Pref" class="indent"
+                    oncommand="LDAPenabling();" wsm_persist="true"
+                    genericattr="true" preftype="bool"
+                    prefstring="mail.identity.%identitykey%.overrideGlobal_Pref">
+          <radio value="false" label="&useGlobal.label;"
+                 accesskey="&useGlobal.accesskey;"/>
+          <radio value="true" id="directories" label="&directories.label;"
+                 accesskey="&directories.accesskey;"/>
+          <hbox class="indent">
+            <menulist id="identity.directoryServer"
+                      wsm_persist="true" preftype="string"
+                      prefstring="mail.identity.%identitykey%.directoryServer"
+                      style="min-width: 16em;" aria-labelledby="directories">
+              <menupopup class="addrbooksPopup"
+                         none="&directoriesNone.label;"
+                         remoteonly="true" value="dirPrefId"/>
+            </menulist>
+            <button id="editButton" label="&editDirectories.label;"
+                    accesskey="&editDirectories.accesskey;"
+                    oncommand="onEditDirectories();"/>
+          </hbox>
+        </radiogroup>
+
+        <separator class="thin"/>
+
+        <hbox pack="start">
+          <button id="globalAddressingPrefsLink"
+                  label="&globalAddressingPrefs.label;"
+                  accesskey="&globalAddressingPrefs.accesskey;"
+                  oncommand="showGlobalAddressingPrefs();"/>
+        </hbox>
+      </groupbox>
+    </vbox>
+
+      <!-- Security Tab -->
+
+    <vbox id="smimeEditing">
+
+      <stringbundleset>
+        <stringbundle id="bundle_smime" src="chrome://messenger/locale/am-smime.properties"/>
+        <stringbundle id="bundle_brand" src="chrome://branding/locale/brand.properties"/>
+      </stringbundleset>
+
+      <label hidden="true" wsm_persist="true" id="identity.encryptionpolicy"/>
+
+      <description>&securityHeading.label;</description>
+
+      <groupbox id="signing.titlebox">
+        <label class="header">&signingGroupTitle.label;</label>
+
+        <label value="&signingCert.message;" control="identity.signing_cert_name"
+               prefstring="mail.identity.%identitykey%.encryptionpolicy"/>
+
+        <hbox align="center">
+          <textbox id="identity.signing_cert_name" wsm_persist="true" flex="1"
+                   prefstring="mail.identity.%identitykey%.signing_cert_name"
+                   readonly="true" disabled="true"/>
+
+          <button id="signingCertSelectButton"
+                  label="&digitalSign.certificate.button;"
+                  accesskey="&digitalSign.certificate.accesskey;"
+                  oncommand="smimeSelectCert('identity.signing_cert_name')"/>
+
+          <button id="signingCertClearButton"
+                  label="&digitalSign.certificate_clear.button;"
+                  accesskey="&digitalSign.certificate_clear.accesskey;"
+                  oncommand="smimeClearCert('identity.signing_cert_name')"/>
+        </hbox>
+
+        <separator class="thin"/>
+
+        <checkbox id="identity.sign_mail" wsm_persist="true"
+                  prefstring="mail.identity.%identitykey%.sign_mail"
+                  label="&signMessage.label;" accesskey="&signMessage.accesskey;"/>
+      </groupbox>
+
+      <groupbox id="encryption.titlebox">
+        <label class="header">&encryptionGroupTitle.label;</label>
+
+        <label value="&encryptionCert.message;"
+               control="identity.encryption_cert_name"/>
+
+        <hbox align="center">
+          <textbox id="identity.encryption_cert_name" wsm_persist="true" flex="1"
+                   prefstring="mail.identity.%identitykey%.encryption_cert_name"
+                   readonly="true" disabled="true"/>
+
+          <button id="encryptionCertSelectButton"
+                  label="&encryption.certificate.button;"
+                  accesskey="&encryption.certificate.accesskey;"
+                  oncommand="smimeSelectCert('identity.encryption_cert_name')"/>
+
+          <button id="encryptionCertClearButton"
+                  label="&encryption.certificate_clear.button;"
+                  accesskey="&encryption.certificate_clear.accesskey;"
+                  oncommand="smimeClearCert('identity.encryption_cert_name')"/>
+        </hbox>
+
+        <separator class="thin"/>
+
+        <label value="&encryptionChoiceLabel.label;" control="encryptionChoices"/>
+
+        <radiogroup id="encryptionChoices">
+          <radio id="encrypt_mail_never" wsm_persist="true" value="0"
+                 label="&neverEncrypt.label;"
+                 accesskey="&neverEncrypt.accesskey;"/>
+
+          <radio id="encrypt_mail_always" wsm_persist="true" value="2"
+                 label="&alwaysEncryptMessage.label;"
+                 accesskey="&alwaysEncryptMessage.accesskey;"/>
+        </radiogroup>
+      </groupbox>
+
+      <!-- Certificate manager -->
+      <groupbox id="smimeCertificateManager" orient="horizontal">
+        <label class="header">&certificates.label;</label>
+        <button id="openCertManagerButton" oncommand="openCertManager();"
+                label="&manageCerts2.label;" accesskey="&manageCerts2.accesskey;"
+                prefstring="security.disable_button.openCertManager"/>
+        <button id="openDeviceManagerButton" oncommand="openDeviceManager();"
+                label="&manageDevices.label;" accesskey="&manageDevices.accesskey;"
+                prefstring="security.disable_button.openDeviceManager"/>
+      </groupbox>
+    </vbox>
+
+    </tabpanels>
+  </tabbox>
+</dialog>

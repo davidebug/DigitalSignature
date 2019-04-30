@@ -1,0 +1,90 @@
+content messenger-newsblog newsblog/content/messenger-newsblog/
+content extensions toolkit/content/extensions/
+content gfxsanity toolkit/content/gfxsanity/
+content global toolkit/content/global/ contentaccessible=yes
+content mozapps toolkit/content/mozapps/
+content passwordmgr toolkit/content/passwordmgr/
+content pluginproblem toolkit/pluginproblem/ contentaccessible=yes
+skin global classic/1.0 toolkit/skin/classic/global/
+skin help classic/1.0 toolkit/skin/classic/help/
+skin mozapps classic/1.0 toolkit/skin/classic/mozapps/
+content communicator comm/content/communicator/
+content editor comm/content/editor/
+content browser browser/content/
+content branding messenger/content/branding/
+content messagebody messenger/content/messagebody/ contentaccessible=yes
+content messenger messenger/content/messenger/
+content messenger-smime messenger/content/messenger-smime/
+skin messenger-emoticons classic/1.0 messenger/skin/classic/messenger/smileys/
+skin messenger-messagestyles classic/1.0 messenger/skin/classic/messenger/messages/
+content gloda gloda/content/
+content chat chat/content/chat/
+skin chat classic/1.0 chat/skin/classic/chat/
+skin prpl-facebook classic/1.0 chat/skin/classic/prpl/facebook/
+skin prpl-gtalk classic/1.0 chat/skin/classic/prpl/gtalk/
+skin prpl-irc classic/1.0 chat/skin/classic/prpl/irc/
+skin prpl-jabber classic/1.0 chat/skin/classic/prpl/xmpp/
+skin prpl-matrix classic/1.0 chat/skin/classic/prpl/matrix/
+skin prpl-odnoklassniki classic/1.0 chat/skin/classic/prpl/odnoklassniki/
+skin prpl-skype classic/1.0 chat/skin/classic/prpl/skype/
+skin prpl-twitter classic/1.0 chat/skin/classic/prpl/twitter/
+skin prpl-yahoo classic/1.0 chat/skin/classic/prpl/yahoo/
+skin communicator classic/1.0 classic/skin/classic/communicator/
+skin editor classic/1.0 classic/skin/classic/editor/
+skin messenger classic/1.0 classic/skin/classic/messenger/
+skin messenger-newsblog classic/1.0 classic/skin/classic/messenger-newsblog/
+content devtools-startup devtools-startup/content/
+content devtools devtools/content/
+skin devtools classic/1.0 devtools/skin/
+content marionette marionette/content/
+content pippki pippki/content/pippki/
+locale alerts it it/locale/it/alerts/
+locale autoconfig it it/locale/it/autoconfig/
+locale branding it it/locale/it/branding/
+locale chat it it/locale/it/chat/
+locale communicator it it/locale/it/communicator/
+locale devtools it it/locale/it/devtools/client/
+locale devtools-shared it it/locale/it/devtools/shared/
+locale devtools-startup it it/locale/it/devtools/startup/
+locale editor it it/locale/it/editor/
+locale global it it/locale/it/global/
+locale global-platform it it/locale/it/global-platform/mac/ os=Darwin
+locale global-platform it it/locale/it/global-platform/unix/ os=LikeUnix os=Android
+locale global-platform it it/locale/it/global-platform/win/ os=WINNT
+locale messenger it it/locale/it/messenger/
+locale messenger-mapi it it/locale/it/messenger-mapi/
+locale messenger-newsblog it it/locale/it/messenger-newsblog/
+locale messenger-region it it/locale/it/messenger-region/
+locale messenger-smime it it/locale/it/messenger-smime/
+locale mozapps it it/locale/it/mozapps/
+locale mozldap it it/locale/it/mozldap/
+locale necko it it/locale/it/necko/
+locale passwordmgr it it/locale/it/passwordmgr/
+locale pipnss it it/locale/it/pipnss/
+locale pippki it it/locale/it/pippki/
+locale places it it/locale/it/places/
+locale pluginproblem it it/locale/it/pluginproblem/
+override chrome://mozapps/skin/extensions/category-dictionaries.svg chrome://mozapps/skin/extensions/dictionaryGeneric.svg
+override chrome://mozapps/skin/extensions/category-experiments.svg chrome://mozapps/skin/extensions/experimentGeneric.svg
+override chrome://mozapps/skin/extensions/category-extensions.svg chrome://mozapps/skin/extensions/extensionGeneric.svg
+override chrome://mozapps/skin/extensions/category-languages.svg chrome://mozapps/skin/extensions/localeGeneric.svg
+override chrome://mozapps/skin/extensions/category-plugins.svg chrome://global/skin/plugins/pluginGeneric.svg
+override chrome://mozapps/skin/extensions/category-themes.svg chrome://mozapps/skin/extensions/themeGeneric.svg
+override chrome://mozapps/skin/extensions/localeGeneric.svg chrome://mozapps/skin/extensions/dictionaryGeneric.svg
+override chrome://mozapps/skin/xpinstall/xpinstallItemGeneric.png chrome://mozapps/skin/extensions/extensionGeneric.svg
+resource cloudstorage toolkit/content/
+resource content-accessible resource://gre/contentaccessible/ contentaccessible=yes
+resource featuregates toolkit/featuregates/
+resource gre-resources toolkit/res/
+override chrome://browser/skin/preferences/in-content/general.svg chrome://mozapps/skin/extensions/utilities.svg
+override chrome://global/content/license.html chrome://messenger/content/license.html
+override chrome://global/content/nsDragAndDrop.js chrome://messenger/content/nsDragAndDrop.js
+override chrome://global/locale/netError.dtd chrome://messenger/locale/netError.dtd
+override chrome://messagebody/skin/messageBody.css chrome://messenger/skin/messageBody.css
+override chrome://mozapps/locale/downloads/settingsChange.dtd chrome://messenger/locale/downloads/settingsChange.dtd
+resource search-plugins chrome://messenger/locale/searchplugins/
+resource search-plugins messenger/searchplugins/
+override chrome://global/skin/netError.css chrome://messenger/skin/aboutNetError.css
+resource devtools devtools/modules/devtools/
+resource devtools-client-jsonview resource://devtools/client/jsonview/ contentaccessible=yes
+resource devtools-client-shared resource://devtools/client/shared/ contentaccessible=yes

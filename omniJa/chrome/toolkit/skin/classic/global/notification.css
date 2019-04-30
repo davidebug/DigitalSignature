@@ -1,0 +1,207 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+.notificationbox-stack {
+  overflow: -moz-hidden-unscrollable;
+}
+
+notification {
+  padding: 2px 0 3px;
+  padding-inline-start: 12px;
+  background: -moz-dialog;
+  color: -moz-dialogText;
+  border-color: ThreeDLightShadow;
+  border-style: solid;
+  border-width: 1px 0;
+  text-shadow: none;
+}
+
+notification.animated {
+  transition: margin-top 300ms var(--animation-easing-function), opacity 300ms var(--animation-easing-function);
+}
+
+.notificationbox-stack[notificationside="top"] > notification {
+  border-top-style: none;
+}
+
+.notificationbox-stack[notificationside="bottom"] > notification {
+  border-bottom-style: none;
+}
+
+notification[type="warning"],
+notification[type="critical"] {
+  border-color: rgba(12, 12, 13, 0.2);
+}
+
+notification[type="warning"] {
+  background: #ffe900;
+  color: #0c0c0d;
+}
+
+notification[type="critical"] {
+  background: #d70022;
+  color: #fff;
+}
+
+.messageText {
+  margin-inline-start: 12px !important;
+  margin-bottom: 1px !important;
+}
+
+.messageText > .text-link {
+  color: inherit !important;
+  text-decoration: underline;
+}
+
+.messageImage {
+  width: 16px;
+  height: 16px;
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+
+notification[type="info"] > hbox > .messageImage {
+  list-style-image: url("chrome://global/skin/icons/help.svg");
+}
+
+notification[type="warning"] > hbox > .messageImage {
+  list-style-image: url("chrome://global/skin/icons/warning.svg");
+}
+
+notification[type="critical"] > hbox > .messageImage {
+  list-style-image: url("chrome://global/skin/icons/error.svg");
+}
+
+.messageCloseButton {
+  margin: 0;
+  padding: 0;
+}
+
+/* Close button needs to be clickable from the edge of the window */
+.messageCloseButton > .toolbarbutton-icon {
+  margin-inline-end: 12px;
+}
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+.popup-notification-header-container,
+.popup-notification-footer-container {
+  display: flex;
+  max-width: calc(2 * var(--arrowpanel-padding) + 32px + 4px + 25em);
+}
+
+.popup-notification-body-container {
+  padding: var(--arrowpanel-padding);
+}
+
+.popup-notification-icon {
+  width: 32px;
+  height: 32px;
+  margin-inline-end: var(--arrowpanel-padding);
+}
+
+.popup-notification-body {
+  width: 25em;
+}
+
+.popup-notification-closebutton {
+  margin-inline-end: -8px;
+  margin-top: -8px;
+}
+
+.popup-notification-origin:not([value]),
+.popup-notification-learnmore-link:not([href]) {
+  display: none;
+}
+
+.popup-notification-origin {
+  margin-bottom: .3em !important;
+}
+
+.popup-notification-learnmore-link {
+  margin-top: .5em !important;
+}
+
+.popup-notification-button-container {
+  display: flex;
+}
+
+.popup-notification-button-container > toolbarseparator {
+  -moz-appearance: none;
+  border: 0;
+  border-left: 1px solid var(--panel-separator-color);
+  margin: 7px 0 7px;
+  min-width: 0;
+}
+
+.popup-notification-button-container:hover > toolbarseparator {
+  margin: 0;
+}
+
+.popup-notification-button {
+  flex: 1;
+}
+
+.popup-notification-primary-button {
+  flex: 0 50%;
+}
+
+.popup-notification-secondary-button[hidden="true"] ~ .popup-notification-primary-button {
+  flex: 1;
+}
+
+.popup-notification-dropmarker {
+  flex: none;
+  padding: 0 15px !important;
+}
+
+.popup-notification-dropmarker > .button-box > hbox {
+  display: none;
+}
+
+.popup-notification-dropmarker > .button-box > .button-menu-dropmarker {
+  /* This is to override the linux !important */
+  -moz-appearance: none !important;
+  display: -moz-box;
+  padding: 0;
+  margin: 0;
+}
+
+.popup-notification-dropmarker > .button-box > .button-menu-dropmarker > .dropmarker-icon {
+  width: 16px;
+  height: 16px;
+  list-style-image: url(chrome://global/skin/icons/arrow-dropdown-16.svg);
+  -moz-context-properties: fill;
+  fill: currentColor;
+}
+
+.popup-notification-warning {
+  color: #d74345;
+}
+
+/* Override default icon size which is too small for this dropdown */
+.popup-notification-dropmarker > .button-box > .button-menu-dropmarker {
+  width: 16px;
+  height: 16px;
+}
+
+/* Swap the primary and secondary action, because Windows
+ * platform conventions put the primary action on the left. */
+.popup-notification-primary-button {
+  order: -1;
+}
+
+.popup-notification-secondary-button:not([hidden="true"]) ~ .popup-notification-primary-button:not([default]) {
+  border-inline-end: 1px solid var(--panel-separator-color);
+}

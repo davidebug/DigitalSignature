@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://messenger/content/viewSource.css" type="text/css"?>
+
+<!DOCTYPE window [
+<!ENTITY % brandDTD SYSTEM "chrome://branding/locale/brand.dtd" >
+%brandDTD;
+<!ENTITY % baseMenuOverlayDTD SYSTEM "chrome://messenger/locale/baseMenuOverlay.dtd">
+%baseMenuOverlayDTD;
+<!ENTITY % sourceDTD SYSTEM "chrome://messenger/locale/viewSource.dtd" >
+%sourceDTD;
+<!ENTITY % charsetDTD SYSTEM "chrome://global/locale/charsetMenu.dtd" >
+%charsetDTD;
+<!ENTITY % editMenuDTD SYSTEM "chrome://global/locale/editMenuOverlay.dtd" >
+%editMenuDTD;
+]>
+
+<window id="viewSource"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" xmlns:html="http://www.w3.org/1999/xhtml"
+        contenttitlesetting="true"
+        title="&mainWindow.title;"
+        titlemodifier="&mainWindow.titlemodifier;"
+        titlepreface="&mainWindow.preface;"
+        titlemenuseparator ="&mainWindow.titlemodifierseparator;"
+        windowtype="navigator:view-source"
+        width="640" height="480"
+        screenX="10" screenY="10"
+        persist="screenX screenY width height sizemode">
+
+  <script type="application/javascript" src="chrome://global/content/globalOverlay.js"/>
+  <script type="application/javascript" src="chrome://global/content/printUtils.js"/>
+<script type="application/javascript" src="chrome://messenger/content/mailCore.js"/>
+  <script type="application/javascript" src="chrome://messenger/content/viewSource.js"/>
+  <script type="application/javascript" src="chrome://global/content/viewZoomOverlay.js"/>
+  <script type="application/javascript" src="chrome://global/content/contentAreaUtils.js"/>
+
+  <stringbundle id="viewSourceBundle" src="chrome://messenger/locale/viewSource.properties"/>
+
+  <command id="cmd_savePage" oncommand="ViewSourceSavePage();"/>
+  <command id="cmd_print" oncommand="PrintUtils.printWindow(gBrowser.outerWindowID, gBrowser);"/>
+  <command id="cmd_printpreview" oncommand="PrintUtils.printPreview(PrintPreviewListener);"/>
+  <command id="cmd_pagesetup" oncommand="PrintUtils.showPageSetup();"/>
+  <command id="cmd_close" oncommand="window.close();"/>
+<script type="application/javascript" src="chrome://global/content/editMenuOverlay.js"/>
+<commandset id="editMenuCommands">
+  <commandset id="editMenuCommandSetAll" commandupdater="true" events="focus,select"
+              oncommandupdate="goUpdateGlobalEditMenuItems()"/>
+  <commandset id="editMenuCommandSetUndo" commandupdater="true" events="undo"
+              oncommandupdate="goUpdateUndoEditMenuItems()"/>
+  <commandset id="editMenuCommandSetPaste" commandupdater="true" events="clipboard"
+              oncommandupdate="goUpdatePasteMenuItems()"/>
+  <command id="cmd_undo" oncommand="goDoCommand('cmd_undo')"/>
+  <command id="cmd_redo" oncommand="goDoCommand('cmd_redo')"/>
+  <command id="cmd_cut" oncommand="goDoCommand('cmd_cut')"/>
+  <command id="cmd_copy" oncommand="goDoCommand('cmd_copy')"/>
+  <command id="cmd_paste" oncommand="goDoCommand('cmd_paste')"/>
+  <command id="cmd_delete" oncommand="goDoCommand('cmd_delete')"/>
+  <command id="cmd_selectAll" oncommand="goDoCommand('cmd_selectAll')"/>
+  <command id="cmd_switchTextDirection" oncommand="goDoCommand('cmd_switchTextDirection');"/>
+</commandset>
+  <command id="cmd_find"
+           oncommand="document.getElementById('FindToolbar').onFindCommand();"/>
+  <command id="cmd_findAgain"
+           oncommand="document.getElementById('FindToolbar').onFindAgainCommand(false);"/>
+  <command id="cmd_findPrevious"
+           oncommand="document.getElementById('FindToolbar').onFindAgainCommand(true);"/>
+  <command id="cmd_reload" oncommand="viewSourceChrome.reload();"/>
+  <command id="cmd_goToLine" oncommand="viewSourceChrome.promptAndGoToLine();" disabled="true"/>
+  <command id="cmd_textZoomReduce" oncommand="ZoomManager.reduce();"/>
+  <command id="cmd_textZoomEnlarge" oncommand="ZoomManager.enlarge();"/>
+  <command id="cmd_textZoomReset" oncommand="ZoomManager.reset();"/>
+
+  <!-- These key nodes are here only for show. The real bindings come from
+       XBL, in platformHTMLBindings.xml. See bugs 57078 and 71779. -->
+
+  <keyset id="editMenuKeys">
+    <key id="key_undo" key="&undoCmd.key;" modifiers="accel" command="cmd_undo"/>
+    <key id="key_redo" key="&redoCmd.key;" modifiers="accel" command="cmd_redo"/>
+    <key id="key_cut" key="&cutCmd.key;" modifiers="accel" command="cmd_cut"/>
+    <key id="key_copy" key="&copyCmd.key;" modifiers="accel" command="cmd_copy"/>
+    <key id="key_paste" key="&pasteCmd.key;" modifiers="accel" command="cmd_paste"/>
+    <key id="key_delete" keycode="VK_DELETE" command="cmd_delete"/>
+    <key id="key_selectAll" key="&selectAllCmd.key;" modifiers="accel" command="cmd_selectAll"/>
+    <key id="key_find" key="&findCmd.key;" modifiers="accel" command="cmd_find"/>
+    <key id="key_findAgain" key="&findAgainCmd.key;" modifiers="accel" command="cmd_findAgain"/>
+    <key id="key_findPrevious" key="&findAgainCmd.key;" modifiers="shift,accel" command="cmd_findPrevious"/>
+    <key id="key_findAgain2" keycode="&findAgainCmd.key2;" command="cmd_findAgain"/>
+    <key id="key_findPrevious2" keycode="&findAgainCmd.key2;" modifiers="shift" command="cmd_findPrevious"/>
+  </keyset>
+  <keyset id="viewSourceKeys">
+    <key id="key_savePage" key="&savePageCmd.commandkey;" modifiers="accel" command="cmd_savePage"/>
+    <key id="key_print" key="&printCmd.commandkey;" modifiers="accel" command="cmd_print"/>
+    <key id="key_close" key="&closeCmd.commandkey;" modifiers="accel" command="cmd_close"/>
+    <key id="key_goToLine"     key="&goToLineCmd.commandkey;"  command="cmd_goToLine"  modifiers="accel"/>
+
+    <key id="key_textZoomEnlarge" key="&textEnlarge.commandkey;" command="cmd_textZoomEnlarge" modifiers="accel"/>
+    <key id="key_textZoomEnlarge2" key="&textEnlarge.commandkey2;" command="cmd_textZoomEnlarge" modifiers="accel"/>
+    <key id="key_textZoomEnlarge3" key="&textEnlarge.commandkey3;" command="cmd_textZoomEnlarge" modifiers="accel"/>
+    <key id="key_textZoomReduce"  key="&textReduce.commandkey;" command="cmd_textZoomReduce" modifiers="accel"/>
+    <key id="key_textZoomReduce2"  key="&textReduce.commandkey2;" command="cmd_textZoomReduce" modifiers="accel"/>
+    <key id="key_textZoomReset" key="&textReset.commandkey;" command="cmd_textZoomReset" modifiers="accel"/>
+    <key id="key_textZoomReset2" key="&textReset.commandkey2;" command="cmd_textZoomReset" modifiers="accel"/>
+
+    <key id="key_reload" key="&reloadCmd.commandkey;" command="cmd_reload" modifiers="accel"/>
+    <key key="&reloadCmd.commandkey;" command="cmd_reload" modifiers="accel,shift"/>
+    <key keycode="VK_F5" command="cmd_reload"/>
+    <key keycode="VK_F5" command="cmd_reload" modifiers="accel"/>
+    <key id="key_find" key="&findOnCmd.commandkey;" command="cmd_find" modifiers="accel"/>
+    <key id="key_findAgain" key="&findAgainCmd.commandkey;" command="cmd_findAgain" modifiers="accel"/>
+    <key id="key_findPrevious" key="&findAgainCmd.commandkey;" command="cmd_findPrevious" modifiers="accel,shift"/>
+    <key keycode="&findAgainCmd.commandkey2;" command="cmd_findAgain"/>
+    <key keycode="&findAgainCmd.commandkey2;"  command="cmd_findPrevious" modifiers="shift"/>
+
+    <key keycode="VK_BACK" command="Browser:Back"/>
+    <key keycode="VK_BACK" command="Browser:Forward" modifiers="shift"/>
+    <key id="goBackKb" keycode="VK_LEFT" command="Browser:Back" modifiers="alt"/>
+    <key id="goForwardKb" keycode="VK_RIGHT" command="Browser:Forward" modifiers="alt"/>
+    <key id="key_openHelp"
+         oncommand="openSupportURL();"
+         keycode="&openHelp.commandkey;"/>
+
+  </keyset>
+
+  <tooltip id="aHTMLTooltip" page="true"/>
+
+  <menupopup id="viewSourceContextMenu">
+    <menuitem id="cMenu_findAgain"
+              label="&findAgainCmd.label;"
+              accesskey="&findAgainCmd.accesskey;"
+              command="cmd_findAgain"/>
+    <menuseparator/>
+    <menuitem id="cMenu_copy"
+              label="&copyCmd.label;"
+              accesskey="&copyCmd.accesskey;"
+              command="cmd_copy"/>
+    <menuitem id="context-copyLink"
+              label="&copyLinkCmd.label;"
+              accesskey="&copyLinkCmd.accesskey;"
+              oncommand="viewSourceChrome.onContextMenuCopyLinkOrEmail();"/>
+    <menuitem id="context-copyEmail"
+              label="&copyEmailCmd.label;"
+              accesskey="&copyEmailCmd.accesskey;"
+              oncommand="viewSourceChrome.onContextMenuCopyLinkOrEmail();"/>
+    <menuseparator/>
+    <menuitem id="cMenu_selectAll"
+              label="&selectAllCmd.label;"
+              accesskey="&selectAllCmd.accesskey;"
+              command="cmd_selectAll"/>
+  </menupopup>
+
+  <!-- Menu -->
+  <toolbox id="viewSource-toolbox">
+    <toolbar type="menubar">
+    <menubar id="viewSource-main-menubar">
+
+      <menu id="menu_file" label="&fileMenu.label;" accesskey="&fileMenu.accesskey;">
+        <menupopup id="menu_FilePopup">
+          <menuitem key="key_savePage" command="cmd_savePage" id="menu_savePage"
+                    label="&savePageCmd.label;" accesskey="&savePageCmd.accesskey;"/>
+          <menuitem command="cmd_pagesetup" id="menu_pageSetup"
+                    label="&pageSetupCmd.label;" accesskey="&pageSetupCmd.accesskey;"/>
+          <menuitem command="cmd_printpreview" id="menu_printPreview"
+                    label="&printPreviewCmd.label;" accesskey="&printPreviewCmd.accesskey;"/>
+          <menuitem key="key_print" command="cmd_print" id="menu_print"
+                    label="&printCmd.label;" accesskey="&printCmd.accesskey;"/>
+          <menuseparator/>
+          <menuitem key="key_close" command="cmd_close" id="menu_close"
+                    label="&closeCmd.label;" accesskey="&closeCmd.accesskey;"/>
+        </menupopup>
+      </menu>
+
+      <menu id="menu_edit" label="&editMenu.label;"
+            accesskey="&editMenu.accesskey;">
+        <menupopup id="editmenu-popup">
+          <menuitem id="menu_undo" label="&undoCmd.label;"
+                    key="key_undo" accesskey="&undoCmd.accesskey;"
+                    command="cmd_undo"/>
+          <menuitem id="menu_redo" label="&redoCmd.label;"
+                    key="key_redo" accesskey="&redoCmd.accesskey;"
+                    command="cmd_redo"/>
+          <menuseparator/>
+          <menuitem id="menu_cut" label="&cutCmd.label;"
+                    key="key_cut" accesskey="&cutCmd.accesskey;"
+                    command="cmd_cut"/>
+          <menuitem id="menu_copy" label="&copyCmd.label;"
+                    key="key_copy" accesskey="&copyCmd.accesskey;"
+                    command="cmd_copy"/>
+          <menuitem id="menu_paste" label="&pasteCmd.label;"
+                    key="key_paste" accesskey="&pasteCmd.accesskey;"
+                    command="cmd_paste"/>
+          <menuitem id="menu_delete" label="&deleteCmd.label;"
+                    key="key_delete" accesskey="&deleteCmd.accesskey;"
+                    command="cmd_delete"/>
+          <menuseparator/>
+          <menuitem id="menu_selectAll" label="&selectAllCmd.label;"
+                    key="key_selectAll" accesskey="&selectAllCmd.accesskey;"
+                    command="cmd_selectAll"/>
+          <menuseparator/>
+          <menuitem id="menu_find" label="&findCmd.label;"
+                    key="key_find" accesskey="&findCmd.accesskey;"
+                    command="cmd_find"/>
+          <menuitem id="menu_findAgain" label="&findAgainCmd.label;"
+                    key="key_findAgain" accesskey="&findAgainCmd.accesskey;"
+                    command="cmd_findAgain"/>
+          <menuseparator/>
+          <menuitem id="menu_goToLine" key="key_goToLine" command="cmd_goToLine"
+                    label="&goToLineCmd.label;" accesskey="&goToLineCmd.accesskey;"/>
+        </menupopup>
+      </menu>
+
+      <menu id="menu_view" label="&viewMenu.label;" accesskey="&viewMenu.accesskey;">
+        <menupopup id="viewmenu-popup">
+          <menuitem id="menu_reload" command="cmd_reload" accesskey="&reloadCmd.accesskey;"
+                    label="&reloadCmd.label;" key="key_reload"/>
+          <menuseparator />
+          <menu id="viewTextZoomMenu" label="&menu_textSize.label;" accesskey="&menu_textSize.accesskey;">
+            <menupopup>
+              <menuitem id="menu_textEnlarge" command="cmd_textZoomEnlarge"
+                        label="&menu_textEnlarge.label;" accesskey="&menu_textEnlarge.accesskey;"
+                        key="key_textZoomEnlarge"/>
+              <menuitem id="menu_textReduce" command="cmd_textZoomReduce"
+                        label="&menu_textReduce.label;" accesskey="&menu_textReduce.accesskey;"
+                        key="key_textZoomReduce"/>
+              <menuseparator/>
+              <menuitem id="menu_textReset" command="cmd_textZoomReset"
+                        label="&menu_textReset.label;" accesskey="&menu_textReset.accesskey;"
+                        key="key_textZoomReset"/>
+            </menupopup>
+          </menu>
+
+          <!-- Charset Menu -->
+          <menu id="charsetMenu"
+                label="&charsetMenu2.label;"
+                accesskey="&charsetMenu2.accesskey;"
+                oncommand="viewSourceChrome.onSetCharacterSet(event);"
+                onpopupshowing="CharsetMenu.build(event.target);
+                                CharsetMenu.update(event.target, content.document.characterSet);">
+            <menupopup/>
+          </menu>
+        </menupopup>
+      </menu>
+      <menu id="helpMenu"
+            label="&helpMenuWin.label;" accesskey="&helpMenuWin.accesskey;">
+        <menupopup id="menu_HelpPopup">
+          <menuitem id="menu_openHelp"
+                    label="&openHelp.label;"
+                    accesskey="&openHelp.accesskey;"
+                    key="key_openHelp"
+                    oncommand="openSupportURL();"/>
+        </menupopup>
+      </menu>
+    </menubar>
+    </toolbar>
+  </toolbox>
+
+  <vbox id="appcontent" flex="1">
+
+    <browser id="content" type="content" name="content" src="about:blank" flex="1"
+             primary="true"
+             disablehistory="true"
+             context="viewSourceContextMenu" showcaret="true" tooltip="aHTMLTooltip" />
+    <findbar id="FindToolbar" browserid="content"/>
+  </vbox>
+
+</window>

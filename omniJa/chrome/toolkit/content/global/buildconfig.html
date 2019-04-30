@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src chrome:" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width; user-scalable=false;">
+  <title>about:buildconfig</title>
+  <link rel="stylesheet" href="chrome://global/skin/about.css" type="text/css">
+  <link rel="stylesheet" href="chrome://global/content/buildconfig.css" type="text/css">
+</head>
+<body class="aboutPageWideContainer">
+<h1>about:buildconfig</h1>
+<h2>Source</h2>
+<p>Built from <a href="https://hg.mozilla.org/releases/comm-beta/rev/09de02716c0ef3f8666dc373a53f421ee3891c20">https://hg.mozilla.org/releases/comm-beta/rev/09de02716c0ef3f8666dc373a53f421ee3891c20</a></p>
+<h2>Build platform</h2>
+<table>
+  <tbody>
+    <tr>
+      <th>target</th>
+    </tr>
+    <tr>
+      <td>i686-pc-mingw32</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Build tools</h2>
+<table>
+  <tbody>
+    <tr>
+      <th>Compiler</th>
+      <th>Version</th>
+      <th>Compiler flags</th>
+    </tr>
+    <tr>
+      <td>z:/task_1556186714/build/src/clang/bin/clang-cl.exe -Xclang -std=gnu99 -m32</td>
+      <td>8.0.0</td>
+      <td>-fcrash-diagnostics-dir=z:/task_1556186714/public/build -nologo -D_HAS_EXCEPTIONS=0 -guard:cf -W3 -Gy -Zc:inline -arch:SSE2 -Gw -Wno-unknown-pragmas -Wno-ignored-pragmas -Wno-deprecated-declarations -Wno-invalid-noreturn</td>
+    </tr>
+    <tr>
+      <td>z:/task_1556186714/build/src/clang/bin/clang-cl.exe -m32</td>
+      <td>8.0.0</td>
+      <td>-Qunused-arguments -guard:cf -Qunused-arguments -fcrash-diagnostics-dir=z:/task_1556186714/public/build -TP -nologo -Zc:sizedDealloc- -D_HAS_EXCEPTIONS=0 -guard:cf -W3 -Gy -Zc:inline -arch:SSE2 -Gw -Wno-inline-new-delete -Wno-invalid-offsetof -Wno-microsoft-enum-value -Wno-microsoft-include -Wno-unknown-pragmas -Wno-ignored-pragmas -Wno-deprecated-declarations -Wno-invalid-noreturn -Wno-inconsistent-missing-override -Wno-implicit-exception-spec-mismatch -Wno-unused-local-typedef -Wno-ignored-attributes -Wno-used-but-marked-unused -D_SILENCE_TR1_NAMESPACE_DEPRECATION_WARNING -GR- -Z7 -O2 -Oy-</td>
+    </tr>
+    <tr>
+      <td>z:/task_1556186714/build/src/rustc/bin/rustc.exe</td>
+      <td>1.32.0</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<h2>Configure options</h2>
+<p>MOZ_AUTOMATION=1 'MOZILLABUILD=C:\mozilla-build' --enable-application=comm/mail --target=i686-pc-mingw32 MOZILLA_OFFICIAL=1 --enable-update-channel=beta VC_PATH=z:/task_1556186714/build/src/vs2017_15.8.4/VC CC=clang-cl CXX=clang-cl WINDOWSSDKDIR=z:/task_1556186714/build/src/vs2017_15.8.4/SDK 'DIA_SDK_PATH=z:/task_1556186714/build/src/vs2017_15.8.4/DIA SDK' LINKER=lld-link MAKECAB=z:/task_1556186714/build/src/makecab.exe NASM=z:/task_1556186714/build/src/nasm/nasm.exe ENABLE_CLANG_PLUGIN=1 --enable-calendar RUSTC=z:/task_1556186714/build/src/rustc/bin/rustc CARGO=z:/task_1556186714/build/src/rustc/bin/cargo RUSTDOC=z:/task_1556186714/build/src/rustc/bin/rustdoc CBINDGEN=z:/task_1556186714/build/src/cbindgen/cbindgen RUSTFMT=z:/task_1556186714/build/src/rustc/bin/rustfmt LLVM_CONFIG=z:/task_1556186714/build/src/clang/bin/llvm-config --enable-js-shell NODEJS=z:/task_1556186714/build/src/node/node.exe --enable-rust-simd MAKE=z:/task_1556186714/build/src/mozmake.EXE --enable-crashreporter --enable-official-branding</p>
+</body>
+</html>
