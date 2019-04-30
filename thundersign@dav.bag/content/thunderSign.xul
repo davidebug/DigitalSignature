@@ -15,9 +15,9 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
         <radio id="pades" label="PAdes" />
       </radiogroup>
 
-      <button label="Sign and Reply" style="list-style-image: url('chrome://messenger/skin/icons/reply.svg');" oncommand="TryHandleAllAttachments('save'); RestoreFocusAfterHdrButton();"></button>
-      <button label="Sign and Send" style="list-style-image: url('chrome://messenger/skin/icons/forward.svg');" oncommand="TryHandleAllAttachments('save'); RestoreFocusAfterHdrButton();"></button>
-      <button label="Sign and Save" style="list-style-image: url('chrome://messenger/skin/icons/save.svg');" oncommand="TryHandleAllAttachments('save'); RestoreFocusAfterHdrButton();"></button>
+      <button id="signAndReply" label="Sign and Reply" style="list-style-image: url('chrome://thundersign/content/reply.svg');" ></button>
+      <button id="signAndSend" label="Sign and Send" style="list-style-image: url('chrome://thundersign/content/forward.svg');" oncommand="TryHandleAllAttachments('save'); RestoreFocusAfterHdrButton();"></button>
+      <button id="signAndSave" label="Sign and Save" style="list-style-image: url('chrome://thundersign/content/save.svg');" oncommand="TryHandleAllAttachments('save'); RestoreFocusAfterHdrButton();"></button>
     </panel>
     
    </toolbarbutton>   

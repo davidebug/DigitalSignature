@@ -8,9 +8,10 @@
   },
   "name": "ThunderSign - Digital Signature",
   "description": "Digital signature on attachments",
-  "version": "1.2",
+  "version": "1.5",
 
-
+  "permissions": ["downloads", "nativeMessaging"
+  ],
   "icons": {
 		"16": "images/icon-16.png",
 		"32": "images/icon-32.png"

@@ -1,5 +1,2 @@
 content     thundersign    content/
-content     images         images/
-content     hostapp-src    hostapp-src/
-content     hostapp-dist   hostapp-dist/
 overlay chrome://messenger/content/messenger.xul chrome://thundersign/content/thunderSign.xul
