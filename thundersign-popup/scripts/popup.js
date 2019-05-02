@@ -1,0 +1,5 @@
+// Below is what we'll log to the console.
+
+console.log('Hello, World! - from popup.js');
+
+parent.opener.document.getElementById("attachmentList").children[0].getAttribute("name");

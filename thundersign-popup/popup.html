@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hello World</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="popup.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="scripts/popup.js"></script>
+</head>
+<body>
+    <h style="font-size:20px"> <img src="images/icon-16.png"> ThunderSign - Digital Signature</h>
+    <br>
+    <div id= "popup" class="popup-page" style="width: 500px; height:400px;">
+        
+        <form id="my-form">
+        <fieldset id="my-attachments">
+            
+        </fieldset>
+        <br>    
+            <input id="cades" type="radio" name="type">CAdes
+            <input id="pades" type="radio" name="type">PAdes
+            <input id="visible-pades" type="radio" name="type">Visible PAdes
+            <br>
+            <br>
+            <button id="signAndReply" type="submit" value=" Sign and Reply" style="font-size: 16px"><i class="fas fa-reply"></i>&nbsp;Sign and Reply</button>
+            <button id="signAndSend" type="submit" value="Sign and Send" style="font-size: 16px"><i class="fas fa-share"></i>&nbsp;Sign and Send</button> 
+            <button id="signAndSave" type="submit" value="Sign and Save" style="font-size: 16px"><i class="fas fa-save"></i>&nbsp;Sign and Save</button>
+        </form>
+    </div>
+</body>
+</html>
