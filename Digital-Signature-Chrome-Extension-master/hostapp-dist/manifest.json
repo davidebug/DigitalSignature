@@ -4,6 +4,6 @@
   "path": "extension.bat",
   "type": "stdio",
   "allowed_origins": [
-    "chrome-extension://ddjlcceejbfdcjgnkjocneccahoefkej/"
+    "chrome-extension://lhimbmehdedmicnbacblhhbokbgbdkhl/"
   ]
 }
