@@ -22,6 +22,9 @@ function check() {
 	scanAttachments();
 	
 	console.log("checked");
+	browser.runtime.sendMessage({action: 'getAttachments'}, function(response)
+    {});
+
 }
 
 

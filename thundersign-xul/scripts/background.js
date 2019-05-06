@@ -5,26 +5,9 @@ console.log('finito back');
 function handleMessage(message) {
         console.log(message.action);
         if(message.action =="getAttachments"){
-
             console.log('provo ad eseguire lo script');
-        
-            // browser.tabs.query({windowId: browser.windows.WINDOW_ID_CURRENT})
-            //  .then(tabs =>  console.log(tabs));
-
             
-            //  browser.tabs.get(1).then(Tab => console.log(Tab));
-            
-            browser.tabs.create({
-              url:"https://example.org"
-            });
-            browser.tabs.executeScript({
-                
-                file: 'scripts/contentScript.js'
-              });  
-        }
-        // else if(message.action =="content"){
-        //   console.log('content received');
-        // }   
+        }    
     //sendResponse({response: "response from background script"});
   }
 

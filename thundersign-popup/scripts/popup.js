@@ -13,6 +13,7 @@ console.log('Hello, World! - from popup.js');
  $(document).ready(function(){
     browser.runtime.sendMessage({action: 'getAttachments'}, function(response)
     {});
+    
     $("#cades").click(function(){
       $(".collapse").collapse('hide');
     });
