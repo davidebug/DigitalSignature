@@ -21,9 +21,10 @@ function check() {
 	button.style.display = "inline";
 	scanAttachments();
 	
-	console.log("checked");
+	
 	browser.runtime.sendMessage({action: 'getAttachments'}, function(response)
-    {});
+		{});
+	console.log("checked");
 
 }
 

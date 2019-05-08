@@ -8,13 +8,12 @@
   },
   "name": "ThunderSign - Digital Signature",
   "description": "Digital signature on attachments",
-  "version": "1.5",
+  "version": "1.6",
   "background": {
     "scripts": ["scripts/background.js"]
     
   },
   "permissions": ["nativeMessaging", "activeTab", "downloads", "tabs", "storage","<all_urls>"],
-
   "icons": {
 		"16": "images/icon-16.png",
 		"32": "images/icon-32.png"

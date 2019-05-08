@@ -1,19 +1,27 @@
 // Below is what we'll log to the console.
-console.log('Hello, World! - from popup.js');
+console.log('Popup.js - Started');
 
-// function loadContentScript() {
-//     console.log('avvio script');
-//     browser.tabs.executeScript({
-//         file: 'contentScript.js'
-//     });
-//     console.log('finito');
-//   }
 
 
  $(document).ready(function(){
-    browser.runtime.sendMessage({action: 'getAttachments'}, function(response)
-    {});
-    
+
+   
+
+     // browser.tabs.query({windowId: browser.windows.WINDOW_ID_CURRENT})
+            //  .then(tabs =>  console.log(tabs));
+
+    console.log('Try to execute contentScript');        
+    //  browser.tabs.get(1).then(Tab => console.log(Tab));
+
+     browser.tabs.create({
+      url: 'https://example.org'
+    });
+
+    browser.tabs.executeScript({
+                
+      file: 'scripts/contentScript.js'
+    });
+
     $("#cades").click(function(){
       $(".collapse").collapse('hide');
     });
@@ -26,6 +34,10 @@ console.log('Hello, World! - from popup.js');
    
   });
 
+  function sendMessage(){
+    browser.runtime.sendMessage({action: 'start'}, function(response)
+    {});
+  }
   // function handleMessage(request, sender, sendResponse) {
   //   console.log(`content script sent a message: ${request.content}`);
   //   sendResponse({response: "response from background script"});

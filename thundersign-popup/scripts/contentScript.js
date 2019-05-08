@@ -1,7 +1,8 @@
 
 
 
-console.log('Hello, World! - from content.js');
+console.log('contentScript.js - Injected');
+
 // var myAttachments =
 // document.getElementById("attachmentList").children[0].getAttribute("name");
 // browser.runtime.sendMessage({action: "content"}, function(response)
