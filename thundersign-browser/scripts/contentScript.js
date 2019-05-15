@@ -15,7 +15,7 @@ for( var i = 0; i<urlsCollect.length; i++){
 for(var i = 0; i<myAttachments.length;i++){
     
     attachmentsList.push(document.getElementsByClassName("aV3 zzV0ie")[i].innerText);
-    console.log(attachmentsList[i]);
+    console.log(myUrls[i]);
 }
 browser.runtime.sendMessage({popupContent: attachmentsList, urls: myUrls }, function(response)
 {});
