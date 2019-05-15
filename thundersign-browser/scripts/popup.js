@@ -1,21 +1,14 @@
-// Below is what we'll log to the console.
+
 console.log('Popup.js - Started');
 
 
 
  $(document).ready(function(){
 
-   
-
-     // browser.tabs.query({windowId: browser.windows.WINDOW_ID_CURRENT})
-            //  .then(tabs =>  console.log(tabs));
-
     console.log('Try to execute contentScript');        
-    //  browser.tabs.get(1).then(Tab => console.log(Tab));
 
 
-    chrome.tabs.executeScript({
-                
+    browser.tabs.executeScript({          
       file: 'scripts/contentScript.js'
     });
 
@@ -31,13 +24,50 @@ console.log('Popup.js - Started');
    
   });
 
-  function sendMessage(){
-    chrome.runtime.sendMessage({action: 'start'}, function(response)
-    {});
+  function handleMessage(message) {
+    console.log(message.popupContent);
+    var attachments = message.popupContent;
+    addAttachments(attachments);
+    var urls = message.urls;
+    // else if(message.action =="content"){
+    //   console.log('content received');
+    // }   
+//sendResponse({response: "response from background script"});
+}
+browser.runtime.onMessage.addListener(handleMessage);
+
+function addAttachments(attachments){
+  document.getElementById("my-attachments").innerHtml="";
+  for(var i=0; i<attachments.length; i++){
+    var attach = '<input type="checkbox" id=' + attachments[i] +' name="checkbox" value="value" >&nbsp;&nbsp;' + attachments[i] +'<br>';
+    $("#my-attachments").append(attach);
+    
   }
-  // function handleMessage(request, sender, sendResponse) {
-  //   console.log(`content script sent a message: ${request.content}`);
-  //   sendResponse({response: "response from background script"});
-  // }
+
+  $("#signAndReply").click(function(){
+    downloadAttachments();
+    
+  });
+
+  $("#signAndSend").click(function(){
+    downloadAttachments();
+    
+  });
+
+  $("#signAndSave").click(function(){
+    downloadAttachments();
+    
+  });
+
+  function downloadAttachments(){
+    var checkboxes = document.getElementById("my-attachments").children;
+    for(var i = 0; i<checkboxes.length; i++){
+      if(checkboxes[i].checked){
+        
+        //To do download attachments
+
+      }
+    }
+  }
+}
   
-  // browser.runtime.onMessage.addListener(handleMessage);

@@ -14,7 +14,7 @@ function handleMessage(message) {
     //sendResponse({response: "response from background script"});
   }
 
-chrome.runtime.onMessage.addListener(handleMessage);
+browser.runtime.onMessage.addListener(handleMessage);
 
 // chrome.runtime.onInstalled.addListener(function () {
 //   chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
