@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "ThunderSign - Digital signature",
+    "description": "Digital Signature on attachments",
+    "version": "1.0",
+    "author": "Davide Bagnato",
+    "permissions": ["nativeMessaging", "activeTab", "downloads", "tabs", "storage","<all_urls>"],
+    "background": {
+        "scripts": ["scripts/background.js"]
+        
+      },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "ThunderSign",
+        "default_icon": "images/icon-32.png"
+    },
+    
+    "icons": {
+        "64": "images/icon.png",
+        "32": "images/icon-32.png",
+        "16": "images/icon-16.png"
+    }
+}

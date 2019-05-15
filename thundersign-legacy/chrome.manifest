@@ -1,0 +1,2 @@
+content     thundersign    content/
+overlay chrome://messenger/content/messenger.xul chrome://thundersign/content/thunderSign.xul
