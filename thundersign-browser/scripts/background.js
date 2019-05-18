@@ -2,10 +2,18 @@ console.log("Start background");
 
 
 console.log('finito back');
+var data = {};
 function handleMessage(message) {
         console.log(message.action);
-        if(message.action =="start"){
-
+        if(message.action == "sign"){
+          openConnection();
+          data = message.data;
+          for( var i = 0; i<data.toSign.length; i++){
+            data.filename = data.toSign[i];
+            console.log("Going to sign -->" + data.filename);
+            sendDataForSign(data);
+          }
+          
           
         }
         // else if(message.action =="content"){
@@ -15,6 +23,52 @@ function handleMessage(message) {
   }
 
 browser.runtime.onMessage.addListener(handleMessage);
+
+/**
+ * Send data to native app for signing
+ * @param {*} data - data to send to native app for signing 
+ */
+function sendDataForSign(data) {
+  // console.log(data);
+  appCurrentState = StateEnum.signing;
+  console.log("Send message to native app...")
+  data.action = "sign";
+  nativeAppPort.postMessage(data);
+};
+
+
+var nativeAppPort = null;
+
+var StateEnum = {
+  ready: "ready",
+  downloadFile: "downloadFile",
+  running: "running",
+  signing: "signing",
+  info: "info",
+  error: "error",
+  complete: "complete"
+};
+Object.freeze(StateEnum)
+
+//state of the app
+var appCurrentState = StateEnum.start;
+
+var storedSignatureData = {
+  signatureData: "",
+  infoPDF: "",
+  localpath: "",
+
+  empty: function () {
+    this.signatureData = "";
+    this.infoPDF = "";
+  },
+
+  isEmpty: function () {
+    if (this.signatureData == "")
+      return true;
+    return false;
+  }
+}
 
 // chrome.runtime.onInstalled.addListener(function () {
 //   chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
@@ -32,117 +86,190 @@ browser.runtime.onMessage.addListener(handleMessage);
 //   });
 // });
 
-// const app = 'com.unical.digitalsignature.signer';
+ const app = 'com.unical.digitalsignature.signer';
 
-// //port with native app
-// var nativeAppPort = null;
 
-// //possible value of appCurrentState
-// var StateEnum = {
-//   ready: "ready",
-//   downloadFile: "downloadFile",
-//   running: "running",
-//   signing: "signing",
-//   info: "info",
-//   error: "error",
-//   complete: "complete"
-// };
-// Object.freeze(StateEnum)
+/**
+ * Open connection with native app and set message listeners.
+ */
+function openConnection() {
+  nativeAppPort = browser.runtime.connectNative(app);
 
-// //state of the app
-// var appCurrentState = StateEnum.start;
+  console.log(nativeAppPort);
 
-// var storedSignatureData = {
-//   signatureData: "",
-//   infoPDF: "",
-//   localpath: "",
+  nativeAppPort.onMessage.addListener(function (msg) {
+    console.log("RECEIVED FROM NATIVE APP:");
+    console.log(msg);
 
-//   empty: function () {
-//     this.signatureData = "";
-//     this.infoPDF = "";
-//   },
+    if (msg.hasOwnProperty("native_app_message")) {
+      if (msg.native_app_message == "end") {
+        
+        
 
-//   isEmpty: function () {
-//     if (this.signatureData == "")
-//       return true;
-//     return false;
-//   }
-// }
+        storedSignatureData.empty();
+        browser.runtime.sendMessage({
+          state: "end",
+          localPath: msg.local_path_newFile
+        }, function (response) {});
 
-// /**
-//  * Open connection with native app and set message listeners.
-//  */
-// function openConnection() {
-//   nativeAppPort = chrome.runtime.connectNative(app);
+        appCurrentState = StateEnum.complete;
+      } else if (msg.native_app_message == "info") {
 
-//   console.log(nativeAppPort);
+        storedSignatureData.infoPDF = {
+          pageNumber: msg.pageNumber,
+          pages: msg.pages,
+          fields: msg.fields
+        }
 
-//   nativeAppPort.onMessage.addListener(function (msg) {
-//     console.log("RECEIVED FROM NATIVE APP:");
-//     console.log(msg);
+        //forward fields list to popup
+        browser.runtime.sendMessage({
+          state: 'info',
+          pageNumber: msg.pageNumber,
+          pages: msg.pages,
+          fields: msg.fields
+        }, function (response) {});
 
-//     if (msg.hasOwnProperty("native_app_message")) {
-//       if (msg.native_app_message == "end") {
-//         //if pades -> open signed pdf 
-//         if (msg.signature_type == "pades") {
-//           var path = "file:///" + msg.local_path_newFile;
-//           chrome.tabs.create({
-//             index: 0,
-//             url: path,
-//             active: false
-//           }, function () {});
-//         }
+        appCurrentState = StateEnum.running;
 
-//         storedSignatureData.empty();
-//         chrome.runtime.sendMessage({
-//           state: "end",
-//           localPath: msg.local_path_newFile
-//         }, function (response) {});
+      } else if (msg.native_app_message == "error") {
+        console.log("ERROR:" + msg.error);
+        appCurrentState = StateEnum.error;
+        browser.runtime.sendMessage({
+          state: 'error',
+          error: msg.error
+        }, function (response) {});
+      }
+    }
 
-//         appCurrentState = StateEnum.complete;
-//       } else if (msg.native_app_message == "info") {
+  });
 
-//         storedSignatureData.infoPDF = {
-//           pageNumber: msg.pageNumber,
-//           pages: msg.pages,
-//           fields: msg.fields
-//         }
+  nativeAppPort.onDisconnect.addListener(function () {
+    console.log("Disconnected: " + browser.runtime.lastError.message);
+  });
 
-//         //forward fields list to popup
-//         chrome.runtime.sendMessage({
-//           state: 'info',
-//           pageNumber: msg.pageNumber,
-//           pages: msg.pages,
-//           fields: msg.fields
-//         }, function (response) {});
+  return nativeAppPort;
+}
 
-//         appCurrentState = StateEnum.running;
+/**
+ * Close connection with native app.
+ */
+function closeConnection() {
+  nativeAppPort.disconnect();
+}
 
-//       } else if (msg.native_app_message == "error") {
-//         console.log("ERROR:" + msg.error);
-//         appCurrentState = StateEnum.error;
-//         chrome.runtime.sendMessage({
-//           state: 'error',
-//           error: msg.error
-//         }, function (response) {});
-//       }
-//     }
 
-//   });
+function getLocalPath(downloadItemID) {
+  console.log("GET LOCAL PATH...")
+  chrome.downloads.search({
+    id: downloadItemID,    // <------- da rivedere
+    state: "complete"      
+  }, function (item) {
+    if (item.length == 0) {
+      console.log("Downloading....");
+      sleep(1500).then(() => { //wait X second
+        getLocalPath(downloadItemID);
+      });
+    } else {
+      console.log(item[0].filename);
+      data.filename = item[0].filename;
+      if (callback)
+        callback(data)
+    }
+  });
+}
 
-//   nativeAppPort.onDisconnect.addListener(function () {
-//     console.log("Disconnected: " + chrome.runtime.lastError.message);
-//   });
+// sleep time expects milliseconds
+function sleep(time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
 
-//   return nativeAppPort;
-// }
+/**
+* Send data to native app for ask information about pdf like: fields and pages number
+* @param {*} data - data to send to native app
+*/
+function requestPDFInfo(data) {
+appCurrentState = StateEnum.info;
+console.log("Send message to native app...")
+// console.log(data);
+data.action = popupMessageType.info;
+nativeAppPort.postMessage(data);
+delete data.action;
+storedSignatureData.signatureData = data;
+updateSignatureDataPopup("filename", storedSignatureData.signatureData.filename);
+};
 
-// /**
-//  * Close connection with native app.
-//  */
-// function closeConnection() {
-//   nativeAppPort.disconnect();
-// }
+/**
+* Send a message to the Popup for update its signature data
+* @param {string} fieldToUpdate : field of signature data to update
+* @param {*} value : new value
+*/
+function updateSignatureDataPopup(fieldToUpdate, value) {
+chrome.runtime.sendMessage({
+  state: 'updateSignatureData',
+  fieldToUpdate: fieldToUpdate,
+  value: value
+}, function (response) {});
+}
+
+var popupMessageType = {
+wakeup: 'wakeup',
+init: 'init',
+disconnect: 'disconnect',
+download_and_sign: 'download_and_sign',
+sign: 'sign',
+download_and_getInfo: 'donwload_and_getInfo',
+info: 'info',
+zoom: 'zoom',
+resetState: "resetState"
+}
+
+//listener message Popup -> Background
+browser.runtime.onMessage.addListener(
+function (request, sender, sendResponse) {
+  switch (request.action) {
+    case popupMessageType.wakeup:
+      console.log("Background wakeup");
+      break;
+    case popupMessageType.resetState:
+      appCurrentState = StateEnum.start;
+      sendResponse({
+        appstate: appCurrentState
+      })
+      break;
+    case popupMessageType.init:
+      openConnection();
+      break;
+    case popupMessageType.disconnect:
+      closeConnection();
+      break;
+
+    case popupMessageType.download_and_sign:
+      downloadFile(request.url, request.data, sendDataForSign);
+      break;
+    case popupMessageType.sign: //used for directly sign a local file
+      sendDataForSign(request.data);
+      break;
+
+    case popupMessageType.download_and_getInfo: //used for directly sign a local file
+      downloadFile(request.url, request.data, requestPDFInfo);
+      break;
+    case popupMessageType.info: //used for local file
+      requestPDFInfo(request.data);
+      break;
+
+    case popupMessageType.zoom:
+      createZoomListener(request.tabid);
+      break;
+
+    default:
+      console.log("Invalid action");
+      break;
+  }
+  sendResponse({
+    ack: "success",
+    received: request.action,
+  });
+});
 
 // /**
 //  * Dowload the pdf, get local path of downloaded file and call callback.
@@ -166,72 +293,12 @@ browser.runtime.onMessage.addListener(handleMessage);
 //   }
 
 
-//   //3) get download file local path
-//   function getLocalPath(downloadItemID) {
-//     console.log("GET LOCAL PATH...")
-//     chrome.downloads.search({
-//       id: downloadItemID,
-//       state: "complete"
-//     }, function (item) {
-//       if (item.length == 0) {
-//         console.log("Downloading....");
-//         sleep(1500).then(() => { //wait X second
-//           getLocalPath(downloadItemID);
-//         });
-//       } else {
-//         console.log(item[0].filename);
-//         data.filename = item[0].filename;
-//         if (callback)
-//           callback(data)
-//       }
-//     });
-//   }
+  //3) get download file local path
+ 
 
-//   // sleep time expects milliseconds
-//   function sleep(time) {
-//     return new Promise((resolve) => setTimeout(resolve, time));
-//   }
-// }
 
-// /**
-//  * Send data to native app for signing
-//  * @param {*} data - data to send to native app for signing 
-//  */
-// function sendDataForSign(data) {
-//   // console.log(data);
-//   appCurrentState = StateEnum.signing;
-//   console.log("Send message to native app...")
-//   data.action = "sign";
-//   nativeAppPort.postMessage(data);
-// };
 
-// /**
-//  * Send data to native app for ask information about pdf like: fields and pages number
-//  * @param {*} data - data to send to native app
-//  */
-// function requestPDFInfo(data) {
-//   appCurrentState = StateEnum.info;
-//   console.log("Send message to native app...")
-//   // console.log(data);
-//   data.action = popupMessageType.info;
-//   nativeAppPort.postMessage(data);
-//   delete data.action;
-//   storedSignatureData.signatureData = data;
-//   updateSignatureDataPopup("filename", storedSignatureData.signatureData.filename);
-// };
 
-// /**
-//  * Send a message to the Popup for update its signature data
-//  * @param {string} fieldToUpdate : field of signature data to update
-//  * @param {*} value : new value
-//  */
-// function updateSignatureDataPopup(fieldToUpdate, value) {
-//   chrome.runtime.sendMessage({
-//     state: 'updateSignatureData',
-//     fieldToUpdate: fieldToUpdate,
-//     value: value
-//   }, function (response) {});
-// }
 
 // /** create a connection with content script and add a zoomchange 
 //  * 
@@ -259,65 +326,6 @@ browser.runtime.onMessage.addListener(handleMessage);
 
 // }
 
-// /**
-//  * types of message from the popup that background script can handle
-//  */
-// var popupMessageType = {
-//   wakeup: 'wakeup',
-//   init: 'init',
-//   disconnect: 'disconnect',
-//   download_and_sign: 'download_and_sign',
-//   sign: 'sign',
-//   download_and_getInfo: 'donwload_and_getInfo',
-//   info: 'info',
-//   zoom: 'zoom',
-//   resetState: "resetState"
-// }
-
-// //listener message Popup -> Background
-// chrome.runtime.onMessage.addListener(
-//   function (request, sender, sendResponse) {
-//     switch (request.action) {
-//       case popupMessageType.wakeup:
-//         console.log("Background wakeup");
-//         break;
-//       case popupMessageType.resetState:
-//         appCurrentState = StateEnum.start;
-//         sendResponse({
-//           appstate: appCurrentState
-//         })
-//         break;
-//       case popupMessageType.init:
-//         openConnection();
-//         break;
-//       case popupMessageType.disconnect:
-//         closeConnection();
-//         break;
-
-//       case popupMessageType.download_and_sign:
-//         downloadFile(request.url, request.data, sendDataForSign);
-//         break;
-//       case popupMessageType.sign: //used for directly sign a local file
-//         sendDataForSign(request.data);
-//         break;
-
-//       case popupMessageType.download_and_getInfo: //used for directly sign a local file
-//         downloadFile(request.url, request.data, requestPDFInfo);
-//         break;
-//       case popupMessageType.info: //used for local file
-//         requestPDFInfo(request.data);
-//         break;
-
-//       case popupMessageType.zoom:
-//         createZoomListener(request.tabid);
-//         break;
-
-//       default:
-//         console.log("Invalid action");
-//         break;
-//     }
-//     sendResponse({
-//       ack: "success",
-//       received: request.action,
-//     });
-//   });
+/**
+ * types of message from the popup that background script can handle
+ */

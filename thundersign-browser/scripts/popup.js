@@ -1,6 +1,53 @@
 
 console.log('Popup.js - Started');
 
+var signatureData = {
+  type: "",
+  filename: "",
+  password: "",
+  visible: false,
+  useField: false,
+  verticalPosition: "Top",
+  horizontalPosition: "Left",
+  pageNumber: 1,
+  signatureField: "",
+  image: "",
+  tabUrl: "",
+  toSign: [],
+
+  /**
+   * Reset signature data.
+   */
+  empty: function () {
+      this.type = "";
+      this.filename = "";
+      this.password = "";
+      this.visible = false;
+      this.useField = false;
+      this.verticalPosition = "Top";
+      this.horizontalPosition = "Left";
+      this.pageNumber = 1;
+      this.signatureField = "";
+      this.image = "";
+      this.tabUrl = "";
+      this.toSign = [];
+  },
+
+  copy: function (data) {
+      this.type = data.type;
+      this.filename = data.filename;
+      this.password = data.password;
+      this.visible = data.visible;
+      this.useField = data.useField;
+      this.verticalPosition = data.verticalPosition;
+      this.horizontalPosition = data.horizontalPosition;
+      this.pageNumber = data.pageNumber;
+      this.signatureField = data.signatureField;
+      this.image = data.image;
+      this.tabUrl = data.tabUrl;
+      this.toSign = data.toSign;
+  }
+};
 
 
  $(document).ready(function(){
@@ -48,40 +95,25 @@ function addAttachments(attachments){
     $("#my-attachments").append(attach);
     
   }
+}
 
-  
-  $("#signAndReply").click(function(){
-    downloadAttachments();
-    
-  });
+function downloadAttachments(){
+  for(var i = 0; i<attachments.length; i++){    
+    if(document.getElementById(attachments[i]).checked){
+      signatureData.toSign.push(attachments[i]);
+      var downloadUrl = urls[i];
+      var downloading = browser.downloads.download({
+        url : downloadUrl,
+        filename: attachments[i],
+        conflictAction : 'overwrite'
+      });         
+      downloading.then(onStartedDownload, onFailed);
+      //To do download attachments
 
-  $("#signAndSend").click(function(){
-    downloadAttachments();
-    
-  });
-
-  $("#signAndSave").click(function(){
-    downloadAttachments();
-    
-  });
-
-  function downloadAttachments(){
-    for(var i = 0; i<attachments.length; i++){    
-      if(document.getElementById(attachments[i]).checked){
-        toSign.push(attachments[i]);
-        var downloadUrl = urls[i];
-        var downloading = browser.downloads.download({
-          url : downloadUrl,
-          filename: attachments[i],
-          conflictAction : 'overwrite'
-        });         
-        downloading.then(onStartedDownload, onFailed);
-        //To do download attachments
-
-      }
     }
   }
 }
+
 function onStartedDownload(id) {
   console.log(`Started downloading: ${id}`);
 }
@@ -90,3 +122,58 @@ function onFailed(error) {
   console.log(`Download failed: ${error}`);
 }
 
+
+
+function getData(){
+  if(document.getElementById("cades").checked){
+    signatureData.type = "cades"
+  }
+  else if(document.getElementById("pades").checked){
+    signatureData.type = "pades"
+  }
+  else if(document.getElementById("visible-pades").checked){
+    signatureData.type = "pades"
+    signatureData.visible = true;
+  }
+  signatureData.password = document.getElementById("password").value;
+}
+
+$("#signAndReply").click(function(){
+  downloadAttachments();
+  getData()
+  if(signatureData.type != "" && signatureData.password != ""){
+    sendDataToSign();
+    console.log("started " + signatureData.type + "sign and Reply")
+  }  
+    // else dai errore
+});
+
+$("#signAndSend").click(function(){
+  downloadAttachments();
+  getData();
+  if(signatureData.type != "" && signatureData.password != ""){
+    sendDataToSign();
+    console.log("started " + signatureData.type + "sign and Send")
+  }
+    // else dai errore
+  
+});
+
+$("#signAndSave").click(function(){
+  downloadAttachments();
+  getData();
+  if(signatureData.type != "" && signatureData.password != ""){
+    sendDataToSign();
+    console.log("started " + signatureData.type + "sign and Save")
+  }
+    // else dai errore
+  
+});
+
+function sendDataToSign(){
+  browser.runtime.sendMessage({action: sign, data: signatureData }, function(response)  // aggiungere poi qui dati per il visible pades
+  { 
+    console.log("<<< received:")
+    console.log(response.ack);
+  });
+}
