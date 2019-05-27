@@ -18,35 +18,35 @@ var signatureData = {
   /**
    * Reset signature data.
    */
-  empty: function () {
-      this.type = "";
-      this.filename = "";
-      this.password = "";
-      this.visible = false;
-      this.useField = false;
-      this.verticalPosition = "Top";
-      this.horizontalPosition = "Left";
-      this.pageNumber = 1;
-      this.signatureField = "";
-      this.image = "";
-      this.tabUrl = "";
-      this.toSign = [];
-  },
+  // empty: function () {
+  //     this.type = "";
+  //     this.filename = "";
+  //     this.password = "";
+  //     this.visible = false;
+  //     this.useField = false;
+  //     this.verticalPosition = "Top";
+  //     this.horizontalPosition = "Left";
+  //     this.pageNumber = 1;
+  //     this.signatureField = "";
+  //     this.image = "";
+  //     this.tabUrl = "";
+  //     this.toSign = [];
+  // },
 
-  copy: function (data) {
-      this.type = data.type;
-      this.filename = data.filename;
-      this.password = data.password;
-      this.visible = data.visible;
-      this.useField = data.useField;
-      this.verticalPosition = data.verticalPosition;
-      this.horizontalPosition = data.horizontalPosition;
-      this.pageNumber = data.pageNumber;
-      this.signatureField = data.signatureField;
-      this.image = data.image;
-      this.tabUrl = data.tabUrl;
-      this.toSign = data.toSign;
-  }
+  // copy: function (data) {
+  //     this.type = data.type;
+  //     this.filename = data.filename;
+  //     this.password = data.password;
+  //     this.visible = data.visible;
+  //     this.useField = data.useField;
+  //     this.verticalPosition = data.verticalPosition;
+  //     this.horizontalPosition = data.horizontalPosition;
+  //     this.pageNumber = data.pageNumber;
+  //     this.signatureField = data.signatureField;
+  //     this.image = data.image;
+  //     this.tabUrl = data.tabUrl;
+  //     this.toSign = data.toSign;
+  // }
 };
 
 
@@ -140,10 +140,10 @@ function getData(){
 
 $("#signAndReply").click(function(){
   downloadAttachments();
-  getData()
+  getData();
   if(signatureData.type != "" && signatureData.password != ""){
     sendDataToSign();
-    console.log("started " + signatureData.type + "sign and Reply")
+    console.log("started " + signatureData.type + " sign and Reply")
   }  
     // else dai errore
 });
@@ -153,7 +153,7 @@ $("#signAndSend").click(function(){
   getData();
   if(signatureData.type != "" && signatureData.password != ""){
     sendDataToSign();
-    console.log("started " + signatureData.type + "sign and Send")
+    console.log("started " + signatureData.type + " sign and Send")
   }
     // else dai errore
   
@@ -164,16 +164,25 @@ $("#signAndSave").click(function(){
   getData();
   if(signatureData.type != "" && signatureData.password != ""){
     sendDataToSign();
-    console.log("started " + signatureData.type + "sign and Save")
+    console.log("started " + signatureData.type + " sign and Save")
   }
     // else dai errore
   
 });
 
+const background = browser.extension.getBackgroundPage();
+const popupMessageType = background.popupMessageType; //types of message from the popup that background script can handle
+//const appStateEnum = background.StateEnum;
+
+
 function sendDataToSign(){
-  browser.runtime.sendMessage({action: sign, data: signatureData }, function(response)  // aggiungere poi qui dati per il visible pades
-  { 
-    console.log("<<< received:")
-    console.log(response.ack);
-  });
+
+  browser.runtime.sendMessage({
+    action: popupMessageType.sign,
+    data: signatureData
+}, function (response) {
+    console.log("data sent to background")
+    console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
+});
 }
+// TO DO --- init and open connection nativeApp, send message to nativeApp (cades)
