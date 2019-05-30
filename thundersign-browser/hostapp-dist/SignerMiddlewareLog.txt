@@ -11,3 +11,263 @@
 2019/05/26 20:17:43, signer: End of signing process.
 2019/05/26 20:17:43, signer: {"native_app_message":"end","local_path_newFile":".\\manifest.json.p7m","signature_type":"cades"}
 2019/05/26 20:17:43, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 13:17:32, signer: ------------ Start Main --------------
+2019/05/30 13:17:32, signer: ERROR :: Parameter Error.
+2019/05/30 13:20:06, signer: ------------ Start Main --------------
+2019/05/30 13:20:06, signer: ERROR :: Parameter Error.
+2019/05/30 13:53:22, signer: ------------ Start Main --------------
+2019/05/30 13:53:22, signer: ERROR :: Parameter Error.
+2019/05/30 13:58:48, signer: ------------ Start Main --------------
+2019/05/30 13:58:48, signer: ERROR :: Parameter Error.
+2019/05/30 14:01:10, signer: ------------ Start Main --------------
+2019/05/30 14:01:10, signer: ERROR :: Parameter Error.
+2019/05/30 14:06:52, signer: ------------ Start Main --------------
+2019/05/30 14:06:52, signer: ERROR :: Parameter Error.
+2019/05/30 14:12:31, signer: ------------ Start Main --------------
+2019/05/30 14:12:31, signer: ERROR :: Parameter Error.
+2019/05/30 14:14:07, signer: ------------ Start Main --------------
+2019/05/30 14:14:07, signer: ERROR :: Parameter Error.
+2019/05/30 14:19:01, signer: ------------ Start Main --------------
+2019/05/30 14:19:01, signer: ERROR :: Parameter Error.
+2019/05/30 14:19:54, signer: ------------ Start Main --------------
+2019/05/30 14:19:54, signer: ERROR :: Parameter Error.
+2019/05/30 14:21:19, signer: ------------ Start Main --------------
+2019/05/30 14:21:19, signer: ERROR :: Parameter Error.
+2019/05/30 14:27:14, signer: ------------ Start Main --------------
+2019/05/30 14:27:14, signer: ------------ Start Main --------------
+2019/05/30 14:27:14, signer: ERROR :: Parameter Error.
+2019/05/30 14:27:14, signer: ERROR :: Parameter Error.
+2019/05/30 14:31:01, signer: ------------ Start Main --------------
+2019/05/30 14:31:01, signer: ------------ Start Main --------------
+2019/05/30 14:31:01, signer: ERROR :: Parameter Error.
+2019/05/30 14:31:01, signer: ERROR :: Parameter Error.
+2019/05/30 14:32:40, signer: ------------ Start Main --------------
+2019/05/30 14:32:40, signer: ------------ Start Main --------------
+2019/05/30 14:32:40, signer: ERROR :: Parameter Error.
+2019/05/30 14:32:40, signer: ERROR :: Parameter Error.
+2019/05/30 14:40:03, signer: ------------ Start Main --------------
+2019/05/30 14:40:03, signer: ------------ Start Main --------------
+2019/05/30 14:40:03, signer: ERROR :: Parameter Error.
+2019/05/30 14:40:03, signer: ERROR :: Parameter Error.
+2019/05/30 14:40:51, signer: ------------ Start Main --------------
+2019/05/30 14:40:51, signer: ------------ Start Main --------------
+2019/05/30 14:40:51, signer: ERROR :: Parameter Error.
+2019/05/30 14:40:51, signer: ERROR :: Parameter Error.
+2019/05/30 14:43:14, signer: ------------ Start Main --------------
+2019/05/30 14:43:14, signer: ------------ Start Main --------------
+2019/05/30 14:43:14, signer: ERROR :: Parameter Error.
+2019/05/30 14:43:14, signer: ERROR :: Parameter Error.
+2019/05/30 14:45:50, signer: ------------ Start Main --------------
+2019/05/30 14:45:50, signer: ------------ Start Main --------------
+2019/05/30 14:45:50, signer: ERROR :: Parameter Error.
+2019/05/30 14:45:50, signer: ERROR :: Parameter Error.
+2019/05/30 14:53:34, signer: ------------ Start Main --------------
+2019/05/30 14:53:34, signer: ------------ Start Main --------------
+2019/05/30 14:53:34, signer: ERROR :: Parameter Error.
+2019/05/30 14:53:34, signer: ERROR :: Parameter Error.
+2019/05/30 14:54:48, signer: ------------ Start Main --------------
+2019/05/30 14:54:48, signer: ERROR :: Parameter Error.
+2019/05/30 14:59:21, signer: ------------ Start Main --------------
+2019/05/30 14:59:21, signer: ERROR :: Parameter Error.
+2019/05/30 15:01:44, signer: ------------ Start Main --------------
+2019/05/30 15:01:45, signer: ERROR :: Parameter Error.
+2019/05/30 15:03:01, signer: ------------ Start Main --------------
+2019/05/30 15:03:02, signer: ERROR :: Parameter Error.
+2019/05/30 15:18:08, signer: ------------ Start Main --------------
+2019/05/30 15:18:08, signer: ERROR :: Parameter Error.
+2019/05/30 15:18:52, signer: ------------ Start Main --------------
+2019/05/30 15:18:52, signer: ERROR :: Parameter Error.
+2019/05/30 15:29:03, signer: ------------ Start Main --------------
+2019/05/30 15:29:03, signer: ERROR :: Parameter Error.
+2019/05/30 15:29:58, signer: ------------ Start Main --------------
+2019/05/30 15:29:59, signer: ERROR :: Parameter Error.
+2019/05/30 15:53:11, signer: ------------ Start Main --------------
+2019/05/30 15:53:11, signer: ERROR :: Parameter Error.
+2019/05/30 15:54:18, signer: ------------ Start Main --------------
+2019/05/30 15:54:18, signer: ERROR :: Parameter Error.
+2019/05/30 16:11:16, signer: ------------ Start Main --------------
+2019/05/30 16:11:16, signer: ERROR :: Parameter Error.
+2019/05/30 16:11:41, signer: ------------ Start Main --------------
+2019/05/30 16:11:41, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/05/30 16:11:41, signer: Selected Sign Format: CADES
+2019/05/30 16:11:41, signer: Start Signature Procedure
+2019/05/30 16:11:49, signer: 
+
+2019/05/30 16:11:51, signer: Certificate to use:  
+2019/05/30 16:11:52, signer: BAGNATO BONAVENTURA
+2019/05/30 16:11:55, signer: Start of signing process...
+2019/05/30 16:11:55, AbstractSignFactory: Create signed file: manifest.json.p7m
+2019/05/30 16:11:55, signer: End of signing process.
+2019/05/30 16:11:55, signer: {"native_app_message":"end","local_path_newFile":".\\manifest.json.p7m","signature_type":"cades"}
+2019/05/30 16:11:55, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 16:12:40, signer: ------------ Start Main --------------
+2019/05/30 19:07:28, signer: ------------ Start Main --------------
+2019/05/30 19:07:28, signer: ERROR :: Parameter Error.
+2019/05/30 19:11:14, signer: ------------ Start Main --------------
+2019/05/30 19:11:14, signer: ERROR :: Parameter Error.
+2019/05/30 19:29:21, signer: ------------ Start Main --------------
+2019/05/30 19:29:21, signer: ERROR :: Parameter Error.
+2019/05/30 19:31:31, signer: ------------ Start Main --------------
+2019/05/30 19:31:31, signer: ERROR :: Parameter Error.
+2019/05/30 19:39:43, signer: ------------ Start Main --------------
+2019/05/30 19:39:43, signer: ERROR :: Parameter Error.
+2019/05/30 20:14:17, signer: ------------ Start Main --------------
+2019/05/30 20:14:17, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/05/30 20:14:17, signer: Selected Sign Format: CADES
+2019/05/30 20:14:17, signer: Start Signature Procedure
+2019/05/30 20:14:21, signer: 
+
+2019/05/30 20:14:24, signer: Certificate to use:  
+2019/05/30 20:14:24, signer: BAGNATO BONAVENTURA
+2019/05/30 20:14:27, signer: Start of signing process...
+2019/05/30 20:14:27, AbstractSignFactory: Create signed file: manifest.json.p7m
+2019/05/30 20:14:27, signer: End of signing process.
+2019/05/30 20:14:27, signer: {"native_app_message":"end","local_path_newFile":".\\manifest.json.p7m","signature_type":"cades"}
+2019/05/30 20:14:27, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 20:15:52, signer: ------------ Start Main --------------
+2019/05/30 20:15:52, signer: ERROR :: Parameter Error.
+2019/05/30 20:17:15, signer: ------------ Start Main --------------
+2019/05/30 20:17:15, signer: ERROR :: Parameter Error.
+2019/05/30 20:17:38, signer: ------------ Start Main --------------
+2019/05/30 20:17:38, signer: ERROR :: Parameter Error.
+2019/05/30 20:23:35, signer: ------------ Start Main --------------
+2019/05/30 20:23:35, signer: ERROR :: Parameter Error.
+2019/05/30 20:23:40, signer: ------------ Start Main --------------
+2019/05/30 20:23:40, signer: ERROR :: Parameter Error.
+2019/05/30 20:25:23, signer: ------------ Start Main --------------
+2019/05/30 20:25:23, signer: ERROR :: Parameter Error.
+2019/05/30 20:28:40, signer: ------------ Start Main --------------
+2019/05/30 20:28:40, signer: ERROR :: Parameter Error.
+2019/05/30 20:29:38, signer: ------------ Start Main --------------
+2019/05/30 20:29:39, signer: ERROR :: Parameter Error.
+2019/05/30 20:29:52, signer: ------------ Start Main --------------
+2019/05/30 20:29:52, signer: Connect with Chrome extension
+2019/05/30 20:29:52, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 20:29:52, com.unical.argparser.MiddlewareChrome: Read Message
+2019/05/30 20:30:06, signer: ------------ Start Main --------------
+2019/05/30 20:30:06, signer: Connect with Chrome extension
+2019/05/30 20:30:06, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 20:30:06, com.unical.argparser.MiddlewareChrome: Read Message
+2019/05/30 20:31:26, signer: ------------ Start Main --------------
+2019/05/30 20:31:26, signer: ERROR :: Parameter Error.
+2019/05/30 20:31:32, signer: ------------ Start Main --------------
+2019/05/30 20:31:32, signer: ERROR :: Parameter Error.
+2019/05/30 20:32:34, signer: ------------ Start Main --------------
+2019/05/30 20:32:34, signer: ERROR :: Parameter Error.
+2019/05/30 20:35:19, signer: ------------ Start Main --------------
+2019/05/30 20:35:19, signer: Connect with Chrome extension
+2019/05/30 20:35:19, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 20:35:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/05/30 20:35:19, com.unical.argparser.MiddlewareChrome: 4
+2019/05/30 20:35:19, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/05/30 20:35:19, signer: Selected Sign Format: CADES
+2019/05/30 20:35:19, signer: Start Signature Procedure
+2019/05/30 20:35:19, signer: 
+
+2019/05/30 20:35:22, signer: Certificate to use:  
+2019/05/30 20:35:22, signer: BAGNATO BONAVENTURA
+2019/05/30 20:35:25, signer: Start of signing process...
+2019/05/30 20:35:25, AbstractSignFactory: Create signed file: DAVIDE-BAGNATO-27776825421322354509025489462.pdf.p7m
+2019/05/30 20:35:25, signer: End of signing process.
+2019/05/30 20:35:25, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\DAVIDE-BAGNATO-27776825421322354509025489462.pdf.p7m","signature_type":"cades"}
+2019/05/30 20:39:57, signer: ------------ Start Main --------------
+2019/05/30 20:39:57, signer: Connect with Chrome extension
+2019/05/30 20:39:57, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 20:39:57, com.unical.argparser.MiddlewareChrome: Read Message
+2019/05/30 20:39:57, com.unical.argparser.MiddlewareChrome: 4
+2019/05/30 20:39:57, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/05/30 20:39:57, signer: Selected Sign Format: PADES
+2019/05/30 20:39:57, signer: ERROR :: File is not a pdf.
+2019/05/30 20:40:19, signer: ------------ Start Main --------------
+2019/05/30 20:40:19, signer: Connect with Chrome extension
+2019/05/30 20:40:19, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 20:40:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/05/30 20:40:19, com.unical.argparser.MiddlewareChrome: 4
+2019/05/30 20:40:19, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/05/30 20:40:19, signer: Selected Sign Format: CADES
+2019/05/30 20:40:19, signer: Start Signature Procedure
+2019/05/30 20:40:19, signer: 
+
+2019/05/30 20:40:22, signer: Certificate to use:  
+2019/05/30 20:40:22, signer: BAGNATO BONAVENTURA
+2019/05/30 20:40:26, signer: Start of signing process...
+2019/05/30 20:40:26, AbstractSignFactory: Create signed file: DAVIDE-BAGNATO-27776825421322354509025489462(1).pdf.p7m
+2019/05/30 20:40:26, signer: End of signing process.
+2019/05/30 20:40:26, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\DAVIDE-BAGNATO-27776825421322354509025489462(1).pdf.p7m","signature_type":"cades"}
+2019/05/30 20:44:57, signer: ------------ Start Main --------------
+2019/05/30 20:44:57, signer: Connect with Chrome extension
+2019/05/30 20:44:57, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 20:44:57, com.unical.argparser.MiddlewareChrome: Read Message
+2019/05/30 20:44:57, com.unical.argparser.MiddlewareChrome: 4
+2019/05/30 20:44:57, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/05/30 20:44:57, signer: Selected Sign Format: CADES
+2019/05/30 20:44:57, signer: Start Signature Procedure
+2019/05/30 20:44:57, signer: 
+
+2019/05/30 20:44:59, signer: Certificate to use:  
+2019/05/30 20:45:00, signer: BAGNATO BONAVENTURA
+2019/05/30 20:45:03, signer: Start of signing process...
+2019/05/30 20:45:03, AbstractSignFactory: Create signed file: DAVIDE-BAGNATO-27776825421322354509025489462(2).pdf.p7m
+2019/05/30 20:45:03, signer: End of signing process.
+2019/05/30 20:45:03, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\DAVIDE-BAGNATO-27776825421322354509025489462(2).pdf.p7m","signature_type":"cades"}
+2019/05/30 20:48:36, signer: ------------ Start Main --------------
+2019/05/30 20:48:36, signer: Connect with Chrome extension
+2019/05/30 20:48:36, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 20:48:36, com.unical.argparser.MiddlewareChrome: Read Message
+2019/05/30 20:48:36, com.unical.argparser.MiddlewareChrome: 4
+2019/05/30 20:48:36, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/05/30 20:48:36, signer: Selected Sign Format: PADES
+2019/05/30 20:48:36, signer: ERROR :: File is not a pdf.
+2019/05/30 20:52:00, signer: ------------ Start Main --------------
+2019/05/30 20:52:00, signer: Connect with Chrome extension
+2019/05/30 20:52:00, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 20:52:00, com.unical.argparser.MiddlewareChrome: Read Message
+2019/05/30 20:52:00, com.unical.argparser.MiddlewareChrome: 4
+2019/05/30 20:52:00, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/05/30 20:52:00, signer: Selected Sign Format: PADES
+2019/05/30 20:52:00, signer: Start Signature Procedure
+2019/05/30 20:52:00, signer: 
+
+2019/05/30 20:52:03, signer: Certificate to use:  
+2019/05/30 20:52:03, signer: BAGNATO BONAVENTURA
+2019/05/30 20:52:05, PadesSignFactory: No available field in the pdf.
+2019/05/30 20:52:09, signer: Start of signing process...
+2019/05/30 20:52:09, AbstractSignFactory: Create signed file: DAVIDE-BAGNATO-27776825421322354509025489462-signed.pdf
+2019/05/30 20:52:09, signer: End of signing process.
+2019/05/30 20:52:09, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\DAVIDE-BAGNATO-27776825421322354509025489462-signed.pdf","signature_type":"pades"}
+2019/05/30 20:57:13, signer: ------------ Start Main --------------
+2019/05/30 20:57:13, signer: Connect with Chrome extension
+2019/05/30 20:57:13, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 20:57:13, com.unical.argparser.MiddlewareChrome: Read Message
+2019/05/30 20:57:42, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/05/30 21:00:30, signer: ------------ Start Main --------------
+2019/05/30 21:00:30, signer: Connect with Chrome extension
+2019/05/30 21:00:30, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 21:00:30, com.unical.argparser.MiddlewareChrome: Read Message
+2019/05/30 21:00:59, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/05/30 21:03:13, signer: ------------ Start Main --------------
+2019/05/30 21:03:13, signer: Connect with Chrome extension
+2019/05/30 21:03:13, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 21:03:13, com.unical.argparser.MiddlewareChrome: Read Message
+2019/05/30 21:03:39, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/05/30 21:24:04, signer: ------------ Start Main --------------
+2019/05/30 21:24:04, signer: Connect with Chrome extension
+2019/05/30 21:24:04, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 21:24:04, com.unical.argparser.MiddlewareChrome: Read Message
+2019/05/30 21:24:10, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/05/30 21:24:18, signer: ------------ Start Main --------------
+2019/05/30 21:24:18, signer: Connect with Chrome extension
+2019/05/30 21:24:18, com.unical.argparser.MiddlewareChrome: Start
+2019/05/30 21:24:18, com.unical.argparser.MiddlewareChrome: Read Message
+2019/05/30 21:24:18, com.unical.argparser.MiddlewareChrome: 4
+2019/05/30 21:24:18, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/05/30 21:24:18, signer: Selected Sign Format: CADES
+2019/05/30 21:24:18, signer: Start Signature Procedure
+2019/05/30 21:24:18, signer: 
+
+2019/05/30 21:24:21, signer: Certificate to use:  
+2019/05/30 21:24:21, signer: BAGNATO BONAVENTURA
+2019/05/30 21:24:24, signer: Start of signing process...
+2019/05/30 21:24:24, AbstractSignFactory: Create signed file: buono_rientro_32518.pdf.p7m
+2019/05/30 21:24:25, signer: End of signing process.
+2019/05/30 21:24:25, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518.pdf.p7m","signature_type":"cades"}

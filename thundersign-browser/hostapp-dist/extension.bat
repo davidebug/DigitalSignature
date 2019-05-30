@@ -1,2 +1,2 @@
 @echo off
-java -jar "signerExtension.jar" "ExtensionMessage" %*
+java -jar "signerExtension.jar" "ChromeExtensionMessage" %*

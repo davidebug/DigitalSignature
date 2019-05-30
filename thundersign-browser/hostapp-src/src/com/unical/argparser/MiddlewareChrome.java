@@ -80,7 +80,7 @@ public class MiddlewareChrome {
 		log(className, "Read Message");
 		try {
 			String jsonIn = readMessage(System.in);
-//			log(className, "Host received " + jsonIn);
+			log(className, "Host received " + jsonIn);
 			jsonObject = new JSONObject(jsonIn);
 		} catch (IOException e) {
 			e.printStackTrace();

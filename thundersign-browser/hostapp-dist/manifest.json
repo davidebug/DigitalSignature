@@ -3,5 +3,5 @@
   "description": "Native application for interact with PKCS11 token",
   "path": "extension.bat",
   "type": "stdio",
-  "allowed_extensions": [ "thundersign@dav.bag" ]
+  "allowed_extensions": [ "6a84b62703f545bcbd980ab3405109d843d64a7f@temporary-addon" ]
 }

@@ -12,8 +12,8 @@ var signatureData = {
   pageNumber: 1,
   signatureField: "",
   image: "",
-  tabUrl: "",
-  toSign: [],
+  tabUrl: ""
+  
 
   /**
    * Reset signature data.
@@ -100,15 +100,15 @@ function addAttachments(attachments){
 function downloadAttachments(){
   for(var i = 0; i<attachments.length; i++){    
     if(document.getElementById(attachments[i]).checked){
-      signatureData.toSign.push(attachments[i]);
+      toSign.push(attachments[i]);
       var downloadUrl = urls[i];
       var downloading = browser.downloads.download({
         url : downloadUrl,
         filename: attachments[i],
-        conflictAction : 'overwrite'
+        //conflictAction : 'overwrite'
       });         
       downloading.then(onStartedDownload, onFailed);
-      //To do download attachments
+      
 
     }
   }
@@ -177,12 +177,22 @@ const popupMessageType = background.popupMessageType; //types of message from th
 
 function sendDataToSign(){
 
-  browser.runtime.sendMessage({
-    action: popupMessageType.sign,
-    data: signatureData
-}, function (response) {
-    console.log("data sent to background")
-    console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
-});
+    browser.runtime.sendMessage({
+      action: popupMessageType.init,
+  }, function (response) {
+      console.log("opening connection to native app");
+  });
+  
+
+    browser.runtime.sendMessage({
+      action: popupMessageType.sign,
+      data: signatureData,
+      toSign: toSign
+  }, function (response) {
+      console.log("data sent to background")
+      console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
+  });
 }
-// TO DO --- init and open connection nativeApp, send message to nativeApp (cades)
+ 
+
+  // TO DO --- init and open connection nativeApp, send message to nativeApp (cades)
