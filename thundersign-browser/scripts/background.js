@@ -17,6 +17,8 @@ Object.freeze(StateEnum)
 //state of the app
 var appCurrentState = StateEnum.start;
 var toSign = [];
+var toDownload = [];
+
 var storedSignatureData = {
   signatureData: "",
   infoPDF: "",
@@ -61,21 +63,22 @@ function openConnection() {
   nativeAppPort = browser.runtime.connectNative(app);
 
   console.log(nativeAppPort);
-
+  
   nativeAppPort.onMessage.addListener(function (msg) {
     console.log("RECEIVED FROM NATIVE APP:");
     console.log(msg);
 
     if (msg.hasOwnProperty("native_app_message")) {
       if (msg.native_app_message == "end") {
-
-        storedSignatureData.empty();
-        browser.runtime.sendMessage({
-          state: "end",
-          localPath: msg.local_path_newFile
-        }, function (response) {});
-
         appCurrentState = StateEnum.complete;
+        
+       // storedSignatureData.empty();
+        // browser.runtime.sendMessage({
+        //   state: "end",                        -----  TO DO inviare messaggio di conferma al popup quando finito
+        //   localPath: msg.local_path_newFile
+        // }, function (response) {});
+
+        
       } else if (msg.native_app_message == "info") {
 
         // storedSignatureData.infoPDF = {
@@ -108,6 +111,7 @@ function openConnection() {
 
   nativeAppPort.onDisconnect.addListener(function () {
     console.log("Disconnected");
+    appCurrentState = StateEnum.ready;
   });
 
   return nativeAppPort;
@@ -126,32 +130,99 @@ function closeConnection() {
  * @param {*} data - data to send to native app for signing 
  */
 function sendDataForSign(data) {
-  appCurrentState = StateEnum.signing;
-  data.action = "sign";
-  data.filename = data.filename.replace(/\\/g, "/");
-  data.tabUrl = "file:///" + data.filename;
-  console.log("Send message to native app, data: ");
-  console.log(data);
-  
-  nativeAppPort.postMessage(data);
+    appCurrentState = StateEnum.signing;
+    data.action = "sign";
+    data.filename = data.filename.replace(/\\/g, "/");
+    data.tabUrl = "file:///" + data.filename;
+    console.log("Send message to native app, data: ");
+    console.log(data);
+    
+    nativeAppPort.postMessage(data);
 };
 
-function getLocalPath(fileIndex) {
-  console.log("GET LOCAL PATH...")
-  console.log("going to find: " + toSign[fileIndex]);
+function downloadFile(index){
+  var url = toDownload[index];
+      console.log("Going to download: " + url);
+      // var downloading = browser.downloads.download({
+      //   url : downloadUrl,
+      //   filename: attachments[i],
+      //   //conflictAction : 'overwrite'
+      // });         
+      // downloading.then(onStartedDownload, onFailed);
+      var creating = browser.tabs.create({
+        url: url,
+        active: false
+      });
+      creating.then(onCreated, onError);
+
+      function onCreated(tab) {
+        console.log(`Created new tab: ${tab.id}`)
+        getLocalPath(index);
+      }
+      
+      function onError(error) {
+        console.log(`Error: ${error}`);
+      }
+
+}
+
+
+function startProcedure(index){
+  var toFind = [];
+  toFind.push(toSign[index]);
+  
+  console.log("Da eliminare: " + toSign[index])
+  function onRemoved(id) {
+    browser.downloads.erase({
+      id: id                  // elimino il file in cronologia download
+    });
+    console.log(`Removed item`);
+    downloadFile(index);
+  }
+  
+  function onError() {
+    console.log("File non trovato")  //se non lo trova lo scarica
+  }
+
+  function remove(downloadItems) {
+    console.log("Removing file");
+    if (downloadItems.length > 0) {
+      var removing = browser.downloads.removeFile(downloadItems[0].id);  //elimino il file dal sistema
+      removing.then(onRemoved(downloadItems[0].id), onError);
+    }
+    else{
+      downloadFile(index);
+    }
+  }
+
+  var searching = browser.downloads.search({
+    query: toFind,
+  });
+  searching.then(remove, onError); 
+
+}
+
+function getLocalPath(index) {
+
+  console.log("GET LOCAL PATH..." + toSign[index]);
+  console.log(toDownload[index]);
+  var toFind = [];
+  toFind.push(toSign[index]);
   browser.downloads.search({
-    query: toSign,    
-    state: "complete"      
-  }, function (item) {
+    query: toFind,  //cerco il file attuale tramite regex
+    state: "complete",
+    exists: true
+ }, function (item) {
+    console.log(item);
     if (item.length == 0) {
-      console.log("Downloading....");
+      console.log("Still Downloading....");
       sleep(1500).then(() => { //wait X second
-        getLocalPath(fileIndex);
+        getLocalPath(index);
       });
     } else {
-      console.log(item[fileIndex].filename);
-      storedSignatureData.signatureData.filename = item[fileIndex].filename;
-      console.log("Filename done");
+      console.log(item[0].filename);
+      storedSignatureData.signatureData.filename = item[0].filename;
+      console.log("File Found, send data for sign...");
       sendDataForSign(storedSignatureData.signatureData);
     }
   });
@@ -225,13 +296,19 @@ function (request, sender, sendResponse) {
     case popupMessageType.download_and_sign:
       downloadFile(request.url, request.data, sendDataForSign);
       break;
+
     case popupMessageType.sign: //used for directly sign a local file
       console.log("data received : ");
       console.log(request.data);
       storedSignatureData.signatureData = request.data;
       toSign = request.toSign;
-     // for (var i = 0; i < toSign.length; i++)
-        getLocalPath(0);
+      toDownload = request.toDownload;
+      for (var i = 0; i < toSign.length; i++){
+          if(appCurrentState != StateEnum.signing){
+            startProcedure(i);
+            appCurrentState = StateEnum.signing;
+          }
+        }    
       break;
 
     case popupMessageType.download_and_getInfo: //used for directly sign a local file
@@ -254,6 +331,19 @@ function (request, sender, sendResponse) {
     received: request.action,
   });
 });
+
+
+
+
+function onStartedDownload(id) {
+  console.log(`Started downloading: ${id}`);
+}
+
+function onFailed(error) {
+  console.log(`Download failed: ${error}`);
+}
+
+
 
 // /**
 //  * Dowload the pdf, get local path of downloaded file and call callback.

@@ -97,34 +97,18 @@ function addAttachments(attachments){
   }
 }
 
-function downloadAttachments(){
-  for(var i = 0; i<attachments.length; i++){    
+
+
+
+var toDownload = [];
+function getData(){
+  for(var i = 0; i<attachments.length; i++){   
     if(document.getElementById(attachments[i]).checked){
       toSign.push(attachments[i]);
-      var downloadUrl = urls[i];
-      var downloading = browser.downloads.download({
-        url : downloadUrl,
-        filename: attachments[i],
-        //conflictAction : 'overwrite'
-      });         
-      downloading.then(onStartedDownload, onFailed);
-      
+      toDownload.push(urls[i]);
+    }  
+  }  
 
-    }
-  }
-}
-
-function onStartedDownload(id) {
-  console.log(`Started downloading: ${id}`);
-}
-
-function onFailed(error) {
-  console.log(`Download failed: ${error}`);
-}
-
-
-
-function getData(){
   if(document.getElementById("cades").checked){
     signatureData.type = "cades"
   }
@@ -139,7 +123,7 @@ function getData(){
 }
 
 $("#signAndReply").click(function(){
-  downloadAttachments();
+  
   getData();
   if(signatureData.type != "" && signatureData.password != ""){
     sendDataToSign();
@@ -149,7 +133,7 @@ $("#signAndReply").click(function(){
 });
 
 $("#signAndSend").click(function(){
-  downloadAttachments();
+ 
   getData();
   if(signatureData.type != "" && signatureData.password != ""){
     sendDataToSign();
@@ -160,7 +144,7 @@ $("#signAndSend").click(function(){
 });
 
 $("#signAndSave").click(function(){
-  downloadAttachments();
+ 
   getData();
   if(signatureData.type != "" && signatureData.password != ""){
     sendDataToSign();
@@ -187,12 +171,11 @@ function sendDataToSign(){
     browser.runtime.sendMessage({
       action: popupMessageType.sign,
       data: signatureData,
-      toSign: toSign
+      toSign: toSign,
+      toDownload: toDownload
   }, function (response) {
       console.log("data sent to background")
       console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
   });
 }
  
-
-  // TO DO --- init and open connection nativeApp, send message to nativeApp (cades)
