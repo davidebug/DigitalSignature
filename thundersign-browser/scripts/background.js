@@ -63,7 +63,7 @@ function openConnection() {
   nativeAppPort = browser.runtime.connectNative(app);
 
   console.log(nativeAppPort);
-  
+  appCurrentState = StateEnum.ready;
   nativeAppPort.onMessage.addListener(function (msg) {
     console.log("RECEIVED FROM NATIVE APP:");
     console.log(msg);
@@ -273,6 +273,20 @@ zoom: 'zoom',
 resetState: "resetState"
 }
 
+function tryHandleProcedure(index){
+  if(appCurrentState != StateEnum.signing){
+    openConnection();
+    startProcedure(index);
+    appCurrentState = StateEnum.signing;
+  }
+  else{
+    sleep(1500).then(() => { 
+      tryHandleProcedure(index);
+    });
+  }
+}
+
+
 //listener message Popup -> Background
 browser.runtime.onMessage.addListener(
 function (request, sender, sendResponse) {
@@ -304,11 +318,8 @@ function (request, sender, sendResponse) {
       toSign = request.toSign;
       toDownload = request.toDownload;
       for (var i = 0; i < toSign.length; i++){
-          if(appCurrentState != StateEnum.signing){
-            startProcedure(i);
-            appCurrentState = StateEnum.signing;
-          }
-        }    
+         tryHandleProcedure(i);
+      }    
       break;
 
     case popupMessageType.download_and_getInfo: //used for directly sign a local file
@@ -331,8 +342,6 @@ function (request, sender, sendResponse) {
     received: request.action,
   });
 });
-
-
 
 
 function onStartedDownload(id) {

@@ -3,5 +3,5 @@
   "description": "Native application for interact with PKCS11 token",
   "path": "extension.bat",
   "type": "stdio",
-  "allowed_extensions": [ "be6230bd14426aaf6abaa9c311eeada167592f4a@temporary-addon" ]
+  "allowed_extensions": [ "4fc756f35d71529faec63ed457c5b5af6ebcb79c@temporary-addon" ]
 }

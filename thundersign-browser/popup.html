@@ -25,9 +25,11 @@
                             </div>
                     </fieldset>        
                 <div class="input-group" style="font-size:20px">
-                    <input id="cades" type="radio" name="type"  />&nbsp;CAdes&nbsp;&nbsp;&nbsp;
-                    <input id="pades" type="radio" name="type"   />&nbsp;PAdes&nbsp;&nbsp;&nbsp;
-                    <input id="visible-pades" type="radio" name="type" />&nbsp;Visible PAdes
+                    <input id="cades" type="radio" name="type" checked />&nbsp;CAdes&nbsp;&nbsp;&nbsp;
+                    <div id="pades-wrapper" style="display: none;"> 
+                        <input id="pades" type="radio" name="type"   />&nbsp;PAdes&nbsp;&nbsp;&nbsp;
+                        <input id="visible-pades" type="radio" name="type" />&nbsp;Visible PAdes  
+                    </div>
                 </div>
 
                 <br>
@@ -76,8 +78,7 @@
                             </fieldset>
                 </div>
 
-                        
-                <br>
+                
 
                 <div class="form-group">
                     <label for="password">Password / PIN</label>

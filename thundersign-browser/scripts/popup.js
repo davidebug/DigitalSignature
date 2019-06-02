@@ -93,7 +93,12 @@ function addAttachments(attachments){
   for(var i=0; i<attachments.length; i++){
     var attach = '<input type="checkbox" id="'+ attachments[i] +'" name="checkbox" value="value" >&nbsp;&nbsp;' + attachments[i] + '<br>';
     $("#my-attachments").append(attach);
-    
+    if(attachments[i].endsWith('pdf')){
+      document.getElementById("pades-wrapper").style.display = "inline";
+    }
+  }
+  if(attachments.length === 0){
+    $("#my-attachments").append("No attachments found");
   }
 }
 
