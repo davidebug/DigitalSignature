@@ -4,7 +4,8 @@
 ### Installation
 
 **Prerequisites:**
-- Chrome or Firefox.
+- Gmail Account
+- Chrome or Firefox
 - Java 8 JRE u212
 - Token PKCS #11
 
