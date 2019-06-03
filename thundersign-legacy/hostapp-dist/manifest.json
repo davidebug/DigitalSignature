@@ -1,7 +1,0 @@
-{
-  "name": "com.unical.digitalsignature.signer",
-  "description": "Native application for interact with PKCS11 token",
-  "path": "extension.bat",
-  "type": "stdio",
-  "allowed_extensions": [ "thundersign@dav.bag" ]
-}

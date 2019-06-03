@@ -55,7 +55,7 @@ var signatureData = {
     console.log('Try to execute contentScript');        
 
 
-    browser.tabs.executeScript({          
+    chrome.tabs.executeScript({          
       file: 'scripts/contentScript.js'
     });
 
@@ -86,7 +86,7 @@ var signatureData = {
     // }   
 //sendResponse({response: "response from background script"});
 }
-browser.runtime.onMessage.addListener(handleMessage);
+chrome.runtime.onMessage.addListener(handleMessage);
 
 function addAttachments(attachments){
   document.getElementById("my-attachments").innerHtml="";
@@ -159,21 +159,21 @@ $("#signAndSave").click(function(){
   
 });
 
-const background = browser.extension.getBackgroundPage();
+const background = chrome.extension.getBackgroundPage();
 const popupMessageType = background.popupMessageType; //types of message from the popup that background script can handle
 //const appStateEnum = background.StateEnum;
 
 
 function sendDataToSign(){
 
-    browser.runtime.sendMessage({
+    chrome.runtime.sendMessage({
       action: popupMessageType.init,
   }, function (response) {
       console.log("opening connection to native app");
   });
   
 
-    browser.runtime.sendMessage({
+    chrome.runtime.sendMessage({
       action: popupMessageType.sign,
       data: signatureData,
       toSign: toSign,
