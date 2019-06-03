@@ -1,9 +1,10 @@
 ﻿# ThunderSign - Digital Signature 
 <p align="left"> <img src="thundersign-chrome\images\icon-32.png"> </p>
+
 ### Installation
 
 **Prerequisites:**
-- Chrome Browser
+- Chrome or Firefox.
 - Java 8 JRE u212
 - Token PKCS #11
 
@@ -31,16 +32,16 @@ At this point in the extension list will appear the loaded extension.
 > **NOTE:** for **uninstall** the application is enough remove the extension from chrome and run `uninstall_host.bat`
 
 
-### 4. Usage
+### Usage
 
 
 ----
 
-### 5. Project Structure
+### Project Structure
 
 
 
-####  5.1. Chrome Extension structure
+#### Chrome Extension structure
 
 **Extension components (scripts) :**
 - **Popup/Page Action**: the UI of the extension, which can be activated only on the tabs that contain a pdf. Allows the user to choose the type of signatures and enter the necessary data such as password, field to sign etc.
@@ -48,9 +49,6 @@ At this point in the extension list will appear the loaded extension.
 - **Background Script**: the script that manages communication with the native app and provides storage services to restore the state of the popup and data. (Allows the user to temporarily close the popup and finish the operation later).
 - **Content Script**: (used only for PAdES visible signature). The PDF browser viewer does not show names of signature fields, so this script adds the name of the fields "above" the pdf viewer.
 - **Native Application**: a Java application that deals with the creation of thesignature and communication with the token. The native application commu-nicates exclusively with the"Background Script"and it responds to two typesof requests:"sign a file"or"analyze a file"to extract information thatcan later be used to execute a signature (visible PAdES).
-
-<p align="center"> <img src="readme-image/ExtensionArchitecture.PNG"> </p>
-
 
 > For details about Chrome Extension Architecture: https://developer.chrome.com/extensions/overview
 
