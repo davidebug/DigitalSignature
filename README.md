@@ -1,6 +1,4 @@
-﻿# ThunderSign - Digital Signature
-
-<p align="center"> <img src="thundersign-chrome\images\icon-32.png"> </p>
+﻿# ThunderSign - Digital Signature <p align="center"> <img src="thundersign-chrome\images\icon-32.png"> </p>
 
 ### Installation
 
@@ -17,7 +15,7 @@
 At this point in the extension list will appear the loaded extension.
 - Copy the extension-id of the new extension, it's required later.
 
-**:three: : INSTALL NATIVE APP**
+**:two: : INSTALL NATIVE APP**
 
 - Go into **hostapp-dist** folder
 - open manifest.json file and modify the "allowed_origins" value with your loaded extension ID.
