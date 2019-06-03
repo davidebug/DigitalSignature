@@ -1,5 +1,5 @@
-﻿# ThunderSign - Digital Signature <p align="center"> <img src="thundersign-chrome\images\icon-32.png"> </p>
-
+﻿# ThunderSign - Digital Signature 
+<p align="left"> <img src="thundersign-chrome\images\icon-32.png"> </p>
 ### Installation
 
 **Prerequisites:**
