@@ -1,6 +1,6 @@
-﻿# Digital-Signature-Chrome-Extension
+﻿# ThunderSign - Digital Signature
 
-<p align="center"> <img src="app/icon/icon128.png"> </p>
+<p align="center"> <img src="thundersign-chrome\images\icon-32.png"> </p>
 
 ### Installation
 
@@ -10,10 +10,10 @@
 - Token PKCS #11
 
 **:one: :  INSTALL THE CHROME EXTENSION**
-
+	
 - Open Chrome and enter `chrome://extensions/` into your address bar.
 - Click on the “developer mode” toggle in the upper-right corner.
-- Click no "**Load Unpacked**" and select the "**app**" folder.
+- Click no "**Load Unpacked**" and select the "**app**" folder (thundersign-chrome if you are using Chrome).
 At this point in the extension list will appear the loaded extension.
 - Copy the extension-id of the new extension, it's required later.
 
