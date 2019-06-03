@@ -49,12 +49,19 @@ var signatureData = {
   // }
 };
 
+$('#inputGroupFile02').on('change',function(){
+  //get the file name
+  var fullPath = $(this).val();
+  var fileName = fullPath.replace(/^.*[\\\/]/, '')
+  //replace the "Choose a file" label
+  $(this).next('.custom-file-label').html(fileName);
+})
 
  $(document).ready(function(){
 
     console.log('Try to execute contentScript');        
 
-
+    
     chrome.tabs.executeScript({          
       file: 'scripts/contentScript.js'
     });
@@ -67,9 +74,18 @@ var signatureData = {
     });
     $("#visible-pades").click(function(){
       $(".collapse").collapse('show');
+      
     });
-   
-  });
+    $("#signature-field").change(function(){
+        if($(this).is(':checked')) {
+          $(".collapse-1").css("display","none");
+      } else {
+        $(".collapse-1").css("display","inline");
+      }
+    });
+ });
+
+  
 
   var urls = [];
   var attachments = [];

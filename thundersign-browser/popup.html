@@ -25,7 +25,7 @@
                             </div>
                     </fieldset>        
                 <div class="input-group" style="font-size:20px">
-                    <input id="cades" type="radio" name="type" checked />&nbsp;CAdes&nbsp;&nbsp;&nbsp;
+                    <div><input id="cades" type="radio" name="type" checked />&nbsp;CAdes&nbsp;&nbsp;&nbsp;</div>
                     <div id="pades-wrapper" > 
                         <input id="pades" type="radio" name="type"   />&nbsp;PAdes&nbsp;&nbsp;&nbsp;
                         <input id="visible-pades" type="radio" name="type" />&nbsp;Visible PAdes  
@@ -40,21 +40,21 @@
                                 <div class="container">
                                     <div class="input-group" style="font-size:14px; margin-top:10px">Signature field &nbsp;
                                         <label class="switch"> 
-                                                <input type="checkbox" id="signature-field" value="Signature Field"> 
+                                                <input type="checkbox" id="signature-field" value="Signature Field" > 
                                                 <span class="slider round"></span>
                                         </label>
                                         
                                     </div>
                                 
-                                    <div class="input-group" style="width:250px; height:40px;font-size:14px; margin-top:8px">
-                                            <div class="custom-file" >
-                                            <input type="file" class="custom-file-input" id="image-selector"  >
-                                            <label class="custom-file-label" for="image-selector"">Choose an image</label>
-                                            </div>
-                                    </div>
                                     <br>
+                                    <div class="input-group mb-3" style="width:300px;">
+                                        <div class="custom-file" >
+                                            <input type="file" class="custom-file-input" id="inputGroupFile02"/>
+                                            <label class="custom-file-label" for="inputGroupFile02">Choose an image</label>
+                                        </div>
+                                    </div>
 
-                                    
+                                    <div class="collapse-1" id="manual-position">
                                         <p style="font-size:14px">Manually set position:</p>
                                         <div style="font-size:14px;" class="container" id="set-position" >
                                                 <div class="input-group" style="width:100px;margin-top:10px;margin-left:14px">Page:&nbsp; &nbsp;
@@ -72,8 +72,9 @@
                                                     <input id="center" type="radio" name="horizontal-pos">&nbsp;Center&nbsp;
                                                     <input id="right" type="radio" name="horizontal-pos">&nbsp;Right
                                             </div>
-                                        </div>  
-                                    </div>    
+                                        </div>
+                                    </div>      
+                                </div>    
                                  
                             </fieldset>
                 </div>

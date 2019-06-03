@@ -49,13 +49,20 @@ var signatureData = {
   // }
 };
 
+$('#inputGroupFile02').on('change',function(){
+  //get the file name
+  var fullPath = $(this).val();
+  var fileName = fullPath.replace(/^.*[\\\/]/, '')
+  //replace the "Choose a file" label
+  $(this).next('.custom-file-label').html(fileName);
+})
 
  $(document).ready(function(){
 
     console.log('Try to execute contentScript');        
 
-
-    browser.tabs.executeScript({          
+    
+    chrome.tabs.executeScript({          
       file: 'scripts/contentScript.js'
     });
 
@@ -67,9 +74,18 @@ var signatureData = {
     });
     $("#visible-pades").click(function(){
       $(".collapse").collapse('show');
+      
     });
-   
-  });
+    $("#signature-field").change(function(){
+        if($(this).is(':checked')) {
+          $(".collapse-1").css("display","none");
+      } else {
+        $(".collapse-1").css("display","inline");
+      }
+    });
+ });
+
+  
 
   var urls = [];
   var attachments = [];
@@ -86,7 +102,7 @@ var signatureData = {
     // }   
 //sendResponse({response: "response from background script"});
 }
-browser.runtime.onMessage.addListener(handleMessage);
+chrome.runtime.onMessage.addListener(handleMessage);
 
 function addAttachments(attachments){
   document.getElementById("my-attachments").innerHtml="";
@@ -159,28 +175,44 @@ $("#signAndSave").click(function(){
   
 });
 
-const background = browser.extension.getBackgroundPage();
+const background = chrome.extension.getBackgroundPage();
 const popupMessageType = background.popupMessageType; //types of message from the popup that background script can handle
 //const appStateEnum = background.StateEnum;
 
 
 function sendDataToSign(){
 
-    browser.runtime.sendMessage({
+    chrome.runtime.sendMessage({
       action: popupMessageType.init,
   }, function (response) {
       console.log("opening connection to native app");
   });
   
 
-    browser.runtime.sendMessage({
+    chrome.runtime.sendMessage({
       action: popupMessageType.sign,
       data: signatureData,
       toSign: toSign,
       toDownload: toDownload
   }, function (response) {
-      console.log("data sent to background")
+      console.log("Successfully signed");
       console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
   });
+      clearData();
 }
- 
+
+function clearData(){
+  toDownload = [];
+  signatureData.type= "";
+  signatureData.filename= "";
+  signatureData.password= "";
+  signatureData.visible= false;
+  signatureData.useField= false;
+  signatureData.verticalPosition= "Top";
+  signatureData.horizontalPosition= "Left";
+  signatureData.pageNumber= 1;
+  signatureData.signatureField= "";
+  signatureData.image= "";
+  signatureData.tabUrl= "";
+  toSign = [];
+}
