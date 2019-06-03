@@ -6,8 +6,8 @@
     "author": "Davide Bagnato",
     "permissions": ["declarativeContent","nativeMessaging", "activeTab", "downloads", "tabs", "storage","<all_urls>"],
     "background": {
-        "scripts": ["scripts/background.js"]
-        
+        "scripts": ["scripts/background.js"],
+        "persistent": false
       },
     "browser_action": {
         "default_popup": "popup.html",

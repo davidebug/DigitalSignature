@@ -136,97 +136,107 @@ function sendDataForSign(data) {
     data.tabUrl = "file:///" + data.filename;
     console.log("Send message to native app, data: ");
     console.log(data);
-    
+    openConnection();
     nativeAppPort.postMessage(data);
 };
 
-function downloadFile(index){
-  var url = toDownload[index];
-      console.log("Going to download: " + url);
-      // var downloading = chrome.downloads.download({
-      //   url : downloadUrl,
-      //   filename: attachments[i],
-      //   //conflictAction : 'overwrite'
-      // });         
-      // downloading.then(onStartedDownload, onFailed);
-      var creating = chrome.tabs.create({
-        url: url,
-        active: false
-      });
-      creating.then(onCreated, onError);
 
-      function onCreated(tab) {
-        console.log(`Created new tab: ${tab.id}`)
-        getLocalPath(index);
+
+
+/**
+ * Dowload the pdf, get local path of downloaded file and call callback.
+ * @param {function(data):void} callback - callback
+ */
+
+function downloadFile(index,callback){
+  var url = toDownload[index];
+  console.log("Going to download: " + url);
+
+
+      chrome.downloads.download({
+        url: url
+      }, function (downloadItemID) {
+        getLocalPath(downloadItemID);
+      });
+
+
+
+      function getLocalPath(downloadItemID) {
+
+        console.log("GET LOCAL PATH...")
+        chrome.downloads.search({
+          id: downloadItemID,
+          state: "complete"
+        }, function (item) {
+          if (item.length == 0) {
+            console.log("Downloading....");
+            sleep(1500).then(() => { //wait X second
+              getLocalPath(downloadItemID);
+            });
+          } else {
+            console.log(item[0].filename);
+            storedSignatureData.signatureData.filename = item[0].filename;
+            console.log("File Found, send data for sign...");
+            sendDataForSign(storedSignatureData.signatureData);
+            if (callback)
+              callback(data)
+          }
+        });
       }
+      // var creating = chrome.tabs.create({
+      //   url: url,
+      //   active: false
+      // });
+      // creating.then(onCreated, onError);
+
+      // function onCreated(tab) {
+      //   console.log(`Created new tab: ${tab.id}`)
+      //   getLocalPath(index);
+      // }
       
-      function onError(error) {
-        console.log(`Error: ${error}`);
-      }
+      // function onError(error) {
+      //   console.log(`Error: ${error}`);
+      // }
 
 }
 
 
 function startProcedure(index){
-  var toFind = [];
-  toFind.push(toSign[index]);
+  // var toFind = [];
+  // toFind.push(toSign[index]);
   
-  console.log("Da eliminare: " + toSign[index])
-  function onRemoved(id) {
-    chrome.downloads.erase({
-      id: id                  // elimino il file in cronologia download
-    });
-    console.log(`Removed item`);
-    downloadFile(index);
-  }
+  // console.log("Da eliminare: " + toSign[index])
+  // function onRemoved(id) {
+  //   chrome.downloads.erase({
+  //     id: id                  // elimino il file in cronologia download
+  //   });
+  //   console.log(`Removed item`);
+  //   downloadFile(index);
+  // }
   
-  function onError() {
-    console.log("File non trovato")  //se non lo trova lo scarica
-  }
+  // function onError() {
+  //   console.log("File non trovato")  //se non lo trova lo scarica
+  // }
 
-  function remove(downloadItems) {
-    console.log("Removing file");
-    if (downloadItems.length > 0) {
-      var removing = chrome.downloads.removeFile(downloadItems[0].id);  //elimino il file dal sistema
-      removing.then(onRemoved(downloadItems[0].id), onError);
-    }
-    else{
-      downloadFile(index);
-    }
-  }
+  // function remove(downloadItems) {
+  //   console.log("Removing file");
+  //   if (downloadItems.length > 0) {
+  //     var removing = chrome.downloads.removeFile(downloadItems[0].id);  //elimino il file dal sistema
+  //     removing.then(onRemoved(downloadItems[0].id), onError);
+  //   }
+  //   else{
+  //     downloadFile(index);
+  //   }
+  // }
 
-  var searching = chrome.downloads.search({
-    query: toFind,
-  });
-  searching.then(remove, onError); 
+  // var searching = chrome.downloads.search({
+  //   query: toFind,
+  // });
+  // searching.then(remove, onError); 
 
 }
 
-function getLocalPath(index) {
 
-  console.log("GET LOCAL PATH..." + toSign[index]);
-  console.log(toDownload[index]);
-  var toFind = [];
-  toFind.push(toSign[index]);
-  chrome.downloads.search({
-    query: toFind,  //cerco il file attuale tramite regex
-    state: "complete",
-    exists: true
- }, function (item) {
-    console.log(item);
-    if (item.length == 0) {
-      console.log("Still Downloading....");
-      sleep(1500).then(() => { //wait X second
-        getLocalPath(index);
-      });
-    } else {
-      console.log(item[0].filename);
-      storedSignatureData.signatureData.filename = item[0].filename;
-      console.log("File Found, send data for sign...");
-      sendDataForSign(storedSignatureData.signatureData);
-    }
-  });
-}
 
 // sleep time expects milliseconds
 function sleep(time) {
@@ -276,7 +286,7 @@ resetState: "resetState"
 function tryHandleProcedure(index){
   if(appCurrentState != StateEnum.signing){
     openConnection();
-    startProcedure(index);
+    downloadFile(index);
     appCurrentState = StateEnum.signing;
   }
   else{
@@ -314,6 +324,8 @@ function (request, sender, sendResponse) {
     case popupMessageType.sign: //used for directly sign a local file
       console.log("data received : ");
       console.log(request.data);
+      console.log("Urls received:");
+      console.log(request.toDownload);
       storedSignatureData.signatureData = request.data;
       toSign = request.toSign;
       toDownload = request.toDownload;

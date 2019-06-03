@@ -179,8 +179,24 @@ function sendDataToSign(){
       toSign: toSign,
       toDownload: toDownload
   }, function (response) {
-      console.log("data sent to background")
+      console.log("Successfully signed");
       console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
   });
+      clearData();
 }
- 
+
+function clearData(){
+  toDownload = [];
+  signatureData.type= "";
+  signatureData.filename= "";
+  signatureData.password= "";
+  signatureData.visible= false;
+  signatureData.useField= false;
+  signatureData.verticalPosition= "Top";
+  signatureData.horizontalPosition= "Left";
+  signatureData.pageNumber= 1;
+  signatureData.signatureField= "";
+  signatureData.image= "";
+  signatureData.tabUrl= "";
+  toSign = [];
+}
