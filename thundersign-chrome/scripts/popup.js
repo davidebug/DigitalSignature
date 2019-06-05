@@ -83,6 +83,31 @@ $('#inputGroupFile02').on('change',function(){
         $(".collapse-1").css("display","inline");
       }
     });
+
+
+    const reader = new FileReader();
+  img_input.addEventListener('change', (e) => {
+  img_input.parentNode.parentNode.classList.remove("is-success");
+  img_input.disabled = true;
+  console.log(img_input.files);
+
+  if (img_input.files.length > 0) {
+      // document.getElementById('filename').textContent = img_input.files[0].name;
+      var file = event.target.files[0];
+      // console.log(event.target.files[0]);
+
+      reader.readAsDataURL(file);
+      reader.onloadend = function () {
+          base64data = reader.result;
+          console.log(base64data);
+          signatureData.image = base64data;
+          img_input.parentNode.parentNode.classList.add("is-success");
+          img_input.disabled = false;
+      }
+  }
+}); 
+
+
  });
 
   
@@ -139,8 +164,53 @@ function getData(){
   else if(document.getElementById("visible-pades").checked){
     signatureData.type = "pades"
     signatureData.visible = true;
+    signatureData.useField = document.getElementById("signature-field").checked;
+    if(signatureData.useField === false){
+      signatureData.verticalPosition= document.querySelector('input[name="vertical-pos"]:checked').value;
+      signatureData.horizontalPosition= document.querySelector('input[name="horizontal-pos"]:checked').value;
+      signatureData.pageNumber = document.getElementById("page").value;
+      
+    }
+    else{
+      signatureData.signatureField = ""; //--- set signature-field
+    }
+
+    //read image
+    const img_input = document.getElementById("inputGroupFile02");
+    const reader = new FileReader();
+        img_input.addEventListener('change', (e) => {
+            img_input.parentNode.parentNode.classList.remove("is-success");
+            img_input.disabled = true;
+            console.log(img_input.files);
+
+            if (img_input.files.length > 0) {
+                // document.getElementById('filename').textContent = img_input.files[0].name;
+                var file = event.target.files[0];
+                // console.log(event.target.files[0]);
+
+                reader.readAsDataURL(file);
+                reader.onloadend = function () {
+                    base64data = reader.result;
+                    console.log(base64data);
+                    signatureData.image = base64data;
+                    img_input.parentNode.parentNode.classList.add("is-success");
+                    img_input.disabled = false;
+                }
+            }
+        });
+
+
+
   }
   signatureData.password = document.getElementById("password").value;
+
+  
+  
+
+
+
+
+
 }
 
 $("#signAndReply").click(function(){
@@ -216,3 +286,5 @@ function clearData(){
   signatureData.tabUrl= "";
   toSign = [];
 }
+
+ 

@@ -36,22 +36,6 @@ var storedSignatureData = {
   }
 }
 
-// // chrome.runtime.onInstalled.addListener(function () {
-// //   chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
-// //     chrome.declarativeContent.onPageChanged.addRules([{
-// //       conditions: [
-// //         new chrome.declarativeContent.PageStateMatcher({
-// //           pageUrl: { urlSuffix: '.pdf'}
-// //         }),
-// //         new chrome.declarativeContent.PageStateMatcher({
-// //           pageUrl: { urlSuffix: '.PDF'}
-// //         })
-// //       ],
-// //       actions: [new chrome.declarativeContent.ShowPageAction()]
-// //     }]);
-// //   });
-// // });
-
 const app = 'com.unical.digitalsignature.signer';
 
 
@@ -183,60 +167,8 @@ function downloadFile(index,callback){
           }
         });
       }
-      // var creating = chrome.tabs.create({
-      //   url: url,
-      //   active: false
-      // });
-      // creating.then(onCreated, onError);
-
-      // function onCreated(tab) {
-      //   console.log(`Created new tab: ${tab.id}`)
-      //   getLocalPath(index);
-      // }
-      
-      // function onError(error) {
-      //   console.log(`Error: ${error}`);
-      // }
 
 }
-
-
-function startProcedure(index){
-  // var toFind = [];
-  // toFind.push(toSign[index]);
-  
-  // console.log("Da eliminare: " + toSign[index])
-  // function onRemoved(id) {
-  //   chrome.downloads.erase({
-  //     id: id                  // elimino il file in cronologia download
-  //   });
-  //   console.log(`Removed item`);
-  //   downloadFile(index);
-  // }
-  
-  // function onError() {
-  //   console.log("File non trovato")  //se non lo trova lo scarica
-  // }
-
-  // function remove(downloadItems) {
-  //   console.log("Removing file");
-  //   if (downloadItems.length > 0) {
-  //     var removing = chrome.downloads.removeFile(downloadItems[0].id);  //elimino il file dal sistema
-  //     removing.then(onRemoved(downloadItems[0].id), onError);
-  //   }
-  //   else{
-  //     downloadFile(index);
-  //   }
-  // }
-
-  // var searching = chrome.downloads.search({
-  //   query: toFind,
-  // });
-  // searching.then(remove, onError); 
-
-}
-
-
 
 // sleep time expects milliseconds
 function sleep(time) {
@@ -317,9 +249,9 @@ function (request, sender, sendResponse) {
       closeConnection();
       break;
 
-    case popupMessageType.download_and_sign:
-      downloadFile(request.url, request.data, sendDataForSign);
-      break;
+    // case popupMessageType.download_and_sign:
+    //   downloadFile(request.url, request.data, sendDataForSign);
+    //   break;
 
     case popupMessageType.sign: //used for directly sign a local file
       console.log("data received : ");
@@ -334,16 +266,16 @@ function (request, sender, sendResponse) {
       }    
       break;
 
-    case popupMessageType.download_and_getInfo: //used for directly sign a local file
-      downloadFile(request.url, request.data, requestPDFInfo);
-      break;
+    // case popupMessageType.download_and_getInfo: //used for directly sign a local file
+    //   downloadFile(request.url, request.data, requestPDFInfo);
+    //   break;
     case popupMessageType.info: //used for local file
       requestPDFInfo(request.data);
       break;
 
-    case popupMessageType.zoom:
-      createZoomListener(request.tabid);
-      break;
+    // case popupMessageType.zoom:
+    //   createZoomListener(request.tabid);
+    //   break;
 
     default:
       console.log("Invalid action");
