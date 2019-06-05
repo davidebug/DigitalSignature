@@ -84,29 +84,28 @@ $('#inputGroupFile02').on('change',function(){
       }
     });
 
-
+    const img_input = document.getElementById("inputGroupFile02");
     const reader = new FileReader();
-  img_input.addEventListener('change', (e) => {
-  img_input.parentNode.parentNode.classList.remove("is-success");
-  img_input.disabled = true;
-  console.log(img_input.files);
+        img_input.addEventListener('change', (e) => {
+            img_input.parentNode.parentNode.classList.remove("is-success");
+            img_input.disabled = true;
+            console.log(img_input.files);
 
-  if (img_input.files.length > 0) {
-      // document.getElementById('filename').textContent = img_input.files[0].name;
-      var file = event.target.files[0];
-      // console.log(event.target.files[0]);
+            if (img_input.files.length > 0) {
+                // document.getElementById('filename').textContent = img_input.files[0].name;
+                var file = event.target.files[0];
+                // console.log(event.target.files[0]);
 
-      reader.readAsDataURL(file);
-      reader.onloadend = function () {
-          base64data = reader.result;
-          console.log(base64data);
-          signatureData.image = base64data;
-          img_input.parentNode.parentNode.classList.add("is-success");
-          img_input.disabled = false;
-      }
-  }
-}); 
-
+                reader.readAsDataURL(file);
+                reader.onloadend = function () {
+                    base64data = reader.result;
+                    console.log(base64data);
+                    signatureData.image = base64data;
+                    img_input.parentNode.parentNode.classList.add("is-success");
+                    img_input.disabled = false;
+                }
+            }
+        });
 
  });
 
@@ -172,34 +171,8 @@ function getData(){
       
     }
     else{
-      signatureData.signatureField = ""; //--- set signature-field
+      signatureData.signatureField = ""; //--- TODO set signature-field
     }
-
-    //read image
-    const img_input = document.getElementById("inputGroupFile02");
-    const reader = new FileReader();
-        img_input.addEventListener('change', (e) => {
-            img_input.parentNode.parentNode.classList.remove("is-success");
-            img_input.disabled = true;
-            console.log(img_input.files);
-
-            if (img_input.files.length > 0) {
-                // document.getElementById('filename').textContent = img_input.files[0].name;
-                var file = event.target.files[0];
-                // console.log(event.target.files[0]);
-
-                reader.readAsDataURL(file);
-                reader.onloadend = function () {
-                    base64data = reader.result;
-                    console.log(base64data);
-                    signatureData.image = base64data;
-                    img_input.parentNode.parentNode.classList.add("is-success");
-                    img_input.disabled = false;
-                }
-            }
-        });
-
-
 
   }
   signatureData.password = document.getElementById("password").value;
