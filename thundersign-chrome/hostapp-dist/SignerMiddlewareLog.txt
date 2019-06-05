@@ -1108,3 +1108,1912 @@
 2019/06/03 19:24:03, com.unical.argparser.MiddlewareChrome: Blocked communication
 2019/06/03 19:24:03, com.unical.argparser.MiddlewareChrome: Blocked communication
 2019/06/03 19:24:03, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/03 20:01:39, signer: ------------ Start Main --------------
+2019/06/03 20:01:39, signer: Connect with Chrome extension
+2019/06/03 20:01:39, signer: ------------ Start Main --------------
+2019/06/03 20:01:39, com.unical.argparser.MiddlewareChrome: Start
+2019/06/03 20:01:39, signer: Connect with Chrome extension
+2019/06/03 20:01:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/03 20:01:39, com.unical.argparser.MiddlewareChrome: Start
+2019/06/03 20:01:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/03 20:01:41, signer: ------------ Start Main --------------
+2019/06/03 20:01:41, signer: Connect with Chrome extension
+2019/06/03 20:01:41, com.unical.argparser.MiddlewareChrome: Start
+2019/06/03 20:01:41, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/03 20:01:41, com.unical.argparser.MiddlewareChrome: 4
+2019/06/03 20:01:41, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/03 20:01:41, signer: Selected Sign Format: CADES
+2019/06/03 20:01:41, signer: Start Signature Procedure
+2019/06/03 20:01:41, signer: 
+
+2019/06/03 20:01:43, signer: Certificate to use:  
+2019/06/03 20:01:44, signer: BAGNATO BONAVENTURA
+2019/06/03 20:01:47, signer: Start of signing process...
+2019/06/03 20:01:47, AbstractSignFactory: Create signed file: DAVIDE-BAGNATO-27776825421322354509025489462.pdf.p7m
+2019/06/03 20:01:47, signer: End of signing process.
+2019/06/03 20:01:47, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\DAVIDE-BAGNATO-27776825421322354509025489462.pdf.p7m","signature_type":"cades"}
+2019/06/03 20:04:52, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/03 20:04:52, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/04 10:30:51, signer: ------------ Start Main --------------
+2019/06/04 10:30:51, signer: Connect with Chrome extension
+2019/06/04 10:30:51, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:30:51, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:30:51, signer: ------------ Start Main --------------
+2019/06/04 10:30:51, signer: Connect with Chrome extension
+2019/06/04 10:30:51, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:30:51, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:30:53, signer: ------------ Start Main --------------
+2019/06/04 10:30:53, signer: Connect with Chrome extension
+2019/06/04 10:30:53, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:30:53, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:30:53, com.unical.argparser.MiddlewareChrome: 4
+2019/06/04 10:30:53, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/04 10:30:53, signer: Selected Sign Format: CADES
+2019/06/04 10:30:53, signer: Start Signature Procedure
+2019/06/04 10:30:53, signer: 
+
+2019/06/04 10:30:55, signer: Certificate to use:  
+2019/06/04 10:30:55, signer: BAGNATO BONAVENTURA
+2019/06/04 10:30:58, signer: Start of signing process...
+2019/06/04 10:30:58, AbstractSignFactory: Create signed file: DAVIDE-BAGNATO-27776825421322354509025489462.pdf.p7m
+2019/06/04 10:30:58, signer: End of signing process.
+2019/06/04 10:30:58, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\DAVIDE-BAGNATO-27776825421322354509025489462.pdf.p7m","signature_type":"cades"}
+2019/06/04 10:31:18, signer: ------------ Start Main --------------
+2019/06/04 10:31:18, signer: ------------ Start Main --------------
+2019/06/04 10:31:18, signer: Connect with Chrome extension
+2019/06/04 10:31:18, signer: Connect with Chrome extension
+2019/06/04 10:31:18, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:31:18, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:31:18, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:31:18, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:31:19, signer: ------------ Start Main --------------
+2019/06/04 10:31:19, signer: Connect with Chrome extension
+2019/06/04 10:31:19, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:31:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:31:19, com.unical.argparser.MiddlewareChrome: 4
+2019/06/04 10:31:19, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/04 10:31:19, signer: Selected Sign Format: PADES
+2019/06/04 10:31:19, signer: Start Signature Procedure
+2019/06/04 10:31:19, signer: 
+
+2019/06/04 10:31:22, signer: Certificate to use:  
+2019/06/04 10:31:22, signer: BAGNATO BONAVENTURA
+2019/06/04 10:31:23, PadesSignFactory: No available field in the pdf.
+2019/06/04 10:31:26, signer: Start of signing process...
+2019/06/04 10:31:26, AbstractSignFactory: Create signed file: DAVIDE-BAGNATO-27776825421322354509025489462-signed.pdf
+2019/06/04 10:31:26, signer: End of signing process.
+2019/06/04 10:31:26, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\DAVIDE-BAGNATO-27776825421322354509025489462-signed.pdf","signature_type":"pades"}
+2019/06/04 10:31:39, signer: ------------ Start Main --------------
+2019/06/04 10:31:39, signer: Connect with Chrome extension
+2019/06/04 10:31:39, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:31:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:31:39, signer: ------------ Start Main --------------
+2019/06/04 10:31:39, signer: Connect with Chrome extension
+2019/06/04 10:31:39, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:31:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:31:41, signer: ------------ Start Main --------------
+2019/06/04 10:31:41, signer: Connect with Chrome extension
+2019/06/04 10:31:41, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:31:41, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:31:41, com.unical.argparser.MiddlewareChrome: 4
+2019/06/04 10:31:41, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/04 10:31:41, signer: Selected Sign Format: PADES
+2019/06/04 10:31:41, signer: Start Signature Procedure
+2019/06/04 10:31:41, signer: 
+
+2019/06/04 10:31:42, signer: ------------ Start Main --------------
+2019/06/04 10:31:42, signer: Connect with Chrome extension
+2019/06/04 10:31:42, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:31:42, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:31:44, signer: Certificate to use:  
+2019/06/04 10:31:44, signer: BAGNATO BONAVENTURA
+2019/06/04 10:31:44, signer: ------------ Start Main --------------
+2019/06/04 10:31:44, signer: Connect with Chrome extension
+2019/06/04 10:31:44, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:31:44, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:31:44, com.unical.argparser.MiddlewareChrome: 4
+2019/06/04 10:31:44, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/04 10:31:44, signer: Selected Sign Format: PADES
+2019/06/04 10:31:44, signer: Start Signature Procedure
+2019/06/04 10:31:44, signer: 
+
+2019/06/04 10:31:45, PadesSignFactory: No available field in the pdf.
+2019/06/04 10:31:46, signer: Certificate to use:  
+2019/06/04 10:31:46, signer: BAGNATO BONAVENTURA
+2019/06/04 10:31:48, PadesSignFactory: No available field in the pdf.
+2019/06/04 10:31:48, signer: Start of signing process...
+2019/06/04 10:31:48, AbstractSignFactory: Create signed file: buono_rientro_32518-signed.pdf
+2019/06/04 10:31:48, signer: End of signing process.
+2019/06/04 10:31:48, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518-signed.pdf","signature_type":"pades"}
+2019/06/04 10:31:51, signer: Start of signing process...
+2019/06/04 10:31:51, AbstractSignFactory: Create signed file: buono_rientro_32539(2)-signed.pdf
+2019/06/04 10:31:51, signer: End of signing process.
+2019/06/04 10:31:51, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32539(2)-signed.pdf","signature_type":"pades"}
+2019/06/04 10:32:45, signer: ------------ Start Main --------------
+2019/06/04 10:32:45, signer: Connect with Chrome extension
+2019/06/04 10:32:45, signer: ------------ Start Main --------------
+2019/06/04 10:32:45, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:32:45, signer: Connect with Chrome extension
+2019/06/04 10:32:45, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:32:45, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:32:45, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:32:47, signer: ------------ Start Main --------------
+2019/06/04 10:32:47, signer: Connect with Chrome extension
+2019/06/04 10:32:47, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:32:47, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:32:47, com.unical.argparser.MiddlewareChrome: 4
+2019/06/04 10:32:47, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/04 10:32:47, signer: Selected Sign Format: CADES
+2019/06/04 10:32:47, signer: Start Signature Procedure
+2019/06/04 10:32:47, signer: 
+
+2019/06/04 10:32:47, signer: ERROR :: Token access failed
+2019/06/04 10:32:48, signer: ------------ Start Main --------------
+2019/06/04 10:32:48, signer: Connect with Chrome extension
+2019/06/04 10:32:48, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:32:48, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:32:50, signer: ------------ Start Main --------------
+2019/06/04 10:32:50, signer: Connect with Chrome extension
+2019/06/04 10:32:50, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 10:32:50, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 10:32:50, com.unical.argparser.MiddlewareChrome: 4
+2019/06/04 10:32:50, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/04 10:32:50, signer: Selected Sign Format: CADES
+2019/06/04 10:32:50, signer: Start Signature Procedure
+2019/06/04 10:32:50, signer: 
+
+2019/06/04 10:32:51, signer: ERROR :: Token access failed
+2019/06/04 11:49:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/04 11:49:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/04 11:49:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/04 11:49:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/04 11:49:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/04 11:49:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/04 11:49:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/04 11:49:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/04 11:49:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/04 11:49:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/04 22:43:21, signer: ------------ Start Main --------------
+2019/06/04 22:43:21, signer: Connect with Chrome extension
+2019/06/04 22:43:21, signer: ------------ Start Main --------------
+2019/06/04 22:43:21, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 22:43:21, signer: Connect with Chrome extension
+2019/06/04 22:43:21, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 22:43:21, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 22:43:21, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 22:43:23, signer: ------------ Start Main --------------
+2019/06/04 22:43:23, signer: Connect with Chrome extension
+2019/06/04 22:43:23, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 22:43:23, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 22:43:23, com.unical.argparser.MiddlewareChrome: 4
+2019/06/04 22:43:23, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/04 22:43:23, signer: Selected Sign Format: CADES
+2019/06/04 22:43:23, signer: Start Signature Procedure
+2019/06/04 22:43:23, signer: 
+
+2019/06/04 22:43:24, signer: ------------ Start Main --------------
+2019/06/04 22:43:24, signer: Connect with Chrome extension
+2019/06/04 22:43:24, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 22:43:24, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 22:43:25, signer: Certificate to use:  
+2019/06/04 22:43:26, signer: ------------ Start Main --------------
+2019/06/04 22:43:26, signer: Connect with Chrome extension
+2019/06/04 22:43:26, com.unical.argparser.MiddlewareChrome: Start
+2019/06/04 22:43:26, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/04 22:43:26, com.unical.argparser.MiddlewareChrome: 4
+2019/06/04 22:43:26, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/04 22:43:26, signer: Selected Sign Format: CADES
+2019/06/04 22:43:26, signer: Start Signature Procedure
+2019/06/04 22:43:26, signer: 
+
+2019/06/04 22:43:26, signer: BAGNATO BONAVENTURA
+2019/06/04 22:43:29, signer: Start of signing process...
+2019/06/04 22:43:29, AbstractSignFactory: Create signed file: buono_rientro_32518.pdf.p7m
+2019/06/04 22:43:29, signer: End of signing process.
+2019/06/04 22:43:29, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518.pdf.p7m","signature_type":"cades"}
+2019/06/04 22:43:30, signer: Certificate to use:  
+2019/06/04 22:43:30, signer: BAGNATO BONAVENTURA
+2019/06/04 22:43:33, signer: Start of signing process...
+2019/06/04 22:43:34, AbstractSignFactory: Create signed file: buono_rientro_32539(2).pdf.p7m
+2019/06/04 22:43:34, signer: End of signing process.
+2019/06/04 22:43:34, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32539(2).pdf.p7m","signature_type":"cades"}
+2019/06/04 22:44:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/04 22:44:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/04 22:44:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 18:52:06, signer: ------------ Start Main --------------
+2019/06/05 18:52:06, signer: ------------ Start Main --------------
+2019/06/05 18:52:06, signer: Connect with Chrome extension
+2019/06/05 18:52:06, signer: Connect with Chrome extension
+2019/06/05 18:52:06, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 18:52:06, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 18:52:06, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 18:52:06, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 18:52:08, signer: ------------ Start Main --------------
+2019/06/05 18:52:08, signer: Connect with Chrome extension
+2019/06/05 18:52:08, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 18:52:08, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 18:52:08, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 18:52:08, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 18:52:08, signer: Selected Sign Format: CADES
+2019/06/05 18:52:08, signer: Start Signature Procedure
+2019/06/05 18:52:08, signer: 
+
+2019/06/05 18:52:10, signer: Certificate to use:  
+2019/06/05 18:52:11, signer: BAGNATO BONAVENTURA
+2019/06/05 18:52:14, signer: Start of signing process...
+2019/06/05 18:52:14, AbstractSignFactory: Create signed file: print.pdf.p7m
+2019/06/05 18:52:14, signer: End of signing process.
+2019/06/05 18:52:14, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\print.pdf.p7m","signature_type":"cades"}
+2019/06/05 18:52:40, signer: ------------ Start Main --------------
+2019/06/05 18:52:40, signer: Connect with Chrome extension
+2019/06/05 18:52:40, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 18:52:40, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 18:52:40, signer: ------------ Start Main --------------
+2019/06/05 18:52:40, signer: Connect with Chrome extension
+2019/06/05 18:52:40, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 18:52:40, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 18:52:42, signer: ------------ Start Main --------------
+2019/06/05 18:52:42, signer: Connect with Chrome extension
+2019/06/05 18:52:42, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 18:52:42, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 18:52:42, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/05 18:52:42, com.unical.argparser.MiddlewareChrome: 12
+2019/06/05 18:52:42, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 18:52:42, signer: Selected Sign Format: PADES
+2019/06/05 18:52:42, signer: Start Signature Procedure
+2019/06/05 18:52:42, signer: 
+
+2019/06/05 18:52:45, signer: Certificate to use:  
+2019/06/05 18:52:45, signer: BAGNATO BONAVENTURA
+2019/06/05 18:52:46, PadesSignFactory: No available field in the pdf.
+2019/06/05 18:52:53, signer: Start of signing process...
+2019/06/05 18:52:53, AbstractSignFactory: Create signed file: print-signed.pdf
+2019/06/05 18:52:53, signer: End of signing process.
+2019/06/05 18:52:53, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\print-signed.pdf","signature_type":"pades"}
+2019/06/05 18:52:53, signer: C:\Users\Davide\AppData\Local\Temp\chrome_ext_sign.png
+2019/06/05 18:59:19, signer: ------------ Start Main --------------
+2019/06/05 18:59:19, signer: Connect with Chrome extension
+2019/06/05 18:59:19, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 18:59:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 18:59:19, signer: ------------ Start Main --------------
+2019/06/05 18:59:19, signer: Connect with Chrome extension
+2019/06/05 18:59:19, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 18:59:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 18:59:21, signer: ------------ Start Main --------------
+2019/06/05 18:59:21, signer: Connect with Chrome extension
+2019/06/05 18:59:21, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 18:59:21, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 18:59:21, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/05 18:59:21, com.unical.argparser.MiddlewareChrome: JSONObject["pageNumber"] is not an int.
+2019/06/05 18:59:21, signer: ERROR :: Parameter Error.
+2019/06/05 18:59:22, signer: ------------ Start Main --------------
+2019/06/05 18:59:22, signer: Connect with Chrome extension
+2019/06/05 18:59:22, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 18:59:22, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 18:59:24, signer: ------------ Start Main --------------
+2019/06/05 18:59:24, signer: Connect with Chrome extension
+2019/06/05 18:59:24, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 18:59:24, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 18:59:24, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/05 18:59:24, com.unical.argparser.MiddlewareChrome: JSONObject["pageNumber"] is not an int.
+2019/06/05 18:59:24, signer: ERROR :: Parameter Error.
+2019/06/05 19:02:57, signer: ------------ Start Main --------------
+2019/06/05 19:02:57, signer: Connect with Chrome extension
+2019/06/05 19:02:57, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:02:57, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:02:57, signer: ------------ Start Main --------------
+2019/06/05 19:02:57, signer: Connect with Chrome extension
+2019/06/05 19:02:57, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:02:57, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:02:59, signer: ------------ Start Main --------------
+2019/06/05 19:02:59, signer: Connect with Chrome extension
+2019/06/05 19:02:59, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:02:59, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:02:59, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/05 19:02:59, com.unical.argparser.MiddlewareChrome: 12
+2019/06/05 19:02:59, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 19:02:59, signer: Selected Sign Format: PADES
+2019/06/05 19:02:59, signer: Start Signature Procedure
+2019/06/05 19:02:59, signer: 
+
+2019/06/05 19:02:59, signer: ------------ Start Main --------------
+2019/06/05 19:02:59, signer: Connect with Chrome extension
+2019/06/05 19:02:59, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:02:59, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:03:01, signer: ------------ Start Main --------------
+2019/06/05 19:03:01, signer: Connect with Chrome extension
+2019/06/05 19:03:01, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:03:01, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:03:01, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/05 19:03:01, com.unical.argparser.MiddlewareChrome: 12
+2019/06/05 19:03:01, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 19:03:01, signer: Selected Sign Format: PADES
+2019/06/05 19:03:01, signer: Certificate to use:  
+2019/06/05 19:03:02, signer: Start Signature Procedure
+2019/06/05 19:03:02, signer: 
+
+2019/06/05 19:03:02, signer: BAGNATO BONAVENTURA
+2019/06/05 19:03:03, PadesSignFactory: No available field in the pdf.
+2019/06/05 19:03:04, signer: Certificate to use:  
+2019/06/05 19:03:04, signer: BAGNATO BONAVENTURA
+2019/06/05 19:03:05, PadesSignFactory: No available field in the pdf.
+2019/06/05 19:03:10, signer: Start of signing process...
+2019/06/05 19:03:11, AbstractSignFactory: Create signed file: buono_rientro_32518(1)-signed.pdf
+2019/06/05 19:03:11, signer: End of signing process.
+2019/06/05 19:03:11, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(1)-signed.pdf","signature_type":"pades"}
+2019/06/05 19:03:11, signer: C:\Users\Davide\AppData\Local\Temp\chrome_ext_sign.png
+2019/06/05 19:03:12, signer: Start of signing process...
+2019/06/05 19:03:56, signer: ------------ Start Main --------------
+2019/06/05 19:03:56, signer: Connect with Chrome extension
+2019/06/05 19:03:56, signer: ------------ Start Main --------------
+2019/06/05 19:03:56, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:03:56, signer: Connect with Chrome extension
+2019/06/05 19:03:56, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:03:56, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:03:56, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:03:58, signer: ------------ Start Main --------------
+2019/06/05 19:03:58, signer: Connect with Chrome extension
+2019/06/05 19:03:58, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:03:58, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:03:58, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/05 19:03:58, com.unical.argparser.MiddlewareChrome: 12
+2019/06/05 19:03:58, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 19:03:58, signer: Selected Sign Format: PADES
+2019/06/05 19:03:58, signer: Start Signature Procedure
+2019/06/05 19:03:58, signer: 
+
+2019/06/05 19:03:59, signer: ------------ Start Main --------------
+2019/06/05 19:03:59, signer: Connect with Chrome extension
+2019/06/05 19:03:59, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:03:59, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:04:00, signer: Certificate to use:  
+2019/06/05 19:04:00, signer: BAGNATO BONAVENTURA
+2019/06/05 19:04:01, signer: ------------ Start Main --------------
+2019/06/05 19:04:01, signer: Connect with Chrome extension
+2019/06/05 19:04:01, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:04:01, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:04:01, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/05 19:04:01, com.unical.argparser.MiddlewareChrome: 12
+2019/06/05 19:04:01, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 19:04:01, signer: Selected Sign Format: PADES
+2019/06/05 19:04:01, signer: Start Signature Procedure
+2019/06/05 19:04:01, signer: 
+
+2019/06/05 19:04:02, PadesSignFactory: No available field in the pdf.
+2019/06/05 19:04:03, signer: Certificate to use:  
+2019/06/05 19:04:03, signer: BAGNATO BONAVENTURA
+2019/06/05 19:04:04, PadesSignFactory: No available field in the pdf.
+2019/06/05 19:04:08, signer: Start of signing process...
+2019/06/05 19:04:09, AbstractSignFactory: Create signed file: buono_rientro_32518-signed.pdf
+2019/06/05 19:04:09, signer: End of signing process.
+2019/06/05 19:04:09, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518-signed.pdf","signature_type":"pades"}
+2019/06/05 19:04:09, signer: C:\Users\Davide\AppData\Local\Temp\chrome_ext_sign.png
+2019/06/05 19:04:11, signer: Start of signing process...
+2019/06/05 19:07:28, signer: ------------ Start Main --------------
+2019/06/05 19:07:28, signer: Connect with Chrome extension
+2019/06/05 19:07:28, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:07:28, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:07:28, signer: ------------ Start Main --------------
+2019/06/05 19:07:28, signer: Connect with Chrome extension
+2019/06/05 19:07:28, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:07:28, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:07:31, signer: ------------ Start Main --------------
+2019/06/05 19:07:31, signer: Connect with Chrome extension
+2019/06/05 19:07:31, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:07:31, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:07:31, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 19:07:31, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 19:07:31, signer: Selected Sign Format: CADES
+2019/06/05 19:07:31, signer: Start Signature Procedure
+2019/06/05 19:07:31, signer: 
+
+2019/06/05 19:07:31, signer: ------------ Start Main --------------
+2019/06/05 19:07:31, signer: Connect with Chrome extension
+2019/06/05 19:07:31, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:07:31, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:07:33, signer: Certificate to use:  
+2019/06/05 19:07:33, signer: ------------ Start Main --------------
+2019/06/05 19:07:33, signer: Connect with Chrome extension
+2019/06/05 19:07:33, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:07:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:07:33, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 19:07:33, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 19:07:33, signer: Selected Sign Format: CADES
+2019/06/05 19:07:33, signer: Start Signature Procedure
+2019/06/05 19:07:33, signer: 
+
+2019/06/05 19:07:33, signer: BAGNATO BONAVENTURA
+2019/06/05 19:07:36, signer: Start of signing process...
+2019/06/05 19:07:36, AbstractSignFactory: Create signed file: buono_rientro_32518(1).pdf.p7m
+2019/06/05 19:07:36, signer: End of signing process.
+2019/06/05 19:07:36, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(1).pdf.p7m","signature_type":"cades"}
+2019/06/05 19:07:38, signer: Certificate to use:  
+2019/06/05 19:07:38, signer: BAGNATO BONAVENTURA
+2019/06/05 19:07:41, signer: Start of signing process...
+2019/06/05 19:07:41, AbstractSignFactory: Create signed file: buono_rientro_32539(2)(1).pdf.p7m
+2019/06/05 19:07:41, signer: End of signing process.
+2019/06/05 19:07:41, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32539(2)(1).pdf.p7m","signature_type":"cades"}
+2019/06/05 19:08:08, signer: ------------ Start Main --------------
+2019/06/05 19:08:08, signer: ------------ Start Main --------------
+2019/06/05 19:08:08, signer: Connect with Chrome extension
+2019/06/05 19:08:08, signer: Connect with Chrome extension
+2019/06/05 19:08:08, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:08:08, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:08:08, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:08:08, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:08:10, signer: ------------ Start Main --------------
+2019/06/05 19:08:10, signer: Connect with Chrome extension
+2019/06/05 19:08:10, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:08:10, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:08:10, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/05 19:08:10, com.unical.argparser.MiddlewareChrome: 12
+2019/06/05 19:08:10, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 19:08:10, signer: Selected Sign Format: PADES
+2019/06/05 19:08:10, signer: Start Signature Procedure
+2019/06/05 19:08:10, signer: 
+
+2019/06/05 19:08:11, signer: ------------ Start Main --------------
+2019/06/05 19:08:11, signer: Connect with Chrome extension
+2019/06/05 19:08:11, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:08:11, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:08:12, signer: Certificate to use:  
+2019/06/05 19:08:12, signer: BAGNATO BONAVENTURA
+2019/06/05 19:08:13, signer: ------------ Start Main --------------
+2019/06/05 19:08:13, signer: Connect with Chrome extension
+2019/06/05 19:08:13, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:08:13, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:08:13, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/05 19:08:13, com.unical.argparser.MiddlewareChrome: 12
+2019/06/05 19:08:13, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 19:08:13, signer: Selected Sign Format: PADES
+2019/06/05 19:08:13, signer: Start Signature Procedure
+2019/06/05 19:08:13, signer: 
+
+2019/06/05 19:08:14, PadesSignFactory: No available field in the pdf.
+2019/06/05 19:08:15, signer: Certificate to use:  
+2019/06/05 19:08:15, signer: BAGNATO BONAVENTURA
+2019/06/05 19:08:16, PadesSignFactory: No available field in the pdf.
+2019/06/05 19:08:21, signer: Start of signing process...
+2019/06/05 19:08:21, AbstractSignFactory: Create signed file: buono_rientro_32518(2)-signed.pdf
+2019/06/05 19:08:21, signer: End of signing process.
+2019/06/05 19:08:21, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(2)-signed.pdf","signature_type":"pades"}
+2019/06/05 19:08:21, signer: C:\Users\Davide\AppData\Local\Temp\chrome_ext_sign.png
+2019/06/05 19:08:23, signer: Start of signing process...
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:11:08, signer: ------------ Start Main --------------
+2019/06/05 19:11:08, signer: Connect with Chrome extension
+2019/06/05 19:11:08, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:11:08, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:11:08, signer: ------------ Start Main --------------
+2019/06/05 19:11:08, signer: Connect with Chrome extension
+2019/06/05 19:11:08, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:11:08, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:11:10, signer: ------------ Start Main --------------
+2019/06/05 19:11:10, signer: Connect with Chrome extension
+2019/06/05 19:11:10, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:11:10, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:11:10, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 19:11:10, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 19:11:10, signer: Selected Sign Format: CADES
+2019/06/05 19:11:10, signer: Start Signature Procedure
+2019/06/05 19:11:10, signer: 
+
+2019/06/05 19:11:13, signer: Certificate to use:  
+2019/06/05 19:11:13, signer: BAGNATO BONAVENTURA
+2019/06/05 19:11:16, signer: Start of signing process...
+2019/06/05 19:11:16, AbstractSignFactory: Create signed file: buono_rientro_32518.pdf.p7m
+2019/06/05 19:11:16, signer: End of signing process.
+2019/06/05 19:11:16, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518.pdf.p7m","signature_type":"cades"}
+2019/06/05 19:11:17, signer: ------------ Start Main --------------
+2019/06/05 19:11:17, signer: Connect with Chrome extension
+2019/06/05 19:11:17, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:11:17, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:11:19, signer: ------------ Start Main --------------
+2019/06/05 19:11:19, signer: Connect with Chrome extension
+2019/06/05 19:11:19, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:11:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:11:19, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 19:11:19, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 19:11:19, signer: Selected Sign Format: CADES
+2019/06/05 19:11:19, signer: Start Signature Procedure
+2019/06/05 19:11:19, signer: 
+
+2019/06/05 19:11:21, signer: Certificate to use:  
+2019/06/05 19:11:21, signer: BAGNATO BONAVENTURA
+2019/06/05 19:11:24, signer: Start of signing process...
+2019/06/05 19:11:24, AbstractSignFactory: Create signed file: buono_rientro_32539(2).pdf.p7m
+2019/06/05 19:11:24, signer: End of signing process.
+2019/06/05 19:11:24, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32539(2).pdf.p7m","signature_type":"cades"}
+2019/06/05 19:11:46, signer: ------------ Start Main --------------
+2019/06/05 19:11:46, signer: ------------ Start Main --------------
+2019/06/05 19:11:46, signer: Connect with Chrome extension
+2019/06/05 19:11:46, signer: Connect with Chrome extension
+2019/06/05 19:11:46, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:11:46, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:11:46, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:11:46, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:11:48, signer: ------------ Start Main --------------
+2019/06/05 19:11:48, signer: Connect with Chrome extension
+2019/06/05 19:11:48, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:11:48, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:11:48, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/05 19:11:48, com.unical.argparser.MiddlewareChrome: 12
+2019/06/05 19:11:48, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 19:11:48, signer: Selected Sign Format: PADES
+2019/06/05 19:11:48, signer: Start Signature Procedure
+2019/06/05 19:11:48, signer: 
+
+2019/06/05 19:11:51, signer: Certificate to use:  
+2019/06/05 19:11:51, signer: BAGNATO BONAVENTURA
+2019/06/05 19:11:52, PadesSignFactory: No available field in the pdf.
+2019/06/05 19:11:59, signer: Start of signing process...
+2019/06/05 19:11:59, AbstractSignFactory: Create signed file: buono_rientro_32518(1)-signed.pdf
+2019/06/05 19:11:59, signer: End of signing process.
+2019/06/05 19:11:59, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(1)-signed.pdf","signature_type":"pades"}
+2019/06/05 19:12:00, signer: C:\Users\Davide\AppData\Local\Temp\chrome_ext_sign.png
+2019/06/05 19:12:01, signer: ------------ Start Main --------------
+2019/06/05 19:12:01, signer: Connect with Chrome extension
+2019/06/05 19:12:01, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:12:01, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:12:03, signer: ------------ Start Main --------------
+2019/06/05 19:12:03, signer: Connect with Chrome extension
+2019/06/05 19:12:03, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 19:12:03, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 19:12:03, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/05 19:12:03, com.unical.argparser.MiddlewareChrome: 12
+2019/06/05 19:12:03, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 19:12:03, signer: Selected Sign Format: PADES
+2019/06/05 19:12:03, signer: Start Signature Procedure
+2019/06/05 19:12:03, signer: 
+
+2019/06/05 19:12:05, signer: Certificate to use:  
+2019/06/05 19:12:05, signer: BAGNATO BONAVENTURA
+2019/06/05 19:12:07, PadesSignFactory: No available field in the pdf.
+2019/06/05 19:12:13, signer: Start of signing process...
+2019/06/05 19:12:14, AbstractSignFactory: Create signed file: buono_rientro_32539(2)(1)-signed.pdf
+2019/06/05 19:12:14, signer: End of signing process.
+2019/06/05 19:12:14, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32539(2)(1)-signed.pdf","signature_type":"pades"}
+2019/06/05 19:12:14, signer: C:\Users\Davide\AppData\Local\Temp\chrome_ext_sign.png
+2019/06/05 19:25:37, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:25:37, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:25:37, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:25:37, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:25:37, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 19:25:37, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 20:18:54, signer: ------------ Start Main --------------
+2019/06/05 20:18:54, signer: ------------ Start Main --------------
+2019/06/05 20:18:54, signer: Connect with Chrome extension
+2019/06/05 20:18:54, signer: Connect with Chrome extension
+2019/06/05 20:18:54, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 20:18:54, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 20:18:54, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 20:18:54, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 20:18:54, signer: ------------ Start Main --------------
+2019/06/05 20:18:54, signer: Connect with Chrome extension
+2019/06/05 20:18:54, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 20:18:54, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 20:18:56, signer: ------------ Start Main --------------
+2019/06/05 20:18:56, signer: Connect with Chrome extension
+2019/06/05 20:18:56, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 20:18:56, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 20:18:56, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 20:18:56, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 20:18:56, signer: Selected Sign Format: PADES
+2019/06/05 20:18:56, signer: Start Signature Procedure
+2019/06/05 20:18:56, signer: 
+
+2019/06/05 20:18:59, signer: Certificate to use:  
+2019/06/05 20:18:59, signer: BAGNATO BONAVENTURA
+2019/06/05 20:19:00, PadesSignFactory: No available field in the pdf.
+2019/06/05 20:19:06, signer: Start of signing process...
+2019/06/05 20:19:06, AbstractSignFactory: Create signed file: buono_rientro_32518-signed.pdf
+2019/06/05 20:19:06, signer: End of signing process.
+2019/06/05 20:19:06, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518-signed.pdf","signature_type":"pades"}
+2019/06/05 20:19:07, signer: ------------ Start Main --------------
+2019/06/05 20:19:07, signer: Connect with Chrome extension
+2019/06/05 20:19:07, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 20:19:07, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 20:19:09, signer: ------------ Start Main --------------
+2019/06/05 20:19:09, signer: Connect with Chrome extension
+2019/06/05 20:19:09, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 20:19:09, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 20:19:09, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 20:19:09, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 20:19:09, signer: Selected Sign Format: PADES
+2019/06/05 20:19:09, signer: Start Signature Procedure
+2019/06/05 20:19:09, signer: 
+
+2019/06/05 20:19:11, signer: Certificate to use:  
+2019/06/05 20:19:11, signer: BAGNATO BONAVENTURA
+2019/06/05 20:19:12, PadesSignFactory: No available field in the pdf.
+2019/06/05 20:19:18, signer: Start of signing process...
+2019/06/05 20:19:18, AbstractSignFactory: Create signed file: buono_rientro_32539(2)-signed.pdf
+2019/06/05 20:19:18, signer: End of signing process.
+2019/06/05 20:19:18, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32539(2)-signed.pdf","signature_type":"pades"}
+2019/06/05 22:00:29, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:00:29, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:00:29, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:00:29, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:01:08, signer: ------------ Start Main --------------
+2019/06/05 22:01:08, signer: Connect with Chrome extension
+2019/06/05 22:01:08, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:01:08, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:01:08, signer: ------------ Start Main --------------
+2019/06/05 22:01:08, signer: Connect with Chrome extension
+2019/06/05 22:01:08, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:01:08, signer: ------------ Start Main --------------
+2019/06/05 22:01:08, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:01:08, signer: Connect with Chrome extension
+2019/06/05 22:01:08, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:01:08, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:01:10, signer: ------------ Start Main --------------
+2019/06/05 22:01:10, signer: Connect with Chrome extension
+2019/06/05 22:01:10, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:01:10, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:01:10, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 22:01:10, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:01:10, signer: Selected Sign Format: PADES
+2019/06/05 22:01:11, signer: Start Signature Procedure
+2019/06/05 22:01:11, signer: 
+
+2019/06/05 22:01:13, signer: Certificate to use:  
+2019/06/05 22:01:13, signer: BAGNATO BONAVENTURA
+2019/06/05 22:01:14, PadesSignFactory: No available field in the pdf.
+2019/06/05 22:01:21, signer: Start of signing process...
+2019/06/05 22:01:21, AbstractSignFactory: Create signed file: buono_rientro_32518(1)-signed.pdf
+2019/06/05 22:01:21, signer: End of signing process.
+2019/06/05 22:01:21, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(1)-signed.pdf","signature_type":"pades"}
+2019/06/05 22:01:23, signer: ------------ Start Main --------------
+2019/06/05 22:01:23, signer: Connect with Chrome extension
+2019/06/05 22:01:23, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:01:23, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:01:24, signer: ------------ Start Main --------------
+2019/06/05 22:01:24, signer: Connect with Chrome extension
+2019/06/05 22:01:24, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:01:24, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:01:24, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 22:01:24, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:01:24, signer: Selected Sign Format: PADES
+2019/06/05 22:01:24, signer: Start Signature Procedure
+2019/06/05 22:01:24, signer: 
+
+2019/06/05 22:01:26, signer: Certificate to use:  
+2019/06/05 22:01:27, signer: BAGNATO BONAVENTURA
+2019/06/05 22:01:28, PadesSignFactory: No available field in the pdf.
+2019/06/05 22:01:34, signer: Start of signing process...
+2019/06/05 22:01:34, AbstractSignFactory: Create signed file: buono_rientro_32539(2)(1)-signed.pdf
+2019/06/05 22:01:34, signer: End of signing process.
+2019/06/05 22:01:34, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32539(2)(1)-signed.pdf","signature_type":"pades"}
+2019/06/05 22:02:14, signer: ------------ Start Main --------------
+2019/06/05 22:02:14, signer: ------------ Start Main --------------
+2019/06/05 22:02:14, signer: Connect with Chrome extension
+2019/06/05 22:02:14, signer: Connect with Chrome extension
+2019/06/05 22:02:14, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:02:14, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:02:14, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:02:14, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:02:55, signer: ------------ Start Main --------------
+2019/06/05 22:02:55, signer: Connect with Chrome extension
+2019/06/05 22:02:55, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:02:55, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:02:55, signer: ------------ Start Main --------------
+2019/06/05 22:02:55, signer: ------------ Start Main --------------
+2019/06/05 22:02:55, signer: Connect with Chrome extension
+2019/06/05 22:02:55, signer: Connect with Chrome extension
+2019/06/05 22:02:55, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:02:55, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:02:55, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:02:55, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:03:07, signer: ------------ Start Main --------------
+2019/06/05 22:03:07, signer: Connect with Chrome extension
+2019/06/05 22:03:07, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:03:07, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:03:07, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 22:03:07, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:03:07, signer: Selected Sign Format: PADES
+2019/06/05 22:03:07, signer: Start Signature Procedure
+2019/06/05 22:03:07, signer: 
+
+2019/06/05 22:03:09, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:03:09, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:03:09, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:03:09, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:03:09, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:03:09, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:03:09, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:03:09, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:03:09, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:03:10, signer: Certificate to use:  
+2019/06/05 22:03:10, signer: BAGNATO BONAVENTURA
+2019/06/05 22:03:12, PadesSignFactory: No available field in the pdf.
+2019/06/05 22:03:18, signer: Start of signing process...
+2019/06/05 22:03:18, AbstractSignFactory: Create signed file: buono_rientro_32518(2)-signed.pdf
+2019/06/05 22:03:18, signer: End of signing process.
+2019/06/05 22:03:18, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(2)-signed.pdf","signature_type":"pades"}
+2019/06/05 22:03:29, signer: ------------ Start Main --------------
+2019/06/05 22:03:29, signer: ------------ Start Main --------------
+2019/06/05 22:03:29, signer: Connect with Chrome extension
+2019/06/05 22:03:29, signer: Connect with Chrome extension
+2019/06/05 22:03:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:03:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:03:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:03:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:03:29, signer: ------------ Start Main --------------
+2019/06/05 22:03:29, signer: Connect with Chrome extension
+2019/06/05 22:03:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:03:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:03:33, signer: ------------ Start Main --------------
+2019/06/05 22:03:33, signer: Connect with Chrome extension
+2019/06/05 22:03:33, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:03:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:03:33, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 22:03:33, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:03:33, signer: Selected Sign Format: PADES
+2019/06/05 22:03:33, signer: Start Signature Procedure
+2019/06/05 22:03:33, signer: 
+
+2019/06/05 22:03:35, signer: Certificate to use:  
+2019/06/05 22:03:35, signer: BAGNATO BONAVENTURA
+2019/06/05 22:03:37, PadesSignFactory: No available field in the pdf.
+2019/06/05 22:03:43, signer: Start of signing process...
+2019/06/05 22:03:43, AbstractSignFactory: Create signed file: buono_rientro_32518(3)-signed.pdf
+2019/06/05 22:03:43, signer: End of signing process.
+2019/06/05 22:03:43, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(3)-signed.pdf","signature_type":"pades"}
+2019/06/05 22:03:44, signer: ------------ Start Main --------------
+2019/06/05 22:03:44, signer: Connect with Chrome extension
+2019/06/05 22:03:44, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:03:44, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:03:45, signer: ------------ Start Main --------------
+2019/06/05 22:03:45, signer: Connect with Chrome extension
+2019/06/05 22:03:45, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:03:45, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:03:45, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 22:03:45, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:03:45, signer: Selected Sign Format: PADES
+2019/06/05 22:03:46, signer: Start Signature Procedure
+2019/06/05 22:03:46, signer: 
+
+2019/06/05 22:03:47, signer: Certificate to use:  
+2019/06/05 22:03:48, signer: BAGNATO BONAVENTURA
+2019/06/05 22:03:49, PadesSignFactory: No available field in the pdf.
+2019/06/05 22:03:55, signer: Start of signing process...
+2019/06/05 22:03:55, AbstractSignFactory: Create signed file: buono_rientro_32539(2)(2)-signed.pdf
+2019/06/05 22:03:55, signer: End of signing process.
+2019/06/05 22:03:55, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32539(2)(2)-signed.pdf","signature_type":"pades"}
+2019/06/05 22:07:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:07:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:07:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:07:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:07:29, signer: ------------ Start Main --------------
+2019/06/05 22:07:29, signer: Connect with Chrome extension
+2019/06/05 22:07:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:07:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:07:29, signer: ------------ Start Main --------------
+2019/06/05 22:07:29, signer: Connect with Chrome extension
+2019/06/05 22:07:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:07:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:07:29, signer: ------------ Start Main --------------
+2019/06/05 22:07:29, signer: Connect with Chrome extension
+2019/06/05 22:07:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:07:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:07:30, signer: ------------ Start Main --------------
+2019/06/05 22:07:30, signer: Connect with Chrome extension
+2019/06/05 22:07:30, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:07:30, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:07:30, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:07:30, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:07:30, signer: Selected Sign Format: CADES
+2019/06/05 22:07:30, signer: Start Signature Procedure
+2019/06/05 22:07:30, signer: 
+
+2019/06/05 22:07:32, signer: ERROR :: Token access failed
+2019/06/05 22:07:33, signer: ------------ Start Main --------------
+2019/06/05 22:07:33, signer: Connect with Chrome extension
+2019/06/05 22:07:33, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:07:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:07:35, signer: ------------ Start Main --------------
+2019/06/05 22:07:35, signer: Connect with Chrome extension
+2019/06/05 22:07:35, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:07:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:07:35, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:07:35, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:07:35, signer: Selected Sign Format: CADES
+2019/06/05 22:07:35, signer: Start Signature Procedure
+2019/06/05 22:07:35, signer: 
+
+2019/06/05 22:07:36, signer: ERROR :: Token access failed
+2019/06/05 22:08:28, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:08:28, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:08:28, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:08:28, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:08:35, signer: ------------ Start Main --------------
+2019/06/05 22:08:35, signer: Connect with Chrome extension
+2019/06/05 22:08:35, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:08:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:08:35, signer: ------------ Start Main --------------
+2019/06/05 22:08:35, signer: Connect with Chrome extension
+2019/06/05 22:08:35, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:08:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:08:35, signer: ------------ Start Main --------------
+2019/06/05 22:08:35, signer: Connect with Chrome extension
+2019/06/05 22:08:35, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:08:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:08:37, signer: ------------ Start Main --------------
+2019/06/05 22:08:37, signer: Connect with Chrome extension
+2019/06/05 22:08:37, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:08:37, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:08:37, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:08:37, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:08:37, signer: Selected Sign Format: CADES
+2019/06/05 22:08:37, signer: Start Signature Procedure
+2019/06/05 22:08:37, signer: 
+
+2019/06/05 22:08:38, signer: ERROR :: Token access failed
+2019/06/05 22:08:39, signer: ------------ Start Main --------------
+2019/06/05 22:08:39, signer: Connect with Chrome extension
+2019/06/05 22:08:39, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:08:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:08:41, signer: ------------ Start Main --------------
+2019/06/05 22:08:41, signer: Connect with Chrome extension
+2019/06/05 22:08:41, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:08:41, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:08:41, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:08:41, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:08:41, signer: Selected Sign Format: CADES
+2019/06/05 22:08:41, signer: Start Signature Procedure
+2019/06/05 22:08:41, signer: 
+
+2019/06/05 22:08:42, signer: ERROR :: Token access failed
+2019/06/05 22:08:44, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:08:44, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:08:44, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:08:44, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:08:50, signer: ------------ Start Main --------------
+2019/06/05 22:08:50, signer: Connect with Chrome extension
+2019/06/05 22:08:50, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:08:50, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:08:50, signer: ------------ Start Main --------------
+2019/06/05 22:08:50, signer: ------------ Start Main --------------
+2019/06/05 22:08:50, signer: Connect with Chrome extension
+2019/06/05 22:08:50, signer: Connect with Chrome extension
+2019/06/05 22:08:50, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:08:50, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:08:50, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:08:50, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:08:52, signer: ------------ Start Main --------------
+2019/06/05 22:08:52, signer: Connect with Chrome extension
+2019/06/05 22:08:52, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:08:52, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:08:52, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:08:52, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:08:52, signer: Selected Sign Format: CADES
+2019/06/05 22:08:52, signer: Start Signature Procedure
+2019/06/05 22:08:52, signer: 
+
+2019/06/05 22:08:53, signer: ERROR :: Token access failed
+2019/06/05 22:09:35, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:09:35, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:09:35, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:10:34, signer: ------------ Start Main --------------
+2019/06/05 22:10:34, signer: Connect with Chrome extension
+2019/06/05 22:10:34, signer: ------------ Start Main --------------
+2019/06/05 22:10:34, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:10:34, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:10:34, signer: Connect with Chrome extension
+2019/06/05 22:10:34, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:10:34, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:10:34, signer: ------------ Start Main --------------
+2019/06/05 22:10:34, signer: Connect with Chrome extension
+2019/06/05 22:10:34, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:10:34, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:10:37, signer: ------------ Start Main --------------
+2019/06/05 22:10:37, signer: Connect with Chrome extension
+2019/06/05 22:10:37, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:10:37, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:10:37, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:10:37, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:10:37, signer: Selected Sign Format: CADES
+2019/06/05 22:10:37, signer: Start Signature Procedure
+2019/06/05 22:10:37, signer: 
+
+2019/06/05 22:10:39, signer: ERROR :: Token access failed
+2019/06/05 22:15:42, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:15:42, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:15:42, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:31:34, signer: ------------ Start Main --------------
+2019/06/05 22:31:34, signer: Connect with Chrome extension
+2019/06/05 22:31:34, signer: ------------ Start Main --------------
+2019/06/05 22:31:34, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:31:34, signer: Connect with Chrome extension
+2019/06/05 22:31:34, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:31:34, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:31:34, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:31:34, signer: ------------ Start Main --------------
+2019/06/05 22:31:34, signer: Connect with Chrome extension
+2019/06/05 22:31:34, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:31:34, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:31:38, signer: ------------ Start Main --------------
+2019/06/05 22:31:38, signer: Connect with Chrome extension
+2019/06/05 22:31:38, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:31:38, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:31:38, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:31:38, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:31:38, signer: Selected Sign Format: CADES
+2019/06/05 22:31:38, signer: Start Signature Procedure
+2019/06/05 22:31:38, signer: 
+
+2019/06/05 22:31:40, signer: ERROR :: Token access failed
+2019/06/05 22:34:34, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:34:34, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:34:34, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:34:41, signer: ------------ Start Main --------------
+2019/06/05 22:34:41, signer: ------------ Start Main --------------
+2019/06/05 22:34:41, signer: ------------ Start Main --------------
+2019/06/05 22:34:41, signer: Connect with Chrome extension
+2019/06/05 22:34:41, signer: Connect with Chrome extension
+2019/06/05 22:34:41, signer: Connect with Chrome extension
+2019/06/05 22:34:41, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:34:41, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:34:41, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:34:41, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:34:41, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:34:41, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:34:43, signer: ------------ Start Main --------------
+2019/06/05 22:34:43, signer: Connect with Chrome extension
+2019/06/05 22:34:43, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:34:43, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:34:43, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:34:43, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:34:43, signer: Selected Sign Format: CADES
+2019/06/05 22:34:43, signer: Start Signature Procedure
+2019/06/05 22:34:43, signer: 
+
+2019/06/05 22:34:44, signer: ERROR :: Token access failed
+2019/06/05 22:36:01, signer: ------------ Start Main --------------
+2019/06/05 22:36:01, signer: Connect with Chrome extension
+2019/06/05 22:36:01, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:36:01, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:36:01, signer: ------------ Start Main --------------
+2019/06/05 22:36:01, signer: Connect with Chrome extension
+2019/06/05 22:36:01, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:36:01, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:36:01, signer: ------------ Start Main --------------
+2019/06/05 22:36:01, signer: Connect with Chrome extension
+2019/06/05 22:36:01, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:36:01, signer: ------------ Start Main --------------
+2019/06/05 22:36:01, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:36:01, signer: Connect with Chrome extension
+2019/06/05 22:36:01, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:36:01, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:36:03, signer: ------------ Start Main --------------
+2019/06/05 22:36:03, signer: Connect with Chrome extension
+2019/06/05 22:36:03, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:36:03, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:36:03, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 22:36:03, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:36:03, signer: Selected Sign Format: PADES
+2019/06/05 22:36:03, signer: ------------ Start Main --------------
+2019/06/05 22:36:03, signer: Connect with Chrome extension
+2019/06/05 22:36:03, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:36:03, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:36:03, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 22:36:03, signer: Start Signature Procedure
+2019/06/05 22:36:03, signer: 
+
+2019/06/05 22:36:03, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:36:03, signer: Selected Sign Format: PADES
+2019/06/05 22:36:03, signer: Start Signature Procedure
+2019/06/05 22:36:03, signer: 
+
+2019/06/05 22:36:05, signer: ERROR :: Token access failed
+2019/06/05 22:36:05, signer: ERROR :: Token access failed
+2019/06/05 22:40:23, signer: ------------ Start Main --------------
+2019/06/05 22:40:23, signer: Connect with Chrome extension
+2019/06/05 22:40:23, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:40:23, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:40:23, signer: ------------ Start Main --------------
+2019/06/05 22:40:23, signer: ------------ Start Main --------------
+2019/06/05 22:40:23, signer: Connect with Chrome extension
+2019/06/05 22:40:23, signer: Connect with Chrome extension
+2019/06/05 22:40:23, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:40:23, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:40:23, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:40:23, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:40:25, signer: ------------ Start Main --------------
+2019/06/05 22:40:25, signer: Connect with Chrome extension
+2019/06/05 22:40:25, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:40:25, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:40:25, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:40:25, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:40:25, signer: Selected Sign Format: CADES
+2019/06/05 22:40:25, signer: Start Signature Procedure
+2019/06/05 22:40:25, signer: 
+
+2019/06/05 22:40:27, signer: ERROR :: Token access failed
+2019/06/05 22:41:14, signer: ------------ Start Main --------------
+2019/06/05 22:41:14, signer: Connect with Chrome extension
+2019/06/05 22:41:14, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:41:14, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:41:14, signer: ------------ Start Main --------------
+2019/06/05 22:41:14, signer: Connect with Chrome extension
+2019/06/05 22:41:14, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:41:14, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:41:14, signer: ------------ Start Main --------------
+2019/06/05 22:41:14, signer: Connect with Chrome extension
+2019/06/05 22:41:14, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:41:14, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:41:15, signer: ------------ Start Main --------------
+2019/06/05 22:41:15, signer: Connect with Chrome extension
+2019/06/05 22:41:15, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:41:15, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:41:15, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:41:15, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:41:15, signer: Selected Sign Format: CADES
+2019/06/05 22:41:15, signer: Start Signature Procedure
+2019/06/05 22:41:15, signer: 
+
+2019/06/05 22:41:16, signer: ERROR :: Token access failed
+2019/06/05 22:42:13, signer: ------------ Start Main --------------
+2019/06/05 22:42:13, signer: Connect with Chrome extension
+2019/06/05 22:42:13, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:42:13, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:42:13, signer: ------------ Start Main --------------
+2019/06/05 22:42:13, signer: Connect with Chrome extension
+2019/06/05 22:42:13, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:42:13, signer: ------------ Start Main --------------
+2019/06/05 22:42:13, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:42:13, signer: Connect with Chrome extension
+2019/06/05 22:42:13, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:42:13, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:42:15, signer: ------------ Start Main --------------
+2019/06/05 22:42:15, signer: Connect with Chrome extension
+2019/06/05 22:42:15, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:42:15, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:42:15, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:42:15, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:42:15, signer: Selected Sign Format: CADES
+2019/06/05 22:42:15, signer: Start Signature Procedure
+2019/06/05 22:42:15, signer: 
+
+2019/06/05 22:42:16, signer: ERROR :: Token access failed
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:42:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 22:55:15, signer: ------------ Start Main --------------
+2019/06/05 22:55:15, signer: ------------ Start Main --------------
+2019/06/05 22:55:15, signer: ------------ Start Main --------------
+2019/06/05 22:55:15, signer: Connect with Chrome extension
+2019/06/05 22:55:15, signer: Connect with Chrome extension
+2019/06/05 22:55:15, signer: Connect with Chrome extension
+2019/06/05 22:55:15, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:55:15, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:55:15, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:55:15, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:55:15, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:55:15, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:55:18, signer: ------------ Start Main --------------
+2019/06/05 22:55:18, signer: Connect with Chrome extension
+2019/06/05 22:55:18, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:55:18, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:55:18, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:55:18, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:55:18, signer: Selected Sign Format: CADES
+2019/06/05 22:55:18, signer: Start Signature Procedure
+2019/06/05 22:55:18, signer: 
+
+2019/06/05 22:55:20, signer: ERROR :: Token access failed
+2019/06/05 22:57:21, signer: ------------ Start Main --------------
+2019/06/05 22:57:21, signer: Connect with Chrome extension
+2019/06/05 22:57:21, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:57:21, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:57:21, signer: ------------ Start Main --------------
+2019/06/05 22:57:21, signer: Connect with Chrome extension
+2019/06/05 22:57:21, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:57:21, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:57:22, signer: ------------ Start Main --------------
+2019/06/05 22:57:22, signer: Connect with Chrome extension
+2019/06/05 22:57:22, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:57:22, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:57:22, signer: ------------ Start Main --------------
+2019/06/05 22:57:22, signer: Connect with Chrome extension
+2019/06/05 22:57:22, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:57:22, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:57:23, signer: ------------ Start Main --------------
+2019/06/05 22:57:23, signer: Connect with Chrome extension
+2019/06/05 22:57:23, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:57:23, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:57:23, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:57:23, signer: ------------ Start Main --------------
+2019/06/05 22:57:23, signer: Connect with Chrome extension
+2019/06/05 22:57:23, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:57:23, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:57:23, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:57:23, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:57:23, signer: Selected Sign Format: CADES
+2019/06/05 22:57:23, signer: Start Signature Procedure
+2019/06/05 22:57:23, signer: 
+
+2019/06/05 22:57:23, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:57:23, signer: Selected Sign Format: CADES
+2019/06/05 22:57:23, signer: Start Signature Procedure
+2019/06/05 22:57:23, signer: 
+
+2019/06/05 22:57:27, signer: Certificate to use:  
+2019/06/05 22:57:27, signer: Certificate to use:  
+2019/06/05 22:57:27, signer: BAGNATO BONAVENTURA
+2019/06/05 22:57:27, signer: BAGNATO BONAVENTURA
+2019/06/05 22:57:31, signer: Start of signing process...
+2019/06/05 22:57:31, AbstractSignFactory: Create signed file: buono_rientro_32539(2)(6).pdf.p7m
+2019/06/05 22:57:31, signer: End of signing process.
+2019/06/05 22:57:31, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32539(2)(6).pdf.p7m","signature_type":"cades"}
+2019/06/05 22:57:33, signer: Start of signing process...
+2019/06/05 22:57:33, AbstractSignFactory: Create signed file: buono_rientro_32518(15).pdf.p7m
+2019/06/05 22:57:33, signer: End of signing process.
+2019/06/05 22:57:33, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(15).pdf.p7m","signature_type":"cades"}
+2019/06/05 22:57:56, signer: ------------ Start Main --------------
+2019/06/05 22:57:56, signer: Connect with Chrome extension
+2019/06/05 22:57:56, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:57:56, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:57:56, signer: ------------ Start Main --------------
+2019/06/05 22:57:56, signer: Connect with Chrome extension
+2019/06/05 22:57:56, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:57:56, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:57:56, signer: ------------ Start Main --------------
+2019/06/05 22:57:56, signer: Connect with Chrome extension
+2019/06/05 22:57:56, signer: ------------ Start Main --------------
+2019/06/05 22:57:56, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:57:56, signer: Connect with Chrome extension
+2019/06/05 22:57:56, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:57:56, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:57:56, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:57:58, signer: ------------ Start Main --------------
+2019/06/05 22:57:58, signer: Connect with Chrome extension
+2019/06/05 22:57:58, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:57:58, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:57:58, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:57:58, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:57:58, signer: Selected Sign Format: CADES
+2019/06/05 22:57:58, signer: Start Signature Procedure
+2019/06/05 22:57:58, signer: 
+
+2019/06/05 22:57:58, signer: ------------ Start Main --------------
+2019/06/05 22:57:58, signer: Connect with Chrome extension
+2019/06/05 22:57:58, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:57:58, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:57:58, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 22:57:58, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:57:58, signer: Selected Sign Format: CADES
+2019/06/05 22:57:58, signer: Start Signature Procedure
+2019/06/05 22:57:58, signer: 
+
+2019/06/05 22:58:02, signer: Certificate to use:  
+2019/06/05 22:58:02, signer: Certificate to use:  
+2019/06/05 22:58:02, signer: BAGNATO BONAVENTURA
+2019/06/05 22:58:02, signer: BAGNATO BONAVENTURA
+2019/06/05 22:58:05, signer: Start of signing process...
+2019/06/05 22:58:05, AbstractSignFactory: Create signed file: buono_rientro_32539(2).pdf.p7m
+2019/06/05 22:58:05, signer: End of signing process.
+2019/06/05 22:58:05, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32539(2).pdf.p7m","signature_type":"cades"}
+2019/06/05 22:58:07, signer: Start of signing process...
+2019/06/05 22:58:07, AbstractSignFactory: Create signed file: buono_rientro_32518.pdf.p7m
+2019/06/05 22:58:07, signer: End of signing process.
+2019/06/05 22:58:07, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518.pdf.p7m","signature_type":"cades"}
+2019/06/05 22:58:28, signer: ------------ Start Main --------------
+2019/06/05 22:58:28, signer: Connect with Chrome extension
+2019/06/05 22:58:28, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:58:28, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:58:28, signer: ------------ Start Main --------------
+2019/06/05 22:58:28, signer: Connect with Chrome extension
+2019/06/05 22:58:28, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:58:28, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:58:28, signer: ------------ Start Main --------------
+2019/06/05 22:58:28, signer: Connect with Chrome extension
+2019/06/05 22:58:28, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:58:28, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:58:28, signer: ------------ Start Main --------------
+2019/06/05 22:58:28, signer: Connect with Chrome extension
+2019/06/05 22:58:28, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:58:28, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:58:30, signer: ------------ Start Main --------------
+2019/06/05 22:58:30, signer: Connect with Chrome extension
+2019/06/05 22:58:30, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:58:30, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:58:30, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 22:58:30, signer: ------------ Start Main --------------
+2019/06/05 22:58:30, signer: Connect with Chrome extension
+2019/06/05 22:58:30, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:58:30, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:58:30, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 22:58:30, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:58:30, signer: Selected Sign Format: PADES
+2019/06/05 22:58:30, signer: Start Signature Procedure
+2019/06/05 22:58:30, signer: 
+
+2019/06/05 22:58:30, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:58:30, signer: Selected Sign Format: PADES
+2019/06/05 22:58:30, signer: Start Signature Procedure
+2019/06/05 22:58:30, signer: 
+
+2019/06/05 22:58:34, signer: Certificate to use:  
+2019/06/05 22:58:34, signer: Certificate to use:  
+2019/06/05 22:58:34, signer: BAGNATO BONAVENTURA
+2019/06/05 22:58:34, signer: BAGNATO BONAVENTURA
+2019/06/05 22:58:35, PadesSignFactory: No available field in the pdf.
+2019/06/05 22:58:35, PadesSignFactory: No available field in the pdf.
+2019/06/05 22:58:42, signer: Start of signing process...
+2019/06/05 22:58:42, AbstractSignFactory: Create signed file: buono_rientro_32518-signed.pdf
+2019/06/05 22:58:42, signer: End of signing process.
+2019/06/05 22:58:42, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518-signed.pdf","signature_type":"pades"}
+2019/06/05 22:58:44, signer: Start of signing process...
+2019/06/05 22:58:44, AbstractSignFactory: Create signed file: buono_rientro_32539(2)-signed.pdf
+2019/06/05 22:58:44, signer: End of signing process.
+2019/06/05 22:58:44, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32539(2)-signed.pdf","signature_type":"pades"}
+2019/06/05 22:59:31, signer: ------------ Start Main --------------
+2019/06/05 22:59:31, signer: Connect with Chrome extension
+2019/06/05 22:59:31, signer: ------------ Start Main --------------
+2019/06/05 22:59:31, signer: Connect with Chrome extension
+2019/06/05 22:59:31, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:59:31, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:59:31, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:59:31, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:59:31, signer: ------------ Start Main --------------
+2019/06/05 22:59:31, signer: Connect with Chrome extension
+2019/06/05 22:59:31, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:59:31, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:59:31, signer: ------------ Start Main --------------
+2019/06/05 22:59:31, signer: Connect with Chrome extension
+2019/06/05 22:59:31, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:59:31, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:59:33, signer: ------------ Start Main --------------
+2019/06/05 22:59:33, signer: Connect with Chrome extension
+2019/06/05 22:59:33, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:59:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:59:33, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 22:59:33, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:59:33, signer: Selected Sign Format: PADES
+2019/06/05 22:59:33, signer: Start Signature Procedure
+2019/06/05 22:59:33, signer: 
+
+2019/06/05 22:59:33, signer: ------------ Start Main --------------
+2019/06/05 22:59:33, signer: Connect with Chrome extension
+2019/06/05 22:59:33, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 22:59:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 22:59:33, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 22:59:33, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 22:59:33, signer: Selected Sign Format: PADES
+2019/06/05 22:59:33, signer: Start Signature Procedure
+2019/06/05 22:59:33, signer: 
+
+2019/06/05 22:59:37, signer: Certificate to use:  
+2019/06/05 22:59:37, signer: Certificate to use:  
+2019/06/05 22:59:37, signer: BAGNATO BONAVENTURA
+2019/06/05 22:59:37, signer: BAGNATO BONAVENTURA
+2019/06/05 22:59:38, PadesSignFactory: No available field in the pdf.
+2019/06/05 22:59:38, PadesSignFactory: No available field in the pdf.
+2019/06/05 22:59:45, signer: Start of signing process...
+2019/06/05 22:59:45, AbstractSignFactory: Create signed file: buono_rientro_32518(1)-signed.pdf
+2019/06/05 22:59:45, signer: End of signing process.
+2019/06/05 22:59:45, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(1)-signed.pdf","signature_type":"pades"}
+2019/06/05 22:59:47, signer: Start of signing process...
+2019/06/05 22:59:47, AbstractSignFactory: Create signed file: buono_rientro_32539(2)(1)-signed.pdf
+2019/06/05 22:59:47, signer: End of signing process.
+2019/06/05 22:59:47, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32539(2)(1)-signed.pdf","signature_type":"pades"}
+2019/06/05 23:00:30, signer: ------------ Start Main --------------
+2019/06/05 23:00:30, signer: Connect with Chrome extension
+2019/06/05 23:00:30, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:00:30, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:00:30, signer: ------------ Start Main --------------
+2019/06/05 23:00:30, signer: Connect with Chrome extension
+2019/06/05 23:00:30, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:00:30, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:00:30, signer: ------------ Start Main --------------
+2019/06/05 23:00:30, signer: ------------ Start Main --------------
+2019/06/05 23:00:30, signer: Connect with Chrome extension
+2019/06/05 23:00:30, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:00:30, signer: Connect with Chrome extension
+2019/06/05 23:00:30, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:00:30, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:00:30, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:00:32, signer: ------------ Start Main --------------
+2019/06/05 23:00:32, signer: Connect with Chrome extension
+2019/06/05 23:00:32, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:00:32, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:00:32, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 23:00:32, signer: ------------ Start Main --------------
+2019/06/05 23:00:32, signer: Connect with Chrome extension
+2019/06/05 23:00:32, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:00:32, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:00:32, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:00:32, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 23:00:32, signer: Selected Sign Format: PADES
+2019/06/05 23:00:32, signer: Start Signature Procedure
+2019/06/05 23:00:32, signer: 
+
+2019/06/05 23:00:32, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:00:32, signer: Selected Sign Format: PADES
+2019/06/05 23:00:32, signer: Start Signature Procedure
+2019/06/05 23:00:32, signer: 
+
+2019/06/05 23:00:35, signer: Certificate to use:  
+2019/06/05 23:00:35, signer: Certificate to use:  
+2019/06/05 23:00:36, signer: BAGNATO BONAVENTURA
+2019/06/05 23:00:36, signer: BAGNATO BONAVENTURA
+2019/06/05 23:00:37, PadesSignFactory: No available field in the pdf.
+2019/06/05 23:00:37, PadesSignFactory: No available field in the pdf.
+2019/06/05 23:00:43, signer: Start of signing process...
+2019/06/05 23:00:44, AbstractSignFactory: Create signed file: buono_rientro_32518(2)-signed.pdf
+2019/06/05 23:00:44, signer: End of signing process.
+2019/06/05 23:00:44, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(2)-signed.pdf","signature_type":"pades"}
+2019/06/05 23:00:46, signer: Start of signing process...
+2019/06/05 23:00:46, AbstractSignFactory: Create signed file: buono_rientro_32539(2)(2)-signed.pdf
+2019/06/05 23:00:46, signer: End of signing process.
+2019/06/05 23:00:46, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32539(2)(2)-signed.pdf","signature_type":"pades"}
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:20, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:01:20, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:03:53, signer: ------------ Start Main --------------
+2019/06/05 23:03:53, signer: Connect with Chrome extension
+2019/06/05 23:03:53, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:03:53, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:03:53, signer: ------------ Start Main --------------
+2019/06/05 23:03:53, signer: Connect with Chrome extension
+2019/06/05 23:03:53, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:03:53, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:03:53, signer: ------------ Start Main --------------
+2019/06/05 23:03:53, signer: Connect with Chrome extension
+2019/06/05 23:03:53, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:03:53, signer: ------------ Start Main --------------
+2019/06/05 23:03:53, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:03:53, signer: Connect with Chrome extension
+2019/06/05 23:03:53, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:03:53, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:03:55, signer: ------------ Start Main --------------
+2019/06/05 23:03:55, signer: Connect with Chrome extension
+2019/06/05 23:03:55, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:03:55, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:03:55, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 23:03:55, signer: ------------ Start Main --------------
+2019/06/05 23:03:55, signer: Connect with Chrome extension
+2019/06/05 23:03:55, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:03:55, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:03:55, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 23:03:55, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:03:55, signer: Selected Sign Format: PADES
+2019/06/05 23:03:55, signer: Start Signature Procedure
+2019/06/05 23:03:55, signer: 
+
+2019/06/05 23:03:55, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:03:55, signer: Selected Sign Format: PADES
+2019/06/05 23:03:55, signer: Start Signature Procedure
+2019/06/05 23:03:55, signer: 
+
+2019/06/05 23:03:58, signer: Certificate to use:  
+2019/06/05 23:03:58, signer: Certificate to use:  
+2019/06/05 23:03:59, signer: BAGNATO BONAVENTURA
+2019/06/05 23:03:59, signer: BAGNATO BONAVENTURA
+2019/06/05 23:04:00, PadesSignFactory: No available field in the pdf.
+2019/06/05 23:04:00, PadesSignFactory: No available field in the pdf.
+2019/06/05 23:04:06, signer: Start of signing process...
+2019/06/05 23:04:06, AbstractSignFactory: Create signed file: buono_rientro_32539(2)(3)-signed.pdf
+2019/06/05 23:04:06, signer: End of signing process.
+2019/06/05 23:04:06, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32539(2)(3)-signed.pdf","signature_type":"pades"}
+2019/06/05 23:04:09, signer: Start of signing process...
+2019/06/05 23:04:09, AbstractSignFactory: Create signed file: buono_rientro_32518(3)-signed.pdf
+2019/06/05 23:04:09, signer: End of signing process.
+2019/06/05 23:04:09, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(3)-signed.pdf","signature_type":"pades"}
+2019/06/05 23:09:05, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:09:05, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:09:05, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:09:05, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:09:23, signer: ------------ Start Main --------------
+2019/06/05 23:09:23, signer: Connect with Chrome extension
+2019/06/05 23:09:23, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:09:23, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:09:23, signer: ------------ Start Main --------------
+2019/06/05 23:09:23, signer: Connect with Chrome extension
+2019/06/05 23:09:23, signer: ------------ Start Main --------------
+2019/06/05 23:09:23, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:09:23, signer: Connect with Chrome extension
+2019/06/05 23:09:23, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:09:23, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:09:23, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:09:23, signer: ------------ Start Main --------------
+2019/06/05 23:09:23, signer: Connect with Chrome extension
+2019/06/05 23:09:23, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:09:23, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:09:25, signer: ------------ Start Main --------------
+2019/06/05 23:09:25, signer: Connect with Chrome extension
+2019/06/05 23:09:25, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:09:25, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:09:25, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 23:09:25, signer: ------------ Start Main --------------
+2019/06/05 23:09:25, signer: Connect with Chrome extension
+2019/06/05 23:09:25, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:09:25, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:09:25, com.unical.argparser.MiddlewareChrome: 11
+2019/06/05 23:09:25, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:09:25, signer: Selected Sign Format: PADES
+2019/06/05 23:09:25, signer: Start Signature Procedure
+2019/06/05 23:09:25, signer: 
+
+2019/06/05 23:09:25, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:09:25, signer: Selected Sign Format: PADES
+2019/06/05 23:09:25, signer: Start Signature Procedure
+2019/06/05 23:09:25, signer: 
+
+2019/06/05 23:09:28, signer: Certificate to use:  
+2019/06/05 23:09:28, signer: Certificate to use:  
+2019/06/05 23:09:29, signer: BAGNATO BONAVENTURA
+2019/06/05 23:09:29, signer: BAGNATO BONAVENTURA
+2019/06/05 23:09:30, PadesSignFactory: No available field in the pdf.
+2019/06/05 23:09:30, PadesSignFactory: No available field in the pdf.
+2019/06/05 23:09:36, signer: Start of signing process...
+2019/06/05 23:09:37, AbstractSignFactory: Create signed file: buono_rientro_32539(2)(4)-signed.pdf
+2019/06/05 23:09:37, signer: End of signing process.
+2019/06/05 23:09:37, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32539(2)(4)-signed.pdf","signature_type":"pades"}
+2019/06/05 23:09:39, signer: Start of signing process...
+2019/06/05 23:09:39, AbstractSignFactory: Create signed file: buono_rientro_32518(4)-signed.pdf
+2019/06/05 23:09:39, signer: End of signing process.
+2019/06/05 23:09:39, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(4)-signed.pdf","signature_type":"pades"}
+2019/06/05 23:17:20, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:20, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:20, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:20, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:27, signer: ------------ Start Main --------------
+2019/06/05 23:17:27, signer: ------------ Start Main --------------
+2019/06/05 23:17:27, signer: Connect with Chrome extension
+2019/06/05 23:17:27, signer: Connect with Chrome extension
+2019/06/05 23:17:27, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:27, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:27, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:27, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:29, signer: ------------ Start Main --------------
+2019/06/05 23:17:29, signer: Connect with Chrome extension
+2019/06/05 23:17:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:29, signer: ------------ Start Main --------------
+2019/06/05 23:17:29, signer: Connect with Chrome extension
+2019/06/05 23:17:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:29, signer: ------------ Start Main --------------
+2019/06/05 23:17:29, signer: Connect with Chrome extension
+2019/06/05 23:17:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:29, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:17:29, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:17:29, signer: Selected Sign Format: CADES
+2019/06/05 23:17:29, signer: Start Signature Procedure
+2019/06/05 23:17:29, signer: 
+
+2019/06/05 23:17:30, signer: ------------ Start Main --------------
+2019/06/05 23:17:30, signer: Connect with Chrome extension
+2019/06/05 23:17:30, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:30, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:30, signer: ------------ Start Main --------------
+2019/06/05 23:17:30, signer: Connect with Chrome extension
+2019/06/05 23:17:30, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:30, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:30, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:17:30, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:17:30, signer: Selected Sign Format: CADES
+2019/06/05 23:17:30, signer: Start Signature Procedure
+2019/06/05 23:17:30, signer: 
+
+2019/06/05 23:17:31, signer: ------------ Start Main --------------
+2019/06/05 23:17:31, signer: Connect with Chrome extension
+2019/06/05 23:17:31, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:31, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:32, signer: Certificate to use:  
+2019/06/05 23:17:32, signer: BAGNATO BONAVENTURA
+2019/06/05 23:17:33, signer: Certificate to use:  
+2019/06/05 23:17:33, signer: BAGNATO BONAVENTURA
+2019/06/05 23:17:33, signer: ------------ Start Main --------------
+2019/06/05 23:17:33, signer: ------------ Start Main --------------
+2019/06/05 23:17:33, signer: Connect with Chrome extension
+2019/06/05 23:17:33, signer: Connect with Chrome extension
+2019/06/05 23:17:33, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:33, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:35, signer: ------------ Start Main --------------
+2019/06/05 23:17:35, signer: ------------ Start Main --------------
+2019/06/05 23:17:35, signer: ------------ Start Main --------------
+2019/06/05 23:17:35, signer: Connect with Chrome extension
+2019/06/05 23:17:35, signer: Connect with Chrome extension
+2019/06/05 23:17:35, signer: Connect with Chrome extension
+2019/06/05 23:17:35, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:35, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:35, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:35, signer: ------------ Start Main --------------
+2019/06/05 23:17:35, signer: Connect with Chrome extension
+2019/06/05 23:17:35, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:35, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:17:35, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:17:35, signer: Selected Sign Format: CADES
+2019/06/05 23:17:35, signer: Start Signature Procedure
+2019/06/05 23:17:35, signer: 
+
+2019/06/05 23:17:35, signer: Start of signing process...
+2019/06/05 23:17:35, AbstractSignFactory: Create signed file: buono_rientro_32518.pdf.p7m
+2019/06/05 23:17:35, signer: End of signing process.
+2019/06/05 23:17:35, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518.pdf.p7m","signature_type":"cades"}
+2019/06/05 23:17:36, signer: ------------ Start Main --------------
+2019/06/05 23:17:36, signer: Connect with Chrome extension
+2019/06/05 23:17:36, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:36, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:36, signer: ------------ Start Main --------------
+2019/06/05 23:17:36, signer: Connect with Chrome extension
+2019/06/05 23:17:36, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:36, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:36, signer: ------------ Start Main --------------
+2019/06/05 23:17:36, signer: Connect with Chrome extension
+2019/06/05 23:17:36, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:36, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:36, signer: ------------ Start Main --------------
+2019/06/05 23:17:36, signer: Connect with Chrome extension
+2019/06/05 23:17:36, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:36, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:36, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:17:36, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:17:36, signer: Selected Sign Format: CADES
+2019/06/05 23:17:36, signer: Start Signature Procedure
+2019/06/05 23:17:36, signer: 
+
+2019/06/05 23:17:36, signer: ------------ Start Main --------------
+2019/06/05 23:17:36, signer: Connect with Chrome extension
+2019/06/05 23:17:36, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:36, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:37, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:17:37, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:17:37, signer: Selected Sign Format: CADES
+2019/06/05 23:17:37, signer: Start Signature Procedure
+2019/06/05 23:17:37, signer: 
+
+2019/06/05 23:17:38, signer: ------------ Start Main --------------
+2019/06/05 23:17:38, signer: Connect with Chrome extension
+2019/06/05 23:17:38, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:38, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:38, signer: Start of signing process...
+2019/06/05 23:17:38, AbstractSignFactory: Create signed file: buono_rientro_32518(1).pdf.p7m
+2019/06/05 23:17:38, signer: End of signing process.
+2019/06/05 23:17:38, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(1).pdf.p7m","signature_type":"cades"}
+2019/06/05 23:17:38, signer: ------------ Start Main --------------
+2019/06/05 23:17:38, signer: Connect with Chrome extension
+2019/06/05 23:17:38, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:38, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:38, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:17:38, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:17:38, signer: Selected Sign Format: CADES
+2019/06/05 23:17:38, signer: Start Signature Procedure
+2019/06/05 23:17:38, signer: 
+
+2019/06/05 23:17:38, signer: ------------ Start Main --------------
+2019/06/05 23:17:38, signer: Connect with Chrome extension
+2019/06/05 23:17:38, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:38, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:38, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:17:38, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:17:38, signer: Selected Sign Format: CADES
+2019/06/05 23:17:38, signer: Start Signature Procedure
+2019/06/05 23:17:38, signer: 
+
+2019/06/05 23:17:39, signer: ------------ Start Main --------------
+2019/06/05 23:17:39, signer: Connect with Chrome extension
+2019/06/05 23:17:39, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:39, signer: ------------ Start Main --------------
+2019/06/05 23:17:39, signer: Connect with Chrome extension
+2019/06/05 23:17:39, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:41, signer: ------------ Start Main --------------
+2019/06/05 23:17:41, signer: Connect with Chrome extension
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:41, signer: ------------ Start Main --------------
+2019/06/05 23:17:41, signer: Connect with Chrome extension
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:17:41, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:17:41, signer: Selected Sign Format: CADES
+2019/06/05 23:17:41, signer: Start Signature Procedure
+2019/06/05 23:17:41, signer: 
+
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:17:45, signer: Certificate to use:  
+2019/06/05 23:17:45, signer: Certificate to use:  
+2019/06/05 23:17:45, signer: Certificate to use:  
+2019/06/05 23:17:46, signer: BAGNATO BONAVENTURA
+2019/06/05 23:17:46, signer: BAGNATO BONAVENTURA
+2019/06/05 23:17:46, signer: BAGNATO BONAVENTURA
+2019/06/05 23:17:46, signer: Certificate to use:  
+2019/06/05 23:17:46, signer: Certificate to use:  
+2019/06/05 23:17:46, signer: Certificate to use:  
+2019/06/05 23:17:46, signer: BAGNATO BONAVENTURA
+2019/06/05 23:17:46, signer: BAGNATO BONAVENTURA
+2019/06/05 23:17:46, signer: BAGNATO BONAVENTURA
+2019/06/05 23:17:49, signer: Start of signing process...
+2019/06/05 23:17:49, AbstractSignFactory: Create signed file: buono_rientro_32518(3).pdf.p7m
+2019/06/05 23:17:49, signer: End of signing process.
+2019/06/05 23:17:49, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(3).pdf.p7m","signature_type":"cades"}
+2019/06/05 23:17:51, signer: Start of signing process...
+2019/06/05 23:17:51, AbstractSignFactory: Create signed file: buono_rientro_32518(2).pdf.p7m
+2019/06/05 23:17:51, signer: End of signing process.
+2019/06/05 23:17:51, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(2).pdf.p7m","signature_type":"cades"}
+2019/06/05 23:17:54, signer: Start of signing process...
+2019/06/05 23:17:56, signer: Start of signing process...
+2019/06/05 23:17:58, signer: Start of signing process...
+2019/06/05 23:18:01, signer: Start of signing process...
+2019/06/05 23:18:24, signer: ------------ Start Main --------------
+2019/06/05 23:18:24, signer: ------------ Start Main --------------
+2019/06/05 23:18:24, signer: Connect with Chrome extension
+2019/06/05 23:18:24, signer: Connect with Chrome extension
+2019/06/05 23:18:24, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:24, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:24, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:24, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:25, signer: ------------ Start Main --------------
+2019/06/05 23:18:25, signer: Connect with Chrome extension
+2019/06/05 23:18:25, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:25, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:25, signer: ------------ Start Main --------------
+2019/06/05 23:18:25, signer: Connect with Chrome extension
+2019/06/05 23:18:25, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:25, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:25, signer: ------------ Start Main --------------
+2019/06/05 23:18:25, signer: Connect with Chrome extension
+2019/06/05 23:18:25, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:25, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:25, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:18:25, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:18:25, signer: Selected Sign Format: CADES
+2019/06/05 23:18:25, signer: Start Signature Procedure
+2019/06/05 23:18:25, signer: 
+
+2019/06/05 23:18:26, signer: ------------ Start Main --------------
+2019/06/05 23:18:26, signer: Connect with Chrome extension
+2019/06/05 23:18:26, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:26, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:27, signer: ------------ Start Main --------------
+2019/06/05 23:18:27, signer: Connect with Chrome extension
+2019/06/05 23:18:27, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:27, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:27, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:18:27, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:18:27, signer: Selected Sign Format: CADES
+2019/06/05 23:18:27, signer: Start Signature Procedure
+2019/06/05 23:18:27, signer: 
+
+2019/06/05 23:18:28, signer: Certificate to use:  
+2019/06/05 23:18:28, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:18:28, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:18:28, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:18:28, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:18:28, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/05 23:18:28, signer: BAGNATO BONAVENTURA
+2019/06/05 23:18:29, signer: Certificate to use:  
+2019/06/05 23:18:29, signer: BAGNATO BONAVENTURA
+2019/06/05 23:18:32, signer: Start of signing process...
+2019/06/05 23:18:32, AbstractSignFactory: Create signed file: buono_rientro_32518.pdf.p7m
+2019/06/05 23:18:32, signer: End of signing process.
+2019/06/05 23:18:32, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518.pdf.p7m","signature_type":"cades"}
+2019/06/05 23:18:34, signer: Start of signing process...
+2019/06/05 23:18:34, AbstractSignFactory: Create signed file: buono_rientro_32518(1).pdf.p7m
+2019/06/05 23:18:34, signer: End of signing process.
+2019/06/05 23:18:34, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(1).pdf.p7m","signature_type":"cades"}
+2019/06/05 23:18:38, signer: ------------ Start Main --------------
+2019/06/05 23:18:38, signer: Connect with Chrome extension
+2019/06/05 23:18:38, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:38, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:38, signer: ------------ Start Main --------------
+2019/06/05 23:18:38, signer: Connect with Chrome extension
+2019/06/05 23:18:38, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:38, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:40, signer: ------------ Start Main --------------
+2019/06/05 23:18:40, signer: ------------ Start Main --------------
+2019/06/05 23:18:40, signer: Connect with Chrome extension
+2019/06/05 23:18:40, signer: Connect with Chrome extension
+2019/06/05 23:18:40, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:40, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:40, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:40, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:40, signer: ------------ Start Main --------------
+2019/06/05 23:18:40, signer: Connect with Chrome extension
+2019/06/05 23:18:40, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:40, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:40, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:18:40, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:18:40, signer: Selected Sign Format: CADES
+2019/06/05 23:18:40, signer: Start Signature Procedure
+2019/06/05 23:18:40, signer: 
+
+2019/06/05 23:18:41, signer: ------------ Start Main --------------
+2019/06/05 23:18:41, signer: Connect with Chrome extension
+2019/06/05 23:18:41, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:41, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:42, signer: ------------ Start Main --------------
+2019/06/05 23:18:42, signer: Connect with Chrome extension
+2019/06/05 23:18:42, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:42, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:42, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:18:42, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:18:42, signer: Selected Sign Format: CADES
+2019/06/05 23:18:42, signer: Start Signature Procedure
+2019/06/05 23:18:42, signer: 
+
+2019/06/05 23:18:42, signer: Certificate to use:  
+2019/06/05 23:18:42, signer: BAGNATO BONAVENTURA
+2019/06/05 23:18:43, signer: ------------ Start Main --------------
+2019/06/05 23:18:43, signer: Connect with Chrome extension
+2019/06/05 23:18:43, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:43, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:43, signer: ------------ Start Main --------------
+2019/06/05 23:18:43, signer: Connect with Chrome extension
+2019/06/05 23:18:43, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:43, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:44, signer: ------------ Start Main --------------
+2019/06/05 23:18:44, signer: Connect with Chrome extension
+2019/06/05 23:18:44, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:44, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:45, signer: ------------ Start Main --------------
+2019/06/05 23:18:45, signer: Connect with Chrome extension
+2019/06/05 23:18:45, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:45, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:45, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:18:45, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:18:45, signer: Selected Sign Format: CADES
+2019/06/05 23:18:45, signer: Start Signature Procedure
+2019/06/05 23:18:45, signer: 
+
+2019/06/05 23:18:45, signer: Start of signing process...
+2019/06/05 23:18:45, AbstractSignFactory: Create signed file: buono_rientro_32518(2).pdf.p7m
+2019/06/05 23:18:45, signer: End of signing process.
+2019/06/05 23:18:45, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(2).pdf.p7m","signature_type":"cades"}
+2019/06/05 23:18:46, signer: ------------ Start Main --------------
+2019/06/05 23:18:46, signer: ------------ Start Main --------------
+2019/06/05 23:18:46, signer: Connect with Chrome extension
+2019/06/05 23:18:46, signer: Connect with Chrome extension
+2019/06/05 23:18:46, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:46, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:46, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:46, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:47, signer: Certificate to use:  
+2019/06/05 23:18:47, signer: BAGNATO BONAVENTURA
+2019/06/05 23:18:47, signer: ------------ Start Main --------------
+2019/06/05 23:18:47, signer: Connect with Chrome extension
+2019/06/05 23:18:47, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:47, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:47, signer: Certificate to use:  
+2019/06/05 23:18:48, signer: ------------ Start Main --------------
+2019/06/05 23:18:48, signer: Connect with Chrome extension
+2019/06/05 23:18:48, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:48, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:48, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:18:48, signer: BAGNATO BONAVENTURA
+2019/06/05 23:18:48, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:18:48, signer: Selected Sign Format: CADES
+2019/06/05 23:18:48, signer: Start Signature Procedure
+2019/06/05 23:18:48, signer: 
+
+2019/06/05 23:18:49, signer: ------------ Start Main --------------
+2019/06/05 23:18:49, signer: Connect with Chrome extension
+2019/06/05 23:18:49, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:49, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:49, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:18:49, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:18:49, signer: Selected Sign Format: CADES
+2019/06/05 23:18:49, signer: Start Signature Procedure
+2019/06/05 23:18:49, signer: 
+
+2019/06/05 23:18:50, signer: Start of signing process...
+2019/06/05 23:18:50, AbstractSignFactory: Create signed file: buono_rientro_32518(3).pdf.p7m
+2019/06/05 23:18:50, signer: End of signing process.
+2019/06/05 23:18:50, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(3).pdf.p7m","signature_type":"cades"}
+2019/06/05 23:18:51, signer: ------------ Start Main --------------
+2019/06/05 23:18:51, signer: Connect with Chrome extension
+2019/06/05 23:18:51, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:51, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:52, signer: Start of signing process...
+2019/06/05 23:18:52, AbstractSignFactory: Create signed file: buono_rientro_32518(4).pdf.p7m
+2019/06/05 23:18:52, signer: End of signing process.
+2019/06/05 23:18:52, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(4).pdf.p7m","signature_type":"cades"}
+2019/06/05 23:18:53, signer: ------------ Start Main --------------
+2019/06/05 23:18:53, signer: Connect with Chrome extension
+2019/06/05 23:18:53, com.unical.argparser.MiddlewareChrome: Start
+2019/06/05 23:18:53, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/05 23:18:53, com.unical.argparser.MiddlewareChrome: 4
+2019/06/05 23:18:53, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/05 23:18:53, signer: Selected Sign Format: CADES
+2019/06/05 23:18:53, signer: Start Signature Procedure
+2019/06/05 23:18:53, signer: 
+
+2019/06/05 23:18:56, signer: Certificate to use:  
+2019/06/05 23:18:56, signer: Certificate to use:  
+2019/06/05 23:18:56, signer: BAGNATO BONAVENTURA
+2019/06/05 23:18:56, signer: BAGNATO BONAVENTURA
+2019/06/05 23:18:57, signer: Certificate to use:  
+2019/06/05 23:18:57, signer: BAGNATO BONAVENTURA
+2019/06/05 23:18:59, signer: Start of signing process...
+2019/06/05 23:18:59, AbstractSignFactory: Create signed file: buono_rientro_32518(6).pdf.p7m
+2019/06/05 23:18:59, signer: End of signing process.
+2019/06/05 23:18:59, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(6).pdf.p7m","signature_type":"cades"}
+2019/06/05 23:19:02, signer: Start of signing process...
+2019/06/05 23:19:02, AbstractSignFactory: Create signed file: buono_rientro_32518(5).pdf.p7m
+2019/06/05 23:19:02, signer: End of signing process.
+2019/06/05 23:19:02, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(5).pdf.p7m","signature_type":"cades"}
+2019/06/05 23:19:04, signer: Start of signing process...
+2019/06/05 23:19:04, AbstractSignFactory: Create signed file: buono_rientro_32518(7).pdf.p7m
+2019/06/05 23:19:04, signer: End of signing process.
+2019/06/05 23:19:04, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\buono_rientro_32518(7).pdf.p7m","signature_type":"cades"}

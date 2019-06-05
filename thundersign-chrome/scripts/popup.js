@@ -107,28 +107,26 @@ $('#inputGroupFile02').on('change',function(){
             }
         });
 
+
  });
 
-  
+ const background = chrome.extension.getBackgroundPage();
+ console.log(background.appCurrentState);
+ const popupMessageType = background.popupMessageType; //types of message from the popup that background script can handle
+ const appStateEnum = background.StateEnum;
+ let appCurrentState = background.appCurrentState;
 
   var urls = [];
   var attachments = [];
   var toSign = [];
+  var newFilesPath = [];
 
-  function handleMessage(message) {
-    console.log(message.popupContent);
-    attachments = message.popupContent;
-    addAttachments(attachments);
-    urls = message.urls;
-    
-    // else if(message.action =="content"){
-    //   console.log('content received');
-    // }   
-//sendResponse({response: "response from background script"});
-}
-chrome.runtime.onMessage.addListener(handleMessage);
+
 
 function addAttachments(attachments){
+
+ 
+
   document.getElementById("my-attachments").innerHtml="";
   for(var i=0; i<attachments.length; i++){
     var attach = '<input type="checkbox" id="'+ attachments[i] +'" name="checkbox" value="value" >&nbsp;&nbsp;' + attachments[i] + '<br>';
@@ -136,6 +134,36 @@ function addAttachments(attachments){
     if(!attachments[i].endsWith('pdf')){
       document.getElementById("pades-wrapper").style.display = "none";
     }
+
+    //aggiungo posizioni manuali
+
+
+    var toAppend = '     <div style="font-size:14px;" class="container" id="set-position" >'
+                      +'         <div class="input-group" style="width:100px;margin-top:10px;">Page:&nbsp; &nbsp;'                  
+                      +'                  <input type="text" class="form-control" id="page'+ attachments[i] +'" style="height:20px;" >'
+                      +'          </div>'      
+                      +'        <div id="vertical-pos'+ attachments[i] +'" class="input-group" style="font-size: 14px;"> Vertical Position:&nbsp; &nbsp;'
+                      +'            <input id="top '+ attachments[i] +'" type="radio" name="vertical-pos'+ attachments[i] +'" value="top" checked>&nbsp;&nbsp;Top&nbsp;&nbsp;'
+                      +'            <input id="middle'+ attachments[i] +'" type="radio" name="vertical-pos'+ attachments[i] +'" value="middle">&nbsp;Middle&nbsp;&nbsp;'
+                      +'            <input id="bottom'+ attachments[i] +'" type="radio" name="vertical-pos'+ attachments[i] +'" value="bottom">&nbsp;Bottom&nbsp;'
+                      +'        </div>'
+                      +'        <div id="horizontal-pos'+ attachments[i] +'" class="input-group" style="font-size:14px"> Horizontal Position:&nbsp; &nbsp;'
+                      +'                <input id="left'+ attachments[i] +'" type="radio" name="horizontal-pos'+ attachments[i] +'" value="left" checked>&nbsp;Left&nbsp;&nbsp;'
+                      +'                <input id="center'+ attachments[i] +'" type="radio" name="horizontal-pos'+ attachments[i] +'" value="center">&nbsp;Center&nbsp;&nbsp;'
+                      +'                <input id="right'+ attachments[i] +'" type="radio" name="horizontal-pos'+ attachments[i] +'" value="right">&nbsp;Right&nbsp;'
+                      +'        </div>'
+                      +'    </div>'
+                      +'  </div>    '
+                      
+                      +'<br>';
+
+
+
+    var manual = '<p> - ' + attachments[i] + '</p>';
+    $("#manual-position").append(manual);
+    $("#manual-position").append(toAppend);
+
+
   }
   if(attachments.length === 0){
     $("#my-attachments").append("No attachments found");
@@ -146,13 +174,13 @@ function addAttachments(attachments){
 
 
 var toDownload = [];
-function getData(){
-  for(var i = 0; i<attachments.length; i++){   
+
+function getData(i){
+  
     if(document.getElementById(attachments[i]).checked){
       toSign.push(attachments[i]);
       toDownload.push(urls[i]);
-    }  
-  }  
+    }   
 
   if(document.getElementById("cades").checked){
     signatureData.type = "cades"
@@ -165,9 +193,9 @@ function getData(){
     signatureData.visible = true;
     signatureData.useField = document.getElementById("signature-field").checked;
     if(signatureData.useField === false){
-      signatureData.verticalPosition= document.querySelector('input[name="vertical-pos"]:checked').value;
-      signatureData.horizontalPosition= document.querySelector('input[name="horizontal-pos"]:checked').value;
-      signatureData.pageNumber = document.getElementById("page").value;
+      signatureData.verticalPosition= document.querySelector('input[name="vertical-pos'+ attachments[i] +'"]:checked').value;
+      signatureData.horizontalPosition= document.querySelector('input[name="horizontal-pos'+ attachments[i] +'"]:checked').value;
+      signatureData.pageNumber = document.getElementById("page"+ attachments[i]).value;
       
     }
     else{
@@ -177,51 +205,58 @@ function getData(){
   }
   signatureData.password = document.getElementById("password").value;
 
-  
-  
-
-
-
-
 
 }
 
+
 $("#signAndReply").click(function(){
+        handleProcedure();
+        console.log("started " + signatureData.type + " sign and Reply")
   
-  getData();
-  if(signatureData.type != "" && signatureData.password != ""){
-    sendDataToSign();
-    console.log("started " + signatureData.type + " sign and Reply")
-  }  
-    // else dai errore
 });
 
 $("#signAndSend").click(function(){
- 
-  getData();
-  if(signatureData.type != "" && signatureData.password != ""){
-    sendDataToSign();
-    console.log("started " + signatureData.type + " sign and Send")
-  }
-    // else dai errore
-  
+        handleProcedure();
+        console.log("started " + signatureData.type + " sign and Send")
+   
 });
 
 $("#signAndSave").click(function(){
- 
-  getData();
-  if(signatureData.type != "" && signatureData.password != ""){
-    sendDataToSign();
-    console.log("started " + signatureData.type + " sign and Save")
-  }
-    // else dai errore
+        handleProcedure();
+        console.log("started " + signatureData.type + " sign and Save")
   
 });
 
-const background = chrome.extension.getBackgroundPage();
-const popupMessageType = background.popupMessageType; //types of message from the popup that background script can handle
-//const appStateEnum = background.StateEnum;
+function handleProcedure(){
+  
+  for(var i = 0; i<attachments.length; i++){
+    console.log("Going to get index -- "+ i);
+    console.log(appCurrentState);
+    if (appCurrentState == undefined) {    
+      sleep(1500).then(() => { 
+        handleProcedure();
+      });
+    }   
+    else if(appCurrentState != appStateEnum.signing){
+      appCurrentState = appStateEnum.signing;
+      getData(i);
+      if(signatureData.type != "" && signatureData.password != ""){
+        sendDataToSign();
+        console.log("started " + signatureData.type + " sign and Save")
+      }  
+      // else dai errore
+    }
+    else{
+      sleep(1500).then(() => { 
+        handleProcedure();
+      });
+    }
+  }  
+}
 
+function sleep(time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
 
 function sendDataToSign(){
 
@@ -238,7 +273,7 @@ function sendDataToSign(){
       toSign: toSign,
       toDownload: toDownload
   }, function (response) {
-      console.log("Successfully signed");
+      console.log("Successfully sent");
       console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
   });
       clearData();
@@ -258,6 +293,87 @@ function clearData(){
   signatureData.image= "";
   signatureData.tabUrl= "";
   toSign = [];
+
+
+  chrome.runtime.sendMessage({
+    action: popupMessageType.resetState
+  }, function (response) {
+    appCurrentState = response.appstate;
+     //console.log("<<< received:")
+    // console.log(response.ack);
+  });
 }
 
- 
+ function checkCurrenState() {
+            // console.log("App Current State:" + appCurrentState);
+            if (appCurrentState == undefined) {
+                clearData();
+            }
+            if (appCurrentState == appStateEnum.signing || appCurrentState == appStateEnum.downloadFile || appCurrentState == appStateEnum.info) {
+                console.log("LOADING");
+                // sections.changeSection(sections.section.loadingSection);
+                showLoading(MessageType[appCurrentState]);
+            } else if (appCurrentState == appStateEnum.complete || appCurrentState == appStateEnum.error) {
+                clearData();
+            }
+            //check if exist stored data in background
+            else if (appCurrentState == appStateEnum.running) {
+                console.log(backgroundStoredSignatureData);
+                if (backgroundStoredSignatureData.isEmpty() == false) {
+                    console.log("NEED TO RESTORE DATA");
+                    chrome.tabs.query({
+                        active: true,
+                        currentWindow: true
+                    }, function (tab) {
+                        if (tab[0].url == backgroundStoredSignatureData.signatureData.tabUrl) {
+                            signatureData.copy(backgroundStoredSignatureData.signatureData);
+                            updateSignatureFieldList(backgroundStoredSignatureData.infoPDF);
+                        } else {
+                            console.log("Stored data in background belong to a different document. Clear stored data.")
+                            clearData();
+                        }
+                    });
+                }
+            }
+        };
+
+
+chrome.runtime.onMessage.addListener(
+  function (request, sender, sendResponse) {
+      console.log("<<< received:")
+      console.log(request);
+
+      if (request.hasOwnProperty("state")) {
+          switch (request.state) {
+              case "end":
+                  appCurrentState = appStateEnum.ready;
+                  newFilesPath.push(request.localPath);
+                  // sections.changeSection(sections.section.endSection);
+                  // endSectionUIUpdate(request.localPath);
+                  break;
+              case "info":
+                  // updateSignatureFieldList(request);
+                  break;
+              case "error":
+                  // showError(request.error);
+                  break;
+              case "updateSignatureData":
+                  // updateSignatureData(request.fieldToUpdate, request.value);
+              default:
+                  break;
+          }
+      }
+
+      // sendResponse({
+      //     ack: "success"
+      // });
+  });        
+
+  function handleMessage(message) {
+    console.log(message.popupContent);
+    attachments = message.popupContent;
+    addAttachments(attachments);
+    urls = message.urls;
+    
+}
+chrome.runtime.onMessage.addListener(handleMessage);        

@@ -4,6 +4,7 @@ console.log("Start background");
 var nativeAppPort = null;
 
 var StateEnum = {
+  start: "start",
   ready: "ready",
   downloadFile: "downloadFile",
   running: "running",
@@ -47,7 +48,6 @@ function openConnection() {
   nativeAppPort = chrome.runtime.connectNative(app);
 
   console.log(nativeAppPort);
-  appCurrentState = StateEnum.ready;
   nativeAppPort.onMessage.addListener(function (msg) {
     console.log("RECEIVED FROM NATIVE APP:");
     console.log(msg);
@@ -132,8 +132,7 @@ function sendDataForSign(data) {
  * @param {function(data):void} callback - callback
  */
 
-function downloadFile(index,callback){
-  var url = toDownload[index];
+function downloadFile(url,callback){
   console.log("Going to download: " + url);
 
 
@@ -217,9 +216,9 @@ resetState: "resetState"
 
 function tryHandleProcedure(index){
   if(appCurrentState != StateEnum.signing){
-    openConnection();
-    downloadFile(index);
     appCurrentState = StateEnum.signing;
+    openConnection();
+    downloadFile(index);  
   }
   else{
     sleep(1500).then(() => { 
@@ -237,7 +236,9 @@ function (request, sender, sendResponse) {
       console.log("Background wakeup");
       break;
     case popupMessageType.resetState:
+      console.log("Reset State");
       appCurrentState = StateEnum.start;
+      console.log(appCurrentState);
       sendResponse({
         appstate: appCurrentState
       })
@@ -263,6 +264,7 @@ function (request, sender, sendResponse) {
       toDownload = request.toDownload;
       for (var i = 0; i < toSign.length; i++){
          tryHandleProcedure(i);
+         
       }    
       break;
 
