@@ -13,47 +13,11 @@ var signatureData = {
   signatureField: "",
   image: "",
   tabUrl: ""
-  
-
-  /**
-   * Reset signature data.
-   */
-  // empty: function () {
-  //     this.type = "";
-  //     this.filename = "";
-  //     this.password = "";
-  //     this.visible = false;
-  //     this.useField = false;
-  //     this.verticalPosition = "Top";
-  //     this.horizontalPosition = "Left";
-  //     this.pageNumber = 1;
-  //     this.signatureField = "";
-  //     this.image = "";
-  //     this.tabUrl = "";
-  //     this.toSign = [];
-  // },
-
-  // copy: function (data) {
-  //     this.type = data.type;
-  //     this.filename = data.filename;
-  //     this.password = data.password;
-  //     this.visible = data.visible;
-  //     this.useField = data.useField;
-  //     this.verticalPosition = data.verticalPosition;
-  //     this.horizontalPosition = data.horizontalPosition;
-  //     this.pageNumber = data.pageNumber;
-  //     this.signatureField = data.signatureField;
-  //     this.image = data.image;
-  //     this.tabUrl = data.tabUrl;
-  //     this.toSign = data.toSign;
-  // }
 };
 
 $('#inputGroupFile02').on('change',function(){
-  //get the file name
   var fullPath = $(this).val();
-  var fileName = fullPath.replace(/^.*[\\\/]/, '')
-  //replace the "Choose a file" label
+  var fileName = fullPath.replace(/^.*[\\\/]/, '');
   $(this).next('.custom-file-label').html(fileName);
 })
 
@@ -118,7 +82,6 @@ $('#inputGroupFile02').on('change',function(){
 
   var urls = [];
   var attachments = [];
-  var toSign = [];
   var newFilesPath = [];
 
 
@@ -173,13 +136,12 @@ function addAttachments(attachments){
 
 
 
-var toDownload = [];
+var url = "";
 
 function getData(i){
   
     if(document.getElementById(attachments[i]).checked){
-      toSign.push(attachments[i]);
-      toDownload.push(urls[i]);
+      url = urls[i];
     }   
 
   if(document.getElementById("cades").checked){
@@ -210,34 +172,35 @@ function getData(i){
 
 
 $("#signAndReply").click(function(){
-        handleProcedure();
+      for(var i = 0; i<attachments.length; i++){
+        handleProcedure(i);
+    }      
         console.log("started " + signatureData.type + " sign and Reply")
   
 });
 
 $("#signAndSend").click(function(){
-        handleProcedure();
+      for(var i = 0; i<attachments.length; i++){
+        handleProcedure(i);
+    }      
         console.log("started " + signatureData.type + " sign and Send")
    
 });
 
 $("#signAndSave").click(function(){
-        handleProcedure();
+  for(var i = 0; i<attachments.length; i++){
+        handleProcedure(i);
+  }      
         console.log("started " + signatureData.type + " sign and Save")
   
 });
 
-function handleProcedure(){
+function handleProcedure(i){
   
-  for(var i = 0; i<attachments.length; i++){
+  
     console.log("Going to get index -- "+ i);
     console.log(appCurrentState);
-    if (appCurrentState == undefined) {    
-      sleep(1500).then(() => { 
-        handleProcedure();
-      });
-    }   
-    else if(appCurrentState != appStateEnum.signing){
+    if(appCurrentState != appStateEnum.signing){
       appCurrentState = appStateEnum.signing;
       getData(i);
       if(signatureData.type != "" && signatureData.password != ""){
@@ -246,12 +209,11 @@ function handleProcedure(){
       }  
       // else dai errore
     }
-    else{
+    else if(appCurrentState == appStateEnum.signing){
       sleep(1500).then(() => { 
-        handleProcedure();
+        handleProcedure(i);
       });
     }
-  }  
 }
 
 function sleep(time) {
@@ -270,8 +232,7 @@ function sendDataToSign(){
     chrome.runtime.sendMessage({
       action: popupMessageType.sign,
       data: signatureData,
-      toSign: toSign,
-      toDownload: toDownload
+      url: url
   }, function (response) {
       console.log("Successfully sent");
       console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
@@ -280,7 +241,6 @@ function sendDataToSign(){
 }
 
 function clearData(){
-  toDownload = [];
   signatureData.type= "";
   signatureData.filename= "";
   signatureData.password= "";
@@ -290,52 +250,42 @@ function clearData(){
   signatureData.horizontalPosition= "Left";
   signatureData.pageNumber= 1;
   signatureData.signatureField= "";
-  signatureData.image= "";
   signatureData.tabUrl= "";
-  toSign = [];
 
-
-  chrome.runtime.sendMessage({
-    action: popupMessageType.resetState
-  }, function (response) {
-    appCurrentState = response.appstate;
-     //console.log("<<< received:")
-    // console.log(response.ack);
-  });
 }
 
- function checkCurrenState() {
-            // console.log("App Current State:" + appCurrentState);
-            if (appCurrentState == undefined) {
-                clearData();
-            }
-            if (appCurrentState == appStateEnum.signing || appCurrentState == appStateEnum.downloadFile || appCurrentState == appStateEnum.info) {
-                console.log("LOADING");
-                // sections.changeSection(sections.section.loadingSection);
-                showLoading(MessageType[appCurrentState]);
-            } else if (appCurrentState == appStateEnum.complete || appCurrentState == appStateEnum.error) {
-                clearData();
-            }
-            //check if exist stored data in background
-            else if (appCurrentState == appStateEnum.running) {
-                console.log(backgroundStoredSignatureData);
-                if (backgroundStoredSignatureData.isEmpty() == false) {
-                    console.log("NEED TO RESTORE DATA");
-                    chrome.tabs.query({
-                        active: true,
-                        currentWindow: true
-                    }, function (tab) {
-                        if (tab[0].url == backgroundStoredSignatureData.signatureData.tabUrl) {
-                            signatureData.copy(backgroundStoredSignatureData.signatureData);
-                            updateSignatureFieldList(backgroundStoredSignatureData.infoPDF);
-                        } else {
-                            console.log("Stored data in background belong to a different document. Clear stored data.")
-                            clearData();
-                        }
-                    });
-                }
-            }
-        };
+//  function checkCurrenState() {
+//             // console.log("App Current State:" + appCurrentState);
+//             if (appCurrentState == undefined) {
+//                 clearData();
+//             }
+//             if (appCurrentState == appStateEnum.signing || appCurrentState == appStateEnum.downloadFile || appCurrentState == appStateEnum.info) {
+//                 console.log("LOADING");
+//                 // sections.changeSection(sections.section.loadingSection);
+//                 showLoading(MessageType[appCurrentState]);
+//             } else if (appCurrentState == appStateEnum.complete || appCurrentState == appStateEnum.error) {
+//                 clearData();
+//             }
+//             //check if exist stored data in background
+//             else if (appCurrentState == appStateEnum.running) {
+//                 console.log(backgroundStoredSignatureData);
+//                 if (backgroundStoredSignatureData.isEmpty() == false) {
+//                     console.log("NEED TO RESTORE DATA");
+//                     chrome.tabs.query({
+//                         active: true,
+//                         currentWindow: true
+//                     }, function (tab) {
+//                         if (tab[0].url == backgroundStoredSignatureData.signatureData.tabUrl) {
+//                             signatureData.copy(backgroundStoredSignatureData.signatureData);
+//                             updateSignatureFieldList(backgroundStoredSignatureData.infoPDF);
+//                         } else {
+//                             console.log("Stored data in background belong to a different document. Clear stored data.")
+//                             clearData();
+//                         }
+//                     });
+//                 }
+//             }
+//         };
 
 
 chrome.runtime.onMessage.addListener(
@@ -346,6 +296,7 @@ chrome.runtime.onMessage.addListener(
       if (request.hasOwnProperty("state")) {
           switch (request.state) {
               case "end":
+                  console.log("ENDED");
                   appCurrentState = appStateEnum.ready;
                   newFilesPath.push(request.localPath);
                   // sections.changeSection(sections.section.endSection);
@@ -363,17 +314,16 @@ chrome.runtime.onMessage.addListener(
                   break;
           }
       }
+      else if(request.hasOwnProperty("popupContent") ){
+        console.log(request.popupContent);
+        attachments = request.popupContent;
+        addAttachments(attachments);
+        urls = request.urls;
+        
+      }
 
       // sendResponse({
       //     ack: "success"
       // });
   });        
-
-  function handleMessage(message) {
-    console.log(message.popupContent);
-    attachments = message.popupContent;
-    addAttachments(attachments);
-    urls = message.urls;
-    
-}
-chrome.runtime.onMessage.addListener(handleMessage);        
+     

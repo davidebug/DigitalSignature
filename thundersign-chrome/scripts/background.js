@@ -17,8 +17,6 @@ Object.freeze(StateEnum)
 
 //state of the app
 var appCurrentState = StateEnum.start;
-var toSign = [];
-var toDownload = [];
 
 var storedSignatureData = {
   signatureData: "",
@@ -56,11 +54,11 @@ function openConnection() {
       if (msg.native_app_message == "end") {
         appCurrentState = StateEnum.complete;
         
-       // storedSignatureData.empty();
-        // chrome.runtime.sendMessage({
-        //   state: "end",                        -----  TO DO inviare messaggio di conferma al popup quando finito
-        //   localPath: msg.local_path_newFile
-        // }, function (response) {});
+      //  storedSignatureData.empty();
+        chrome.runtime.sendMessage({
+          state: "end",                        
+          localPath: msg.local_path_newFile
+        }, function (response) {});
 
         
       } else if (msg.native_app_message == "info") {
@@ -260,12 +258,7 @@ function (request, sender, sendResponse) {
       console.log("Urls received:");
       console.log(request.toDownload);
       storedSignatureData.signatureData = request.data;
-      toSign = request.toSign;
-      toDownload = request.toDownload;
-      for (var i = 0; i < toSign.length; i++){
-         tryHandleProcedure(i);
-         
-      }    
+      downloadFile(request.url);
       break;
 
     // case popupMessageType.download_and_getInfo: //used for directly sign a local file
@@ -298,30 +291,5 @@ function onFailed(error) {
   console.log(`Download failed: ${error}`);
 }
 
-
-
-// /**
-//  * Dowload the pdf, get local path of downloaded file and call callback.
-//  * @param {string} pdfURL - url of the pdf
-//  * @param {*} data - signature data
-//  * @param {function(data):void} callback - callback
-//  */
-// function downloadFile(pdfURL, data, callback) {
-//   appCurrentState = StateEnum.downloadFile;
-//   //1) get tab url
-//   downloadPDF(pdfURL)
-
-//   //2) download pdf 
-//   function downloadPDF(pdfUrl) {
-//     console.log("Start download document...")
-//     chrome.downloads.download({
-//       url: pdfUrl
-//     }, function (downloadItemID) {
-//       getLocalPath(downloadItemID);
-//     });
-//   }
-
-
-  //3) get download file local path
  
 
