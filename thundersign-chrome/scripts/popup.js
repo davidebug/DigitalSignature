@@ -15,6 +15,22 @@ var signatureData = {
   tabUrl: ""
 };
 
+const background = chrome.extension.getBackgroundPage();
+ console.log(background.appCurrentState);
+ const popupMessageType = background.popupMessageType; //types of message from the popup that background script can handle
+ const appStateEnum = background.StateEnum;
+ let appCurrentState = background.appCurrentState;
+
+var urls = [];
+var attachments = [];
+var newFilesPath = [];
+
+chrome.runtime.sendMessage({
+  action: popupMessageType.wakeup,
+}, function (response) {
+  console.log("background wakeup");
+});
+
 $('#inputGroupFile02').on('change',function(){
   var fullPath = $(this).val();
   var fileName = fullPath.replace(/^.*[\\\/]/, '');
@@ -23,6 +39,7 @@ $('#inputGroupFile02').on('change',function(){
 
  $(document).ready(function(){
 
+  
    checkCurrenState();
 
     console.log('Try to execute contentScript');        
@@ -76,15 +93,7 @@ $('#inputGroupFile02').on('change',function(){
 
  });
 
- const background = chrome.extension.getBackgroundPage();
- console.log(background.appCurrentState);
- const popupMessageType = background.popupMessageType; //types of message from the popup that background script can handle
- const appStateEnum = background.StateEnum;
- let appCurrentState = background.appCurrentState;
-
-var urls = [];
-var attachments = [];
-var newFilesPath = [];
+ 
 
   
 function addAttachments(attachments){
@@ -245,7 +254,7 @@ function sendDataToSign(){
       console.log("opening connection to native app");
   });
   
-    console.log(toSend[0]);
+    console.log(toSend[0].pageNumber);
     chrome.runtime.sendMessage({
       action: popupMessageType.sign,
       data: toSend,
