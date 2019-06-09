@@ -144,6 +144,7 @@ var toSend = [];
 
 function getData(i){
   
+  clearData();
     
     if(document.getElementById(attachments[i]).checked){
       
@@ -255,12 +256,12 @@ function sendDataToSign(){
       console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
   });
       clearData();
+      toSend = [];
 }
 
 function clearData(){
   signatureData.type= "";
   signatureData.filename= "";
-  signatureData.password= "";
   signatureData.visible= false;
   signatureData.useField= false;
   signatureData.verticalPosition= "Top";
@@ -268,7 +269,6 @@ function clearData(){
   signatureData.pageNumber= 1;
   signatureData.signatureField= "";
   signatureData.tabUrl= "";
-  toSend = [];
 
 }
 
@@ -348,6 +348,7 @@ chrome.runtime.onMessage.addListener(
                   console.log("ENDED");
                   appCurrentState = appStateEnum.ready;
                   hideLoading();
+                  
                   // sections.changeSection(sections.section.endSection);
                   // endSectionUIUpdate(request.localPath);
                   break;
