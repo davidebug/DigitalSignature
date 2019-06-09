@@ -1,5 +1,5 @@
 {
-  "name": "com.unical.digitalsignature.signer",
+  "name": "com.unical.digitalsignature.mailsigner",
   "description": "Native application for interact with PKCS11 token and sign pdf",
   "path": "extension.bat",
   "type": "stdio",

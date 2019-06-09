@@ -23,6 +23,22 @@ $('#inputGroupFile02').on('change',function(){
 
  $(document).ready(function(){
 
+  // chrome.runtime.getBackgroundPage(function(bg){
+  //   if(bg.sessionDataHTML != ""){
+  //     document.body.innerHTML = "";
+  //     document.body.innerHTML = bg.sessionDataHTML; 
+  //     console.log("not vuoto");
+  //   }
+  //   else{
+  //     bg.sessionDataHTML = document.body.innerHTML;
+  //     console.log("vuoto");
+  //   }
+  //   setInterval(function(){
+  //     bg.sessionDataHTML = document.body.innerHTML;
+  //     console.log("aggiorno");
+  //   },500);    
+  // })
+
     console.log('Try to execute contentScript');        
 
     
@@ -84,7 +100,7 @@ $('#inputGroupFile02').on('change',function(){
   var attachments = [];
   var newFilesPath = [];
 
-
+  
 
 function addAttachments(attachments){
 
@@ -222,6 +238,8 @@ function sleep(time) {
 
 function sendDataToSign(){
 
+    showLoading();
+    hideError();
     chrome.runtime.sendMessage({
       action: popupMessageType.init,
   }, function (response) {
@@ -234,7 +252,8 @@ function sendDataToSign(){
       data: signatureData,
       url: url
   }, function (response) {
-      console.log("Successfully sent");
+      console.log("Loading background app");
+      showLoading("Downloading and signing");
       console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
   });
       clearData();
@@ -287,6 +306,34 @@ function clearData(){
 //             }
 //         };
 
+const loadingMsg = document.getElementById("loading-info");
+const errorMsg = document.getElementById("error-info");
+const submitButtons = document.getElementById("submit-buttons");
+
+function showError(errorMessage) {
+  errorMsg.textContent = errorMessage;
+  document.getElementById("error-section").style.display = "inline";
+  
+}
+
+function hideError() {
+  errorMsg.textContent = "";
+  document.getElementById("error-section").style.display = "none";
+}
+
+function showLoading(message) {
+  submitButtons.style.display = "none";
+  loadingMsg.textContent = message;
+  document.getElementById("loading").style.display = "inline";
+  
+}
+
+function hideLoading() {
+  submitButtons.style.display = "inline";
+  loadingMsg.textContent = "";
+  document.getElementById("loading").style.display = "none";
+  
+}
 
 chrome.runtime.onMessage.addListener(
   function (request, sender, sendResponse) {
@@ -299,6 +346,7 @@ chrome.runtime.onMessage.addListener(
                   console.log("ENDED");
                   appCurrentState = appStateEnum.ready;
                   newFilesPath.push(request.localPath);
+                  hideLoading();
                   // sections.changeSection(sections.section.endSection);
                   // endSectionUIUpdate(request.localPath);
                   break;
@@ -306,7 +354,8 @@ chrome.runtime.onMessage.addListener(
                   // updateSignatureFieldList(request);
                   break;
               case "error":
-                  // showError(request.error);
+                   showError(request.error);
+                   hideLoading();
                   break;
               case "updateSignatureData":
                   // updateSignatureData(request.fieldToUpdate, request.value);
@@ -317,7 +366,7 @@ chrome.runtime.onMessage.addListener(
       else if(request.hasOwnProperty("popupContent") ){
         console.log(request.popupContent);
         attachments = request.popupContent;
-        addAttachments(attachments);
+          addAttachments(attachments);
         urls = request.urls;
         
       }

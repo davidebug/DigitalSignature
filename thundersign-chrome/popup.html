@@ -6,7 +6,9 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" media="screen" href="popup.css">
         
-
+        <script src="scripts/bootstrap/jquery-3.4.1.slim.min.js"  ></script>
+        <script src="scripts/bootstrap/popper.min.js" ></script>
+        <script src="scripts/bootstrap/bootstrap.min.js" ></script>
         <title> ThunderSign </title>
 
     </head>
@@ -17,70 +19,86 @@
 
         <div id= "popup" class="popup-page" style="width:520px" >
             
-            <form id="my-form">
-                    <fieldset class="scheduler-border" id="attachments" style="border-width:2px">
-                            <legend class="scheduler-border" style="font-size: 14px">Available attachments</legend>
-                            <div class="container" id="my-attachments">
+                <div id="error-section" class="has-text-centered" style="display:none;">
+                        
+                        <h1 class="title is-5 "style="color:red;">Error&nbsp;&nbsp;<i class="fas fa-exclamation-triangle"></i></h1>
+                        <h6 id="error-info" class="info-msg" style="text-align: center; color:red;" ></h6>
+                </div>
+                <br>    
 
-                            </div>
-                    </fieldset>        
-                <div class="input-group" style="font-size:20px">
-                    <div><input id="cades" type="radio" name="type" checked />&nbsp;CAdes&nbsp;&nbsp;&nbsp;</div>
-                    <div id="pades-wrapper" > 
-                        <input id="pades" type="radio" name="type"   />&nbsp;PAdes&nbsp;&nbsp;&nbsp;
-                        <input id="visible-pades" type="radio" name="type" />&nbsp;Visible PAdes  
+            <div id="submit-buttons">
+
+                <form id="my-form">
+
+                        <fieldset class="scheduler-border" id="attachments" style="border-width:2px">
+                                <legend class="scheduler-border" style="font-size: 14px">Available attachments</legend>
+                                <div class="container" id="my-attachments">
+
+                                </div>
+                        </fieldset>        
+                    <div class="input-group" style="font-size:20px">
+                        <div><input id="cades" type="radio" name="type" checked />&nbsp;CAdes&nbsp;&nbsp;&nbsp;</div>
+                        <div id="pades-wrapper" > 
+                            <input id="pades" type="radio" name="type"   />&nbsp;PAdes&nbsp;&nbsp;&nbsp;
+                            <input id="visible-pades" type="radio" name="type" />&nbsp;Visible PAdes  
+                        </div>
                     </div>
-                </div>
 
-                <br>
+                    <br>
 
-                <div class="collapse">
-                            <fieldset class="scheduler-border" id="pades-options" style="border-width:2px">
-                                <legend class="scheduler-border" style="font-size: 14px">Visible PAdes options</legend>
-                                <div class="container">
-                                    <div class="input-group" style="font-size:14px; margin-top:10px">Signature field &nbsp;
-                                        <label class="switch"> 
-                                                <input type="checkbox" id="signature-field" value="Signature Field" > 
-                                                <span class="slider round"></span>
-                                        </label>
-                                        
-                                    </div>
-                                
-                                    <br>
-                                    <div class="input-group mb-3" style="width:300px;">
-                                        <div class="custom-file" >
-                                            <input type="file" class="custom-file-input" id="inputGroupFile02"/>
-                                            <label class="custom-file-label" for="inputGroupFile02">Choose an image</label>
+                    <div class="collapse">
+                                <fieldset class="scheduler-border" id="pades-options" style="border-width:2px">
+                                    <legend class="scheduler-border" style="font-size: 14px">Visible PAdes options</legend>
+                                    <div class="container">
+                                        <div class="input-group" style="font-size:14px; margin-top:10px">Signature field &nbsp;
+                                            <label class="switch"> 
+                                                    <input type="checkbox" id="signature-field" value="Signature Field" > 
+                                                    <span class="slider round"></span>
+                                            </label>
+                                            
                                         </div>
-                                    </div>
+                                    
+                                        <br>
+                                        <div class="input-group mb-3" style="width:300px;">
+                                            <div class="custom-file" >
+                                                <input type="file" class="custom-file-input" id="inputGroupFile02"/>
+                                                <label class="custom-file-label" for="inputGroupFile02">Choose an image</label>
+                                            </div>
+                                        </div>
 
-                                    <div class="collapse-1" id="manual-position">
-                                        <p style="font-size:14px">Manually set position:</p>
-      
-                                    </div>    
-                                 
-                            </fieldset>
+                                        <div class="collapse-1" id="manual-position">
+                                            <p style="font-size:14px">Manually set position:</p>
+        
+                                        </div>    
+                                    
+                                </fieldset>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password / PIN</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                    
+                    
+                        <button id="signAndReply" class="btn btn-success" type="button" value="Sign and Reply" style="font-size: 16px"><i class="fas fa-reply"></i>&nbsp;Sign and Reply</button>
+                        <button id="signAndSend" class="btn btn-success" type="button" value="Sign and Send" style="font-size: 16px"><i class="fas fa-share"></i>&nbsp;Sign and Send</button> 
+                        <button id="signAndSave" class="btn btn-success" type="button" value="Sign and Save" style="font-size: 16px"><i class="fas fa-save"></i>&nbsp;Sign and Save</button>
+                            
+                </form>
+
+            </div>  
+            <div id="loading" style="display:none">
+                <div style="width: 50%; margin: 0 auto;">
+                    <h6 id="loading-info" class="info-msg" style="text-align: center"></h6>
+                    <div class="loader" style="margin-left:80px"  ></div>
                 </div>
-
-                
-
-                <div class="form-group">
-                    <label for="password">Password / PIN</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
-                </div>
-                
-                    <button id="signAndReply" class="btn btn-success" type="button" value="Sign and Reply" style="font-size: 16px"><i class="fas fa-reply"></i>&nbsp;Sign and Reply</button>
-                    <button id="signAndSend" class="btn btn-success" type="button" value="Sign and Send" style="font-size: 16px"><i class="fas fa-share"></i>&nbsp;Sign and Send</button> 
-                    <button id="signAndSave" class="btn btn-success" type="button" value="Sign and Save" style="font-size: 16px"><i class="fas fa-save"></i>&nbsp;Sign and Save</button>
-                          
-            </form>
+            </div>
         </div>
 
 
         
-        <script src="scripts/bootstrap/jquery-3.2.1.slim.min.js"  ></script>
-        <script src="scripts/bootstrap/popper.min.js" ></script>
-        <script src="scripts/bootstrap/bootstrap.min.js" ></script>
+        
+        
         <script src="scripts/popup.js"></script>   
         
         

@@ -17,6 +17,8 @@ Object.freeze(StateEnum)
 
 //state of the app
 var appCurrentState = StateEnum.start;
+var sessionDataHTML = "";
+
 
 var storedSignatureData = {
   signatureData: "",
@@ -35,7 +37,7 @@ var storedSignatureData = {
   }
 }
 
-const app = 'com.unical.digitalsignature.signer';
+const app = 'com.unical.digitalsignature.mailsigner';
 
 
 /**
