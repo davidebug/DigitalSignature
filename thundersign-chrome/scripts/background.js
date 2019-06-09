@@ -17,7 +17,6 @@ Object.freeze(StateEnum)
 
 //state of the app
 var appCurrentState = StateEnum.start;
-var sessionDataHTML = "";
 
 
 var storedSignatureData = {
@@ -37,8 +36,10 @@ var storedSignatureData = {
   }
 }
 
-const app = 'com.unical.digitalsignature.mailsigner';
+var sessionDataHtml = "";
 
+const app = 'com.unical.digitalsignature.mailsigner';
+var countEnded = 0;
 
 /**
  * Open connection with native app and set message listeners.
@@ -55,15 +56,22 @@ function openConnection() {
     if (msg.hasOwnProperty("native_app_message")) {
       if (msg.native_app_message == "end") {
         appCurrentState = StateEnum.complete;
+        countEnded += 1;
         
-      //  storedSignatureData.empty();
         chrome.runtime.sendMessage({
-          state: "end",                        
+          state: "file",                        
           localPath: msg.local_path_newFile
         }, function (response) {});
 
-        
-      } else if (msg.native_app_message == "info") {
+        if(countEnded == toSign){
+          console.log("ENDED");
+          countEnded = 0;
+          storedSignatureData.empty();
+          chrome.runtime.sendMessage({
+            state: "end"
+          }, function (response) {});
+        }
+      }  else if (msg.native_app_message == "info") {
 
         // storedSignatureData.infoPDF = {
         //   pageNumber: msg.pageNumber,
@@ -214,20 +222,20 @@ zoom: 'zoom',
 resetState: "resetState"
 }
 
-function tryHandleProcedure(index){
+function tryHandleProcedure(url){
   if(appCurrentState != StateEnum.signing){
     appCurrentState = StateEnum.signing;
     openConnection();
-    downloadFile(index);  
+    downloadFile(url);  
   }
   else{
     sleep(1500).then(() => { 
-      tryHandleProcedure(index);
+      tryHandleProcedure(url);
     });
   }
 }
 
-
+var toSign = 0;
 //listener message Popup -> Background
 chrome.runtime.onMessage.addListener(
 function (request, sender, sendResponse) {
@@ -258,9 +266,14 @@ function (request, sender, sendResponse) {
       console.log("data received : ");
       console.log(request.data);
       console.log("Urls received:");
-      console.log(request.toDownload);
-      storedSignatureData.signatureData = request.data;
-      downloadFile(request.url);
+      console.log(request.urls);
+      toSign = request.data.length;
+      for(var i = 0; i< request.data.length; i++){
+        console.log(request.data[i].pageNumber);
+        storedSignatureData.signatureData = request.data[i];
+        tryHandleProcedure(request.urls[i]);
+      }
+     
       break;
 
     // case popupMessageType.download_and_getInfo: //used for directly sign a local file

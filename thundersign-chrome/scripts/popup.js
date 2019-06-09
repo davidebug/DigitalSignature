@@ -23,21 +23,7 @@ $('#inputGroupFile02').on('change',function(){
 
  $(document).ready(function(){
 
-  // chrome.runtime.getBackgroundPage(function(bg){
-  //   if(bg.sessionDataHTML != ""){
-  //     document.body.innerHTML = "";
-  //     document.body.innerHTML = bg.sessionDataHTML; 
-  //     console.log("not vuoto");
-  //   }
-  //   else{
-  //     bg.sessionDataHTML = document.body.innerHTML;
-  //     console.log("vuoto");
-  //   }
-  //   setInterval(function(){
-  //     bg.sessionDataHTML = document.body.innerHTML;
-  //     console.log("aggiorno");
-  //   },500);    
-  // })
+   checkCurrenState();
 
     console.log('Try to execute contentScript');        
 
@@ -96,12 +82,11 @@ $('#inputGroupFile02').on('change',function(){
  const appStateEnum = background.StateEnum;
  let appCurrentState = background.appCurrentState;
 
-  var urls = [];
-  var attachments = [];
-  var newFilesPath = [];
+var urls = [];
+var attachments = [];
+var newFilesPath = [];
 
   
-
 function addAttachments(attachments){
 
  
@@ -152,93 +137,106 @@ function addAttachments(attachments){
 
 
 
-var url = "";
+var toDownload = [];
+var toSend = [];
+
+
 
 function getData(i){
   
+    
     if(document.getElementById(attachments[i]).checked){
-      url = urls[i];
-    }   
-
-  if(document.getElementById("cades").checked){
-    signatureData.type = "cades"
-  }
-  else if(document.getElementById("pades").checked){
-    signatureData.type = "pades"
-  }
-  else if(document.getElementById("visible-pades").checked){
-    signatureData.type = "pades"
-    signatureData.visible = true;
-    signatureData.useField = document.getElementById("signature-field").checked;
-    if(signatureData.useField === false){
-      signatureData.verticalPosition= document.querySelector('input[name="vertical-pos'+ attachments[i] +'"]:checked').value;
-      signatureData.horizontalPosition= document.querySelector('input[name="horizontal-pos'+ attachments[i] +'"]:checked').value;
-      signatureData.pageNumber = document.getElementById("page"+ attachments[i]).value;
       
-    }
-    else{
-      signatureData.signatureField = ""; //--- TODO set signature-field
-    }
+      if(document.getElementById("cades").checked){
+        signatureData.type = "cades"
+      }
+      else if(document.getElementById("pades").checked){
+        signatureData.type = "pades"
+      }
+      else if(document.getElementById("visible-pades").checked){
+        signatureData.type = "pades"
+        signatureData.visible = true;
+        signatureData.useField = document.getElementById("signature-field").checked;
+        if(signatureData.useField === false){
+          signatureData.verticalPosition= document.querySelector('input[name="vertical-pos'+ attachments[i] +'"]:checked').value;
+          signatureData.horizontalPosition= document.querySelector('input[name="horizontal-pos'+ attachments[i] +'"]:checked').value;
+          signatureData.pageNumber = document.getElementById("page"+ attachments[i]).value;
+        
+        }
+        else{
+          signatureData.signatureField = ""; //--- TODO set signature-field
+        }
 
+      }
+      
+      toDownload.push(urls[i]);
+      toSend.push(signatureData);
+     
   }
-  signatureData.password = document.getElementById("password").value;
-
-
 }
 
 
 $("#signAndReply").click(function(){
-      for(var i = 0; i<attachments.length; i++){
-        handleProcedure(i);
+
+  signatureData.password = document.getElementById("password").value;
+
+  if(signatureData.password != ""){
+    for(var i = 0; i<attachments.length; i++){
+      getData(i);
     }      
-        console.log("started " + signatureData.type + " sign and Reply")
+      sendDataToSign();
+      console.log("started " + signatureData.type + " sign and Reply")
+  }
+  else{
+    showError("Password needed");
+  }  
   
 });
 
 $("#signAndSend").click(function(){
-      for(var i = 0; i<attachments.length; i++){
-        handleProcedure(i);
+
+  signatureData.password = document.getElementById("password").value;
+
+  if(signatureData.password != ""){
+    for(var i = 0; i<attachments.length; i++){
+      getData(i);
     }      
-        console.log("started " + signatureData.type + " sign and Send")
+      sendDataToSign();
+      console.log("started " + signatureData.type + " sign and Send")
+  }
+  else{
+    showError("Password needed");
+  }  
    
 });
 
 $("#signAndSave").click(function(){
-  for(var i = 0; i<attachments.length; i++){
-        handleProcedure(i);
-  }      
-        console.log("started " + signatureData.type + " sign and Save")
+
+  signatureData.password = document.getElementById("password").value;
+
+  if(signatureData.password != ""){
+    for(var i = 0; i<attachments.length; i++){
+      getData(i);
+    }      
+      sendDataToSign();
+      console.log("started " + signatureData.type + " sign and Save")
+  }
+  else{
+    showError("Password needed");
+  }  
+  
   
 });
 
-function handleProcedure(i){
-  
-  
-    console.log("Going to get index -- "+ i);
-    console.log(appCurrentState);
-    if(appCurrentState != appStateEnum.signing){
-      appCurrentState = appStateEnum.signing;
-      getData(i);
-      if(signatureData.type != "" && signatureData.password != ""){
-        sendDataToSign();
-        console.log("started " + signatureData.type + " sign and Save")
-      }  
-      // else dai errore
-    }
-    else if(appCurrentState == appStateEnum.signing){
-      sleep(1500).then(() => { 
-        handleProcedure(i);
-      });
-    }
-}
+
+
 
 function sleep(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
 function sendDataToSign(){
-
-    showLoading();
+    showLoading("Downloading and signing");
     hideError();
     chrome.runtime.sendMessage({
       action: popupMessageType.init,
@@ -246,11 +244,11 @@ function sendDataToSign(){
       console.log("opening connection to native app");
   });
   
-
+    console.log(toSend[0]);
     chrome.runtime.sendMessage({
       action: popupMessageType.sign,
-      data: signatureData,
-      url: url
+      data: toSend,
+      urls: toDownload
   }, function (response) {
       console.log("Loading background app");
       showLoading("Downloading and signing");
@@ -270,41 +268,42 @@ function clearData(){
   signatureData.pageNumber= 1;
   signatureData.signatureField= "";
   signatureData.tabUrl= "";
+  toSend = [];
 
 }
 
-//  function checkCurrenState() {
-//             // console.log("App Current State:" + appCurrentState);
-//             if (appCurrentState == undefined) {
-//                 clearData();
-//             }
-//             if (appCurrentState == appStateEnum.signing || appCurrentState == appStateEnum.downloadFile || appCurrentState == appStateEnum.info) {
-//                 console.log("LOADING");
-//                 // sections.changeSection(sections.section.loadingSection);
-//                 showLoading(MessageType[appCurrentState]);
-//             } else if (appCurrentState == appStateEnum.complete || appCurrentState == appStateEnum.error) {
-//                 clearData();
-//             }
-//             //check if exist stored data in background
-//             else if (appCurrentState == appStateEnum.running) {
-//                 console.log(backgroundStoredSignatureData);
-//                 if (backgroundStoredSignatureData.isEmpty() == false) {
-//                     console.log("NEED TO RESTORE DATA");
-//                     chrome.tabs.query({
-//                         active: true,
-//                         currentWindow: true
-//                     }, function (tab) {
-//                         if (tab[0].url == backgroundStoredSignatureData.signatureData.tabUrl) {
-//                             signatureData.copy(backgroundStoredSignatureData.signatureData);
-//                             updateSignatureFieldList(backgroundStoredSignatureData.infoPDF);
-//                         } else {
-//                             console.log("Stored data in background belong to a different document. Clear stored data.")
-//                             clearData();
-//                         }
-//                     });
-//                 }
-//             }
-//         };
+ function checkCurrenState() {
+            // console.log("App Current State:" + appCurrentState);
+            if (appCurrentState == undefined) {
+                clearData();
+            }
+            if (appCurrentState == appStateEnum.signing || appCurrentState == appStateEnum.downloadFile || appCurrentState == appStateEnum.info) {
+                console.log("LOADING");
+                // sections.changeSection(sections.section.loadingSection);
+                showLoading("Downloading and signing");
+            } else if (appCurrentState == appStateEnum.complete || appCurrentState == appStateEnum.error) {
+                clearData();
+            }
+            //check if exist stored data in background
+            // else if (appCurrentState == appStateEnum.running) {
+            //     console.log(backgroundStoredSignatureData);
+            //     if (backgroundStoredSignatureData.isEmpty() == false) {
+            //         console.log("NEED TO RESTORE DATA");
+            //         chrome.tabs.query({
+            //             active: true,
+            //             currentWindow: true
+            //         }, function (tab) {
+            //             if (tab[0].url == backgroundStoredSignatureData.signatureData.tabUrl) {
+            //                 signatureData.copy(backgroundStoredSignatureData.signatureData);
+            //                 updateSignatureFieldList(backgroundStoredSignatureData.infoPDF);
+            //             } else {
+            //                 console.log("Stored data in background belong to a different document. Clear stored data.")
+            //                 clearData();
+            //             }
+            //         });
+            //     }
+            // }
+        };
 
 const loadingMsg = document.getElementById("loading-info");
 const errorMsg = document.getElementById("error-info");
@@ -342,10 +341,12 @@ chrome.runtime.onMessage.addListener(
 
       if (request.hasOwnProperty("state")) {
           switch (request.state) {
+              case "file":
+                  newFilesPath.push(request.localPath);
+                  break;
               case "end":
                   console.log("ENDED");
                   appCurrentState = appStateEnum.ready;
-                  newFilesPath.push(request.localPath);
                   hideLoading();
                   // sections.changeSection(sections.section.endSection);
                   // endSectionUIUpdate(request.localPath);
