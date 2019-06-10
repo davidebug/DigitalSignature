@@ -222,15 +222,17 @@ zoom: 'zoom',
 resetState: "resetState"
 }
 
-function tryHandleProcedure(url){
+function tryHandleProcedure(url,data){
+	
   if(appCurrentState != StateEnum.signing){
     appCurrentState = StateEnum.signing;
+	storedSignatureData.signatureData = data;
     openConnection();
     downloadFile(url);  
   }
   else{
     sleep(1500).then(() => { 
-      tryHandleProcedure(url);
+      tryHandleProcedure(url,data);
     });
   }
 }
@@ -270,8 +272,8 @@ function (request, sender, sendResponse) {
       toSign = request.data.length;
       for(var i = 0; i< request.data.length; i++){
         console.log(request.data[i].pageNumber);
-        storedSignatureData.signatureData = request.data[i];
-        tryHandleProcedure(request.urls[i]);
+        
+        tryHandleProcedure(request.urls[i],request.data[i]);
       }
      
       break;

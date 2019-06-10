@@ -167,6 +167,7 @@ function getData(i){
       image: "",
       tabUrl: ""
     }
+    send.image = signatureData.image;
     send.password = signatureData.password;
     if(document.getElementById(attachments[i]).checked){
       
