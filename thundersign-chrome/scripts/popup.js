@@ -153,35 +153,48 @@ var toSend = [];
 
 function getData(i){
   
-  clearData();
-    
+    clearData();
+    var send = {
+      type: "",
+      filename: "",
+      password: "",
+      visible: false,
+      useField: false,
+      verticalPosition: "Top",
+      horizontalPosition: "Left",
+      pageNumber: 1,
+      signatureField: "",
+      image: "",
+      tabUrl: ""
+    }
+    send.password = signatureData.password;
     if(document.getElementById(attachments[i]).checked){
       
       if(document.getElementById("cades").checked){
-        signatureData.type = "cades"
+        send.type = "cades"
       }
       else if(document.getElementById("pades").checked){
-        signatureData.type = "pades"
+        send.type = "pades"
       }
       else if(document.getElementById("visible-pades").checked){
-        signatureData.type = "pades"
-        signatureData.visible = true;
-        signatureData.useField = document.getElementById("signature-field").checked;
-        if(signatureData.useField === false){
-          signatureData.verticalPosition= document.querySelector('input[name="vertical-pos'+ attachments[i] +'"]:checked').value;
-          signatureData.horizontalPosition= document.querySelector('input[name="horizontal-pos'+ attachments[i] +'"]:checked').value;
-          signatureData.pageNumber = document.getElementById("page"+ attachments[i]).value;
+        send.type = "pades"
+        send.visible = true;
+        send.useField = document.getElementById("signature-field").checked;
+        if(send.useField === false){
+          send.verticalPosition= document.querySelector('input[name="vertical-pos'+ attachments[i] +'"]:checked').value;
+          send.horizontalPosition= document.querySelector('input[name="horizontal-pos'+ attachments[i] +'"]:checked').value;
+          send.pageNumber = document.getElementById("page"+ attachments[i]).value;
         
         }
         else{
-          signatureData.signatureField = ""; //--- TODO set signature-field
+          send.signatureField = ""; //--- TODO set signature-field
         }
 
       }
       
       toDownload.push(urls[i]);
-      toSend.push(signatureData);
-     
+      toSend.push(send);
+      console.log(toSend[i].pageNumber);
   }
 }
 
@@ -278,7 +291,7 @@ function clearData(){
   signatureData.pageNumber= 1;
   signatureData.signatureField= "";
   signatureData.tabUrl= "";
-
+  
 }
 
  function checkCurrenState() {
@@ -288,7 +301,6 @@ function clearData(){
             }
             if (appCurrentState == appStateEnum.signing || appCurrentState == appStateEnum.downloadFile || appCurrentState == appStateEnum.info) {
                 console.log("LOADING");
-                // sections.changeSection(sections.section.loadingSection);
                 showLoading("Downloading and signing");
             } else if (appCurrentState == appStateEnum.complete || appCurrentState == appStateEnum.error) {
                 clearData();
@@ -357,8 +369,6 @@ chrome.runtime.onMessage.addListener(
                   console.log("ENDED");
                   appCurrentState = appStateEnum.ready;
                   hideLoading();
-                  
-                  // sections.changeSection(sections.section.endSection);
                   // endSectionUIUpdate(request.localPath);
                   break;
               case "info":
