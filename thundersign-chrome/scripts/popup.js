@@ -24,6 +24,7 @@ const background = chrome.extension.getBackgroundPage();
 var urls = [];
 var attachments = [];
 var newFilesPath = [];
+var fieldsList = [];
 
 chrome.runtime.sendMessage({
   action: popupMessageType.wakeup,
@@ -148,7 +149,7 @@ function addAttachments(attachments){
 
 var toDownload = [];
 var toSend = [];
-
+var toSign = [];
 
 
 function getData(i){
@@ -170,7 +171,7 @@ function getData(i){
     send.image = signatureData.image;
     send.password = signatureData.password;
     if(document.getElementById(attachments[i]).checked){
-      
+      toSign.push(attachments[i]);
       if(document.getElementById("cades").checked){
         send.type = "cades"
       }
@@ -186,9 +187,6 @@ function getData(i){
           send.horizontalPosition= document.querySelector('input[name="horizontal-pos'+ attachments[i] +'"]:checked').value;
           send.pageNumber = document.getElementById("page"+ attachments[i]).value;
         
-        }
-        else{
-          send.signatureField = ""; //--- TODO set signature-field
         }
 
       }
@@ -207,8 +205,12 @@ $("#signAndReply").click(function(){
   if(signatureData.password != ""){
     for(var i = 0; i<attachments.length; i++){
       getData(i);
-    }      
+    } 
+    if(toSend[0].useField == false)     
       sendDataToSign();
+    else{
+      requestInfo();
+    }  
       console.log("started " + signatureData.type + " sign and Reply")
   }
   else{
@@ -225,7 +227,11 @@ $("#signAndSend").click(function(){
     for(var i = 0; i<attachments.length; i++){
       getData(i);
     }      
-      sendDataToSign();
+    if(toSend[0].useField == false)     
+    sendDataToSign();
+  else{
+    requestInfo();
+  }  
       console.log("started " + signatureData.type + " sign and Send")
   }
   else{
@@ -242,7 +248,11 @@ $("#signAndSave").click(function(){
     for(var i = 0; i<attachments.length; i++){
       getData(i);
     }      
-      sendDataToSign();
+    if(toSend[0].useField == false)     
+    sendDataToSign();
+  else{
+    requestInfo();
+  }  
       console.log("started " + signatureData.type + " sign and Save")
   }
   else{
@@ -252,12 +262,75 @@ $("#signAndSave").click(function(){
   
 });
 
+$("#sendInfo").click(function(){
+
+  var fieldsToSend = [];
+  $("#fields-container").css("display","none");
+  for(var i = 0; i< toSign.length; i++){
+    for(var j = 0; j<fieldsList.length; j++){
+      if(document.getElementById(toSign[i]+j+"field").checked){
+        var field = document.getElementById(toSign[i]+j+"field").value;
+        fieldsToSend.push(field);
+        break;
+      }
+    }
+  }  
+  chrome.runtime.sendMessage({
+    action: popupMessageType.init,
+}, function (response) {
+    console.log("opening connection to native app");
+});
+
+  chrome.runtime.sendMessage({
+    action: popupMessageType.sign,
+    fieldsList: fieldsToSend,
+}, function (response) {
+    console.log("Loading background app");
+    showLoading("Signing on selected fields..");
+    console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
+});
+    clearData();
+    $("#fields").html("");
+    toSend = [];
+    fieldsList = [];
+    
+  
+});
+
 
 
 
 function sleep(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
+
+
+function requestInfo(){
+  showLoading("Requesting signature fields..");
+    hideError();
+    chrome.runtime.sendMessage({
+      action: popupMessageType.init,
+  }, function (response) {
+      console.log("opening connection to native app");
+  });
+  
+    console.log(toSend[0].pageNumber);
+    chrome.runtime.sendMessage({
+      action: popupMessageType.info,
+      data: toSend,
+      urls: toDownload
+  }, function (response) {
+      console.log("Loading background app");
+      showLoading("Requesting signature fields..");
+      console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
+  });
+      clearData();
+      $("#fields").html("");
+      toSend = [];
+      fieldsList = [];
+}
+
+
 
 function sendDataToSign(){
     showLoading("Downloading and signing");
@@ -270,7 +343,7 @@ function sendDataToSign(){
   
     console.log(toSend[0].pageNumber);
     chrome.runtime.sendMessage({
-      action: popupMessageType.sign,
+      action: popupMessageType.download_and_sign,
       data: toSend,
       urls: toDownload
   }, function (response) {
@@ -279,7 +352,10 @@ function sendDataToSign(){
       console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
   });
       clearData();
+      $("#fields").html("");
       toSend = [];
+      fieldsList = [];
+      
 }
 
 function clearData(){
@@ -356,6 +432,59 @@ function hideLoading() {
   
 }
 
+function showfields(){
+  hideLoading();
+  submitButtons.style.display = "none";
+}
+
+
+
+function updateSignatureFieldList() {
+ showfields();
+  var manual = '<div><p> - ' + toSign[infoCount] +"</p>";
+  $("#fields").append(manual);
+
+  if(fieldsList.length != 0)
+  {
+    console.log(infoCount);
+    for(var i = 0; i<fieldsList.length; i++){    
+      var toAppend = "<input id='"+ toSign[infoCount]+i+"field' type='radio' name='"+toSign[infoCount]+"fields' style='margin-left:30px' value ='"+ fieldsList[i].name+ "'>" + fieldsList[i].name;    
+      
+      $("#fields").append(toAppend);
+      $("#fields").append("<br>");
+      
+    }
+  }
+  else{
+            var toAppend = '     <div style="font-size:14px;" class="container" id="set-position" >'
+            +'         <div class="input-group" style="width:100px;margin-top:10px;">Page:&nbsp; &nbsp;'                  
+            +'                  <input type="text" class="form-control" id="page'+ toSign[infoCount] +'" style="height:20px;" >'
+            +'          </div>'      
+            +'        <div id="vertical-pos'+ toSign[infoCount] +'fielded" class="input-group" style="font-size: 14px;"> Vertical Position:&nbsp; &nbsp;'
+            +'            <input id="top '+ toSign[infoCount] +'fielded" type="radio" name="vertical-pos'+ toSign[infoCount] +'" value="top" checked>&nbsp;&nbsp;Top&nbsp;&nbsp;'
+            +'            <input id="middle'+ toSign[infoCount] +'fielded" type="radio" name="vertical-pos'+ toSign[infoCount] +'" value="middle">&nbsp;Middle&nbsp;&nbsp;'
+            +'            <input id="bottom'+ toSign[infoCount] +'fielded" type="radio" name="vertical-pos'+ toSign[infoCount] +'" value="bottom">&nbsp;Bottom&nbsp;'
+            +'        </div>'
+            +'        <div id="horizontal-pos'+ toSign[infoCount] +'fielded" class="input-group" style="font-size:14px"> Horizontal Position:&nbsp; &nbsp;'
+            +'                <input id="left'+ toSign[infoCount] +'fielded" type="radio" name="horizontal-pos'+ toSign[infoCount] +'" value="left" checked>&nbsp;Left&nbsp;&nbsp;'
+            +'                <input id="center'+ toSign[infoCount] +'fielded" type="radio" name="horizontal-pos'+ toSign[infoCount] +'" value="center">&nbsp;Center&nbsp;&nbsp;'
+            +'                <input id="right'+ toSign[infoCount] +'fielded" type="radio" name="horizontal-pos'+ toSign[infoCount] +'" value="right">&nbsp;Right&nbsp;'
+            +'        </div>'
+            +'    </div>'
+            +'  </div>    '
+            
+            +'<br>';
+
+            $("#fields").append(toAppend);    
+            $("#fields").append("<br>");
+        
+  }
+  $("#fields").append("</div>");
+  $("#fields-container").css("display","inline");
+  infoCount +=1;
+}
+
+var infoCount = 0;
 chrome.runtime.onMessage.addListener(
   function (request, sender, sendResponse) {
       console.log("<<< received:")
@@ -373,7 +502,8 @@ chrome.runtime.onMessage.addListener(
                   // endSectionUIUpdate(request.localPath);
                   break;
               case "info":
-                  // updateSignatureFieldList(request);
+                  fieldsList = request.fields;
+                  updateSignatureFieldList();
                   break;
               case "error":
                    showError(request.error);
@@ -397,4 +527,3 @@ chrome.runtime.onMessage.addListener(
       //     ack: "success"
       // });
   });        
-     

@@ -7714,3 +7714,1351 @@
 2019/06/10 11:24:31, AbstractSignFactory: Create signed file: buono_rientro_32539(2)(1)-signed.pdf
 2019/06/10 11:24:31, signer: End of signing process.
 2019/06/10 11:24:31, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\giuse\\Downloads\\buono_rientro_32539(2)(1)-signed.pdf","signature_type":"pades"}
+2019/06/11 20:33:52, signer: ------------ Start Main --------------
+2019/06/11 20:33:52, signer: ------------ Start Main --------------
+2019/06/11 20:33:52, signer: Connect with Chrome extension
+2019/06/11 20:33:52, signer: Connect with Chrome extension
+2019/06/11 20:33:52, com.unical.argparser.MiddlewareChrome: Start
+2019/06/11 20:33:52, com.unical.argparser.MiddlewareChrome: Start
+2019/06/11 20:33:52, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 20:33:52, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 20:33:53, signer: ------------ Start Main --------------
+2019/06/11 20:33:53, signer: Connect with Chrome extension
+2019/06/11 20:33:53, com.unical.argparser.MiddlewareChrome: Start
+2019/06/11 20:33:53, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 20:33:54, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 20:36:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/11 20:36:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/11 20:36:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/11 22:02:21, signer: ------------ Start Main --------------
+2019/06/11 22:02:21, signer: Connect with Chrome extension
+2019/06/11 22:02:21, com.unical.argparser.MiddlewareChrome: Start
+2019/06/11 22:02:21, signer: ------------ Start Main --------------
+2019/06/11 22:02:21, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 22:02:21, signer: Connect with Chrome extension
+2019/06/11 22:02:21, com.unical.argparser.MiddlewareChrome: Start
+2019/06/11 22:02:21, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 22:02:24, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 22:02:51, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/11 22:02:51, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/11 22:03:10, signer: ------------ Start Main --------------
+2019/06/11 22:03:10, signer: Connect with Chrome extension
+2019/06/11 22:03:10, com.unical.argparser.MiddlewareChrome: Start
+2019/06/11 22:03:10, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 22:04:35, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/11 22:04:46, signer: ------------ Start Main --------------
+2019/06/11 22:04:46, signer: Connect with Chrome extension
+2019/06/11 22:04:46, com.unical.argparser.MiddlewareChrome: Start
+2019/06/11 22:04:46, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 22:04:46, signer: ------------ Start Main --------------
+2019/06/11 22:04:46, signer: Connect with Chrome extension
+2019/06/11 22:04:46, com.unical.argparser.MiddlewareChrome: Start
+2019/06/11 22:04:46, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 22:04:48, signer: ------------ Start Main --------------
+2019/06/11 22:04:48, signer: Connect with Chrome extension
+2019/06/11 22:04:48, com.unical.argparser.MiddlewareChrome: Start
+2019/06/11 22:04:48, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 22:04:48, com.unical.argparser.MiddlewareChrome: 4
+2019/06/11 22:04:48, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/11 22:04:48, signer: Selected Sign Format: PADES
+2019/06/11 22:04:48, signer: Start Signature Procedure
+2019/06/11 22:04:48, signer: 
+
+2019/06/11 22:04:51, signer: Certificate to use:  
+2019/06/11 22:04:52, signer: BAGNATO BONAVENTURA
+2019/06/11 22:04:54, PadesSignFactory: No available field in the pdf.
+2019/06/11 22:05:00, signer: Start of signing process...
+2019/06/11 22:05:00, AbstractSignFactory: Create signed file: 2017-RW-School-FORM1(3)-signed.pdf
+2019/06/11 22:05:00, signer: End of signing process.
+2019/06/11 22:05:00, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM1(3)-signed.pdf","signature_type":"pades"}
+2019/06/11 22:05:02, signer: ------------ Start Main --------------
+2019/06/11 22:05:02, signer: Connect with Chrome extension
+2019/06/11 22:05:02, com.unical.argparser.MiddlewareChrome: Start
+2019/06/11 22:05:02, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 22:05:04, signer: ------------ Start Main --------------
+2019/06/11 22:05:04, signer: Connect with Chrome extension
+2019/06/11 22:05:04, com.unical.argparser.MiddlewareChrome: Start
+2019/06/11 22:05:04, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 22:05:04, com.unical.argparser.MiddlewareChrome: 4
+2019/06/11 22:05:04, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/11 22:05:04, signer: Selected Sign Format: PADES
+2019/06/11 22:05:04, signer: Start Signature Procedure
+2019/06/11 22:05:04, signer: 
+
+2019/06/11 22:05:07, signer: Certificate to use:  
+2019/06/11 22:05:08, signer: BAGNATO BONAVENTURA
+2019/06/11 22:05:10, PadesSignFactory: No available field in the pdf.
+2019/06/11 22:05:14, signer: Start of signing process...
+2019/06/11 22:05:14, AbstractSignFactory: Create signed file: 2017-RW-School-FORM2(1)-signed.pdf
+2019/06/11 22:05:14, signer: End of signing process.
+2019/06/11 22:05:14, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM2(1)-signed.pdf","signature_type":"pades"}
+2019/06/11 22:07:16, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/11 22:07:16, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/11 22:07:16, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/11 22:07:28, signer: ------------ Start Main --------------
+2019/06/11 22:07:28, signer: ------------ Start Main --------------
+2019/06/11 22:07:28, signer: Connect with Chrome extension
+2019/06/11 22:07:28, signer: Connect with Chrome extension
+2019/06/11 22:07:28, com.unical.argparser.MiddlewareChrome: Start
+2019/06/11 22:07:28, com.unical.argparser.MiddlewareChrome: Start
+2019/06/11 22:07:28, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 22:07:28, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 22:07:34, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 22:07:35, signer: ------------ Start Main --------------
+2019/06/11 22:07:35, signer: Connect with Chrome extension
+2019/06/11 22:07:35, com.unical.argparser.MiddlewareChrome: Start
+2019/06/11 22:07:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/11 22:07:37, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:04:23, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:04:23, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:04:23, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:04:44, signer: ------------ Start Main --------------
+2019/06/12 00:04:44, signer: Connect with Chrome extension
+2019/06/12 00:04:44, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:04:44, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:04:44, signer: ------------ Start Main --------------
+2019/06/12 00:04:44, signer: Connect with Chrome extension
+2019/06/12 00:04:44, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:04:44, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:04:48, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:04:50, signer: ------------ Start Main --------------
+2019/06/12 00:04:50, signer: Connect with Chrome extension
+2019/06/12 00:04:50, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:04:50, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:04:52, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:07:16, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:07:16, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:07:16, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:07:29, signer: ------------ Start Main --------------
+2019/06/12 00:07:29, signer: Connect with Chrome extension
+2019/06/12 00:07:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:07:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:07:29, signer: ------------ Start Main --------------
+2019/06/12 00:07:29, signer: Connect with Chrome extension
+2019/06/12 00:07:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:07:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:07:31, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:07:33, signer: ------------ Start Main --------------
+2019/06/12 00:07:33, signer: Connect with Chrome extension
+2019/06/12 00:07:33, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:07:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:07:36, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:09:26, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:09:26, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:09:26, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:09:37, signer: ------------ Start Main --------------
+2019/06/12 00:09:37, signer: ------------ Start Main --------------
+2019/06/12 00:09:37, signer: Connect with Chrome extension
+2019/06/12 00:09:37, signer: Connect with Chrome extension
+2019/06/12 00:09:37, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:09:37, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:09:37, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:09:37, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:09:45, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:09:47, signer: ------------ Start Main --------------
+2019/06/12 00:09:47, signer: Connect with Chrome extension
+2019/06/12 00:09:47, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:09:47, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:09:50, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:12:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:12:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:12:31, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:12:42, signer: ------------ Start Main --------------
+2019/06/12 00:12:42, signer: Connect with Chrome extension
+2019/06/12 00:12:42, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:12:42, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:12:42, signer: ------------ Start Main --------------
+2019/06/12 00:12:42, signer: Connect with Chrome extension
+2019/06/12 00:12:42, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:12:42, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:12:44, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:12:45, signer: ------------ Start Main --------------
+2019/06/12 00:12:45, signer: Connect with Chrome extension
+2019/06/12 00:12:45, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:12:45, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:12:47, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:14:22, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:14:22, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:14:22, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:14:33, signer: ------------ Start Main --------------
+2019/06/12 00:14:33, signer: Connect with Chrome extension
+2019/06/12 00:14:33, signer: ------------ Start Main --------------
+2019/06/12 00:14:33, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:14:33, signer: Connect with Chrome extension
+2019/06/12 00:14:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:14:33, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:14:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:14:36, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:14:39, signer: ------------ Start Main --------------
+2019/06/12 00:14:39, signer: Connect with Chrome extension
+2019/06/12 00:14:39, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:14:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:14:43, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:16:24, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:16:24, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:16:24, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:16:34, signer: ------------ Start Main --------------
+2019/06/12 00:16:34, signer: Connect with Chrome extension
+2019/06/12 00:16:34, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:16:34, signer: ------------ Start Main --------------
+2019/06/12 00:16:34, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:16:34, signer: Connect with Chrome extension
+2019/06/12 00:16:34, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:16:34, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:16:37, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:16:39, signer: ------------ Start Main --------------
+2019/06/12 00:16:39, signer: Connect with Chrome extension
+2019/06/12 00:16:39, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:16:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:16:41, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:17:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:17:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:17:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:17:30, signer: ------------ Start Main --------------
+2019/06/12 00:17:30, signer: Connect with Chrome extension
+2019/06/12 00:17:30, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:17:30, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:17:30, signer: ------------ Start Main --------------
+2019/06/12 00:17:30, signer: Connect with Chrome extension
+2019/06/12 00:17:30, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:17:30, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:17:31, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:17:33, signer: ------------ Start Main --------------
+2019/06/12 00:17:33, signer: Connect with Chrome extension
+2019/06/12 00:17:33, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:17:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:17:34, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:19:25, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:19:25, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:19:25, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:19:36, signer: ------------ Start Main --------------
+2019/06/12 00:19:36, signer: Connect with Chrome extension
+2019/06/12 00:19:36, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:19:36, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:19:36, signer: ------------ Start Main --------------
+2019/06/12 00:19:36, signer: Connect with Chrome extension
+2019/06/12 00:19:36, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:19:36, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:19:38, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:19:39, signer: ------------ Start Main --------------
+2019/06/12 00:19:39, signer: Connect with Chrome extension
+2019/06/12 00:19:39, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:19:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:19:42, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:22:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:22:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:22:41, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:22:52, signer: ------------ Start Main --------------
+2019/06/12 00:22:52, signer: Connect with Chrome extension
+2019/06/12 00:22:52, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:22:52, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:22:52, signer: ------------ Start Main --------------
+2019/06/12 00:22:52, signer: Connect with Chrome extension
+2019/06/12 00:22:52, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:22:52, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:22:54, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:22:56, signer: ------------ Start Main --------------
+2019/06/12 00:22:56, signer: Connect with Chrome extension
+2019/06/12 00:22:56, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:22:56, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:23:17, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:23:55, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:23:55, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:23:55, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:24:07, signer: ------------ Start Main --------------
+2019/06/12 00:24:07, signer: Connect with Chrome extension
+2019/06/12 00:24:07, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:24:07, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:24:07, signer: ------------ Start Main --------------
+2019/06/12 00:24:07, signer: Connect with Chrome extension
+2019/06/12 00:24:07, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:24:07, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:24:20, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:24:21, signer: ------------ Start Main --------------
+2019/06/12 00:24:21, signer: Connect with Chrome extension
+2019/06/12 00:24:21, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:24:21, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:24:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:31:08, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:31:08, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:31:08, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:31:18, signer: ------------ Start Main --------------
+2019/06/12 00:31:18, signer: ------------ Start Main --------------
+2019/06/12 00:31:18, signer: Connect with Chrome extension
+2019/06/12 00:31:18, signer: Connect with Chrome extension
+2019/06/12 00:31:18, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:31:18, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:31:18, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:31:18, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:31:23, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:31:25, signer: ------------ Start Main --------------
+2019/06/12 00:31:25, signer: Connect with Chrome extension
+2019/06/12 00:31:25, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:31:25, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:31:28, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:34:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:34:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:34:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:34:29, signer: ------------ Start Main --------------
+2019/06/12 00:34:29, signer: Connect with Chrome extension
+2019/06/12 00:34:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:34:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:34:29, signer: ------------ Start Main --------------
+2019/06/12 00:34:29, signer: Connect with Chrome extension
+2019/06/12 00:34:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:34:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:34:34, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:34:37, signer: ------------ Start Main --------------
+2019/06/12 00:34:37, signer: Connect with Chrome extension
+2019/06/12 00:34:37, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:34:37, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:34:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:37:04, signer: ------------ Start Main --------------
+2019/06/12 00:37:04, signer: Connect with Chrome extension
+2019/06/12 00:37:04, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:37:04, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:37:04, signer: ------------ Start Main --------------
+2019/06/12 00:37:04, signer: Connect with Chrome extension
+2019/06/12 00:37:04, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:37:04, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:39:03, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:39:03, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:39:03, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:39:03, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:39:03, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 00:39:14, signer: ------------ Start Main --------------
+2019/06/12 00:39:14, signer: ------------ Start Main --------------
+2019/06/12 00:39:14, signer: Connect with Chrome extension
+2019/06/12 00:39:14, signer: Connect with Chrome extension
+2019/06/12 00:39:14, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:39:14, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:39:14, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:39:14, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:39:17, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:39:19, signer: ------------ Start Main --------------
+2019/06/12 00:39:19, signer: Connect with Chrome extension
+2019/06/12 00:39:19, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 00:39:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 00:39:21, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:08:07, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:08:07, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:08:07, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:08:23, signer: ------------ Start Main --------------
+2019/06/12 01:08:23, signer: Connect with Chrome extension
+2019/06/12 01:08:23, signer: ------------ Start Main --------------
+2019/06/12 01:08:23, signer: Connect with Chrome extension
+2019/06/12 01:08:23, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:08:23, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:08:23, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:08:23, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:08:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:08:35, signer: ------------ Start Main --------------
+2019/06/12 01:08:35, signer: Connect with Chrome extension
+2019/06/12 01:08:35, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:08:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:08:36, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:09:17, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:09:17, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:09:17, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:09:26, signer: ------------ Start Main --------------
+2019/06/12 01:09:26, signer: Connect with Chrome extension
+2019/06/12 01:09:26, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:09:26, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:09:26, signer: ------------ Start Main --------------
+2019/06/12 01:09:26, signer: Connect with Chrome extension
+2019/06/12 01:09:26, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:09:26, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:09:28, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:09:29, signer: ------------ Start Main --------------
+2019/06/12 01:09:29, signer: Connect with Chrome extension
+2019/06/12 01:09:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:09:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:09:31, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:09:35, signer: ------------ Start Main --------------
+2019/06/12 01:09:35, signer: Connect with Chrome extension
+2019/06/12 01:09:35, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:09:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:10:13, signer: ------------ Start Main --------------
+2019/06/12 01:10:13, signer: Connect with Chrome extension
+2019/06/12 01:10:13, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:10:13, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:10:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:10:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:10:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:10:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:10:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:10:29, signer: ------------ Start Main --------------
+2019/06/12 01:10:29, signer: Connect with Chrome extension
+2019/06/12 01:10:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:10:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:10:29, signer: ------------ Start Main --------------
+2019/06/12 01:10:29, signer: Connect with Chrome extension
+2019/06/12 01:10:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:10:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:10:31, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:10:32, signer: ------------ Start Main --------------
+2019/06/12 01:10:32, signer: Connect with Chrome extension
+2019/06/12 01:10:32, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:10:32, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:10:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:10:39, signer: ------------ Start Main --------------
+2019/06/12 01:10:39, signer: Connect with Chrome extension
+2019/06/12 01:10:39, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:10:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:11:32, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:11:32, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:11:32, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:11:32, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:11:43, signer: ------------ Start Main --------------
+2019/06/12 01:11:43, signer: ------------ Start Main --------------
+2019/06/12 01:11:43, signer: Connect with Chrome extension
+2019/06/12 01:11:43, signer: Connect with Chrome extension
+2019/06/12 01:11:43, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:11:43, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:11:43, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:11:43, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:11:45, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:11:46, signer: ------------ Start Main --------------
+2019/06/12 01:11:46, signer: Connect with Chrome extension
+2019/06/12 01:11:46, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:11:46, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:11:48, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:11:51, signer: ------------ Start Main --------------
+2019/06/12 01:11:51, signer: Connect with Chrome extension
+2019/06/12 01:11:51, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:11:51, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:11:51, signer: ------------ Start Main --------------
+2019/06/12 01:11:51, signer: Connect with Chrome extension
+2019/06/12 01:11:51, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:11:51, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:11:51, signer: ------------ Start Main --------------
+2019/06/12 01:11:51, signer: Connect with Chrome extension
+2019/06/12 01:11:51, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:11:51, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:11:51, com.unical.argparser.MiddlewareChrome: JSONObject["signatureField"] not a string.
+2019/06/12 01:11:51, com.unical.argparser.MiddlewareChrome: JSONObject["signatureField"] not a string.
+2019/06/12 01:11:52, signer: ERROR :: Parameter Error.
+2019/06/12 01:11:52, signer: ERROR :: Parameter Error.
+2019/06/12 01:12:49, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:12:49, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:12:49, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:12:49, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:15:35, signer: ------------ Start Main --------------
+2019/06/12 01:15:35, signer: Connect with Chrome extension
+2019/06/12 01:15:35, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:15:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:15:35, signer: ------------ Start Main --------------
+2019/06/12 01:15:35, signer: Connect with Chrome extension
+2019/06/12 01:15:35, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:15:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:15:37, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:15:39, signer: ------------ Start Main --------------
+2019/06/12 01:15:39, signer: Connect with Chrome extension
+2019/06/12 01:15:39, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:15:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:15:41, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:15:45, signer: ------------ Start Main --------------
+2019/06/12 01:15:45, signer: Connect with Chrome extension
+2019/06/12 01:15:45, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:15:45, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:15:45, signer: ------------ Start Main --------------
+2019/06/12 01:15:45, signer: ------------ Start Main --------------
+2019/06/12 01:15:45, signer: Connect with Chrome extension
+2019/06/12 01:15:45, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:15:45, signer: Connect with Chrome extension
+2019/06/12 01:15:45, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:15:45, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:15:45, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:15:45, signer: ------------ Start Main --------------
+2019/06/12 01:15:45, signer: Connect with Chrome extension
+2019/06/12 01:15:45, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:15:45, signer: ------------ Start Main --------------
+2019/06/12 01:15:45, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:15:45, signer: Connect with Chrome extension
+2019/06/12 01:15:45, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:15:45, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:15:45, com.unical.argparser.MiddlewareChrome: JSONObject["signatureField"] not a string.
+2019/06/12 01:15:45, com.unical.argparser.MiddlewareChrome: JSONObject["signatureField"] not a string.
+2019/06/12 01:15:45, signer: ERROR :: Parameter Error.
+2019/06/12 01:15:45, signer: ERROR :: Parameter Error.
+2019/06/12 01:19:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:19:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:19:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:19:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:19:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:19:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:19:28, signer: ------------ Start Main --------------
+2019/06/12 01:19:28, signer: Connect with Chrome extension
+2019/06/12 01:19:28, signer: ------------ Start Main --------------
+2019/06/12 01:19:28, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:19:28, signer: Connect with Chrome extension
+2019/06/12 01:19:28, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:19:28, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:19:28, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:19:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:19:34, signer: ------------ Start Main --------------
+2019/06/12 01:19:34, signer: Connect with Chrome extension
+2019/06/12 01:19:34, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:19:34, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:19:36, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:19:38, signer: ------------ Start Main --------------
+2019/06/12 01:19:38, signer: Connect with Chrome extension
+2019/06/12 01:19:38, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:19:38, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:20:05, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:20:05, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:20:05, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:20:05, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:20:17, signer: ------------ Start Main --------------
+2019/06/12 01:20:17, signer: Connect with Chrome extension
+2019/06/12 01:20:17, signer: ------------ Start Main --------------
+2019/06/12 01:20:17, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:20:17, signer: Connect with Chrome extension
+2019/06/12 01:20:17, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:20:17, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:20:17, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:20:18, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:20:19, signer: ------------ Start Main --------------
+2019/06/12 01:20:19, signer: Connect with Chrome extension
+2019/06/12 01:20:19, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:20:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:20:21, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:20:27, signer: ------------ Start Main --------------
+2019/06/12 01:20:27, signer: Connect with Chrome extension
+2019/06/12 01:20:27, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:20:27, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:20:27, signer: ------------ Start Main --------------
+2019/06/12 01:20:27, signer: Connect with Chrome extension
+2019/06/12 01:20:27, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:20:27, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:20:27, signer: ------------ Start Main --------------
+2019/06/12 01:20:27, signer: Connect with Chrome extension
+2019/06/12 01:20:27, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:20:27, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:20:27, signer: ------------ Start Main --------------
+2019/06/12 01:20:27, signer: Connect with Chrome extension
+2019/06/12 01:20:27, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:20:27, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:20:27, signer: ------------ Start Main --------------
+2019/06/12 01:20:27, signer: Connect with Chrome extension
+2019/06/12 01:20:27, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:20:27, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:20:27, com.unical.argparser.MiddlewareChrome: JSONObject["signatureField"] not a string.
+2019/06/12 01:20:27, com.unical.argparser.MiddlewareChrome: JSONObject["signatureField"] not a string.
+2019/06/12 01:20:27, signer: ERROR :: Parameter Error.
+2019/06/12 01:20:27, signer: ERROR :: Parameter Error.
+2019/06/12 01:27:38, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:27:38, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:27:38, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:27:38, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:27:38, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:27:38, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:27:49, signer: ------------ Start Main --------------
+2019/06/12 01:27:49, signer: ------------ Start Main --------------
+2019/06/12 01:27:49, signer: Connect with Chrome extension
+2019/06/12 01:27:49, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:27:49, signer: Connect with Chrome extension
+2019/06/12 01:27:49, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:27:49, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:27:49, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:27:51, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:27:53, signer: ------------ Start Main --------------
+2019/06/12 01:27:53, signer: Connect with Chrome extension
+2019/06/12 01:27:53, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:27:53, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:27:55, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:27:58, signer: ------------ Start Main --------------
+2019/06/12 01:27:58, signer: Connect with Chrome extension
+2019/06/12 01:27:58, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:27:58, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:27:58, signer: ------------ Start Main --------------
+2019/06/12 01:27:58, signer: Connect with Chrome extension
+2019/06/12 01:27:58, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:27:58, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:27:58, signer: ------------ Start Main --------------
+2019/06/12 01:27:58, signer: ------------ Start Main --------------
+2019/06/12 01:27:58, signer: Connect with Chrome extension
+2019/06/12 01:27:58, signer: Connect with Chrome extension
+2019/06/12 01:27:58, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:27:58, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:27:58, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:27:58, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:27:58, signer: ------------ Start Main --------------
+2019/06/12 01:27:58, signer: Connect with Chrome extension
+2019/06/12 01:27:58, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:27:58, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:27:58, com.unical.argparser.MiddlewareChrome: 7
+2019/06/12 01:27:58, com.unical.argparser.MiddlewareChrome: 7
+2019/06/12 01:27:58, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 01:27:58, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 01:27:58, signer: Selected Sign Format: PADES
+2019/06/12 01:27:58, signer: Selected Sign Format: PADES
+2019/06/12 01:27:58, signer: Start Signature Procedure
+2019/06/12 01:27:58, signer: 
+
+2019/06/12 01:27:58, signer: Start Signature Procedure
+2019/06/12 01:27:58, signer: 
+
+2019/06/12 01:28:03, signer: Certificate to use:  
+2019/06/12 01:28:03, signer: Certificate to use:  
+2019/06/12 01:28:04, signer: BAGNATO BONAVENTURA
+2019/06/12 01:28:04, signer: BAGNATO BONAVENTURA
+2019/06/12 01:28:17, signer: Start of signing process...
+2019/06/12 01:28:17, AbstractSignFactory: Create signed file: 2017-RW-School-FORM2(23)-signed.pdf
+2019/06/12 01:28:17, signer: End of signing process.
+2019/06/12 01:28:17, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM2(23)-signed.pdf","signature_type":"pades"}
+2019/06/12 01:28:19, signer: Start of signing process...
+2019/06/12 01:28:19, AbstractSignFactory: Create signed file: 2017-RW-School-FORM1(25)-signed.pdf
+2019/06/12 01:28:19, signer: End of signing process.
+2019/06/12 01:28:19, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM1(25)-signed.pdf","signature_type":"pades"}
+2019/06/12 01:32:11, signer: ------------ Start Main --------------
+2019/06/12 01:32:11, signer: Connect with Chrome extension
+2019/06/12 01:32:11, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:32:11, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:32:11, signer: ------------ Start Main --------------
+2019/06/12 01:32:11, signer: Connect with Chrome extension
+2019/06/12 01:32:11, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:32:11, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:32:13, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:32:18, signer: ------------ Start Main --------------
+2019/06/12 01:32:18, signer: Connect with Chrome extension
+2019/06/12 01:32:18, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:32:18, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:32:18, signer: ------------ Start Main --------------
+2019/06/12 01:32:18, signer: Connect with Chrome extension
+2019/06/12 01:32:18, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:32:18, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:32:18, signer: ------------ Start Main --------------
+2019/06/12 01:32:18, signer: Connect with Chrome extension
+2019/06/12 01:32:18, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:32:18, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:32:18, com.unical.argparser.MiddlewareChrome: 7
+2019/06/12 01:32:18, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 01:32:18, signer: Selected Sign Format: PADES
+2019/06/12 01:32:18, signer: Start Signature Procedure
+2019/06/12 01:32:18, signer: 
+
+2019/06/12 01:32:22, signer: Certificate to use:  
+2019/06/12 01:32:22, signer: BAGNATO BONAVENTURA
+2019/06/12 01:32:35, signer: Start of signing process...
+2019/06/12 01:32:35, AbstractSignFactory: Create signed file: 2017-RW-School-FORM1(25)-signed.pdf
+2019/06/12 01:32:35, signer: End of signing process.
+2019/06/12 01:32:35, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM1(25)-signed.pdf","signature_type":"pades"}
+2019/06/12 01:37:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:37:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:37:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:37:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:37:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:37:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:37:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:37:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:37:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:37:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:37:10, signer: ------------ Start Main --------------
+2019/06/12 01:37:10, signer: Connect with Chrome extension
+2019/06/12 01:37:10, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:37:10, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:37:10, signer: ------------ Start Main --------------
+2019/06/12 01:37:10, signer: Connect with Chrome extension
+2019/06/12 01:37:10, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:37:10, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:37:11, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:37:13, signer: ------------ Start Main --------------
+2019/06/12 01:37:13, signer: Connect with Chrome extension
+2019/06/12 01:37:13, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:37:13, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:37:14, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:37:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:37:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:37:19, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:37:29, signer: ------------ Start Main --------------
+2019/06/12 01:37:29, signer: Connect with Chrome extension
+2019/06/12 01:37:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:37:29, signer: ------------ Start Main --------------
+2019/06/12 01:37:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:37:29, signer: Connect with Chrome extension
+2019/06/12 01:37:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:37:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:37:31, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:37:33, signer: ------------ Start Main --------------
+2019/06/12 01:37:33, signer: Connect with Chrome extension
+2019/06/12 01:37:33, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:37:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:37:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:42:26, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:42:26, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:42:26, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:42:36, signer: ------------ Start Main --------------
+2019/06/12 01:42:36, signer: Connect with Chrome extension
+2019/06/12 01:42:36, signer: ------------ Start Main --------------
+2019/06/12 01:42:36, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:42:36, signer: Connect with Chrome extension
+2019/06/12 01:42:36, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:42:36, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:42:36, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:42:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:42:40, signer: ------------ Start Main --------------
+2019/06/12 01:42:40, signer: Connect with Chrome extension
+2019/06/12 01:42:40, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:42:40, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:42:43, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:42:47, signer: ------------ Start Main --------------
+2019/06/12 01:42:47, signer: Connect with Chrome extension
+2019/06/12 01:42:47, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:42:47, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:42:47, signer: ------------ Start Main --------------
+2019/06/12 01:42:47, signer: Connect with Chrome extension
+2019/06/12 01:42:47, signer: ------------ Start Main --------------
+2019/06/12 01:42:47, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:42:47, signer: Connect with Chrome extension
+2019/06/12 01:42:47, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:42:47, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:42:47, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:42:47, com.unical.argparser.MiddlewareChrome: JSONObject["signatureField"] not a string.
+2019/06/12 01:42:47, signer: ERROR :: Parameter Error.
+2019/06/12 01:51:57, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:51:57, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:51:57, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:51:57, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:51:57, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:52:07, signer: ------------ Start Main --------------
+2019/06/12 01:52:07, signer: Connect with Chrome extension
+2019/06/12 01:52:07, signer: ------------ Start Main --------------
+2019/06/12 01:52:07, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:52:07, signer: Connect with Chrome extension
+2019/06/12 01:52:07, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:52:07, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:52:07, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:52:10, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:52:12, signer: ------------ Start Main --------------
+2019/06/12 01:52:12, signer: Connect with Chrome extension
+2019/06/12 01:52:12, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:52:12, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:52:14, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:52:19, signer: ------------ Start Main --------------
+2019/06/12 01:52:19, signer: ------------ Start Main --------------
+2019/06/12 01:52:19, signer: Connect with Chrome extension
+2019/06/12 01:52:19, signer: Connect with Chrome extension
+2019/06/12 01:52:19, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:52:19, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:52:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:52:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:52:19, signer: ------------ Start Main --------------
+2019/06/12 01:52:19, signer: ------------ Start Main --------------
+2019/06/12 01:52:19, signer: Connect with Chrome extension
+2019/06/12 01:52:19, signer: Connect with Chrome extension
+2019/06/12 01:52:19, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:52:19, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:52:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:52:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:52:19, signer: ------------ Start Main --------------
+2019/06/12 01:52:19, signer: Connect with Chrome extension
+2019/06/12 01:52:19, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:52:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:52:19, com.unical.argparser.MiddlewareChrome: 7
+2019/06/12 01:52:19, com.unical.argparser.MiddlewareChrome: 7
+2019/06/12 01:52:19, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 01:52:19, signer: Selected Sign Format: PADES
+2019/06/12 01:52:19, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 01:52:19, signer: Selected Sign Format: PADES
+2019/06/12 01:52:19, signer: Start Signature Procedure
+2019/06/12 01:52:19, signer: 
+
+2019/06/12 01:52:19, signer: Start Signature Procedure
+2019/06/12 01:52:19, signer: 
+
+2019/06/12 01:52:24, signer: Certificate to use:  
+2019/06/12 01:52:24, signer: Certificate to use:  
+2019/06/12 01:52:24, signer: BAGNATO BONAVENTURA
+2019/06/12 01:52:24, signer: BAGNATO BONAVENTURA
+2019/06/12 01:52:27, PadesSignFactory: There is no empty field named 'on' in the document
+2019/06/12 01:52:27, PadesSignFactory: No available field in the pdf.
+2019/06/12 01:52:27, PadesSignFactory: There is no empty field named 'on' in the document
+2019/06/12 01:52:27, PadesSignFactory: No available field in the pdf.
+2019/06/12 01:52:37, signer: Start of signing process...
+2019/06/12 01:52:38, AbstractSignFactory: Create signed file: 2017-RW-School-FORM2(27)-signed.pdf
+2019/06/12 01:52:38, signer: End of signing process.
+2019/06/12 01:52:38, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM2(27)-signed.pdf","signature_type":"pades"}
+2019/06/12 01:52:40, signer: Start of signing process...
+2019/06/12 01:52:40, AbstractSignFactory: Create signed file: 2017-RW-School-FORM1(30)-signed.pdf
+2019/06/12 01:52:40, signer: End of signing process.
+2019/06/12 01:52:40, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM1(30)-signed.pdf","signature_type":"pades"}
+2019/06/12 01:55:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:55:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:55:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:55:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:55:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:55:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:55:10, signer: ------------ Start Main --------------
+2019/06/12 01:55:10, signer: Connect with Chrome extension
+2019/06/12 01:55:10, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:55:10, signer: ------------ Start Main --------------
+2019/06/12 01:55:10, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:55:10, signer: Connect with Chrome extension
+2019/06/12 01:55:10, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:55:10, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:55:12, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:55:13, signer: ------------ Start Main --------------
+2019/06/12 01:55:13, signer: Connect with Chrome extension
+2019/06/12 01:55:13, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:55:13, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:55:15, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:55:24, signer: ------------ Start Main --------------
+2019/06/12 01:55:24, signer: Connect with Chrome extension
+2019/06/12 01:55:24, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:55:24, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:55:24, signer: ------------ Start Main --------------
+2019/06/12 01:55:24, signer: Connect with Chrome extension
+2019/06/12 01:55:24, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:55:24, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:55:24, signer: ------------ Start Main --------------
+2019/06/12 01:55:24, signer: Connect with Chrome extension
+2019/06/12 01:55:24, signer: ------------ Start Main --------------
+2019/06/12 01:55:24, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:55:24, signer: Connect with Chrome extension
+2019/06/12 01:55:24, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:55:24, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:55:24, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:55:24, signer: ------------ Start Main --------------
+2019/06/12 01:55:24, signer: Connect with Chrome extension
+2019/06/12 01:55:24, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:55:24, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:55:24, com.unical.argparser.MiddlewareChrome: 7
+2019/06/12 01:55:24, com.unical.argparser.MiddlewareChrome: 7
+2019/06/12 01:55:24, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 01:55:24, signer: Selected Sign Format: PADES
+2019/06/12 01:55:24, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 01:55:24, signer: Selected Sign Format: PADES
+2019/06/12 01:55:24, signer: Start Signature Procedure
+2019/06/12 01:55:24, signer: 
+
+2019/06/12 01:55:24, signer: Start Signature Procedure
+2019/06/12 01:55:24, signer: 
+
+2019/06/12 01:55:29, signer: Certificate to use:  
+2019/06/12 01:55:29, signer: Certificate to use:  
+2019/06/12 01:55:29, signer: BAGNATO BONAVENTURA
+2019/06/12 01:55:29, signer: BAGNATO BONAVENTURA
+2019/06/12 01:55:32, PadesSignFactory: There is no empty field named 'on' in the document
+2019/06/12 01:55:32, PadesSignFactory: No available field in the pdf.
+2019/06/12 01:55:32, PadesSignFactory: There is no empty field named 'on' in the document
+2019/06/12 01:55:32, PadesSignFactory: No available field in the pdf.
+2019/06/12 01:55:42, signer: Start of signing process...
+2019/06/12 01:55:43, AbstractSignFactory: Create signed file: 2017-RW-School-FORM1(31)-signed.pdf
+2019/06/12 01:55:43, signer: End of signing process.
+2019/06/12 01:55:43, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM1(31)-signed.pdf","signature_type":"pades"}
+2019/06/12 01:55:45, signer: Start of signing process...
+2019/06/12 01:55:45, AbstractSignFactory: Create signed file: 2017-RW-School-FORM2(28)-signed.pdf
+2019/06/12 01:55:45, signer: End of signing process.
+2019/06/12 01:55:45, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM2(28)-signed.pdf","signature_type":"pades"}
+2019/06/12 01:58:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:58:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:58:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:58:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:58:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:58:53, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 01:59:21, signer: ------------ Start Main --------------
+2019/06/12 01:59:21, signer: Connect with Chrome extension
+2019/06/12 01:59:21, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:59:21, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:59:21, signer: ------------ Start Main --------------
+2019/06/12 01:59:21, signer: Connect with Chrome extension
+2019/06/12 01:59:21, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:59:21, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:59:24, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:59:26, signer: ------------ Start Main --------------
+2019/06/12 01:59:26, signer: Connect with Chrome extension
+2019/06/12 01:59:26, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:59:26, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:59:27, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:59:37, signer: ------------ Start Main --------------
+2019/06/12 01:59:37, signer: Connect with Chrome extension
+2019/06/12 01:59:37, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:59:37, signer: ------------ Start Main --------------
+2019/06/12 01:59:37, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:59:37, signer: Connect with Chrome extension
+2019/06/12 01:59:37, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:59:37, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:59:37, signer: ------------ Start Main --------------
+2019/06/12 01:59:37, signer: Connect with Chrome extension
+2019/06/12 01:59:37, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:59:37, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:59:37, com.unical.argparser.MiddlewareChrome: 7
+2019/06/12 01:59:37, signer: ------------ Start Main --------------
+2019/06/12 01:59:37, signer: Connect with Chrome extension
+2019/06/12 01:59:37, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:59:37, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:59:37, signer: ------------ Start Main --------------
+2019/06/12 01:59:37, signer: Connect with Chrome extension
+2019/06/12 01:59:37, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 01:59:37, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 01:59:37, com.unical.argparser.MiddlewareChrome: 7
+2019/06/12 01:59:37, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 01:59:37, signer: Selected Sign Format: PADES
+2019/06/12 01:59:37, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 01:59:37, signer: Selected Sign Format: PADES
+2019/06/12 01:59:37, signer: Start Signature Procedure
+2019/06/12 01:59:37, signer: 
+
+2019/06/12 01:59:37, signer: Start Signature Procedure
+2019/06/12 01:59:37, signer: 
+
+2019/06/12 01:59:42, signer: Certificate to use:  
+2019/06/12 01:59:42, signer: Certificate to use:  
+2019/06/12 01:59:42, signer: BAGNATO BONAVENTURA
+2019/06/12 01:59:42, signer: BAGNATO BONAVENTURA
+2019/06/12 01:59:45, PadesSignFactory: There is no empty field named 'on' in the document
+2019/06/12 01:59:45, PadesSignFactory: No available field in the pdf.
+2019/06/12 01:59:45, PadesSignFactory: There is no empty field named 'on' in the document
+2019/06/12 01:59:45, PadesSignFactory: No available field in the pdf.
+2019/06/12 01:59:56, signer: Start of signing process...
+2019/06/12 01:59:56, AbstractSignFactory: Create signed file: 2017-RW-School-FORM2(29)-signed.pdf
+2019/06/12 01:59:56, signer: End of signing process.
+2019/06/12 01:59:56, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM2(29)-signed.pdf","signature_type":"pades"}
+2019/06/12 01:59:58, signer: Start of signing process...
+2019/06/12 01:59:58, AbstractSignFactory: Create signed file: 2017-RW-School-FORM1(32)-signed.pdf
+2019/06/12 01:59:58, signer: End of signing process.
+2019/06/12 01:59:58, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM1(32)-signed.pdf","signature_type":"pades"}
+2019/06/12 02:00:17, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:00:17, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:00:17, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:00:17, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:00:17, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:00:17, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:00:50, signer: ------------ Start Main --------------
+2019/06/12 02:00:50, signer: Connect with Chrome extension
+2019/06/12 02:00:50, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:00:50, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:00:50, signer: ------------ Start Main --------------
+2019/06/12 02:00:50, signer: Connect with Chrome extension
+2019/06/12 02:00:50, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:00:50, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:00:52, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:00:53, signer: ------------ Start Main --------------
+2019/06/12 02:00:53, signer: Connect with Chrome extension
+2019/06/12 02:00:53, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:00:53, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:00:55, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:01:00, signer: ------------ Start Main --------------
+2019/06/12 02:01:00, signer: Connect with Chrome extension
+2019/06/12 02:01:00, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:01:00, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:01:00, signer: ------------ Start Main --------------
+2019/06/12 02:01:00, signer: Connect with Chrome extension
+2019/06/12 02:01:00, signer: ------------ Start Main --------------
+2019/06/12 02:01:00, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:01:00, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:01:00, signer: Connect with Chrome extension
+2019/06/12 02:01:00, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:01:00, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:01:00, signer: ------------ Start Main --------------
+2019/06/12 02:01:00, signer: Connect with Chrome extension
+2019/06/12 02:01:00, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:01:00, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:01:00, signer: ------------ Start Main --------------
+2019/06/12 02:01:00, signer: Connect with Chrome extension
+2019/06/12 02:01:00, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:01:00, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:01:00, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/12 02:01:00, com.unical.argparser.MiddlewareChrome: 8
+2019/06/12 02:01:00, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/12 02:01:00, com.unical.argparser.MiddlewareChrome: 8
+2019/06/12 02:01:00, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 02:01:00, signer: Selected Sign Format: PADES
+2019/06/12 02:01:00, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 02:01:00, signer: Selected Sign Format: PADES
+2019/06/12 02:01:00, signer: Start Signature Procedure
+2019/06/12 02:01:00, signer: 
+
+2019/06/12 02:01:00, signer: Start Signature Procedure
+2019/06/12 02:01:00, signer: 
+
+2019/06/12 02:01:05, signer: Certificate to use:  
+2019/06/12 02:01:05, signer: Certificate to use:  
+2019/06/12 02:01:05, signer: BAGNATO BONAVENTURA
+2019/06/12 02:01:05, signer: BAGNATO BONAVENTURA
+2019/06/12 02:01:19, signer: Start of signing process...
+2019/06/12 02:01:21, AbstractSignFactory: Create signed file: 2017-RW-School-FORM1(33)-signed.pdf
+2019/06/12 02:01:21, signer: End of signing process.
+2019/06/12 02:01:21, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM1(33)-signed.pdf","signature_type":"pades"}
+2019/06/12 02:01:21, signer: C:\Users\Davide\AppData\Local\Temp\chrome_ext_sign.png
+2019/06/12 02:01:22, signer: Start of signing process...
+2019/06/12 02:04:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:04:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:04:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:04:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:04:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:04:18, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:04:33, signer: ------------ Start Main --------------
+2019/06/12 02:04:33, signer: Connect with Chrome extension
+2019/06/12 02:04:33, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:04:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:04:33, signer: ------------ Start Main --------------
+2019/06/12 02:04:33, signer: Connect with Chrome extension
+2019/06/12 02:04:33, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:04:33, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:04:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:04:37, signer: ------------ Start Main --------------
+2019/06/12 02:04:37, signer: Connect with Chrome extension
+2019/06/12 02:04:37, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:04:37, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:04:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:04:43, signer: ------------ Start Main --------------
+2019/06/12 02:04:43, signer: Connect with Chrome extension
+2019/06/12 02:04:43, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:04:43, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:04:43, signer: ------------ Start Main --------------
+2019/06/12 02:04:43, signer: Connect with Chrome extension
+2019/06/12 02:04:43, signer: ------------ Start Main --------------
+2019/06/12 02:04:43, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:04:43, signer: Connect with Chrome extension
+2019/06/12 02:04:43, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:04:43, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:04:43, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:04:43, signer: ------------ Start Main --------------
+2019/06/12 02:04:43, signer: Connect with Chrome extension
+2019/06/12 02:04:43, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:04:43, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:04:43, signer: ------------ Start Main --------------
+2019/06/12 02:04:43, signer: Connect with Chrome extension
+2019/06/12 02:04:43, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:04:43, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:04:43, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/12 02:04:43, com.unical.argparser.MiddlewareChrome: 8
+2019/06/12 02:04:43, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/12 02:04:43, com.unical.argparser.MiddlewareChrome: 8
+2019/06/12 02:04:43, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 02:04:43, signer: Selected Sign Format: PADES
+2019/06/12 02:04:43, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 02:04:43, signer: Selected Sign Format: PADES
+2019/06/12 02:04:43, signer: Start Signature Procedure
+2019/06/12 02:04:43, signer: 
+
+2019/06/12 02:04:43, signer: Start Signature Procedure
+2019/06/12 02:04:43, signer: 
+
+2019/06/12 02:04:47, signer: Certificate to use:  
+2019/06/12 02:04:48, signer: Certificate to use:  
+2019/06/12 02:04:48, signer: BAGNATO BONAVENTURA
+2019/06/12 02:04:48, signer: BAGNATO BONAVENTURA
+2019/06/12 02:05:02, signer: Start of signing process...
+2019/06/12 02:05:04, AbstractSignFactory: Create signed file: 2017-RW-School-FORM2(31)-signed.pdf
+2019/06/12 02:05:04, signer: End of signing process.
+2019/06/12 02:05:04, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM2(31)-signed.pdf","signature_type":"pades"}
+2019/06/12 02:05:04, signer: C:\Users\Davide\AppData\Local\Temp\chrome_ext_sign.png
+2019/06/12 02:05:04, signer: Start of signing process...
+2019/06/12 02:06:58, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:06:58, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:06:58, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:06:58, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:06:58, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:06:58, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:07:09, signer: ------------ Start Main --------------
+2019/06/12 02:07:09, signer: Connect with Chrome extension
+2019/06/12 02:07:09, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:07:09, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:07:09, signer: ------------ Start Main --------------
+2019/06/12 02:07:09, signer: Connect with Chrome extension
+2019/06/12 02:07:09, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:07:09, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:07:11, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:07:12, signer: ------------ Start Main --------------
+2019/06/12 02:07:12, signer: Connect with Chrome extension
+2019/06/12 02:07:12, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:07:12, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:07:14, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:07:17, signer: ------------ Start Main --------------
+2019/06/12 02:07:17, signer: ------------ Start Main --------------
+2019/06/12 02:07:17, signer: Connect with Chrome extension
+2019/06/12 02:07:17, signer: Connect with Chrome extension
+2019/06/12 02:07:17, signer: ------------ Start Main --------------
+2019/06/12 02:07:17, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:07:17, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:07:17, signer: Connect with Chrome extension
+2019/06/12 02:07:17, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:07:17, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:07:17, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:07:17, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:07:17, com.unical.argparser.MiddlewareChrome: 7
+2019/06/12 02:07:18, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 02:07:18, signer: Selected Sign Format: PADES
+2019/06/12 02:07:18, signer: Start Signature Procedure
+2019/06/12 02:07:18, signer: 
+
+2019/06/12 02:07:21, signer: Certificate to use:  
+2019/06/12 02:07:21, signer: BAGNATO BONAVENTURA
+2019/06/12 02:07:34, signer: Start of signing process...
+2019/06/12 02:07:34, AbstractSignFactory: Create signed file: 2017-RW-School-FORM1(35)-signed.pdf
+2019/06/12 02:07:34, signer: End of signing process.
+2019/06/12 02:07:34, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM1(35)-signed.pdf","signature_type":"pades"}
+2019/06/12 02:07:35, signer: ------------ Start Main --------------
+2019/06/12 02:07:35, signer: Connect with Chrome extension
+2019/06/12 02:07:35, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:07:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:07:35, signer: ------------ Start Main --------------
+2019/06/12 02:07:35, signer: Connect with Chrome extension
+2019/06/12 02:07:35, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:07:35, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:07:35, com.unical.argparser.MiddlewareChrome: 7
+2019/06/12 02:07:35, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 02:07:35, signer: Selected Sign Format: PADES
+2019/06/12 02:07:36, signer: Start Signature Procedure
+2019/06/12 02:07:36, signer: 
+
+2019/06/12 02:07:38, signer: Certificate to use:  
+2019/06/12 02:07:39, signer: BAGNATO BONAVENTURA
+2019/06/12 02:07:51, signer: Start of signing process...
+2019/06/12 02:07:52, AbstractSignFactory: Create signed file: 2017-RW-School-FORM2(32)-signed.pdf
+2019/06/12 02:07:52, signer: End of signing process.
+2019/06/12 02:07:52, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM2(32)-signed.pdf","signature_type":"pades"}
+2019/06/12 02:09:03, signer: ------------ Start Main --------------
+2019/06/12 02:09:03, signer: Connect with Chrome extension
+2019/06/12 02:09:03, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:09:03, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:09:03, signer: ------------ Start Main --------------
+2019/06/12 02:09:03, signer: Connect with Chrome extension
+2019/06/12 02:09:03, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:09:03, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:09:05, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:09:06, signer: ------------ Start Main --------------
+2019/06/12 02:09:06, signer: Connect with Chrome extension
+2019/06/12 02:09:06, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:09:06, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:09:08, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:12:46, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:12:46, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:12:46, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:12:46, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:12:46, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:12:46, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:12:46, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:12:46, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:12:46, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:15:41, signer: ------------ Start Main --------------
+2019/06/12 02:15:41, signer: Connect with Chrome extension
+2019/06/12 02:15:41, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:15:41, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:15:41, signer: ------------ Start Main --------------
+2019/06/12 02:15:41, signer: Connect with Chrome extension
+2019/06/12 02:15:41, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:15:41, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:15:43, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:15:44, signer: ------------ Start Main --------------
+2019/06/12 02:15:44, signer: Connect with Chrome extension
+2019/06/12 02:15:44, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:15:44, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:15:46, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:15:51, signer: ------------ Start Main --------------
+2019/06/12 02:15:51, signer: Connect with Chrome extension
+2019/06/12 02:15:51, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:15:51, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:15:51, signer: ------------ Start Main --------------
+2019/06/12 02:15:51, signer: Connect with Chrome extension
+2019/06/12 02:15:51, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:15:51, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:15:51, signer: ------------ Start Main --------------
+2019/06/12 02:15:51, signer: Connect with Chrome extension
+2019/06/12 02:15:51, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:15:51, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:15:51, com.unical.argparser.MiddlewareChrome: 7
+2019/06/12 02:15:51, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 02:15:51, signer: Selected Sign Format: PADES
+2019/06/12 02:15:51, signer: Start Signature Procedure
+2019/06/12 02:15:51, signer: 
+
+2019/06/12 02:15:54, signer: Certificate to use:  
+2019/06/12 02:15:55, signer: BAGNATO BONAVENTURA
+2019/06/12 02:16:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:16:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:16:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:16:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:16:01, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:16:07, signer: Start of signing process...
+2019/06/12 02:16:08, AbstractSignFactory: Create signed file: 2017-RW-School-FORM1(37)-signed.pdf
+2019/06/12 02:16:08, signer: End of signing process.
+2019/06/12 02:16:08, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM1(37)-signed.pdf","signature_type":"pades"}
+2019/06/12 02:16:17, signer: ------------ Start Main --------------
+2019/06/12 02:16:18, signer: Connect with Chrome extension
+2019/06/12 02:16:18, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:16:18, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:16:18, signer: ------------ Start Main --------------
+2019/06/12 02:16:18, signer: Connect with Chrome extension
+2019/06/12 02:16:18, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:16:18, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:16:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:16:20, signer: ------------ Start Main --------------
+2019/06/12 02:16:20, signer: Connect with Chrome extension
+2019/06/12 02:16:20, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:16:20, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:16:22, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:16:28, signer: ------------ Start Main --------------
+2019/06/12 02:16:28, signer: Connect with Chrome extension
+2019/06/12 02:16:28, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:16:28, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:16:28, signer: ------------ Start Main --------------
+2019/06/12 02:16:28, signer: Connect with Chrome extension
+2019/06/12 02:16:28, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:16:28, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:16:28, signer: ------------ Start Main --------------
+2019/06/12 02:16:28, signer: Connect with Chrome extension
+2019/06/12 02:16:28, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:16:28, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:16:28, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/12 02:16:28, com.unical.argparser.MiddlewareChrome: 8
+2019/06/12 02:16:28, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 02:16:28, signer: Selected Sign Format: PADES
+2019/06/12 02:16:28, signer: Start Signature Procedure
+2019/06/12 02:16:28, signer: 
+
+2019/06/12 02:16:31, signer: Certificate to use:  
+2019/06/12 02:16:32, signer: BAGNATO BONAVENTURA
+2019/06/12 02:16:45, signer: Start of signing process...
+2019/06/12 02:16:46, AbstractSignFactory: Create signed file: 2017-RW-School-FORM1(38)-signed.pdf
+2019/06/12 02:16:46, signer: End of signing process.
+2019/06/12 02:16:46, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM1(38)-signed.pdf","signature_type":"pades"}
+2019/06/12 02:16:46, signer: C:\Users\Davide\AppData\Local\Temp\chrome_ext_sign.png
+2019/06/12 02:16:49, signer: ------------ Start Main --------------
+2019/06/12 02:16:49, signer: Connect with Chrome extension
+2019/06/12 02:16:49, signer: ------------ Start Main --------------
+2019/06/12 02:16:49, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:16:49, signer: Connect with Chrome extension
+2019/06/12 02:16:49, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:16:49, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:16:49, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:16:49, com.unical.argparser.MiddlewareChrome: Get path image: C:\Users\Davide\AppData\Local\Temp\
+2019/06/12 02:16:49, com.unical.argparser.MiddlewareChrome: 8
+2019/06/12 02:16:49, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 02:16:49, signer: Selected Sign Format: PADES
+2019/06/12 02:16:49, signer: Start Signature Procedure
+2019/06/12 02:16:49, signer: 
+
+2019/06/12 02:16:52, signer: Certificate to use:  
+2019/06/12 02:16:52, signer: BAGNATO BONAVENTURA
+2019/06/12 02:17:05, signer: Start of signing process...
+2019/06/12 02:17:07, AbstractSignFactory: Create signed file: 2017-RW-School-FORM2(35)-signed.pdf
+2019/06/12 02:17:07, signer: End of signing process.
+2019/06/12 02:17:07, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM2(35)-signed.pdf","signature_type":"pades"}
+2019/06/12 02:17:07, signer: C:\Users\Davide\AppData\Local\Temp\chrome_ext_sign.png
+2019/06/12 02:19:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:19:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:19:00, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:21:45, signer: ------------ Start Main --------------
+2019/06/12 02:21:45, signer: Connect with Chrome extension
+2019/06/12 02:21:45, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:21:45, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:21:47, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:21:49, signer: ERROR :: Parameter Error.
+2019/06/12 02:22:29, signer: ------------ Start Main --------------
+2019/06/12 02:22:29, signer: Connect with Chrome extension
+2019/06/12 02:22:29, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:22:29, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:22:31, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:22:33, signer: ERROR :: Parameter Error.
+2019/06/12 02:23:19, signer: ------------ Start Main --------------
+2019/06/12 02:23:19, signer: Connect with Chrome extension
+2019/06/12 02:23:19, signer: ------------ Start Main --------------
+2019/06/12 02:23:19, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:23:19, signer: Connect with Chrome extension
+2019/06/12 02:23:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:23:19, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:23:19, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:23:20, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:23:22, signer: ------------ Start Main --------------
+2019/06/12 02:23:22, signer: Connect with Chrome extension
+2019/06/12 02:23:22, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:23:22, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:23:23, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:23:31, signer: ------------ Start Main --------------
+2019/06/12 02:23:31, signer: Connect with Chrome extension
+2019/06/12 02:23:31, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:23:31, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:23:31, signer: ------------ Start Main --------------
+2019/06/12 02:23:31, signer: Connect with Chrome extension
+2019/06/12 02:23:31, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:23:31, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:23:31, com.unical.argparser.MiddlewareChrome: 7
+2019/06/12 02:23:31, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 02:23:31, signer: Selected Sign Format: PADES
+2019/06/12 02:23:31, signer: Start Signature Procedure
+2019/06/12 02:23:31, signer: 
+
+2019/06/12 02:23:35, signer: Certificate to use:  
+2019/06/12 02:23:35, signer: BAGNATO BONAVENTURA
+2019/06/12 02:23:48, signer: Start of signing process...
+2019/06/12 02:23:48, AbstractSignFactory: Create signed file: 2017-RW-School-FORM1(2)-signed.pdf
+2019/06/12 02:23:48, signer: End of signing process.
+2019/06/12 02:23:48, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM1(2)-signed.pdf","signature_type":"pades"}
+2019/06/12 02:23:49, signer: ------------ Start Main --------------
+2019/06/12 02:23:49, signer: Connect with Chrome extension
+2019/06/12 02:23:49, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:23:49, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:23:49, com.unical.argparser.MiddlewareChrome: 7
+2019/06/12 02:23:49, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 02:23:49, signer: Selected Sign Format: PADES
+2019/06/12 02:23:49, signer: Start Signature Procedure
+2019/06/12 02:23:49, signer: 
+
+2019/06/12 02:23:52, signer: Certificate to use:  
+2019/06/12 02:23:53, signer: BAGNATO BONAVENTURA
+2019/06/12 02:23:55, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:23:55, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:23:55, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:23:55, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:24:06, signer: Start of signing process...
+2019/06/12 02:24:06, AbstractSignFactory: Create signed file: 2017-RW-School-FORM2(2)-signed.pdf
+2019/06/12 02:24:06, signer: End of signing process.
+2019/06/12 02:24:06, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM2(2)-signed.pdf","signature_type":"pades"}
+2019/06/12 02:24:40, signer: ------------ Start Main --------------
+2019/06/12 02:24:40, signer: Connect with Chrome extension
+2019/06/12 02:24:40, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:24:40, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:24:42, signer: ------------ Start Main --------------
+2019/06/12 02:24:42, signer: Connect with Chrome extension
+2019/06/12 02:24:42, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:24:42, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:24:43, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:24:47, signer: ------------ Start Main --------------
+2019/06/12 02:24:47, signer: Connect with Chrome extension
+2019/06/12 02:24:47, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:24:47, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:24:47, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:24:54, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:24:54, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:24:54, com.unical.argparser.MiddlewareChrome: Blocked communication
+2019/06/12 02:25:39, signer: ------------ Start Main --------------
+2019/06/12 02:25:39, signer: Connect with Chrome extension
+2019/06/12 02:25:39, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:25:39, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:25:41, signer: ------------ Start Main --------------
+2019/06/12 02:25:41, signer: Connect with Chrome extension
+2019/06/12 02:25:41, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:25:41, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:25:41, com.unical.argparser.MiddlewareChrome: 4
+2019/06/12 02:25:41, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 02:25:41, signer: Selected Sign Format: CADES
+2019/06/12 02:25:41, signer: Start Signature Procedure
+2019/06/12 02:25:41, signer: 
+
+2019/06/12 02:25:44, signer: Certificate to use:  
+2019/06/12 02:25:45, signer: BAGNATO BONAVENTURA
+2019/06/12 02:25:49, signer: Start of signing process...
+2019/06/12 02:25:49, AbstractSignFactory: Create signed file: 2017-RW-School-FORM1(4).pdf.p7m
+2019/06/12 02:25:49, signer: End of signing process.
+2019/06/12 02:25:49, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM1(4).pdf.p7m","signature_type":"cades"}
+2019/06/12 02:25:53, signer: ------------ Start Main --------------
+2019/06/12 02:25:53, signer: Connect with Chrome extension
+2019/06/12 02:25:53, com.unical.argparser.MiddlewareChrome: Start
+2019/06/12 02:25:53, com.unical.argparser.MiddlewareChrome: Read Message
+2019/06/12 02:25:53, com.unical.argparser.MiddlewareChrome: 4
+2019/06/12 02:25:53, signer: Use the default driver located in: driver\Windows\bit4xpki.dll
+2019/06/12 02:25:53, signer: Selected Sign Format: CADES
+2019/06/12 02:25:53, signer: Start Signature Procedure
+2019/06/12 02:25:53, signer: 
+
+2019/06/12 02:25:56, signer: Certificate to use:  
+2019/06/12 02:25:56, signer: BAGNATO BONAVENTURA
+2019/06/12 02:26:00, signer: Start of signing process...
+2019/06/12 02:26:00, AbstractSignFactory: Create signed file: 2017-RW-School-FORM2(4).pdf.p7m
+2019/06/12 02:26:00, signer: End of signing process.
+2019/06/12 02:26:00, signer: {"native_app_message":"end","local_path_newFile":"C:\\Users\\Davide\\Downloads\\2017-RW-School-FORM2(4).pdf.p7m","signature_type":"cades"}
+2019/06/12 02:26:36, com.unical.argparser.MiddlewareChrome: Blocked communication

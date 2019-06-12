@@ -67,25 +67,27 @@ function openConnection() {
           console.log("ENDED");
           countEnded = 0;
           storedSignatureData.empty();
+          closeConnection();
           chrome.runtime.sendMessage({
             state: "end"
           }, function (response) {});
         }
       }  else if (msg.native_app_message == "info") {
+        
+        appCurrentState = StateEnum.ready;
+        storedSignatureData.infoPDF = {
+          pageNumber: msg.pageNumber,
+          pages: msg.pages,
+          fields: msg.fields
+        }                                    
 
-        // storedSignatureData.infoPDF = {
-        //   pageNumber: msg.pageNumber,
-        //   pages: msg.pages,
-        //   fields: msg.fields
-        // }                                    ----- TO DO inviare info field a popup (errore)
-
-        // //forward fields list to popup
-        // chrome.runtime.sendMessage({
-        //   state: 'info',
-        //   pageNumber: msg.pageNumber,
-        //   pages: msg.pages,
-        //   fields: msg.fields
-        // }, function (response) {});
+        //forward fields list to popup
+        chrome.runtime.sendMessage({
+          state: 'info',
+          pageNumber: msg.pageNumber,
+          pages: msg.pages,
+          fields: msg.fields
+        }, function (response) {});
 
         // appCurrentState = StateEnum.running;
 
@@ -132,7 +134,33 @@ function sendDataForSign(data) {
     nativeAppPort.postMessage(data);
 };
 
+/**
+ * Send data to native app for ask information about pdf like: fields and pages number
+ * @param {*} data - data to send to native app
+ */
+function requestPDFInfo(data) {
+  appCurrentState = StateEnum.info;
+  console.log("Send message to native app...")
+  // console.log(data);
+  data.action = popupMessageType.info;
+  nativeAppPort.postMessage(data);
+  delete data.action;
+  storedSignatureData.signatureData = data;
+  updateSignatureDataPopup("filename", storedSignatureData.signatureData.filename);
+};
 
+/**
+ * Send a message to the Popup for update its signature data
+ * @param {string} fieldToUpdate : field of signature data to update
+ * @param {*} value : new value
+ */
+function updateSignatureDataPopup(fieldToUpdate, value) {
+  chrome.runtime.sendMessage({
+    state: 'updateSignatureData',
+    fieldToUpdate: fieldToUpdate,
+    value: value
+  }, function (response) {});
+}
 
 
 /**
@@ -168,7 +196,12 @@ function downloadFile(url,callback){
             console.log(item[0].filename);
             storedSignatureData.signatureData.filename = item[0].filename;
             console.log("File Found, send data for sign...");
-            sendDataForSign(storedSignatureData.signatureData);
+            if(appCurrentState == StateEnum.signing)
+              sendDataForSign(storedSignatureData.signatureData);
+            else if (appCurrentState == StateEnum.info){
+              addToList(storedSignatureData.signatureData);
+              requestPDFInfo(storedSignatureData.signatureData);
+            }  
             if (callback)
               callback(data)
           }
@@ -177,38 +210,72 @@ function downloadFile(url,callback){
 
 }
 
+// Aggiungo il file attuale ad un array da conservare in caso di requestInfo
+var storedForField = [];
+function addToList(data){
+
+  var signatureData = {
+    type: "",
+    filename: "",
+    password: "",
+    visible: false,
+    useField: false,
+    verticalPosition: "Top",
+    horizontalPosition: "Left",
+    pageNumber: 1,
+    signatureField: "",
+    image: "",
+    tabUrl: ""
+  };
+
+  signatureData.type = data.type;
+  signatureData.filename = data.filename;
+  signatureData.password = data.password;
+  signatureData.visible = data.visible;
+  signatureData.useField = data.useField;
+  signatureData.verticalPosition = data.verticalPosition;
+  signatureData.horizontalPosition = data.horizontalPosition;
+  signatureData.pageNumber = data.pageNumber;
+  signatureData.signatureField = data.signatureField;
+  signatureData.image = data.image;
+  signatureData.tabUrl = data.tabUrl;
+  storedForField.push(signatureData);
+
+}
+
 // sleep time expects milliseconds
 function sleep(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-// /**
-// * Send data to native app for ask information about pdf like: fields and pages number
-// * @param {*} data - data to send to native app
-// */
-// function requestPDFInfo(data) {
-// appCurrentState = StateEnum.info;
-// console.log("Send message to native app...")
-// // console.log(data);
-// data.action = popupMessageType.info;
-// nativeAppPort.postMessage(data);
-// delete data.action;
+/**
+* Send data to native app for ask information about pdf like: fields and pages number
+* @param {*} data - data to send to native app
+*/
+function requestPDFInfo(data) {
+appCurrentState = StateEnum.info;
+console.log("Send message to native app...")
+// console.log(data);
+data.action = popupMessageType.info;
+openConnection();
+nativeAppPort.postMessage(data);
+delete data.action;
 // storedSignatureData.signatureData = data;
 // updateSignatureDataPopup("filename", storedSignatureData.signatureData.filename);
-// };
+};
 
-// /**
-// * Send a message to the Popup for update its signature data
-// * @param {string} fieldToUpdate : field of signature data to update
-// * @param {*} value : new value
-// */
-// function updateSignatureDataPopup(fieldToUpdate, value) {
-// chrome.runtime.sendMessage({
-//   state: 'updateSignatureData',
-//   fieldToUpdate: fieldToUpdate,
-//   value: value
-// }, function (response) {});
-// }
+/**
+* Send a message to the Popup for update its signature data
+* @param {string} fieldToUpdate : field of signature data to update
+* @param {*} value : new value
+*/
+function updateSignatureDataPopup(fieldToUpdate, value) {
+chrome.runtime.sendMessage({
+  state: 'updateSignatureData',
+  fieldToUpdate: fieldToUpdate,
+  value: value
+}, function (response) {});
+}
 
 var popupMessageType = {
 wakeup: 'wakeup',
@@ -227,7 +294,7 @@ function tryHandleProcedure(url,data){
   if(appCurrentState != StateEnum.signing){
     appCurrentState = StateEnum.signing;
 	storedSignatureData.signatureData = data;
-    openConnection();
+    
     downloadFile(url);  
   }
   else{
@@ -236,6 +303,38 @@ function tryHandleProcedure(url,data){
     });
   }
 }
+
+function tryHandleInfo(url,data){
+	
+  if(appCurrentState != StateEnum.info){
+    appCurrentState = StateEnum.info;
+	storedSignatureData.signatureData = data;
+    
+    downloadFile(url);  
+  }
+  else{
+    sleep(1500).then(() => { 
+      tryHandleInfo(url,data);
+    });
+  }
+}
+
+function tryHandleField(field,data){
+  if(appCurrentState != StateEnum.signing){
+    console.log(appCurrentState);
+    appCurrentState = StateEnum.sign;
+    data.signatureField = field;  
+	  storedSignatureData.signatureData = data;
+    
+    sendDataForSign(data);
+  }
+  else{
+    sleep(1500).then(() => { 
+      tryHandleField(field,data);
+    });
+  }
+}
+
 
 var toSign = 0;
 //listener message Popup -> Background
@@ -260,11 +359,7 @@ function (request, sender, sendResponse) {
       closeConnection();
       break;
 
-    // case popupMessageType.download_and_sign:
-    //   downloadFile(request.url, request.data, sendDataForSign);
-    //   break;
-
-    case popupMessageType.sign: //used for directly sign a local file
+    case popupMessageType.download_and_sign:
       console.log("data received : ");
       console.log(request.data);
       console.log("Urls received:");
@@ -275,14 +370,29 @@ function (request, sender, sendResponse) {
         
         tryHandleProcedure(request.urls[i],request.data[i]);
       }
-     
+      break;
+
+    case popupMessageType.sign: //used for directly sign a local file
+      
+      console.log("Start signing without download");
+      console.log(storedForField);
+      toSign = storedForField.length;
+      for(var i = 0; i< request.fieldsList.length; i++){
+        
+        tryHandleField(request.fieldsList[i],storedForField[i]);
+      }
+      
       break;
 
     // case popupMessageType.download_and_getInfo: //used for directly sign a local file
     //   downloadFile(request.url, request.data, requestPDFInfo);
     //   break;
     case popupMessageType.info: //used for local file
-      requestPDFInfo(request.data);
+    for(var i = 0; i< request.data.length; i++){
+      console.log(request.data[i].pageNumber);
+      
+      tryHandleInfo(request.urls[i],request.data[i]);
+    }
       break;
 
     // case popupMessageType.zoom:
