@@ -1,6 +1,75 @@
 
 console.log('Popup.js - Started');
 
+// Convert file to base64 string
+const fileToBase64 = (filename, filepath) => {
+  return new Promise(resolve => {
+    var file = new File([filename], filepath);
+    var reader = new FileReader();
+    // Read file content on file loaded event
+    reader.onload = function(event) {
+      resolve(event.target.result);
+    };
+    
+    // Convert data to base64 
+    reader.readAsDataURL(file);
+  });
+};
+// Example call:
+
+
+    $('#test').on('click', function(){
+      chrome.identity.getAuthToken({interactive: true}, function(token) {
+        console.log(token);
+        fileToBase64("pic4.png", "C:\Users\Davide\Downloads\pic4.jpg").then(result => {
+          console.log(result);
+
+          var mail = [
+            'Content-Type: multipart/mixed; boundary="foo_bar_baz"\r\n',
+            'MIME-Version: 1.0\r\n',
+            'From: davidebagnato97@gmail.com\r\n',
+            'To: harry1997@live.it\r\n',
+            'Subject: Subject Text\r\n\r\n',
+          
+            '--foo_bar_baz\r\n',
+            'Content-Type: text/plain; charset="UTF-8"\r\n',
+            'MIME-Version: 1.0\r\n',
+            'Content-Transfer-Encoding: 7bit\r\n\r\n',
+          
+            'The actual message text goes here\r\n\r\n',
+          
+            '--foo_bar_baz\r\n',
+            'Content-Type: image/jpeg\r\n',
+            'MIME-Version: 1.0\r\n',
+            'Content-Transfer-Encoding: base64\r\n',
+            'Content-Disposition: attachment; filename="pic4.jpg"\r\n\r\n',
+
+            result, '\r\n\r\n',
+         
+            '--foo_bar_baz--'
+          ].join('');
+          
+          // Send the mail!
+          $.ajax({
+            type: "POST",
+            url: "https://www.googleapis.com/upload/gmail/v1/users/me/messages/send?uploadType=multipart",
+            contentType: "message/rfc822",
+            beforeSend: function(xhr, settings) {
+              xhr.setRequestHeader('Authorization','Bearer '+ token );
+            },
+            data: mail
+          }); 
+  
+        });
+
+
+
+        });
+        
+
+    });
+    
+
 var signatureData = {
   type: "",
   filename: "",
