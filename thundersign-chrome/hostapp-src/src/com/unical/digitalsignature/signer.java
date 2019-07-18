@@ -18,6 +18,7 @@ package com.unical.digitalsignature;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Base64;
 import java.util.List;
 import java.util.logging.Level;
 
@@ -264,6 +265,14 @@ public class signer {
 			else
 				jo.put("signature_type", "cades");
 			jo.put("local_path_newFile", pathNewFile);
+			
+			File newFile = new File(pathNewFile);
+			byte[] input_file = Files.toByteArray(newFile);
+
+	        byte[] encodedBytes = Base64.getEncoder().encode(input_file);
+	        String encodedString =  new String(encodedBytes);
+	        jo.put("encoded_file", encodedString);
+			
 			MiddlewareChrome.log(className, jo.toString());
 			MiddlewareChrome.getInstance().sendMessage(jo.toString());
 

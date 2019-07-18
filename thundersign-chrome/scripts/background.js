@@ -39,12 +39,14 @@ var storedSignatureData = {
 var sessionDataHtml = "";
 
 const app = 'com.unical.digitalsignature.mailsigner';
-var countEnded = 0;
-
+var encoded_files = [];
+var signedNames = [];
+var recipient = "";
 /**
  * Open connection with native app and set message listeners.
  */
 function openConnection() {
+  
   
   nativeAppPort = chrome.runtime.connectNative(app);
 
@@ -55,22 +57,33 @@ function openConnection() {
 
     if (msg.hasOwnProperty("native_app_message")) {
       if (msg.native_app_message == "end") {
+
         appCurrentState = StateEnum.complete;
-        countEnded += 1;
-        
+        encoded_files.push(msg.encoded_file);
+        var tmp = msg.local_path_newFile.replace(/\\/g, "\\\\");
+        signedNames.push(tmp.substring(tmp.lastIndexOf("\\")+1));
+
         chrome.runtime.sendMessage({
           state: "file",                        
           localPath: msg.local_path_newFile
         }, function (response) {});
 
-        if(countEnded == toSign){
-          console.log("ENDED");
-          countEnded = 0;
-          storedSignatureData.empty();
-          closeConnection();
-          chrome.runtime.sendMessage({
-            state: "end"
-          }, function (response) {});
+        if(signedNames.length == toSign){
+          if(recipient != "")
+            authAndSendMail(encoded_files, signedNames, msg.signature_type)
+          else{
+
+            console.log("ENDED");      
+            storedSignatureData.empty();
+            closeConnection();
+            chrome.runtime.sendMessage({
+              state: "end"
+            }, function (response) {});
+            encoded_files = [];
+            signedNames = [];
+
+          }  
+         
         }
       }  else if (msg.native_app_message == "info") {
         
@@ -99,6 +112,7 @@ function openConnection() {
           error: msg.error
         }, function (response) {});
       }
+    
     }
 
   });
@@ -107,9 +121,9 @@ function openConnection() {
     console.log("Disconnected");
     appCurrentState = StateEnum.ready;
   });
-
   return nativeAppPort;
 }
+
 
 /**
  * Close connection with native app.
@@ -130,8 +144,7 @@ function sendDataForSign(data) {
     data.tabUrl = "file:///" + data.filename;
     console.log("Send message to native app, data: ");
     console.log(data);
-    openConnection();
-    nativeAppPort.postMessage(data);
+    openConnection().postMessage(data);
 };
 
 /**
@@ -343,6 +356,9 @@ function (request, sender, sendResponse) {
   switch (request.action) {
     case popupMessageType.wakeup:
       console.log("Background wakeup");
+      encoded_files = [];
+      signedNames = [];
+      recipient = "";
       break;
     case popupMessageType.resetState:
       console.log("Reset State");
@@ -365,6 +381,8 @@ function (request, sender, sendResponse) {
       console.log("Urls received:");
       console.log(request.urls);
       toSign = request.data.length;
+      recipient = request.recipient;
+
       for(var i = 0; i< request.data.length; i++){
         console.log(request.data[i].pageNumber);
         
@@ -419,4 +437,73 @@ function onFailed(error) {
 }
 
  
+function authAndSendMail(signature_type){
 
+  if(signature_type == "cades"){
+    var type = "application/pkcs7-mime"
+  }
+  else{
+    var type = "application/pdf"
+  }
+
+  chrome.identity.getAuthToken({interactive: true}, function(token) {
+    console.log(token);
+      var mail = [
+        'Content-Type: multipart/mixed; boundary="foo_bar_baz"\r\n',
+        'MIME-Version: 1.0\r\n',
+        
+        'To:'+ recipient + '\r\n',
+        'Subject: Subject\r\n\r\n',
+      
+        '--foo_bar_baz\r\n',
+        'Content-Type: text/plain; charset="UTF-8"\r\n',
+        'MIME-Version: 1.0\r\n',
+        'Content-Transfer-Encoding: 7bit\r\n\r\n',
+      
+        'Here is your signed file.\r\n\r\n'
+
+      ];
+      
+      for (var i = 0; i< encoded_files.length; i++){
+        mail.push('--foo_bar_baz\r\n',
+                        'Content-Type:'+ type +'; name="'+ signedNames[i]+'"\r\n',
+                        'MIME-Version: 1.0\r\n',
+                        'Content-Transfer-Encoding: base64\r\n',
+                        'Content-Disposition: attachment; filename="'+ signedNames[i]+'"\r\n\r\n',
+                        encoded_files[i], '\r\n\r\n');
+        if(i === encoded_files.length-1){
+          mail.push('--foo_bar_baz--');
+        }                
+      }
+      console.log(mail);
+      var dataToSend = mail.join('');
+      // Send the mail!
+      $.ajax({
+        type: "POST",
+        url: "https://www.googleapis.com/upload/gmail/v1/users/me/messages/send?uploadType=multipart",
+        contentType: "message/rfc822",
+        beforeSend: function(xhr, settings) {
+          xhr.setRequestHeader('Authorization','Bearer '+ token );
+        },
+        data: dataToSend
+      }); 
+      
+      // var url = 'https://accounts.google.com/o/oauth2/revoke?token=' + token;
+    // window.fetch(url);
+    // chrome.identity.removeCachedAuthToken({token: token}, function (){
+      
+    // });
+
+      console.log("ENDED");
+      
+      storedSignatureData.empty();
+      closeConnection();
+      chrome.runtime.sendMessage({
+        state: "end"
+      }, function (response) {});
+
+      encoded_files = [];
+      signedNames = [];
+    });
+
+}

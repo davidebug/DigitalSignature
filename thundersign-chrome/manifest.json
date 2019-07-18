@@ -5,10 +5,11 @@
     "description": "Digital Signature on attachments",
     "version": "1.0",
     "author": "Davide Bagnato",
-    "permissions": ["declarativeContent","nativeMessaging", "activeTab", "downloads", "tabs", "storage","<all_urls>", "identity"],
+    "permissions": ["declarativeContent","nativeMessaging", "activeTab", "downloads", "tabs", "storage","<all_urls>", "identity","contextMenus",
+        "https://www.googleapis.com/upload/gmail/v1/users/me/messages/send?uploadType=multipart"
+      ],
     "background": {
-        "scripts": ["scripts/background.js"]
-        
+        "scripts": ["scripts/background.js", "scripts/bootstrap/jquery-3.4.1.slim.min.js"]
       },
       "oauth2": {
         "client_id": "500941724095-q9ghi3np9eqvdvlhr806jj84f74elrnn.apps.googleusercontent.com",
