@@ -5,7 +5,7 @@
 
 **Prerequisites:**
 - Gmail Account
-- Chrome or Firefox
+- Google Chrome
 - Java 8 JRE u212
 - Token PKCS #11
 
@@ -14,23 +14,14 @@
 - Open Chrome and enter `chrome://extensions/` into your address bar.
 - Click on the “developer mode” toggle in the upper-right corner.
 - Click no "**Load Unpacked**" and select the "**app**" folder (thundersign-chrome if you are using Chrome).
-At this point in the extension list will appear the loaded extension.
-- Copy the extension-id of the new extension, it's required later.
 
 **:two: : INSTALL NATIVE APP**
 
-- Go into **hostapp-dist** folder
-- open manifest.json file and modify the "allowed_origins" value with your loaded extension ID.
-
-"allowed_origins": [
-​    "chrome-extension://YOUR_EXTESION_ID/"
-  ]
-
-- After this, run the `install_host.bat` script that will create some registry key that are necessary for using the native application.
+- After this, run the `install_NativeApp` script that will create some registry key that are necessary for using the native application.
 
 **NOW YOU CAN USE THE APPLICATION :smile:** 
 
-> **NOTE:** for **uninstall** the application is enough remove the extension from chrome and run `uninstall_host.bat`
+> **NOTE:** for **uninstall** the application is enough remove the extension from chrome and run `uninstall_nativeApp`
 
 
 ### Usage
