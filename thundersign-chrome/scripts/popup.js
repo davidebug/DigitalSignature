@@ -1,6 +1,15 @@
 
 console.log('Popup.js - Started');
 
+
+var tabId = 0;
+chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+  var activeTab = tabs[0];
+  tabId = activeTab.id;
+  console.log(tabId);
+});
+
+
 var signatureData = {
   type: "",
   filename: "",
@@ -146,8 +155,6 @@ function addAttachments(attachments){
 }
 
 
-
-
 var toDownload = [];
 var toSend = [];
 var toSign = [];
@@ -198,6 +205,7 @@ function getData(i){
   }
 }
 
+var sendMode = "reply";
 
 $("#signAndReply").click(function(){
 
@@ -207,11 +215,8 @@ $("#signAndReply").click(function(){
     for(var i = 0; i<attachments.length; i++){
       getData(i);
     } 
-    if(toSend[0].useField == false)     
-      sendDataToSign();
-    else{
-      requestInfo();
-    }  
+      sendMode = "reply";
+      displayMailInfo();
       console.log("started " + signatureData.type + " sign and Reply")
   }
   else{
@@ -227,14 +232,9 @@ $("#signAndSend").click(function(){
   if(signatureData.password != ""){
     for(var i = 0; i<attachments.length; i++){
       getData(i);
-    }      
-    if(toSend[0].useField == false){     
-      recipient = "";
-      sendDataToSign();
-    }
-  else{
-    requestInfo();
-  }  
+    } 
+      sendMode = "send";
+      displayMailInfo();
       console.log("started " + signatureData.type + " sign and Send")
   }
   else{
@@ -289,6 +289,12 @@ $("#sendInfo").click(function(){
   chrome.runtime.sendMessage({
     action: popupMessageType.sign,
     fieldsList: fieldsToSend,
+    subject: subject,
+    body: body,
+    recipient: recipient,
+    tabId: tabId
+
+
 }, function (response) {
     console.log("Loading background app");
     showLoading("Signing on selected fields..");
@@ -307,6 +313,40 @@ $("#sendInfo").click(function(){
 
 function sleep(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
+}
+
+var subject = "";
+var body = "";
+
+function displayMailInfo(){
+  console.log(sendMode);
+  submitButtons.style.display = "none";
+  document.getElementById("mail").style.display = "inline";
+  if(sendMode == "send"){
+    document.getElementById("compose-to").style.display = "inline";
+  }
+
+  $("#send-button").click(function(){
+    
+    if(sendMode == "send"){
+      recipient = document.getElementById("compose-to").value;
+      console.log(recipient +"selezionato");
+    }
+    subject = document.getElementById("compose-subject").value;
+    body = document.getElementById("compose-message").value;
+    if(recipient == "" || subject == ""){
+      showError("Missing arguments");
+    }
+    else{
+      if(toSend[0].useField == false){ 
+        sendDataToSign();
+      }
+      else{
+        requestInfo();
+      }  
+    }
+    
+  });
 }
 
 
@@ -346,12 +386,17 @@ function sendDataToSign(){
       console.log("opening connection to native app");
   });
   
+    console.log("mando a" + recipient);
     console.log(toSend[0].pageNumber);
     chrome.runtime.sendMessage({
       action: popupMessageType.download_and_sign,
       data: toSend,
       urls: toDownload,
-      recipient: recipient
+      recipient: recipient,
+      subject: subject,
+      body: body,
+      tabId: tabId
+
   }, function (response) {
       console.log("Loading background app");
       showLoading("Downloading and signing");
@@ -425,6 +470,9 @@ function hideError() {
 }
 
 function showLoading(message) {
+  document.getElementById("compose-to").style.display = "none";
+  document.getElementById("mail").style.display = "none";
+  
   submitButtons.style.display = "none";
   loadingMsg.textContent = message;
   document.getElementById("loading").style.display = "inline";

@@ -23,8 +23,9 @@
                         
                         <h1 class="title is-5 "style="color:red;">Error&nbsp;&nbsp;<i class="fas fa-exclamation-triangle"></i></h1>
                         <h6 id="error-info" class="info-msg" style="text-align: center; color:red;" ></h6>
+                        <br>  
                 </div>
-                <br>    
+                  
 
             <div id="submit-buttons">
 
@@ -100,6 +101,27 @@
                 </div>
                 
                 <button id="sendInfo" class="btn btn-success" type="button" value="Send info" style="font-size: 16px"><i class="fas fa-reply"></i>&nbsp;Confirm</button>
+            </div>
+
+            <div id="mail" style="display:none">
+                <form >
+                    <div class="modal-body">
+                      <div class="form-group">
+                        <input type="email" style= "display:none" class="form-control" id="compose-to" placeholder="To" required />
+                      </div>
+            
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="compose-subject" placeholder="Subject" required />
+                      </div>
+            
+                      <div class="form-group">
+                        <textarea class="form-control" id="compose-message" placeholder="Message" rows="10" required></textarea>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" id="send-button" class="btn btn-success"><i class="fas fa-check"></i>&nbsp;Send</button>
+                    </div>
+                </form>
             </div>
         </div>
 

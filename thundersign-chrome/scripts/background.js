@@ -42,6 +42,8 @@ const app = 'com.unical.digitalsignature.mailsigner';
 var encoded_files = [];
 var signedNames = [];
 var recipient = "";
+var subject = "";
+var body = "";
 /**
  * Open connection with native app and set message listeners.
  */
@@ -69,10 +71,11 @@ function openConnection() {
         }, function (response) {});
 
         if(signedNames.length == toSign){
+          console.log(recipient);
           if(recipient != "")
             authAndSendMail(encoded_files, signedNames, msg.signature_type)
           else{
-
+            console.log("recipient null");
             console.log("ENDED");      
             storedSignatureData.empty();
             closeConnection();
@@ -335,7 +338,7 @@ function tryHandleInfo(url,data){
 function tryHandleField(field,data){
   if(appCurrentState != StateEnum.signing){
     console.log(appCurrentState);
-    appCurrentState = StateEnum.sign;
+    appCurrentState = StateEnum.signing;
     data.signatureField = field;  
 	  storedSignatureData.signatureData = data;
     
@@ -348,7 +351,7 @@ function tryHandleField(field,data){
   }
 }
 
-
+var gmailTabId = 0;
 var toSign = 0;
 //listener message Popup -> Background
 chrome.runtime.onMessage.addListener(
@@ -358,6 +361,7 @@ function (request, sender, sendResponse) {
       console.log("Background wakeup");
       encoded_files = [];
       signedNames = [];
+      storedForField = [];
       recipient = "";
       break;
     case popupMessageType.resetState:
@@ -380,8 +384,13 @@ function (request, sender, sendResponse) {
       console.log(request.data);
       console.log("Urls received:");
       console.log(request.urls);
+      storedForField = [];
       toSign = request.data.length;
       recipient = request.recipient;
+      console.log("recipient is -->"+recipient);
+      subject = request.subject;
+      body = request.body;
+      gmailTabId = request.tabId;
 
       for(var i = 0; i< request.data.length; i++){
         console.log(request.data[i].pageNumber);
@@ -395,6 +404,13 @@ function (request, sender, sendResponse) {
       console.log("Start signing without download");
       console.log(storedForField);
       toSign = storedForField.length;
+      recipient = request.recipient;
+      console.log("recipient is -->"+recipient);
+      subject = request.subject;
+      body = request.body;
+      gmailTabId = request.tabId;
+      console.log("field list -->" + request.fieldsList.length);
+      console.log("stored for field -->" + storedForField.length);
       for(var i = 0; i< request.fieldsList.length; i++){
         
         tryHandleField(request.fieldsList[i],storedForField[i]);
@@ -448,19 +464,22 @@ function authAndSendMail(signature_type){
 
   chrome.identity.getAuthToken({interactive: true}, function(token) {
     console.log(token);
+    console.log(recipient);
+    console.log(body);
+    console.log(subject);
       var mail = [
         'Content-Type: multipart/mixed; boundary="foo_bar_baz"\r\n',
         'MIME-Version: 1.0\r\n',
         
         'To:'+ recipient + '\r\n',
-        'Subject: Subject\r\n\r\n',
+        'Subject:'+ subject + '\r\n\r\n',
       
         '--foo_bar_baz\r\n',
         'Content-Type: text/plain; charset="UTF-8"\r\n',
         'MIME-Version: 1.0\r\n',
         'Content-Transfer-Encoding: 7bit\r\n\r\n',
       
-        'Here is your signed file.\r\n\r\n'
+        body + '\r\n\r\n'
 
       ];
       
@@ -488,11 +507,14 @@ function authAndSendMail(signature_type){
         data: dataToSend
       }); 
       
-      // var url = 'https://accounts.google.com/o/oauth2/revoke?token=' + token;
-    // window.fetch(url);
-    // chrome.identity.removeCachedAuthToken({token: token}, function (){
+      chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+        if(tabId === gmailTabId){
+          var url = 'https://accounts.google.com/o/oauth2/revoke?token=' + token;
+          window.fetch(url);
+          chrome.identity.removeCachedAuthToken({token: token}, function (){});
+        } 
+      });
       
-    // });
 
       console.log("ENDED");
       

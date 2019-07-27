@@ -19,6 +19,8 @@ for(var i = 0; i<myAttachments.length;i++){
     attachmentsList.push(document.getElementsByClassName("aV3 zzV0ie")[i].innerText);
     console.log(myUrls[i]);
 }
+
+
 chrome.runtime.sendMessage({popupContent: attachmentsList, urls: myUrls, recipient: recipient }, function(response)
 {});
 
