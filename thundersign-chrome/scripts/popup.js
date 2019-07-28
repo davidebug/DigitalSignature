@@ -35,6 +35,7 @@ var attachments = [];
 var newFilesPath = [];
 var fieldsList = [];
 var recipient = "";
+var replyRecipient = "";
 
 chrome.runtime.sendMessage({
   action: popupMessageType.wakeup,
@@ -162,7 +163,7 @@ var toSign = [];
 
 function getData(i){
   
-    clearData();
+    clearSignData();
     var send = {
       type: "",
       filename: "",
@@ -205,7 +206,7 @@ function getData(i){
   }
 }
 
-var sendMode = "reply";
+var sendMode = "";
 
 $("#signAndReply").click(function(){
 
@@ -300,7 +301,7 @@ $("#sendInfo").click(function(){
     showLoading("Signing on selected fields..");
     console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
 });
-    clearData();
+    clearSignData();
     $("#fields").html("");
     toSend = [];
     fieldsList = [];
@@ -331,6 +332,9 @@ function displayMailInfo(){
     if(sendMode == "send"){
       recipient = document.getElementById("compose-to").value;
       console.log(recipient +"selezionato");
+    }
+    else{
+      recipient = replyRecipient;
     }
     subject = document.getElementById("compose-subject").value;
     body = document.getElementById("compose-message").value;
@@ -369,7 +373,7 @@ function requestInfo(){
       showLoading("Requesting signature fields..");
       console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
   });
-      clearData();
+      clearSignData();
       $("#fields").html("");
       toSend = [];
       fieldsList = [];
@@ -402,14 +406,14 @@ function sendDataToSign(){
       showLoading("Downloading and signing");
       console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
   });
-      clearData();
+      clearSignData();
       $("#fields").html("");
       toSend = [];
       fieldsList = [];
       
 }
 
-function clearData(){
+function clearSignData(){
   signatureData.type= "";
   signatureData.filename= "";
   signatureData.visible= false;
@@ -419,19 +423,18 @@ function clearData(){
   signatureData.pageNumber= 1;
   signatureData.signatureField= "";
   signatureData.tabUrl= "";
-  
 }
 
  function checkCurrenState() {
             // console.log("App Current State:" + appCurrentState);
             if (appCurrentState == undefined) {
-                clearData();
+                clearSignData();
             }
             if (appCurrentState == appStateEnum.signing || appCurrentState == appStateEnum.downloadFile || appCurrentState == appStateEnum.info) {
                 console.log("LOADING");
                 showLoading("Downloading and signing");
             } else if (appCurrentState == appStateEnum.complete || appCurrentState == appStateEnum.error) {
-                clearData();
+                clearSignData();
             }
             //check if exist stored data in background
             // else if (appCurrentState == appStateEnum.running) {
@@ -447,7 +450,7 @@ function clearData(){
             //                 updateSignatureFieldList(backgroundStoredSignatureData.infoPDF);
             //             } else {
             //                 console.log("Stored data in background belong to a different document. Clear stored data.")
-            //                 clearData();
+            //                 clearSignData();
             //             }
             //         });
             //     }
@@ -457,6 +460,8 @@ function clearData(){
 const loadingMsg = document.getElementById("loading-info");
 const errorMsg = document.getElementById("error-info");
 const submitButtons = document.getElementById("submit-buttons");
+const endMsg = document.getElementById("end-msg");
+
 
 function showError(errorMessage) {
   errorMsg.textContent = errorMessage;
@@ -491,6 +496,29 @@ function showfields(){
   submitButtons.style.display = "none";
 }
 
+
+function showEnd(message) {
+  document.getElementById("compose-to").style.display = "none";
+  document.getElementById("mail").style.display = "none";
+  submitButtons.style.display = "none";
+  endMsg.textContent = message;
+  document.getElementById("end-section").style.display = "inline";
+  
+}
+
+function hideEnd() {
+  submitButtons.style.display = "inline";
+  endMsg.textContent = "";
+  document.getElementById("end-section").style.display = "none";
+  
+}
+
+$("#close-end").click(function(){
+    
+  hideEnd();
+  clearSignData();
+
+});
 
 
 function updateSignatureFieldList() {
@@ -553,6 +581,11 @@ chrome.runtime.onMessage.addListener(
                   console.log("ENDED");
                   appCurrentState = appStateEnum.ready;
                   hideLoading();
+                  if(sendMode != "")
+                    showEnd("Mail sent to "+ recipient);
+                  else{
+                    showEnd();
+                  }  
                   // endSectionUIUpdate(request.localPath);
                   break;
               case "info":
@@ -574,7 +607,7 @@ chrome.runtime.onMessage.addListener(
         attachments = request.popupContent;
           addAttachments(attachments);
         urls = request.urls;
-        recipient = request.recipient;
+        replyRecipient = request.recipient;
         console.log(recipient);
       }
 
