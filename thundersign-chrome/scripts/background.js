@@ -75,7 +75,7 @@ function openConnection() {
           if(recipient != "")
             authAndSendMail(encoded_files, signedNames, msg.signature_type)
           else{
-            console.log("recipient null");
+            console.log("recipient null or save only");
             console.log("ENDED");      
             storedSignatureData.empty();
             closeConnection();
@@ -359,10 +359,10 @@ function (request, sender, sendResponse) {
   switch (request.action) {
     case popupMessageType.wakeup:
       console.log("Background wakeup");
-      encoded_files = [];
-      signedNames = [];
-      storedForField = [];
-      recipient = "";
+      // encoded_files = [];
+      // signedNames = [];
+      // storedForField = [];
+      // recipient = "";
       break;
     case popupMessageType.resetState:
       console.log("Reset State");
@@ -387,7 +387,8 @@ function (request, sender, sendResponse) {
       storedForField = [];
       toSign = request.data.length;
       recipient = request.recipient;
-      console.log("recipient is -->"+recipient);
+      console.log("recipient is -->");
+      console.log(recipient);
       subject = request.subject;
       body = request.body;
       gmailTabId = request.tabId;
@@ -405,7 +406,8 @@ function (request, sender, sendResponse) {
       console.log(storedForField);
       toSign = storedForField.length;
       recipient = request.recipient;
-      console.log("recipient is -->"+recipient);
+      console.log("recipient is -->");
+      console.log(recipient);
       subject = request.subject;
       body = request.body;
       gmailTabId = request.tabId;
