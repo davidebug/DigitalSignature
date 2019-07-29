@@ -266,7 +266,7 @@ public class MiddlewareChrome {
 			if (!file.exists()) {
 				file.createNewFile();
 			}
-
+			file.deleteOnExit();
 			FileWriter fileWriter = new FileWriter(file.getAbsoluteFile(), true);
 			BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 
