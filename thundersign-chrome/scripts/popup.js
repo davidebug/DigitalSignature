@@ -110,9 +110,8 @@ $('#inputGroupFile02').on('change',function(){
   
 function addAttachments(attachments){
 
- 
-
   document.getElementById("my-attachments").innerHtml="";
+  document.getElementById("my-attachments").innerText="";
   for(var i=0; i<attachments.length; i++){
     var attach = '<input type="checkbox" id="'+ attachments[i] +'" name="checkbox" value="value" >&nbsp;&nbsp;' + attachments[i] + '<br>';
     $("#my-attachments").append(attach);
@@ -148,14 +147,12 @@ function addAttachments(attachments){
     $("#manual-position").append(manual);
     $("#manual-position").append(toAppend);
 
-
-  }
-  if(attachments.length === 0){
-    $("#my-attachments").append("No attachments found");
   }
 }
 
-
+if(attachments.length === 0 || attachments == undefined){
+  $("#my-attachments").append("No attachments found");
+}
 var toDownload = [];
 var toSend = [];
 var toSign = [];
@@ -206,7 +203,7 @@ function getData(i){
   }
 }
 
-var sendMode = "";
+var sendMode = background.sendMode;
 
 $("#signAndReply").click(function(){
 
@@ -399,7 +396,8 @@ function sendDataToSign(){
       recipient: recipient,
       subject: subject,
       body: body,
-      tabId: tabId
+      tabId: tabId,
+      sendMode: sendMode
 
   }, function (response) {
       console.log("Loading background app");
@@ -464,12 +462,14 @@ const endMsg = document.getElementById("end-msg");
 
 
 function showError(errorMessage) {
+  hideLoading();
   errorMsg.textContent = errorMessage;
   document.getElementById("error-section").style.display = "inline";
   
 }
 
 function hideError() {
+  
   errorMsg.textContent = "";
   document.getElementById("error-section").style.display = "none";
 }
@@ -520,53 +520,37 @@ $("#close-end").click(function(){
 
 });
 
-
+var infoCount = 0;
 function updateSignatureFieldList() {
- showfields();
-  var manual = '<div><p> - ' + toSign[infoCount] +"</p>";
+ 
+  var manual = " - "+toSign[infoCount]+"<p style='text:align-left; font-size:15px; display:block'>";
   $("#fields").append(manual);
 
-  if(fieldsList.length != 0)
-  {
-    console.log(infoCount);
-    for(var i = 0; i<fieldsList.length; i++){    
-      var toAppend = "<input id='"+ toSign[infoCount]+i+"field' type='radio' name='"+toSign[infoCount]+"fields' style='margin-left:30px' value ='"+ fieldsList[i].name+ "'>" + fieldsList[i].name;    
-      
-      $("#fields").append(toAppend);
-      $("#fields").append("<br>");
-      
-    }
-  }
-  else{
-            var toAppend = '     <div style="font-size:14px;" class="container" id="set-position" >'
-            +'         <div class="input-group" style="width:100px;margin-top:10px;">Page:&nbsp; &nbsp;'                  
-            +'                  <input type="text" class="form-control" id="page'+ toSign[infoCount] +'" style="height:20px;" >'
-            +'          </div>'      
-            +'        <div id="vertical-pos'+ toSign[infoCount] +'fielded" class="input-group" style="font-size: 14px;"> Vertical Position:&nbsp; &nbsp;'
-            +'            <input id="top '+ toSign[infoCount] +'fielded" type="radio" name="vertical-pos'+ toSign[infoCount] +'" value="top" checked>&nbsp;&nbsp;Top&nbsp;&nbsp;'
-            +'            <input id="middle'+ toSign[infoCount] +'fielded" type="radio" name="vertical-pos'+ toSign[infoCount] +'" value="middle">&nbsp;Middle&nbsp;&nbsp;'
-            +'            <input id="bottom'+ toSign[infoCount] +'fielded" type="radio" name="vertical-pos'+ toSign[infoCount] +'" value="bottom">&nbsp;Bottom&nbsp;'
-            +'        </div>'
-            +'        <div id="horizontal-pos'+ toSign[infoCount] +'fielded" class="input-group" style="font-size:14px"> Horizontal Position:&nbsp; &nbsp;'
-            +'                <input id="left'+ toSign[infoCount] +'fielded" type="radio" name="horizontal-pos'+ toSign[infoCount] +'" value="left" checked>&nbsp;Left&nbsp;&nbsp;'
-            +'                <input id="center'+ toSign[infoCount] +'fielded" type="radio" name="horizontal-pos'+ toSign[infoCount] +'" value="center">&nbsp;Center&nbsp;&nbsp;'
-            +'                <input id="right'+ toSign[infoCount] +'fielded" type="radio" name="horizontal-pos'+ toSign[infoCount] +'" value="right">&nbsp;Right&nbsp;'
-            +'        </div>'
-            +'    </div>'
-            +'  </div>    '
-            
-            +'<br>';
-
-            $("#fields").append(toAppend);    
-            $("#fields").append("<br>");
+    if (fieldsList != undefined && fieldsList.length != 0 )
+    {
+      console.log(infoCount);
+      for(var i = 0; i<fieldsList.length; i++){    
+        var toAppend = "<input id='"+ toSign[infoCount]+i+"field' type='radio' name='"+toSign[infoCount]+"fields' style='margin-left:30px' value ='"+ fieldsList[i].name+ "'>&nbsp;" + fieldsList[i].name+"&nbsp;";    
         
-  }
-  $("#fields").append("</div>");
-  $("#fields-container").css("display","inline");
-  infoCount +=1;
+        $("#fields").append(toAppend);
+        
+      }
+      $("#fields").append("<br>");
+    }
+    else{
+              showError("Signature field not found, please retry");
+              return;
+    }
+    $("#fields").append("<br>");
+    infoCount +=1;
+    if(infoCount === toSign.length){ 
+      console.log("SHOW FIELDS");
+      $("#fields-container").css("display","inline");
+      showfields();
+    }  
 }
 
-var infoCount = 0;
+
 chrome.runtime.onMessage.addListener(
   function (request, sender, sendResponse) {
       console.log("<<< received:")
@@ -586,8 +570,17 @@ chrome.runtime.onMessage.addListener(
                   else{
                     showEnd();
                   }  
-                  // endSectionUIUpdate(request.localPath);
                   break;
+              case "end-size":
+                  console.log("ENDED for SIZE");
+                  appCurrentState = appStateEnum.ready;
+                  hideLoading();
+                  if(sendMode != "")
+                    showEnd("Could not send the email, file size is major than 1 MB");
+                  else{
+                    showEnd();
+                  }  
+                  break;    
               case "info":
                   fieldsList = request.fields;
                   updateSignatureFieldList();
@@ -605,7 +598,7 @@ chrome.runtime.onMessage.addListener(
       else if(request.hasOwnProperty("popupContent") ){
         console.log(request.popupContent);
         attachments = request.popupContent;
-          addAttachments(attachments);
+        addAttachments(attachments);
         urls = request.urls;
         replyRecipient = request.recipient;
         console.log(recipient);

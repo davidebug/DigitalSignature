@@ -44,6 +44,8 @@ var signedNames = [];
 var recipient = "";
 var subject = "";
 var body = "";
+var sentToNative = 0;
+var sendMode = "";
 /**
  * Open connection with native app and set message listeners.
  */
@@ -76,7 +78,8 @@ function openConnection() {
             authAndSendMail(encoded_files, signedNames, msg.signature_type)
           else{
             console.log("recipient null or save only");
-            console.log("ENDED");      
+            console.log("ENDED");
+            appCurrentState = StateEnum.complete;      
             storedSignatureData.empty();
             closeConnection();
             chrome.runtime.sendMessage({
@@ -98,13 +101,12 @@ function openConnection() {
         }                                    
 
         //forward fields list to popup
-        chrome.runtime.sendMessage({
-          state: 'info',
-          pageNumber: msg.pageNumber,
-          pages: msg.pages,
-          fields: msg.fields
-        }, function (response) {});
-
+          chrome.runtime.sendMessage({
+            state: 'info',
+            pageNumber: msg.pageNumber,
+            pages: msg.pages,
+            fields: msg.fields
+          }, function (response) {});
         // appCurrentState = StateEnum.running;
 
       } else if (msg.native_app_message == "error") {
@@ -122,6 +124,11 @@ function openConnection() {
 
   nativeAppPort.onDisconnect.addListener(function () {
     console.log("Disconnected");
+    if(sentToNative === toSign && appCurrentState != StateEnum.complete){
+      chrome.runtime.sendMessage({
+        state: "end-size"
+      }, function (response) {});
+    }
     appCurrentState = StateEnum.ready;
   });
   return nativeAppPort;
@@ -141,6 +148,7 @@ function closeConnection() {
  * @param {*} data - data to send to native app for signing 
  */
 function sendDataForSign(data) {
+
     appCurrentState = StateEnum.signing;
     data.action = "sign";
     data.filename = data.filename.replace(/\\/g, "/");
@@ -148,6 +156,7 @@ function sendDataForSign(data) {
     console.log("Send message to native app, data: ");
     console.log(data);
     openConnection().postMessage(data);
+    sentToNative +=1;
 };
 
 /**
@@ -353,12 +362,14 @@ function tryHandleField(field,data){
 
 var gmailTabId = 0;
 var toSign = 0;
+var fieldsToSearch = 0;
 //listener message Popup -> Background
 chrome.runtime.onMessage.addListener(
 function (request, sender, sendResponse) {
   switch (request.action) {
     case popupMessageType.wakeup:
       console.log("Background wakeup");
+      wakeUpProcedure();
       // encoded_files = [];
       // signedNames = [];
       // storedForField = [];
@@ -392,6 +403,7 @@ function (request, sender, sendResponse) {
       subject = request.subject;
       body = request.body;
       gmailTabId = request.tabId;
+      sendMode = request.sendMode;
 
       for(var i = 0; i< request.data.length; i++){
         console.log(request.data[i].pageNumber);
@@ -411,6 +423,8 @@ function (request, sender, sendResponse) {
       subject = request.subject;
       body = request.body;
       gmailTabId = request.tabId;
+      sendMode = request.sendMode;
+      
       console.log("field list -->" + request.fieldsList.length);
       console.log("stored for field -->" + storedForField.length);
       for(var i = 0; i< request.fieldsList.length; i++){
@@ -424,9 +438,9 @@ function (request, sender, sendResponse) {
     //   downloadFile(request.url, request.data, requestPDFInfo);
     //   break;
     case popupMessageType.info: //used for local file
-    for(var i = 0; i< request.data.length; i++){
+    fieldsToSearch = request.data.length;
+    for(var i = 0; i< fieldsToSearch; i++){
       console.log(request.data[i].pageNumber);
-      
       tryHandleInfo(request.urls[i],request.data[i]);
     }
       break;
@@ -529,5 +543,12 @@ function authAndSendMail(signature_type){
       encoded_files = [];
       signedNames = [];
     });
+
+}
+
+//viene eseguita al risveglio della background ( quando viene riaperto il popup)
+function wakeUpProcedure(){
+  //verifico che non ci siano fields e firme in sospeso
+  //ricarico eventuali fields in sospeso
 
 }
