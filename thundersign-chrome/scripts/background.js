@@ -22,7 +22,6 @@ var appCurrentState = StateEnum.start;
 var storedSignatureData = {
   signatureData: "",
   infoPDF: "",
-  localpath: "",
 
   empty: function () {
     this.signatureData = "";
@@ -36,7 +35,6 @@ var storedSignatureData = {
   }
 }
 
-var sessionDataHtml = "";
 
 const app = 'com.unical.digitalsignature.mailsigner';
 var encoded_files = [];
@@ -46,8 +44,82 @@ var subject = "";
 var body = "";
 var sentToNative = 0;
 var sendMode = "";
+var gmailTabId = 0;
+var toSign = 0;
+var fieldsToSearch = 0;
+
+
+var popupMessageType = {
+  wakeup: 'wakeup',
+  init: 'init',
+  disconnect: 'disconnect',
+  download_and_sign: 'download_and_sign',
+  sign: 'sign',
+  download_and_getInfo: 'donwload_and_getInfo',
+  info: 'info',
+  zoom: 'zoom',
+  resetState: "resetState"
+  }
+
+
+
+// Aggiungo il file attuale ad un array da conservare in caso di requestInfo
+var storedForField = [];
+function addToList(data){
+
+  var signatureData = {
+    type: "",
+    filename: "",
+    password: "",
+    visible: false,
+    useField: false,
+    verticalPosition: "Top",
+    horizontalPosition: "Left",
+    pageNumber: 1,
+    signatureField: "",
+    image: "",
+    tabUrl: ""
+  };
+
+  signatureData.type = data.type;
+  signatureData.filename = data.filename;
+  signatureData.password = data.password;
+  signatureData.visible = data.visible;
+  signatureData.useField = data.useField;
+  signatureData.verticalPosition = data.verticalPosition;
+  signatureData.horizontalPosition = data.horizontalPosition;
+  signatureData.pageNumber = data.pageNumber;
+  signatureData.signatureField = data.signatureField;
+  signatureData.image = data.image;
+  signatureData.tabUrl = data.tabUrl;
+  storedForField.push(signatureData);
+
+}  
+
+
+
+function clearData(){
+ // nativeAppPort = null;
+  gmailTabId = 0;
+  toSign = 0;
+  fieldsToSearch = 0;
+
+  encoded_files = [];
+  signedNames = [];
+  recipient = "";
+  subject = "";
+  body = "";
+  sentToNative = 0;
+  sendMode = "";
+
+  appCurrentState = StateEnum.start;
+
+  storedForField = [];
+  storedSignatureData.empty();
+}
+
 /**
- * Open connection with native app and set message listeners.
+ * Opens connection with native app and set message listeners.
  */
 function openConnection() {
   
@@ -72,16 +144,16 @@ function openConnection() {
           localPath: msg.local_path_newFile
         }, function (response) {});
 
+        console.log(signedNames.length);
+        console.log(toSign);
         if(signedNames.length == toSign){
-          console.log(recipient);
+          console.log("TENTO DI INVIARE");
           if(recipient != "")
             authAndSendMail(encoded_files, signedNames, msg.signature_type)
           else{
-            console.log("recipient null or save only");
-            console.log("ENDED");
+            console.log("CONCLUDO PROCEDURA");
             appCurrentState = StateEnum.complete;      
-            storedSignatureData.empty();
-            closeConnection();
+            endProcedure();
             chrome.runtime.sendMessage({
               state: "end"
             }, function (response) {});
@@ -123,8 +195,9 @@ function openConnection() {
   });
 
   nativeAppPort.onDisconnect.addListener(function () {
-    console.log("Disconnected");
-    if(sentToNative === toSign && appCurrentState != StateEnum.complete){
+    console.log("Disconnected");  
+    if(sentToNative === toSign && appCurrentState != StateEnum.complete && appCurrentState != StateEnum.error){
+      endProcedure();
       chrome.runtime.sendMessage({
         state: "end-size"
       }, function (response) {});
@@ -235,38 +308,7 @@ function downloadFile(url,callback){
 
 }
 
-// Aggiungo il file attuale ad un array da conservare in caso di requestInfo
-var storedForField = [];
-function addToList(data){
 
-  var signatureData = {
-    type: "",
-    filename: "",
-    password: "",
-    visible: false,
-    useField: false,
-    verticalPosition: "Top",
-    horizontalPosition: "Left",
-    pageNumber: 1,
-    signatureField: "",
-    image: "",
-    tabUrl: ""
-  };
-
-  signatureData.type = data.type;
-  signatureData.filename = data.filename;
-  signatureData.password = data.password;
-  signatureData.visible = data.visible;
-  signatureData.useField = data.useField;
-  signatureData.verticalPosition = data.verticalPosition;
-  signatureData.horizontalPosition = data.horizontalPosition;
-  signatureData.pageNumber = data.pageNumber;
-  signatureData.signatureField = data.signatureField;
-  signatureData.image = data.image;
-  signatureData.tabUrl = data.tabUrl;
-  storedForField.push(signatureData);
-
-}
 
 // sleep time expects milliseconds
 function sleep(time) {
@@ -302,17 +344,7 @@ chrome.runtime.sendMessage({
 }, function (response) {});
 }
 
-var popupMessageType = {
-wakeup: 'wakeup',
-init: 'init',
-disconnect: 'disconnect',
-download_and_sign: 'download_and_sign',
-sign: 'sign',
-download_and_getInfo: 'donwload_and_getInfo',
-info: 'info',
-zoom: 'zoom',
-resetState: "resetState"
-}
+
 
 function tryHandleProcedure(url,data){
 	
@@ -360,9 +392,13 @@ function tryHandleField(field,data){
   }
 }
 
-var gmailTabId = 0;
-var toSign = 0;
-var fieldsToSearch = 0;
+function endProcedure(){
+ 
+  clearData();
+  closeConnection();
+  console.log("ENDED");
+}
+
 //listener message Popup -> Background
 chrome.runtime.onMessage.addListener(
 function (request, sender, sendResponse) {
@@ -370,10 +406,6 @@ function (request, sender, sendResponse) {
     case popupMessageType.wakeup:
       console.log("Background wakeup");
       wakeUpProcedure();
-      // encoded_files = [];
-      // signedNames = [];
-      // storedForField = [];
-      // recipient = "";
       break;
     case popupMessageType.resetState:
       console.log("Reset State");
@@ -437,17 +469,14 @@ function (request, sender, sendResponse) {
     // case popupMessageType.download_and_getInfo: //used for directly sign a local file
     //   downloadFile(request.url, request.data, requestPDFInfo);
     //   break;
-    case popupMessageType.info: //used for local file
-    fieldsToSearch = request.data.length;
-    for(var i = 0; i< fieldsToSearch; i++){
-      console.log(request.data[i].pageNumber);
-      tryHandleInfo(request.urls[i],request.data[i]);
-    }
+    case popupMessageType.info: 
+      fieldsToSearch = request.data.length;
+      for(var i = 0; i< fieldsToSearch; i++){
+        console.log(request.data[i].pageNumber);
+        tryHandleInfo(request.urls[i],request.data[i]);
+      }
       break;
 
-    // case popupMessageType.zoom:
-    //   createZoomListener(request.tabid);
-    //   break;
 
     default:
       console.log("Invalid action");
@@ -458,6 +487,7 @@ function (request, sender, sendResponse) {
     received: request.action,
   });
 });
+
 
 
 function onStartedDownload(id) {
@@ -534,14 +564,10 @@ function authAndSendMail(signature_type){
 
       console.log("ENDED");
       
-      storedSignatureData.empty();
-      closeConnection();
+      endProcedure();
       chrome.runtime.sendMessage({
         state: "end"
       }, function (response) {});
-
-      encoded_files = [];
-      signedNames = [];
     });
 
 }

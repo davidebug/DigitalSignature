@@ -1,7 +1,10 @@
 
 console.log('Popup.js - Started');
 
-
+/**
+* Id of the current chrome tab where the popup has been opened
+*
+*/
 var tabId = 0;
 chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
   var activeTab = tabs[0];
@@ -9,7 +12,10 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
   console.log(tabId);
 });
 
-
+/**
+* Signature data required by the background script to sign the document.
+*
+*/
 var signatureData = {
   type: "",
   filename: "",
@@ -24,18 +30,107 @@ var signatureData = {
   tabUrl: ""
 };
 
+/**
+* Gets the backgound page and its data.
+*
+*/
 const background = chrome.extension.getBackgroundPage();
- console.log(background.appCurrentState);
- const popupMessageType = background.popupMessageType; //types of message from the popup that background script can handle
- const appStateEnum = background.StateEnum;
- let appCurrentState = background.appCurrentState;
+console.log(background.appCurrentState);
+const popupMessageType = background.popupMessageType; //types of message from the popup that background script can handle
+const appStateEnum = background.StateEnum;
+let appCurrentState = background.appCurrentState;
 
+/**
+* Urls of the attachments found in the page.
+*/
 var urls = [];
+/**
+* Attachments found in the page.
+*/
 var attachments = [];
+/**
+* Local file path of the new signed attachments.
+*/
 var newFilesPath = [];
+/**
+* List of the fields on the popup page.
+*/
 var fieldsList = [];
+/**
+* Recipient for the new mail.
+*/
 var recipient = "";
 var replyRecipient = "";
+/**
+* Attachments selected ready to be downloaded by the background page.
+*/
+var toDownload = [];
+/**
+*  Attachments selected ready to be sent by the background page.
+*/
+var toSend = [];
+/**
+* Attachments selected ready to be signed by the background page.
+*/
+var toSign = [];
+
+/**
+* Send mode of the mail ( reply or not)
+*/
+var sendMode = background.sendMode;
+/**
+* Subject of the mail.
+*/
+var subject = "";
+/**
+* Body of the mail.
+*/
+var body = "";
+
+
+/**
+* Clears the signatureData 
+*/ 
+function clearSignData(){
+  signatureData.type= "";
+  signatureData.filename= "";
+  signatureData.visible= false;
+  signatureData.useField= false;
+  signatureData.verticalPosition= "Top";
+  signatureData.horizontalPosition= "Left";
+  signatureData.pageNumber= 1;
+  signatureData.signatureField= "";
+  signatureData.tabUrl= "";
+}
+
+/**
+* Clears the popup Data 
+*/ 
+function clearPopupData(){
+
+  newFilesPath = [];
+
+  fieldsList = [];
+
+  recipient = "";
+
+  toDownload = [];
+
+  toSend = [];
+
+  toSign = [];
+
+
+  sendMode = background.sendMode;
+
+  subject = "";
+
+  body = "";
+}
+
+
+
+
 
 chrome.runtime.sendMessage({
   action: popupMessageType.wakeup,
@@ -43,20 +138,20 @@ chrome.runtime.sendMessage({
   console.log("background wakeup");
 });
 
+// Little change on the path of the input image (visible pades).
 $('#inputGroupFile02').on('change',function(){
   var fullPath = $(this).val();
   var fileName = fullPath.replace(/^.*[\\\/]/, '');
   $(this).next('.custom-file-label').html(fileName);
 })
 
+// When the popup is opened the content script is injected in the page to find possible attachments and their urls.
  $(document).ready(function(){
 
-  
    checkCurrenState();
 
     console.log('Try to execute contentScript');        
 
-    
     chrome.tabs.executeScript({          
       file: 'scripts/contentScript.js'
     });
@@ -79,6 +174,7 @@ $('#inputGroupFile02').on('change',function(){
       }
     });
 
+    //on document loaded the script tries to load the image in the input file.
     const img_input = document.getElementById("inputGroupFile02");
     const reader = new FileReader();
         img_input.addEventListener('change', (e) => {
@@ -86,10 +182,8 @@ $('#inputGroupFile02').on('change',function(){
             img_input.disabled = true;
             console.log(img_input.files);
 
-            if (img_input.files.length > 0) {
-                // document.getElementById('filename').textContent = img_input.files[0].name;
+            if (img_input.files.length > 0) {          
                 var file = event.target.files[0];
-                // console.log(event.target.files[0]);
 
                 reader.readAsDataURL(file);
                 reader.onloadend = function () {
@@ -107,7 +201,11 @@ $('#inputGroupFile02').on('change',function(){
 
  
 
-  
+/**
+* Adds the attachments loaded by the content script on the popup; 
+* Also adds their manual position settings.
+* @param {*} attachments - list of attachments to add on the popup 
+*/  
 function addAttachments(attachments){
 
   document.getElementById("my-attachments").innerHtml="";
@@ -153,11 +251,12 @@ function addAttachments(attachments){
 if(attachments.length === 0 || attachments == undefined){
   $("#my-attachments").append("No attachments found");
 }
-var toDownload = [];
-var toSend = [];
-var toSign = [];
 
 
+/**
+* Gets the data per attachment selected on the popup and fills the lists required by the background page.
+* @param {*} i - index of the current attachment
+*/ 
 function getData(i){
   
     clearSignData();
@@ -177,6 +276,8 @@ function getData(i){
     send.image = signatureData.image;
     send.password = signatureData.password;
     if(document.getElementById(attachments[i]).checked){
+      console.log("PUSHO");
+      console.log(attachments);
       toSign.push(attachments[i]);
       if(document.getElementById("cades").checked){
         send.type = "cades"
@@ -203,7 +304,8 @@ function getData(i){
   }
 }
 
-var sendMode = background.sendMode;
+
+//On click of every send or save button getData is called and text boxes for the mail are shown.
 
 $("#signAndReply").click(function(){
 
@@ -253,9 +355,9 @@ $("#signAndSave").click(function(){
       recipient = "";    
       sendDataToSign();
     }
-  else{
-    requestInfo();
-  }  
+    else{
+      requestInfo();
+    }  
       console.log("started " + signatureData.type + " sign and Save")
   }
   else{
@@ -264,6 +366,11 @@ $("#signAndSave").click(function(){
   
   
 });
+
+
+// In the case of signature field selection the sendInfo button is shown 
+// and the user is forced to select a field before he can proceed.
+// after he selects the field, a "sign" message is sent to the background page ( download is not required ).
 
 $("#sendInfo").click(function(){
 
@@ -307,15 +414,15 @@ $("#sendInfo").click(function(){
 });
 
 
-
-
 function sleep(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-var subject = "";
-var body = "";
 
+/**
+* In case of Send or Reply selection, text boxes for Subject, Recipient and Body of the mail are shown.
+* A send-button will trigger the signature process.
+*/ 
 function displayMailInfo(){
   console.log(sendMode);
   submitButtons.style.display = "none";
@@ -324,33 +431,41 @@ function displayMailInfo(){
     document.getElementById("compose-to").style.display = "inline";
   }
 
-  $("#send-button").click(function(){
-    
-    if(sendMode == "send"){
-      recipient = document.getElementById("compose-to").value;
-      console.log(recipient +"selezionato");
-    }
-    else{
-      recipient = replyRecipient;
-    }
-    subject = document.getElementById("compose-subject").value;
-    body = document.getElementById("compose-message").value;
-    if(recipient == "" || subject == ""){
-      showError("Missing arguments");
-    }
-    else{
-      if(toSend[0].useField == false){ 
-        sendDataToSign();
-      }
-      else{
-        requestInfo();
-      }  
-    }
-    
-  });
 }
 
+//Listener on the send mail button
+$("#send-button").click(function(){
+    
+  if(sendMode == "send"){
+    recipient = document.getElementById("compose-to").value;
+    console.log(recipient +"selezionato");
+  }
+  else{
+    recipient = replyRecipient;
+  }
+  subject = document.getElementById("compose-subject").value;
+  body = document.getElementById("compose-message").value;
+  
+  if(recipient == "" || subject == ""){
+    showError("Missing arguments");
+  }
+  else{
+    console.log("TOSEND-->");
+    console.log(toSend);
+    if(toSend[0].useField == false){ 
+      sendDataToSign();
+    }
+    else{
+      requestInfo();
+    }  
+  }
+  
+});
 
+
+/**
+* Triggered by the selection of a signature field, it asks for fields to the background script.
+*/ 
 function requestInfo(){
   showLoading("Requesting signature fields..");
     hideError();
@@ -372,12 +487,13 @@ function requestInfo(){
   });
       clearSignData();
       $("#fields").html("");
-      toSend = [];
-      fieldsList = [];
+  
 }
 
 
-
+/**
+* Sends the signature data to the backgroung script, requiring a "sign and download" procedure.
+*/ 
 function sendDataToSign(){
     showLoading("Downloading and signing");
     hideError();
@@ -387,7 +503,7 @@ function sendDataToSign(){
       console.log("opening connection to native app");
   });
   
-    console.log("mando a" + recipient);
+    console.log("mando a " + recipient);
     console.log(toSend[0].pageNumber);
     chrome.runtime.sendMessage({
       action: popupMessageType.download_and_sign,
@@ -406,34 +522,29 @@ function sendDataToSign(){
   });
       clearSignData();
       $("#fields").html("");
-      toSend = [];
-      fieldsList = [];
+      
       
 }
 
-function clearSignData(){
-  signatureData.type= "";
-  signatureData.filename= "";
-  signatureData.visible= false;
-  signatureData.useField= false;
-  signatureData.verticalPosition= "Top";
-  signatureData.horizontalPosition= "Left";
-  signatureData.pageNumber= 1;
-  signatureData.signatureField= "";
-  signatureData.tabUrl= "";
-}
 
+/**
+* Checks the current app state and updates the popup if something is loading.
+*/ 
  function checkCurrenState() {
             // console.log("App Current State:" + appCurrentState);
             if (appCurrentState == undefined) {
                 clearSignData();
             }
-            if (appCurrentState == appStateEnum.signing || appCurrentState == appStateEnum.downloadFile || appCurrentState == appStateEnum.info) {
+            if (appCurrentState == appStateEnum.signing || appCurrentState == appStateEnum.downloadFile) {
                 console.log("LOADING");
                 showLoading("Downloading and signing");
             } else if (appCurrentState == appStateEnum.complete || appCurrentState == appStateEnum.error) {
                 clearSignData();
+            } else if ( appCurrentState == appStateEnum.info){
+              console.log("LOADING");
+                showLoading("Requesting signature fields");
             }
+
             //check if exist stored data in background
             // else if (appCurrentState == appStateEnum.running) {
             //     console.log(backgroundStoredSignatureData);
@@ -460,7 +571,10 @@ const errorMsg = document.getElementById("error-info");
 const submitButtons = document.getElementById("submit-buttons");
 const endMsg = document.getElementById("end-msg");
 
-
+/**
+* Shows an error on the popup
+*@param {string} errorMessage - message of the error
+*/ 
 function showError(errorMessage) {
   hideLoading();
   errorMsg.textContent = errorMessage;
@@ -468,12 +582,20 @@ function showError(errorMessage) {
   
 }
 
+/**
+* Hides the error on the popup
+*
+*/ 
 function hideError() {
   
   errorMsg.textContent = "";
   document.getElementById("error-section").style.display = "none";
 }
 
+/**
+* Shows a loading on the popup
+*@param {string} message - loading message 
+*/ 
 function showLoading(message) {
   document.getElementById("compose-to").style.display = "none";
   document.getElementById("mail").style.display = "none";
@@ -484,6 +606,9 @@ function showLoading(message) {
   
 }
 
+/**
+* Hides the loading on the popup
+*/ 
 function hideLoading() {
   submitButtons.style.display = "inline";
   loadingMsg.textContent = "";
@@ -491,12 +616,18 @@ function hideLoading() {
   
 }
 
+/**
+* Shows the fields on the popup
+*/ 
 function showfields(){
   hideLoading();
   submitButtons.style.display = "none";
 }
 
-
+/**
+* Shows the ending of the signature process.
+* @param {string} message - the ending message
+*/ 
 function showEnd(message) {
   document.getElementById("compose-to").style.display = "none";
   document.getElementById("mail").style.display = "none";
@@ -506,6 +637,9 @@ function showEnd(message) {
   
 }
 
+/**
+* Hides the end message and restore the popup.
+*/ 
 function hideEnd() {
   submitButtons.style.display = "inline";
   endMsg.textContent = "";
@@ -513,14 +647,26 @@ function hideEnd() {
   
 }
 
+//Listener on the Close button when the end message is shown, clears all the data and closes the connection with background script.
 $("#close-end").click(function(){
-    
+
   hideEnd();
-  clearSignData();
+  chrome.runtime.sendMessage({
+    action: popupMessageType.disconnect,
+  }, function (response) {
+    console.log("CONNECTION CLOSED and DATA CLEARED");
+  });
 
 });
 
+/**
+* Counter for the signature field List update.
+*/ 
 var infoCount = 0;
+
+/**
+* Updates the signature fields list on the popup.
+*/ 
 function updateSignatureFieldList() {
  
   var manual = " - "+toSign[infoCount]+"<p style='text:align-left; font-size:15px; display:block'>";
@@ -550,7 +696,7 @@ function updateSignatureFieldList() {
     }  
 }
 
-
+// Listener for the message passing between Popup Script, Background Script and Content Script.
 chrome.runtime.onMessage.addListener(
   function (request, sender, sendResponse) {
       console.log("<<< received:")
@@ -570,16 +716,20 @@ chrome.runtime.onMessage.addListener(
                   else{
                     showEnd();
                   }  
+                  clearSignData();
+                  clearPopupData();
                   break;
               case "end-size":
                   console.log("ENDED for SIZE");
                   appCurrentState = appStateEnum.ready;
                   hideLoading();
-                  if(sendMode != "")
+                  if(sendMode != "" && sendMode != "save")
                     showEnd("Could not send the email, file size is major than 1 MB");
                   else{
                     showEnd();
-                  }  
+                  }
+                  clearSignData();
+                  clearPopupData();  
                   break;    
               case "info":
                   fieldsList = request.fields;

@@ -1,5 +1,5 @@
 
-
+// Content Script to inject in the page, it searches for attachments, urls and recipients inside the DOM.
 
 console.log('contentScript.js - Injected');
 
@@ -14,13 +14,12 @@ for( var i = 0; i<urlsCollect.length; i++){
     myUrls.push(urlsCollect[i].getAttribute('href'));
 }
 
-for(var i = 0; i<myAttachments.length;i++){
-    
+for(var i = 0; i<myAttachments.length;i++){  
     attachmentsList.push(document.getElementsByClassName("aV3 zzV0ie")[i].innerText);
     console.log(myUrls[i]);
 }
 
-
+// Sends the attachments, the urls and the reply recipient to the popup script.
 chrome.runtime.sendMessage({popupContent: attachmentsList, urls: myUrls, recipient: recipient }, function(response)
 {});
 
