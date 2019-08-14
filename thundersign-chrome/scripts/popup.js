@@ -120,6 +120,7 @@ function clearPopupData(){
 
   toSign = [];
 
+  infoCount = 0;
 
   sendMode = background.sendMode;
 
@@ -467,7 +468,7 @@ $("#send-button").click(function(){
 * Triggered by the selection of a signature field, it asks for fields to the background script.
 */ 
 function requestInfo(){
-  showLoading("Requesting signature fields..");
+  showLoading("Requesting signature fields, don't close the popup..");
     hideError();
     chrome.runtime.sendMessage({
       action: popupMessageType.init,
@@ -482,7 +483,7 @@ function requestInfo(){
       urls: toDownload
   }, function (response) {
       console.log("Loading background app");
-      showLoading("Requesting signature fields..");
+      showLoading("Requesting signature fields, don't close the popup..");
       console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
   });
       clearSignData();
@@ -579,7 +580,8 @@ function showError(errorMessage) {
   hideLoading();
   errorMsg.textContent = errorMessage;
   document.getElementById("error-section").style.display = "inline";
-  
+  clearPopupData();
+  clearSignData();
 }
 
 /**
@@ -689,6 +691,10 @@ function updateSignatureFieldList() {
     }
     $("#fields").append("<br>");
     infoCount +=1;
+    console.log("INFOCOUNT -- ");
+    console.log(infoCount);
+    console.log("toSIGN -- ");
+    console.log(toSign.length);
     if(infoCount === toSign.length){ 
       console.log("SHOW FIELDS");
       $("#fields-container").css("display","inline");

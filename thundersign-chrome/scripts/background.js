@@ -1,8 +1,13 @@
 console.log("Start background");
 
-
+/**
+* Port of the native app for native messaging
+*/
 var nativeAppPort = null;
 
+/**
+* State of the app
+*/
 var StateEnum = {
   start: "start",
   ready: "ready",
@@ -15,10 +20,14 @@ var StateEnum = {
 };
 Object.freeze(StateEnum)
 
-//state of the app
+/**
+* Current state of the app
+*/
 var appCurrentState = StateEnum.start;
 
-
+/**
+* Signature data stored
+*/
 var storedSignatureData = {
   signatureData: "",
   infoPDF: "",
@@ -35,20 +44,64 @@ var storedSignatureData = {
   }
 }
 
-
+/**
+* Name of native app
+*/
 const app = 'com.unical.digitalsignature.mailsigner';
+
+/**
+*List of encoded files to attach in the mail
+*/
 var encoded_files = [];
+
+/**
+*Names of the signed attachments
+*/
 var signedNames = [];
+
+/**
+*Recipient of the mail
+*/
 var recipient = "";
+
+/**
+*Subject of the mail
+*/
 var subject = "";
+
+/**
+*Body of the mail
+*/
 var body = "";
+
+/**
+*Sent to native app counter
+*/
 var sentToNative = 0;
+
+/**
+*Send mode of the mail (reply or not)
+*/
 var sendMode = "";
+
+/**
+*Gmail tab id 
+*/
 var gmailTabId = 0;
+
+/**
+*Number of attachments to sign
+*/
 var toSign = 0;
+
+/**
+*Number of fields to search
+*/
 var fieldsToSearch = 0;
 
-
+/**
+*Type of popup script message
+*/
 var popupMessageType = {
   wakeup: 'wakeup',
   init: 'init',
@@ -63,8 +116,15 @@ var popupMessageType = {
 
 
 
-// Aggiungo il file attuale ad un array da conservare in caso di requestInfo
+/**
+*Signature data stored after field is found
+*/
 var storedForField = [];
+
+/**
+*Add to storedForField list 
+*@param data - Signature data to add
+*/
 function addToList(data){
 
   var signatureData = {
@@ -97,7 +157,9 @@ function addToList(data){
 }  
 
 
-
+/**
+*Clear background stored data
+*/
 function clearData(){
  // nativeAppPort = null;
   gmailTabId = 0;
@@ -196,11 +258,17 @@ function openConnection() {
 
   nativeAppPort.onDisconnect.addListener(function () {
     console.log("Disconnected");  
+    console.log(appCurrentState);
+    console.log("Sent to native -->");
+    console.log(sentToNative);
+    console.log("TOSIGN -->");
+    console.log(toSign);
     if(sentToNative === toSign && appCurrentState != StateEnum.complete && appCurrentState != StateEnum.error){
       endProcedure();
       chrome.runtime.sendMessage({
         state: "end-size"
       }, function (response) {});
+      
     }
     appCurrentState = StateEnum.ready;
   });
@@ -241,11 +309,11 @@ function requestPDFInfo(data) {
   console.log("Send message to native app...")
   // console.log(data);
   data.action = popupMessageType.info;
-  nativeAppPort.postMessage(data);
+  openConnection().postMessage(data);
   delete data.action;
   storedSignatureData.signatureData = data;
   updateSignatureDataPopup("filename", storedSignatureData.signatureData.filename);
-};
+}
 
 /**
  * Send a message to the Popup for update its signature data
@@ -294,7 +362,8 @@ function downloadFile(url,callback){
             console.log(item[0].filename);
             storedSignatureData.signatureData.filename = item[0].filename;
             console.log("File Found, send data for sign...");
-            if(appCurrentState == StateEnum.signing)
+            console.log(appCurrentState);
+            if(appCurrentState == StateEnum.signing || appCurrentState == StateEnum.ready )
               sendDataForSign(storedSignatureData.signatureData);
             else if (appCurrentState == StateEnum.info){
               addToList(storedSignatureData.signatureData);
@@ -310,48 +379,27 @@ function downloadFile(url,callback){
 
 
 
-// sleep time expects milliseconds
+/**
+ * Wait an amount of time
+ * @param  time - time to wait (millisec)
+ */
 function sleep(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
 
-/**
-* Send data to native app for ask information about pdf like: fields and pages number
-* @param {*} data - data to send to native app
-*/
-function requestPDFInfo(data) {
-appCurrentState = StateEnum.info;
-console.log("Send message to native app...")
-// console.log(data);
-data.action = popupMessageType.info;
-openConnection();
-nativeAppPort.postMessage(data);
-delete data.action;
-// storedSignatureData.signatureData = data;
-// updateSignatureDataPopup("filename", storedSignatureData.signatureData.filename);
-};
+
 
 /**
-* Send a message to the Popup for update its signature data
-* @param {string} fieldToUpdate : field of signature data to update
-* @param {*} value : new value
-*/
-function updateSignatureDataPopup(fieldToUpdate, value) {
-chrome.runtime.sendMessage({
-  state: 'updateSignatureData',
-  fieldToUpdate: fieldToUpdate,
-  value: value
-}, function (response) {});
-}
-
-
-
+ * Tries to start the download and sign procedure, else wait and retries.
+ * @param  url - url to download
+ * @param  data - signature data
+ */
 function tryHandleProcedure(url,data){
 	
   if(appCurrentState != StateEnum.signing){
     appCurrentState = StateEnum.signing;
-	storedSignatureData.signatureData = data;
-    
+	  storedSignatureData.signatureData = data;
+    console.log(appCurrentState);
     downloadFile(url);  
   }
   else{
@@ -361,6 +409,11 @@ function tryHandleProcedure(url,data){
   }
 }
 
+/**
+ * Tries to start the download and get info procedure, else wait and retries.
+ * @param  url - url to download
+ * @param  data - signature data
+ */
 function tryHandleInfo(url,data){
 	
   if(appCurrentState != StateEnum.info){
@@ -376,6 +429,11 @@ function tryHandleInfo(url,data){
   }
 }
 
+/**
+ * Try to start to sign on the selected field without download, else wait and retry.
+ * @param  field - field to sign
+ * @param  data - signature data
+ */
 function tryHandleField(field,data){
   if(appCurrentState != StateEnum.signing){
     console.log(appCurrentState);
@@ -392,6 +450,9 @@ function tryHandleField(field,data){
   }
 }
 
+/**
+ * End the whole background procedure
+ */
 function endProcedure(){
  
   clearData();
@@ -399,7 +460,9 @@ function endProcedure(){
   console.log("ENDED");
 }
 
-//listener message Popup -> Background
+
+// Message Listener Popup -> Background
+// Starts the procedures when a new signature data arrives from the Popup
 chrome.runtime.onMessage.addListener(
 function (request, sender, sendResponse) {
   switch (request.action) {
@@ -470,7 +533,10 @@ function (request, sender, sendResponse) {
     //   downloadFile(request.url, request.data, requestPDFInfo);
     //   break;
     case popupMessageType.info: 
+      
       fieldsToSearch = request.data.length;
+      console.log("Fields to Search -- "); 
+      console.log(fieldsToSearch);
       for(var i = 0; i< fieldsToSearch; i++){
         console.log(request.data[i].pageNumber);
         tryHandleInfo(request.urls[i],request.data[i]);
@@ -489,16 +555,25 @@ function (request, sender, sendResponse) {
 });
 
 
-
+/**
+ * log the started download
+ */
 function onStartedDownload(id) {
   console.log(`Started downloading: ${id}`);
 }
 
+/**
+ * log the failed download
+ */
 function onFailed(error) {
   console.log(`Download failed: ${error}`);
 }
 
- 
+
+/**
+ * OAuth and Send the mail
+ * @param signature_type - signature type , Cades or Pades
+ */
 function authAndSendMail(signature_type){
 
   if(signature_type == "cades"){
@@ -572,9 +647,8 @@ function authAndSendMail(signature_type){
 
 }
 
-//viene eseguita al risveglio della background ( quando viene riaperto il popup)
+
 function wakeUpProcedure(){
-  //verifico che non ci siano fields e firme in sospeso
-  //ricarico eventuali fields in sospeso
+
 
 }
