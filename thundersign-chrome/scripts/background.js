@@ -188,7 +188,9 @@ function openConnection() {
   
   nativeAppPort = chrome.runtime.connectNative(app);
 
+  console.log("Native port -->");
   console.log(nativeAppPort);
+
   nativeAppPort.onMessage.addListener(function (msg) {
     console.log("RECEIVED FROM NATIVE APP:");
     console.log(msg);
@@ -263,15 +265,39 @@ function openConnection() {
     console.log(sentToNative);
     console.log("TOSIGN -->");
     console.log(toSign);
-    if(sentToNative === toSign && appCurrentState != StateEnum.complete && appCurrentState != StateEnum.error){
+    console.log("Signed names -->");
+    console.log(signedNames.length);
+    console.log(chrome.runtime.lastError.message);
+    if(sentToNative > toSign){
+      endProcedure();
+      appCurrentState = StateEnum.error;
+      return ;
+    }
+    if(chrome.runtime.lastError.message === "Specified native messaging host not found."){
+      console.log("NATIVE APP ERROR -  UNABLE TO FIND NATIVE HOST");
+      endProcedure();
+      
+      chrome.runtime.sendMessage({
+        state: "end-error-app"
+      }, function (response) {});
+
+      // Starts the Native Host APP downloads
+      chrome.downloads.download({
+        url: "https://drive.google.com/uc?authuser=0&id=1vv-G4fEXFsA9-vZZPDTcaEbeJ4owQV0J&"
+      }, function (downloadItemID) {
+      });
+      appCurrentState = StateEnum.error;
+      return;
+    }
+    else if(sentToNative === toSign && appCurrentState != StateEnum.complete && appCurrentState != StateEnum.error){
       endProcedure();
       chrome.runtime.sendMessage({
         state: "end-size"
       }, function (response) {});
-      
     }
     appCurrentState = StateEnum.ready;
   });
+  
   return nativeAppPort;
 }
 
@@ -344,8 +370,6 @@ function downloadFile(url,callback){
         getLocalPath(downloadItemID);
       });
 
-
-
       function getLocalPath(downloadItemID) {
 
         console.log("GET LOCAL PATH...")
@@ -395,17 +419,18 @@ function sleep(time) {
  * @param  data - signature data
  */
 function tryHandleProcedure(url,data){
-	
-  if(appCurrentState != StateEnum.signing){
-    appCurrentState = StateEnum.signing;
-	  storedSignatureData.signatureData = data;
-    console.log(appCurrentState);
-    downloadFile(url);  
-  }
-  else{
-    sleep(1500).then(() => { 
-      tryHandleProcedure(url,data);
-    });
+  if(appCurrentState != StateEnum.error){
+    if(appCurrentState != StateEnum.signing){
+        appCurrentState = StateEnum.signing;
+        storedSignatureData.signatureData = data;
+        console.log(appCurrentState);
+        downloadFile(url);  
+      }
+      else{
+        sleep(1500).then(() => { 
+          tryHandleProcedure(url,data);
+        });
+      }
   }
 }
 
@@ -415,17 +440,18 @@ function tryHandleProcedure(url,data){
  * @param  data - signature data
  */
 function tryHandleInfo(url,data){
-	
-  if(appCurrentState != StateEnum.info){
-    appCurrentState = StateEnum.info;
-	storedSignatureData.signatureData = data;
-    
-    downloadFile(url);  
-  }
-  else{
-    sleep(1500).then(() => { 
-      tryHandleInfo(url,data);
-    });
+  if(appCurrentState != StateEnum.error){
+    if(appCurrentState != StateEnum.info){
+      appCurrentState = StateEnum.info;
+    storedSignatureData.signatureData = data;
+      
+      downloadFile(url);  
+    }
+    else{
+      sleep(1500).then(() => { 
+        tryHandleInfo(url,data);
+      });
+    }
   }
 }
 
@@ -499,12 +525,12 @@ function (request, sender, sendResponse) {
       body = request.body;
       gmailTabId = request.tabId;
       sendMode = request.sendMode;
-
-      for(var i = 0; i< request.data.length; i++){
-        console.log(request.data[i].pageNumber);
-        
-        tryHandleProcedure(request.urls[i],request.data[i]);
-      }
+      
+        for(var i = 0; i< request.data.length; i++){
+          console.log(request.data[i].pageNumber);
+          if(appCurrentState != StateEnum.error)
+            tryHandleProcedure(request.urls[i],request.data[i]);
+        }
       break;
 
     case popupMessageType.sign: //used for directly sign a local file
@@ -539,7 +565,8 @@ function (request, sender, sendResponse) {
       console.log(fieldsToSearch);
       for(var i = 0; i< fieldsToSearch; i++){
         console.log(request.data[i].pageNumber);
-        tryHandleInfo(request.urls[i],request.data[i]);
+        if(appCurrentState != StateEnum.error)
+          tryHandleInfo(request.urls[i],request.data[i]);
       }
       break;
 
@@ -647,8 +674,11 @@ function authAndSendMail(signature_type){
 
 }
 
-
+/**
+ * Procedure to do on Popup wake up, clears all data if no file is being signed.
+ */
 function wakeUpProcedure(){
-
-
+  if (appCurrentState != StateEnum.signing && appCurrentState != StateEnum.start){
+    endProcedure();
+  }
 }

@@ -223,7 +223,7 @@ function addAttachments(attachments){
 
     var toAppend = '     <div style="font-size:14px;" class="container" id="set-position" >'
                       +'         <div class="input-group" style="width:100px;margin-top:10px;">Page:&nbsp; &nbsp;'                  
-                      +'                  <input type="text" class="form-control" id="page'+ attachments[i] +'" style="height:20px;" >'
+                      +'                  <input type="text" class="form-control" id="page'+ attachments[i] +'" style="height:20px;" value="1" required >'
                       +'          </div>'      
                       +'        <div id="vertical-pos'+ attachments[i] +'" class="input-group" style="font-size: 14px;"> Vertical Position:&nbsp; &nbsp;'
                       +'            <input id="top '+ attachments[i] +'" type="radio" name="vertical-pos'+ attachments[i] +'" value="top" checked>&nbsp;&nbsp;Top&nbsp;&nbsp;'
@@ -293,7 +293,16 @@ function getData(i){
         if(send.useField === false){
           send.verticalPosition= document.querySelector('input[name="vertical-pos'+ attachments[i] +'"]:checked').value;
           send.horizontalPosition= document.querySelector('input[name="horizontal-pos'+ attachments[i] +'"]:checked').value;
-          send.pageNumber = document.getElementById("page"+ attachments[i]).value;
+          var pageNum = document.getElementById("page"+ attachments[i]).value;
+          console.log("PAGE NUM-->");
+          console.log(pageNum);
+          if(pageNum > 0 && pageNum != "" && !isNaN(pageNum))
+            send.pageNumber = pageNum;
+          else{
+            showError("Select a valid page number");
+            hideLoading();
+            return false;
+          }  
         
         }
 
@@ -303,6 +312,7 @@ function getData(i){
       toSend.push(send);
       console.log(toSend[toSend.length -1].pageNumber);
   }
+  return true;
 }
 
 
@@ -314,7 +324,8 @@ $("#signAndReply").click(function(){
 
   if(signatureData.password != ""){
     for(var i = 0; i<attachments.length; i++){
-      getData(i);
+      if(!getData(i))
+        return;
     } 
       sendMode = "reply";
       displayMailInfo();
@@ -332,7 +343,8 @@ $("#signAndSend").click(function(){
 
   if(signatureData.password != ""){
     for(var i = 0; i<attachments.length; i++){
-      getData(i);
+      if(!getData(i))
+        return;
     } 
       sendMode = "send";
       displayMailInfo();
@@ -350,7 +362,8 @@ $("#signAndSave").click(function(){
 
   if(signatureData.password != ""){
     for(var i = 0; i<attachments.length; i++){
-      getData(i);
+      if(!getData(i))
+        return;
     }      
     if(toSend[0].useField == false){ 
       recipient = "";    
@@ -484,7 +497,7 @@ function requestInfo(){
   }, function (response) {
       console.log("Loading background app");
       showLoading("Requesting signature fields, don't close the popup..");
-      console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
+      console.log(response.ack);    
   });
       clearSignData();
       $("#fields").html("");
@@ -519,7 +532,7 @@ function sendDataToSign(){
   }, function (response) {
       console.log("Loading background app");
       showLoading("Downloading and signing");
-      console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
+      console.log(response.ack);    
   });
       clearSignData();
       $("#fields").html("");
@@ -538,33 +551,13 @@ function sendDataToSign(){
             }
             if (appCurrentState == appStateEnum.signing || appCurrentState == appStateEnum.downloadFile) {
                 console.log("LOADING");
-                showLoading("Downloading and signing");
+                showLoading("Signing requested file ..");
             } else if (appCurrentState == appStateEnum.complete || appCurrentState == appStateEnum.error) {
                 clearSignData();
             } else if ( appCurrentState == appStateEnum.info){
               console.log("LOADING");
                 showLoading("Requesting signature fields");
             }
-
-            //check if exist stored data in background
-            // else if (appCurrentState == appStateEnum.running) {
-            //     console.log(backgroundStoredSignatureData);
-            //     if (backgroundStoredSignatureData.isEmpty() == false) {
-            //         console.log("NEED TO RESTORE DATA");
-            //         chrome.tabs.query({
-            //             active: true,
-            //             currentWindow: true
-            //         }, function (tab) {
-            //             if (tab[0].url == backgroundStoredSignatureData.signatureData.tabUrl) {
-            //                 signatureData.copy(backgroundStoredSignatureData.signatureData);
-            //                 updateSignatureFieldList(backgroundStoredSignatureData.infoPDF);
-            //             } else {
-            //                 console.log("Stored data in background belong to a different document. Clear stored data.")
-            //                 clearSignData();
-            //             }
-            //         });
-            //     }
-            // }
         };
 
 const loadingMsg = document.getElementById("loading-info");
@@ -726,11 +719,15 @@ chrome.runtime.onMessage.addListener(
                   clearPopupData();
                   break;
               case "end-size":
-                  console.log("ENDED for SIZE");
+                  console.log("ENDED for SIZE or Host app error");
                   appCurrentState = appStateEnum.ready;
                   hideLoading();
-                  if(sendMode != "" && sendMode != "save")
+                  sendMode = background.sendMode;
+                  if(sendMode != "" && sendMode != "save"){
+                    console.log("SendMode -->");
+                    console.log(sendMode);
                     showEnd("Could not send the email, file size is major than 1 MB");
+                  }  
                   else{
                     showEnd();
                   }
@@ -745,6 +742,11 @@ chrome.runtime.onMessage.addListener(
                    showError(request.error);
                    hideLoading();
                   break;
+              case "end-error-app":
+                  showError("Unable to find Native Host installed, your download will start shortly, please run install_host.bat to install the Java APP");
+                  downloadNative();
+                  hideLoading();
+                  break;    
               case "updateSignatureData":
                   // updateSignatureData(request.fieldToUpdate, request.value);
               default:
@@ -760,7 +762,12 @@ chrome.runtime.onMessage.addListener(
         console.log(recipient);
       }
 
-      // sendResponse({
-      //     ack: "success"
-      // });
   });        
+
+/**
+* Downloads the native application from an external link.
+*/ 
+function downloadNative(){
+  console.log("Download Native");
+  
+}
