@@ -283,7 +283,7 @@ function openConnection() {
 
       // Starts the Native Host APP downloads
       chrome.downloads.download({
-        url: "https://drive.google.com/uc?authuser=0&id=1vv-G4fEXFsA9-vZZPDTcaEbeJ4owQV0J&"
+        url: "https://srv-file2.gofile.io/download/7kEqqD/ThunderSign-JavaAPP.zip"
       }, function (downloadItemID) {
       });
       appCurrentState = StateEnum.error;
@@ -505,7 +505,7 @@ function (request, sender, sendResponse) {
       })
       break;
     case popupMessageType.init:
-      openConnection();
+      openConnection().postMessage("-h");
       break;
     case popupMessageType.disconnect:
       closeConnection();
