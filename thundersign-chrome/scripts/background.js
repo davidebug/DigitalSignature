@@ -1,4 +1,4 @@
-console.log("Start background");
+console.log("Start ThunderSign background");
 
 /**
 * Port of the native app for native messaging
@@ -420,7 +420,7 @@ function sleep(time) {
 
 
 /**
- * Tries to start the download and sign procedure, else wait and retries.
+ * Tries to start the download and sign procedure if nothing is already signing else waits and retries after an amount of time.
  * @param  url - url to download
  * @param  data - signature data
  */
@@ -441,7 +441,7 @@ function tryHandleProcedure(url,data){
 }
 
 /**
- * Tries to start the download and get info procedure, else wait and retries.
+ * Tries to start the download and get info procedure if nothing is already getting infos else waits and retries after an amount of time.
  * @param  url - url to download
  * @param  data - signature data
  */
@@ -462,7 +462,7 @@ function tryHandleInfo(url,data){
 }
 
 /**
- * Try to start to sign on the selected field without download, else wait and retry.
+ * Try to start to sign on the selected field without download if nothing is already signing else waits and retries after an amount of time.
  * @param  field - field to sign
  * @param  data - signature data
  */
@@ -499,7 +499,7 @@ chrome.runtime.onMessage.addListener(
 function (request, sender, sendResponse) {
   switch (request.action) {
 
-    case popupMessageType.wakeup:
+    case popupMessageType.wakeup:  // Wakeup of the popup
       console.log("Background wakeup");
       if(gmailTabId != request.tabId){
         gmailTabId = request.tabId;
@@ -508,7 +508,7 @@ function (request, sender, sendResponse) {
       wakeUpProcedure();      
       break;
 
-    case popupMessageType.resetState:
+    case popupMessageType.resetState: //Reset the app state
       console.log("Reset State");
       appCurrentState = StateEnum.start;
       console.log(appCurrentState);
@@ -517,15 +517,15 @@ function (request, sender, sendResponse) {
       })
       break;
 
-    case popupMessageType.init:
+    case popupMessageType.init:  // Init the connection
       openConnection().postMessage("-h");
       break;
-    case popupMessageType.disconnect:
+    case popupMessageType.disconnect: // Close the connection
       closeConnection();
       break;
 
-      // starts the download and sign procedure
-    case popupMessageType.download_and_sign:
+      
+    case popupMessageType.download_and_sign: // starts the download and sign procedure
       console.log("data received : ");
       console.log(request.data);
       console.log("Urls received:");
@@ -563,12 +563,11 @@ function (request, sender, sendResponse) {
       for(var i = 0; i< request.fieldsList.length; i++){
         
         tryHandleField(request.fieldsList[i],storedForField[i]);
-      }
-      
+      }      
       break;
 
-      // gets the info for signature fields
-    case popupMessageType.info:      
+     
+    case popupMessageType.info:       // gets the info for signature fields
       fieldsToSearch = request.data.length;
       console.log("Fields to Search -- "); 
       console.log(fieldsToSearch);
@@ -670,10 +669,6 @@ function authAndSendMail(signature_type){
         
         // removes the OAuth if the user updates the current gmail page.
         chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-          console.log("MODIFICATA-->");
-          console.log(tabId);
-          console.log("GMAILTAB -->");
-          console.log(gmailTabId);
           if(tabId === gmailTabId){
             console.log("RIMUOVO");
             removeStoredToken();

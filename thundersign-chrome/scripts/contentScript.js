@@ -3,11 +3,11 @@
 
 console.log('contentScript.js - Injected');
 
-var myAttachments = document.getElementsByClassName("aZo");
+var myAttachments = document.getElementsByClassName("aZo");  // Attachments list
 var attachmentsList = [];
-var urlsCollect = document.getElementsByClassName("aQy aZr e");
+var urlsCollect = document.getElementsByClassName("aQy aZr e");  // Urls List
 
-var recipient = document.getElementsByClassName("gD")[0].getAttribute("email");
+var recipient = document.getElementsByClassName("gD")[0].getAttribute("email");  // Actual Recipient
 var myUrls = [];
 
 for( var i = 0; i<urlsCollect.length; i++){
@@ -23,10 +23,4 @@ for(var i = 0; i<myAttachments.length;i++){
 chrome.runtime.sendMessage({popupContent: attachmentsList, urls: myUrls, recipient: recipient }, function(response)
 {});
 
-// function notify(message) {
-//     chrome.runtime.sendMessage({content: "Function call: " + message});
-    
-//   }
-  
-// exportFunction(notify, window, {defineAs:'notify'});
 
