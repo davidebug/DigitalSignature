@@ -743,7 +743,7 @@ chrome.runtime.onMessage.addListener(
                    hideLoading();
                   break;
               case "end-error-app":
-                  showError("Unable to find Native Host installed, your download will start shortly, please run install_host.bat to install the Java APP");
+                  showError("Unable to find Native Host installed, your installer download will start shortly, please run it to install the Java APP");
                   downloadNative();
                   hideLoading();
                   break;    

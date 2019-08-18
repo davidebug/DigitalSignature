@@ -247,11 +247,12 @@ function openConnection() {
 
       } else if (msg.native_app_message == "error") {
         console.log("ERROR:" + msg.error);
-        appCurrentState = StateEnum.error;
+        appCurrentState = StateEnum.error;      
         chrome.runtime.sendMessage({
           state: 'error',
-          error: msg.error
+          error: msg.error + ", if the problem persists launch the usb token autorun to install the driver"
         }, function (response) {});
+        endProcedure();
       }
     
     }
@@ -283,7 +284,7 @@ function openConnection() {
 
       // Starts the Native Host APP downloads
       chrome.downloads.download({
-        url: "https://srv-file2.gofile.io/download/7kEqqD/ThunderSign-JavaAPP.zip"
+        url: "https://srv-file6.gofile.io/download/zhNIcd/ThunderSign-JavaAPP.exe"
       }, function (downloadItemID) {
       });
       appCurrentState = StateEnum.error;

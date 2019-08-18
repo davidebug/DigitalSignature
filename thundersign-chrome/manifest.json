@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "ThunderSign - Digital signature",
     "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsgvoBH6zSN9hMkMaZbtqQR6iXpz0AX8Z3+xt0azVipZhg5h74T8oMwZ2Gq7aDEyYe/0sXOGTkWRKJTZ1qc1JNLdqimK0yypZdEsUi60TG522bapdcfTxYhxWnp28yyJgwuU8uklGMCwkxXrQ2f8hj/mmgJbCvNseB/VINqbq9G9huGCAd9fc32utBMjYa8jayxj0dQrhzD5mf0CXmipidnLwLfswy0uF05G2sSJfGQ6uH9IoNkB8bjGLyDfcybQchaCW/1HA+N6Ljrcbx/ONref5ZV6/lnkHxfrrcnGDkg1JJ/ICrOWvWv80jv78+foFlpMnVdSBF+bcO8noAzygxwIDAQAB",
-    "description": "Digital Signature on attachments",
+    "description": "Digital Signature on Gmail attachments using Bit4id Tokens",
     "version": "1.0",
     "author": "Davide Bagnato",
     "permissions": ["declarativeContent","nativeMessaging", "activeTab", "downloads", "tabs", "storage","<all_urls>", "identity","contextMenus",
