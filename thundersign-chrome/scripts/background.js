@@ -26,6 +26,11 @@ Object.freeze(StateEnum)
 var appCurrentState = StateEnum.start;
 
 /**
+* Current Token Stored
+*/
+var tokenStored ="";
+
+/**
 * Signature data stored
 */
 var storedSignatureData = {
@@ -75,7 +80,7 @@ var subject = "";
 var body = "";
 
 /**
-*Sent to native app counter
+*Number of files sent to the native application
 */
 var sentToNative = 0;
 
@@ -162,7 +167,7 @@ function addToList(data){
 */
 function clearData(){
  // nativeAppPort = null;
-  gmailTabId = 0;
+ // gmailTabId = 0;
   toSign = 0;
   fieldsToSearch = 0;
 
@@ -181,11 +186,10 @@ function clearData(){
 }
 
 /**
- * Opens connection with native app and set message listeners.
+ * Opens connection with native app and set native messages listeners.
  */
 function openConnection() {
-  
-  
+    
   nativeAppPort = chrome.runtime.connectNative(app);
 
   console.log("Native port -->");
@@ -217,13 +221,13 @@ function openConnection() {
           else{
             console.log("CONCLUDO PROCEDURA");
             appCurrentState = StateEnum.complete;      
-            endProcedure();
             chrome.runtime.sendMessage({
-              state: "end"
+              state: "end",
+              sendMode: sendMode
             }, function (response) {});
             encoded_files = [];
             signedNames = [];
-
+            endProcedure();
           }  
          
         }
@@ -259,6 +263,7 @@ function openConnection() {
 
   });
 
+  // Sets the listener for the Disconnection
   nativeAppPort.onDisconnect.addListener(function () {
     console.log("Disconnected");  
     console.log(appCurrentState);
@@ -484,7 +489,7 @@ function endProcedure(){
  
   clearData();
   closeConnection();
-  console.log("ENDED");
+  console.log("ENDED_PROCEDURE");
 }
 
 
@@ -493,10 +498,16 @@ function endProcedure(){
 chrome.runtime.onMessage.addListener(
 function (request, sender, sendResponse) {
   switch (request.action) {
+
     case popupMessageType.wakeup:
       console.log("Background wakeup");
-      wakeUpProcedure();
+      if(gmailTabId != request.tabId){
+        gmailTabId = request.tabId;
+        removeStoredToken();
+      }  
+      wakeUpProcedure();      
       break;
+
     case popupMessageType.resetState:
       console.log("Reset State");
       appCurrentState = StateEnum.start;
@@ -505,6 +516,7 @@ function (request, sender, sendResponse) {
         appstate: appCurrentState
       })
       break;
+
     case popupMessageType.init:
       openConnection().postMessage("-h");
       break;
@@ -512,6 +524,7 @@ function (request, sender, sendResponse) {
       closeConnection();
       break;
 
+      // starts the download and sign procedure
     case popupMessageType.download_and_sign:
       console.log("data received : ");
       console.log(request.data);
@@ -524,9 +537,8 @@ function (request, sender, sendResponse) {
       console.log(recipient);
       subject = request.subject;
       body = request.body;
-      gmailTabId = request.tabId;
-      sendMode = request.sendMode;
-      
+      sendMode = request.sendMode;    
+
         for(var i = 0; i< request.data.length; i++){
           console.log(request.data[i].pageNumber);
           if(appCurrentState != StateEnum.error)
@@ -534,7 +546,7 @@ function (request, sender, sendResponse) {
         }
       break;
 
-    case popupMessageType.sign: //used for directly sign a local file
+    case popupMessageType.sign: //used for directly sign a local file (after signature fields selection)
       
       console.log("Start signing without download");
       console.log(storedForField);
@@ -544,9 +556,8 @@ function (request, sender, sendResponse) {
       console.log(recipient);
       subject = request.subject;
       body = request.body;
-      gmailTabId = request.tabId;
       sendMode = request.sendMode;
-      
+
       console.log("field list -->" + request.fieldsList.length);
       console.log("stored for field -->" + storedForField.length);
       for(var i = 0; i< request.fieldsList.length; i++){
@@ -556,11 +567,8 @@ function (request, sender, sendResponse) {
       
       break;
 
-    // case popupMessageType.download_and_getInfo: //used for directly sign a local file
-    //   downloadFile(request.url, request.data, requestPDFInfo);
-    //   break;
-    case popupMessageType.info: 
-      
+      // gets the info for signature fields
+    case popupMessageType.info:      
       fieldsToSearch = request.data.length;
       console.log("Fields to Search -- "); 
       console.log(fieldsToSearch);
@@ -611,68 +619,96 @@ function authAndSendMail(signature_type){
     var type = "application/pdf"
   }
 
+  // gets the OAuth Token (stored in Chrome or not)
   chrome.identity.getAuthToken({interactive: true}, function(token) {
     console.log(token);
-    console.log(recipient);
-    console.log(body);
-    console.log(subject);
-      var mail = [
-        'Content-Type: multipart/mixed; boundary="foo_bar_baz"\r\n',
-        'MIME-Version: 1.0\r\n',
+
+    if (token != undefined){
+      tokenStored = token;
+      console.log(recipient);
+      console.log(body);
+      console.log(subject);
+        var mail = [
+          'Content-Type: multipart/mixed; boundary="foo_bar_baz"\r\n',
+          'MIME-Version: 1.0\r\n',
+          
+          'To:'+ recipient + '\r\n',
+          'Subject:'+ subject + '\r\n\r\n',
         
-        'To:'+ recipient + '\r\n',
-        'Subject:'+ subject + '\r\n\r\n',
-      
-        '--foo_bar_baz\r\n',
-        'Content-Type: text/plain; charset="UTF-8"\r\n',
-        'MIME-Version: 1.0\r\n',
-        'Content-Transfer-Encoding: 7bit\r\n\r\n',
-      
-        body + '\r\n\r\n'
+          '--foo_bar_baz\r\n',
+          'Content-Type: text/plain; charset="UTF-8"\r\n',
+          'MIME-Version: 1.0\r\n',
+          'Content-Transfer-Encoding: 7bit\r\n\r\n',
+        
+          body + '\r\n\r\n'
 
-      ];
+        ];
+        
+        for (var i = 0; i< encoded_files.length; i++){
+          mail.push('--foo_bar_baz\r\n',
+                          'Content-Type:'+ type +'; name="'+ signedNames[i]+'"\r\n',
+                          'MIME-Version: 1.0\r\n',
+                          'Content-Transfer-Encoding: base64\r\n',
+                          'Content-Disposition: attachment; filename="'+ signedNames[i]+'"\r\n\r\n',
+                          encoded_files[i], '\r\n\r\n');
+          if(i === encoded_files.length-1){
+            mail.push('--foo_bar_baz--');
+          }                
+        }
+        console.log(mail);
+        var dataToSend = mail.join('');
+        // Send the mail!
+        $.ajax({
+          type: "POST",
+          url: "https://www.googleapis.com/upload/gmail/v1/users/me/messages/send?uploadType=multipart",
+          contentType: "message/rfc822",
+          beforeSend: function(xhr, settings) {
+            xhr.setRequestHeader('Authorization','Bearer '+ token );
+          },
+          data: dataToSend
+        }); 
+        
+        // removes the OAuth if the user updates the current gmail page.
+        chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+          console.log("MODIFICATA-->");
+          console.log(tabId);
+          console.log("GMAILTAB -->");
+          console.log(gmailTabId);
+          if(tabId === gmailTabId){
+            console.log("RIMUOVO");
+            removeStoredToken();
+          } 
+        });
       
-      for (var i = 0; i< encoded_files.length; i++){
-        mail.push('--foo_bar_baz\r\n',
-                        'Content-Type:'+ type +'; name="'+ signedNames[i]+'"\r\n',
-                        'MIME-Version: 1.0\r\n',
-                        'Content-Transfer-Encoding: base64\r\n',
-                        'Content-Disposition: attachment; filename="'+ signedNames[i]+'"\r\n\r\n',
-                        encoded_files[i], '\r\n\r\n');
-        if(i === encoded_files.length-1){
-          mail.push('--foo_bar_baz--');
-        }                
-      }
-      console.log(mail);
-      var dataToSend = mail.join('');
-      // Send the mail!
-      $.ajax({
-        type: "POST",
-        url: "https://www.googleapis.com/upload/gmail/v1/users/me/messages/send?uploadType=multipart",
-        contentType: "message/rfc822",
-        beforeSend: function(xhr, settings) {
-          xhr.setRequestHeader('Authorization','Bearer '+ token );
-        },
-        data: dataToSend
-      }); 
-      
-      chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-        if(tabId === gmailTabId){
-          var url = 'https://accounts.google.com/o/oauth2/revoke?token=' + token;
-          window.fetch(url);
-          chrome.identity.removeCachedAuthToken({token: token}, function (){});
-        } 
-      });
-      
-
-      console.log("ENDED");
-      
-      endProcedure();
+      console.log("ENDED - Sent");  //TOKEN VALID, EMAIL SENT
+      console.log(sendMode);
       chrome.runtime.sendMessage({
-        state: "end"
+        state: "end",
+        sendMode: sendMode
       }, function (response) {});
-    });
+      endProcedure();
+    }
+    else{
+      console.log("ENDED - Not sent");   // TOKEN NOT VALID, EMAIL NOT SENT
+      sendMode = "";
+      chrome.runtime.sendMessage({
+        state: "end",
+        sendMode: sendMode
+      }, function (response) {});
+      endProcedure();
+    } 
+  });
+   
 
+}
+
+/**
+ * Removes the Authorization stored in Chrome for the actual Google Token
+ */
+function removeStoredToken(){
+  var url = 'https://accounts.google.com/o/oauth2/revoke?token=' + tokenStored;
+  window.fetch(url);
+  chrome.identity.removeCachedAuthToken({token: tokenStored}, function (){});
 }
 
 /**

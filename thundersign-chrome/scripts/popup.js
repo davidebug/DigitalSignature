@@ -3,12 +3,19 @@ console.log('Popup.js - Started');
 
 /**
 * Id of the current chrome tab where the popup has been opened
-*
 */
 var tabId = 0;
+
+// Gets the actual gmail tab and sends it to the background script
 chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
   var activeTab = tabs[0];
   tabId = activeTab.id;
+  chrome.runtime.sendMessage({
+    action: popupMessageType.wakeup,
+    tabId: tabId
+  }, function (response) {
+    console.log("background wakeup");
+  });
   console.log(tabId);
 });
 
@@ -130,14 +137,6 @@ function clearPopupData(){
 }
 
 
-
-
-
-chrome.runtime.sendMessage({
-  action: popupMessageType.wakeup,
-}, function (response) {
-  console.log("background wakeup");
-});
 
 // Little change on the path of the input image (visible pades).
 $('#inputGroupFile02').on('change',function(){
@@ -411,7 +410,6 @@ $("#sendInfo").click(function(){
     subject: subject,
     body: body,
     recipient: recipient,
-    tabId: tabId
 
 
 }, function (response) {
@@ -526,7 +524,6 @@ function sendDataToSign(){
       recipient: recipient,
       subject: subject,
       body: body,
-      tabId: tabId,
       sendMode: sendMode
 
   }, function (response) {
@@ -710,7 +707,11 @@ chrome.runtime.onMessage.addListener(
                   console.log("ENDED");
                   appCurrentState = appStateEnum.ready;
                   hideLoading();
-                  if(sendMode != "")
+                  console.log("SENDMODE-->");
+                  console.log(request.sendMode);
+                  console.log("SENDMODE2-->");
+                  console.log(background.sendMode);
+                  if(request.sendMode != "" && request.sendMode != "save")
                     showEnd("Mail sent to "+ recipient);
                   else{
                     showEnd();
@@ -718,6 +719,7 @@ chrome.runtime.onMessage.addListener(
                   clearSignData();
                   clearPopupData();
                   break;
+
               case "end-size":
                   console.log("ENDED for SIZE or Host app error");
                   appCurrentState = appStateEnum.ready;
