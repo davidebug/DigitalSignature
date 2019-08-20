@@ -736,7 +736,7 @@ chrome.runtime.onMessage.addListener(
                   break;
 
               case "end-error-app": // Native Host error
-                  showError("Unable to find Native Host installed, your installer download will start shortly, please run it to install the Java APP");
+                  showError("Unable to find Native Host installed, your installer download will start shortly, please run it to install the Java APP and the related Bit4id driver");
                   downloadNative();
                   hideLoading();
                   break;  
