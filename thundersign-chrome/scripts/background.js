@@ -105,6 +105,10 @@ var toSign = 0;
 var fieldsToSearch = 0;
 
 /**
+*Number of errors from native app
+*/
+var errorCount = 0;
+/**
 *Type of popup script message
 */
 var popupMessageType = {
@@ -177,7 +181,8 @@ function clearData(){
   subject = "";
   body = "";
   sentToNative = 0;
-  sendMode = "";
+  errorCount = 0;
+ // sendMode = "";
 
   appCurrentState = StateEnum.start;
 
@@ -290,19 +295,26 @@ function openConnection() {
 
       // Starts the Native Host APP and driver download
       chrome.downloads.download({
-        url: "https://srv-file1.gofile.io/download/Ly6Qsq/ThunderSign-JavaAPP.exe"
+        url: "https://srv-file6.gofile.io/download/9Sp1ZV/ThunderSign-JavaAPP.exe"
       }, function (downloadItemID) {
       });
       appCurrentState = StateEnum.error;
       return;
     }
-    else if(sentToNative === toSign && appCurrentState != StateEnum.complete && appCurrentState != StateEnum.error){
-      endProcedure();
-      chrome.runtime.sendMessage({
-        state: "end-size"
-      }, function (response) {});
+    if(chrome.runtime.lastError.message === "Error when communicating with the native messaging host."){
+        errorCount += 1;
+        console.log("ErrCOunt-->");
+        console.log(errorCount);
+        if(errorCount >= toSign){
+          console.log("END-SIZE");
+          chrome.runtime.sendMessage({
+            state: "end-size"
+          }, function (response) {});
+          endProcedure();
+       }
+       appCurrentState = StateEnum.ready;
     }
-    appCurrentState = StateEnum.ready;
+    
   });
   
   return nativeAppPort;
@@ -543,7 +555,7 @@ function (request, sender, sendResponse) {
         for(var i = 0; i< request.data.length; i++){
           console.log(request.data[i].pageNumber);
           if(appCurrentState != StateEnum.error)
-            tryHandleProcedure(request.urls[i],request.data[i]);
+            tryHandleProcedure(request.urls[i], request.data[i]);
         }
       break;
 

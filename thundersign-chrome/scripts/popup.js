@@ -211,7 +211,7 @@ function addAttachments(attachments){
   document.getElementById("my-attachments").innerHtml="";
   document.getElementById("my-attachments").innerText="";
   for(var i=0; i<attachments.length; i++){
-    var attach = '<input type="checkbox" id="'+ attachments[i] +'" name="checkbox" value="value" >&nbsp;&nbsp;' + attachments[i] + '<br>';
+    var attach = '<input type="checkbox" id="'+ attachments[i] +'-'+i+'" name="checkbox" value="value" >&nbsp;&nbsp;' + attachments[i] + '<br>';
     $("#my-attachments").append(attach);
     if(!attachments[i].endsWith('pdf')){
       document.getElementById("pades-wrapper").style.display = "none";
@@ -275,7 +275,7 @@ function getData(i){
     }
     send.image = signatureData.image;
     send.password = signatureData.password;
-    if(document.getElementById(attachments[i]).checked){
+    if(document.getElementById(attachments[i]+"-"+i).checked){
       console.log("PUSHO");
       console.log(attachments);
       toSign.push(attachments[i]);
@@ -406,7 +406,7 @@ $("#sendInfo").click(function(){
 
 }, function (response) {
     console.log("Loading background app");
-    showLoading("Signing on selected fields..");
+    showLoading("Signing on selected fields, please wait, it could takes few minutes..");
     console.log(response.ack);    // restituisce "success" quando la procedura di background è conclusa.
 });
     clearSignData();
@@ -500,7 +500,7 @@ function requestInfo(){
 * Sends the signature data to the backgroung script, requiring a "sign and download" procedure.
 */ 
 function sendDataToSign(){
-    showLoading("Downloading and signing");
+    showLoading("Downloading and signing, please wait, it could takes few minutes..");
     hideError();
     chrome.runtime.sendMessage({
       action: popupMessageType.init,
@@ -521,7 +521,7 @@ function sendDataToSign(){
 
   }, function (response) {
       console.log("Loading background app");
-      showLoading("Downloading and signing");
+      showLoading("Downloading and signing, please wait, it could takes few minutes..");
       console.log(response.ack);    
   });
       clearSignData();
@@ -544,7 +544,7 @@ function sendDataToSign(){
                 clearSignData();
             } else if ( appCurrentState == appStateEnum.info){
               console.log("LOADING");
-                showLoading("Requesting signature fields");
+                showLoading("Requesting signature fields, don't close the popup..");
             }
         };
 
@@ -716,7 +716,7 @@ chrome.runtime.onMessage.addListener(
                   if(sendMode != "" && sendMode != "save"){
                     console.log("SendMode -->");
                     console.log(sendMode);
-                    showEnd("Could not send the email, file size is major than 1 MB");
+                    showEnd("Could not send the email, signed file size exceeds the maximum accepted");
                   }  
                   else{
                     showEnd();
