@@ -23,12 +23,12 @@
 > **NOTE:** for **uninstall** the application is enough remove the extension from chrome and run `uninstall_host.bat`
 
 ### Usage
- - **one** Open Gmail on your Chrome browser and open an email with an attachment.
- - **two** Open the extension Popup, select your attachment, select a signature type (Cades, Pades, Visible Pades) and insert your PIN.
- - **three** Select a method between Sign and Reply, Sign and Send (to another recipient) and Sign and Save (to your downloads folder).
+ - **1** Open Gmail on your Chrome browser and open an email with an attachment.
+ - **2** Open the extension Popup, select your attachment, select a signature type (Cades, Pades, Visible Pades) and insert your PIN.
+ - **3** Select a method between Sign and Reply, Sign and Send (to another recipient) and Sign and Save (to your downloads folder).
  > Compile your email if you chose a reply or send method.
- - **four** Wait for the signature process and login to your Google Account if it's required authorizing Thundersign.
- - **five** Your email attachment has been correctly signed and sent!.
+ - **4** Wait for the signature process and login to your Google Account if it's required authorizing Thundersign.
+ - **5** Your email attachment has been correctly signed and sent!.
 
 #### Chrome Extension structure
 
