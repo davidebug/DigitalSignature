@@ -1,5 +1,5 @@
 ﻿# ThunderSign - Digital Signature 
-<p align="left"> <img src="thundersign-chrome\images\icon-32.png"> </p>
+<p align="left"> <img src="thundersign-chrome\images\icon128.png"> </p>
 
 ### Installation
 
@@ -9,20 +9,26 @@
 - Java 8 JRE u212
 - Token PKCS #11 (Bit4id)
 
-**:one: :  INSTALL THE CHROME EXTENSION**
+**:one: :  INSTALL THE CHROME EXTENSION (If you don't want to use the Chrome Web Store version)** 
 	
 - Open Chrome and enter `chrome://extensions/` into your address bar.
 - Click on the “developer mode” toggle in the upper-right corner.
 - Click no "**Load Unpacked**" and select the "**thundersign-chrome**" folder.
 
-**:two: : INSTALL NATIVE APP**
+**:two: : INSTALL DRIVERS and JAVA APP**
 
 - After this, run the **ThunderSign-JavaAPP** executable, choose a folder and it will create some registry key that are necessary for using the native application.
+- Then it will install the Bit4id Drivers
 
 > **NOTE:** for **uninstall** the application is enough remove the extension from chrome and run `uninstall_host.bat`
 
 ### Usage
----toDO---
+ - **one** Open Gmail on your Chrome browser and open an email with an attachment.
+ - **two** Open the extension Popup, select your attachment, select a signature type (Cades, Pades, Visible Pades) and insert your PIN.
+ - **three** Select a method between Sign and Reply, Sign and Send (to another recipient) and Sign and Save (to your downloads folder).
+ > Compile your email if you chose a reply or send method.
+ - **four** Wait for the signature process and login to your Google Account if it's required authorizing Thundersign.
+ - **five** Your email attachment has been correctly signed and sent!.
 
 #### Chrome Extension structure
 
@@ -37,7 +43,8 @@
 
 -----
 
-#### NOTE:
+#### NOTE: ALL RIGHTS FOR THE FORMAT and JAVA APPLICATION TO --> Alessio Scarfone https://github.com/AlessioScarfone/Java-Digital-Signature
+
 - Tested on: **Windows 10, 8.1 (Oracle JDK 8u212).**
 
 - **Tested with Bit4id smart card reader and an Italian CNS** (all provided by Aruba): 
@@ -47,3 +54,4 @@
     [Link to Bit4id usb token](https://www.bit4id.com/en/lettore-di-smart-card-minilector-s-evo/)
 
 ![Token Image](https://www.pec.it/getattachment/20362be8-daa3-44a6-9a91-4d801245baa7/Token)
+

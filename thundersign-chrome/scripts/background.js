@@ -289,15 +289,11 @@ function openConnection() {
       console.log("NATIVE APP ERROR -  UNABLE TO FIND NATIVE HOST");
       endProcedure();
       
+      // Notify the user for the APP error
       chrome.runtime.sendMessage({
         state: "end-error-app"
       }, function (response) {});
-
-      // Starts the Native Host APP and driver download
-      chrome.downloads.download({
-        url: "https://srv-file6.gofile.io/download/9Sp1ZV/ThunderSign-JavaAPP.exe"
-      }, function (downloadItemID) {
-      });
+      
       appCurrentState = StateEnum.error;
       return;
     }

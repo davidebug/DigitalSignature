@@ -735,9 +735,15 @@ chrome.runtime.onMessage.addListener(
                    hideLoading();
                   break;
 
-              case "end-error-app": // Native Host error
-                  showError("Unable to find Native Host installed, your installer download will start shortly, please run it to install the Java APP and the related Bit4id driver");
-                  downloadNative();
+              case "end-error-app": // Native Host error, sets the listener for the link.
+                  showError("Unable to find Native Host or Drivers installed, you can download your installer from ");
+                  $("#error-info").append('<a id= "error-link" href="">Here</a> ');
+                  $("#error-link").click(function(){
+                    chrome.tabs.create({
+                      url: "https://1drv.ms/u/s!ArvmRG8fou1fihQq4P42U0gTuyyH?e=5pQcyv"
+                     }, function (downloadItemID) {
+                     });
+                  });
                   hideLoading();
                   break;  
 
